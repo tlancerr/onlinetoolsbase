@@ -1,0 +1,101 @@
+"use client";
+
+import { useState } from "react";
+import ToolLayout from "../../../components/ToolLayout";
+import * as pdfjsLib from "pdfjs-dist/build/pdf";
+import JSZip from "jszip";
+
+// Use the worker you already placed in /public
+pdfjsLib.GlobalWorkerOptions.workerSrc = "/pdf.worker.min.js";
+
+export default function PdfExtractImages() {
+  const [zipUrl, setZipUrl] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [pageCount, setPageCount] = useState<number | null>(null);
+
+  async function handleFile(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    setLoading(true);
+    setZipUrl("");
+    setPageCount(null);
+
+    try {
+      const arrayBuffer = await file.arrayBuffer();
+      const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+
+      setPageCount(pdf.numPages);
+
+      const zip = new JSZip();
+
+      for (let i = 1; i <= pdf.numPages; i++) {
+        const page = await pdf.getPage(i);
+        const viewport = page.getViewport({ scale: 2 });
+
+        const canvas = document.createElement("canvas");
+        const ctx = canvas.getContext("2d")!;
+
+        canvas.width = viewport.width;
+        canvas.height = viewport.height;
+
+        await page.render({ canvasContext: ctx, viewport }).promise;
+
+        // Convert canvas to blob (PNG)
+        const dataUrl = canvas.toDataURL("image/png");
+        const res = await fetch(dataUrl);
+        const blob = await res.blob();
+
+        zip.file(`page-${i}.png`, blob);
+      }
+
+      const zipBlob = await zip.generateAsync({ type: "blob" });
+      const url = URL.createObjectURL(zipBlob);
+      setZipUrl(url);
+    } catch (err) {
+      console.error(err);
+      alert("Failed to extract images from PDF.");
+    }
+
+    setLoading(false);
+  }
+
+  return (
+    <ToolLayout
+      title="Extract Images from PDF"
+      description="Convert each page of your PDF into PNG images and download them as a ZIP archive."
+      category="PDF Tools"
+    >
+      <div className="space-y-4">
+        <input
+          type="file"
+          accept="application/pdf"
+          className="tool-input"
+          onChange={handleFile}
+        />
+
+        {loading && (
+          <div className="bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-sm text-slate-100">
+            Extracting images... This may take a few seconds for large PDFs.
+          </div>
+        )}
+
+        {pageCount && !loading && (
+          <p className="text-sm text-slate-300">
+            Pages processed: <span className="font-semibold">{pageCount}</span>
+          </p>
+        )}
+
+        {zipUrl && (
+          <a
+            href={zipUrl}
+            download="pdf-images.zip"
+            className="btn-primary inline-block w-full text-center"
+          >
+            Download ZIP with Images
+          </a>
+        )}
+      </div>
+    </ToolLayout>
+  );
+}

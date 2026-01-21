@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# AdSense recommendation
+User-agent: Mediapartners-Google
+Allow: /
+
+# Sitemap
+Sitemap: https://onlinetoolsbase.com/sitemap.xml
+Sitemap: https://onlinetoolsbase.com/tools-sitemap.xml
+Sitemap: https://onlinetoolsbase.com/tools-pages-sitemap.xml

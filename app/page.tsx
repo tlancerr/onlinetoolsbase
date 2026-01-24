@@ -13,7 +13,7 @@ type CategoryMeta = {
 const categoryMeta: Record<string, CategoryMeta> = {
   "Time and Age Tools": {
     icon: "⏱️",
-    description: "Calculate age, time differences and important dates.",
+    description: "Calculates age, time differences and important dates.",
     colorClass: "bg-purple-500/10 border-purple-500/40 text-purple-100",
   },
   "Finance Tools": {

@@ -60,7 +60,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
 
       <body className="main-shell">
-      {/*  <AdSenseScript />*/}
+      <AdSenseScript />
         <SiteHeader />
         <main className="flex-1">{children}</main>
         <SiteFooter />

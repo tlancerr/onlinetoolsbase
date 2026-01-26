@@ -167,10 +167,10 @@ const popular = toolsData
         {/* Main tool area */}
         <section className="card">
           {children}
-        {/*  <AdSlot
+         <AdSlot
   slot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_TOOL_BELOW_BOX || "1234567890"}
   minHeight={280}
-/> */ }
+/>
         </section>
 
         {/* Sidebar */}
@@ -227,10 +227,10 @@ const popular = toolsData
         </aside>
       </div>
       {/* Visible How-To Section */}
-     {/* <AdSlot
+     <AdSlot
   slot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_TOOL_BEFORE_FAQ || "0987654321"}
   minHeight={280}
-/> */ }
+/>
 {tool?.howtoSteps && tool.howtoSteps.length > 0 && (
   <section className="my-6 p-4 rounded-xl bg-slate-800/40 border border-slate-700">
     <h2 className="text-lg font-semibold mb-2">How to Use This Tool</h2>

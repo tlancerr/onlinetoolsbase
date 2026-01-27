@@ -168,7 +168,7 @@ const popular = toolsData
         <section className="card">
           {children}
          <AdSlot
-  slot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_TOOL_BELOW_BOX || "1234567890"}
+  slot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_TOOL_BELOW_BOX || "7182705926"}
   minHeight={280}
 />
         </section>
@@ -228,7 +228,7 @@ const popular = toolsData
       </div>
       {/* Visible How-To Section */}
      <AdSlot
-  slot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_TOOL_BEFORE_FAQ || "0987654321"}
+  slot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_TOOL_BEFORE_FAQ || "8471736863"}
   minHeight={280}
 />
 {tool?.howtoSteps && tool.howtoSteps.length > 0 && (

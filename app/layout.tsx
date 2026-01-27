@@ -57,10 +57,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         {/* Load theme IMMEDIATELY before page renders */}
         <ThemeInitializer />
+        <AdSenseScript />
       </head>
 
       <body className="main-shell">
-      <AdSenseScript />
+      
         <SiteHeader />
         <main className="flex-1">{children}</main>
         <SiteFooter />

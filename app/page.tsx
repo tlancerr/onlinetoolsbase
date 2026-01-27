@@ -140,8 +140,8 @@ export default function HomePage() {
         </div>
       </section>
 
-   {/*   {/* OPTIONAL ADSENSE PLACEHOLDER */
-   /*  <section>
+      {/* OPTIONAL ADSENSE PLACEHOLDER */
+     <section>
        <AdSlot
     slot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_HOME_MID || "1769096713"}
     minHeight={280}

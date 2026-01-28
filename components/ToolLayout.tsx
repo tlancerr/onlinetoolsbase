@@ -1,71 +1,102 @@
 "use client";
 
-import ToolSchema from "./ToolSchema";
-import FAQSchema from "./FAQSchema";
-import HowToSchema from "./HowToSchema";
-import AdSlot from "@/components/AdSlot";
-import BreadcrumbSchema from "./BreadcrumbSchema";
-
-import React, { ReactNode } from "react";
-import toolsData from "./toolsData";
-import SupportSection from "./SupportSection";
+import React, { ReactNode, useMemo } from "react";
 import Head from "next/head";
 import { usePathname } from "next/navigation";
 
+import ToolSchema from "./ToolSchema";
+import FAQSchema from "./FAQSchema";
+import HowToSchema from "./HowToSchema";
+import BreadcrumbSchema from "./BreadcrumbSchema";
+
+import AdSlot from "@/components/AdSlot";
+import toolsData from "./toolsData";
+import SupportSection from "./SupportSection";
+
 type Props = {
-  slug?: string;
   title: string;
   description: string;
   category: string;
   children: ReactNode;
+  slug?: string; // ✅ optional (fixes your page.tsx error)
 };
 
 export default function ToolLayout({
-  slug,
   title,
   description,
   category,
   children,
+  slug,
 }: Props) {
   const pathname = usePathname();
+
+  // ✅ infer slug from URL if not provided
+  const inferredSlug = useMemo(() => {
+    if (slug) return slug;
+    const parts = (pathname || "").split("/").filter(Boolean);
+    // expected: /tools/<slug>
+    const last = parts[parts.length - 1] || "";
+    return last;
+  }, [pathname, slug]);
+
   const siteUrl =
     process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
     "https://onlinetoolsbase.com";
- const canonical = `${siteUrl}${pathname || `/tools/${inferredSlug}`}`;
 
+  // ✅ canonical AFTER inferredSlug exists (fixes “used before declaration”)
+  const canonical = `${siteUrl}${
+    pathname || (inferredSlug ? `/tools/${inferredSlug}` : "")
+  }`;
 
-  const inferredSlug =
-  slug ||
-  (pathname?.startsWith("/tools/")
-    ? pathname.replace("/tools/", "").split("/")[0]
-    : "");
+  const tool = useMemo(() => {
+    // primary match by slug
+    const bySlug = toolsData.find((t) => t.slug === inferredSlug);
+    if (bySlug) return bySlug;
 
-const tool = toolsData.find((t) => t.slug === inferredSlug);
+    // fallback match by title (in case slug mismatch)
+    const byTitle = toolsData.find(
+      (t) => t.title.trim().toLowerCase() === title.trim().toLowerCase()
+    );
+    return byTitle || null;
+  }, [inferredSlug, title]);
 
+  const faqs = tool?.faqs || [];
+  const howtoSteps = tool?.howtoSteps || [];
+
+  const seoTitle =
+    tool?.seoTitleTemplate?.replace("{tool}", title) ||
+    `${title} — OnlineToolsBase`;
+
+  const seoDesc =
+    tool?.seoDescriptionTemplate?.replace("{tool}", title) ||
+    description ||
+    "Free online tool.";
+
+  const related = useMemo(() => {
+    // same category, exclude current
+    return toolsData
+      .filter((t) => t.category === category && t.slug !== inferredSlug)
+      .slice(0, 8);
+  }, [category, inferredSlug]);
+
+  const popular = useMemo(() => {
+    // simple “popular” list: first N tools
+    return toolsData.slice(0, 25);
+  }, []);
 
   return (
     <>
       <Head>
+        <title>{seoTitle}</title>
+        <meta name="description" content={seoDesc} />
         <link rel="canonical" href={canonical} />
       </Head>
 
-      {/* SEO / Schema */}
-      <BreadcrumbSchema
-        category={category}
-        title={title}
-        url={canonical}
-        categorySlug={tool?.categorySlug}
-      />
-      <ToolSchema
-        title={title}
-        description={description}
-        url={canonical}
-        category={category}
-      />
-      {tool?.faqs?.length ? <FAQSchema faqs={tool.faqs} /> : null}
-      {tool?.howtoSteps?.length ? (
-        <HowToSchema title={title} steps={tool.howtoSteps} url={canonical} />
-      ) : null}
+      {/* Schemas */}
+      <BreadcrumbSchema />
+      <ToolSchema />
+      <HowToSchema />
+      <FAQSchema />
 
       <div className="main-container py-8 lg:py-10">
         {/* Header */}
@@ -79,54 +110,51 @@ const tool = toolsData.find((t) => t.slug === inferredSlug);
 
         {/* Main grid */}
         <div className="grid gap-8 lg:grid-cols-[minmax(0,2fr)_minmax(260px,1fr)]">
+          {/* Tool box */}
           <section className="card">
             {children}
 
-            {/*
-              AdSlot (ABOVE THE FOLD) — commented out intentionally.
-              Reason: for AdSense approval + UX, reduce ad density near the tool UI.
-              Keep the "before FAQ" ad instead (below), which is less intrusive.
-            */}
-            {/*
-            <AdSlot
-              slot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_TOOL_BELOW_BOX || ""}
-              minHeight={280}
-            />
-            */}
+            {/* ✅ Ad #1 (keep only one above-the-fold for approval) */}
+            <div className="w-full mt-6">
+              <AdSlot
+                slot={
+                  process.env.NEXT_PUBLIC_ADSENSE_SLOT_TOOL_BELOW_BOX ||
+                  "7182705926"
+                }
+                minHeight={280}
+              />
+            </div>
           </section>
 
+          {/* Sidebar */}
           <aside className="space-y-6">
             <div className="card sidebar-card mt-6">
               <h2 className="text-sm font-semibold text-slate-100 mb-3">
                 Related tools
               </h2>
-
               <ul className="space-y-2 text-sm">
-                {tool?.related?.map((r) => (
-                  <li key={r.slug}>
+                {related.map((t) => (
+                  <li key={t.slug}>
                     <a
-                      href={`/tools/${r.slug}`}
+                      href={`/tools/${t.slug}`}
                       className="flex items-center justify-between hover:text-blue-400"
                     >
-                      <span>{r.title}</span>
+                      <span>{t.title}</span>
                       <span className="text-[10px] px-2 py-0.5 rounded-full bg-slate-800 text-slate-400">
-                        {category}
+                        {t.category}
                       </span>
                     </a>
                   </li>
                 ))}
               </ul>
-
-              <div className="mt-8" />
             </div>
 
             <div className="card sidebar-card">
               <h2 className="text-sm font-semibold text-slate-100 mb-3">
                 Popular tools
               </h2>
-
               <ul className="space-y-2 text-sm max-h-[260px] overflow-auto pr-1">
-                {toolsData.slice(0, 25).map((t) => (
+                {popular.map((t) => (
                   <li key={t.slug}>
                     <a href={`/tools/${t.slug}`} className="hover:text-blue-400">
                       {t.title}
@@ -138,61 +166,65 @@ const tool = toolsData.find((t) => t.slug === inferredSlug);
           </aside>
         </div>
 
-        {/* About (visible content pulled from toolsData) */}
-        {tool?.description ? (
-          <section className="my-8 p-4 rounded-xl bg-slate-800/40 border border-slate-700">
-            <h2 className="text-lg font-semibold mb-2">About this tool</h2>
-            <p className="text-sm md:text-base text-slate-200 leading-relaxed">
-              {tool.description}
-            </p>
+        {/* ✅ Visible “About / Description” section (publisher content) */}
+        <section className="my-6 p-4 rounded-xl bg-slate-800/40 border border-slate-700">
+          <h2 className="text-lg font-semibold mb-2">About this tool</h2>
+          <p className="text-sm opacity-90 leading-relaxed">
+            {tool?.description || description}
+          </p>
+        </section>
+
+        {/* ✅ Visible How-To from toolsData */}
+        {howtoSteps.length > 0 && (
+          <section className="my-6 p-4 rounded-xl bg-slate-800/40 border border-slate-700">
+            <h2 className="text-lg font-semibold mb-2">How to Use This Tool</h2>
+            <ol className="list-decimal list-inside space-y-1 text-sm opacity-90">
+              {howtoSteps.map((s, i) => (
+                <li key={i}>{s}</li>
+              ))}
+            </ol>
           </section>
-        ) : null}
+        )}
 
-        {/* Ad: before FAQ (keep this one) */}
-        <AdSlot
-          slot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_TOOL_BEFORE_FAQ || ""}
-          minHeight={280}
-          className="my-6"
-        />
-
-        {/* FAQ (visible content pulled from toolsData) */}
-        {tool?.faqs?.length ? (
-          <section className="my-8 p-4 rounded-xl bg-slate-800/40 border border-slate-700">
-            <h2 className="text-lg font-semibold mb-2">
+        {/* ✅ Visible FAQ from toolsData */}
+        {faqs.length > 0 && (
+          <section className="my-6 p-4 rounded-xl bg-slate-800/40 border border-slate-700">
+            <h2 className="text-lg font-semibold mb-3">
               Frequently Asked Questions
             </h2>
 
-            <div className="space-y-2">
-              {tool.faqs.map((f, idx) => (
+            <div className="space-y-3">
+              {faqs.map((f, idx) => (
                 <details
                   key={idx}
-                  className="rounded-lg border border-slate-700 bg-slate-950/30 px-4 py-3"
+                  className="rounded-lg border border-slate-700 bg-slate-950/30 p-3"
                 >
-                  <summary className="cursor-pointer select-none text-sm md:text-base font-medium text-slate-100">
+                  <summary className="cursor-pointer text-sm font-semibold text-slate-100">
                     {f.q}
                   </summary>
-                  <div className="mt-2 text-sm md:text-base text-slate-200 leading-relaxed">
+                  <div className="mt-2 text-sm text-slate-300 leading-relaxed">
                     {f.a}
                   </div>
                 </details>
               ))}
             </div>
           </section>
-        ) : null}
+        )}
 
-        {/* How to use (visible content pulled from toolsData) */}
-        {tool?.howtoSteps?.length ? (
-          <section className="my-6 p-4 rounded-xl bg-slate-800/40 border border-slate-700">
-            <h2 className="text-lg font-semibold mb-2">How to Use This Tool</h2>
-            <ol className="list-decimal list-inside space-y-1 text-sm opacity-90">
-              {tool.howtoSteps.map((step, i) => (
-                <li key={i}>{step}</li>
-              ))}
-            </ol>
-          </section>
-        ) : null}
+        {/*
+          ✅ Ad #2 (COMMENTED ON PURPOSE for AdSense approval)
+          Reason: your rejection says “Google-served ads on screens without publisher-content”.
+          During approval, keep ads minimal. After approval, you can enable this.
 
-        <SupportSection />
+          <AdSlot
+            slot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_TOOL_BEFORE_FAQ || "8471736863"}
+            minHeight={280}
+          />
+        */}
+
+        <div className="mt-10">
+          <SupportSection />
+        </div>
       </div>
     </>
   );

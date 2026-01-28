@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { toolsData, ToolItem } from "@/app/tools/toolsData";
+import { toolsData, ToolItem } from "@/components/toolsData";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import FAQSchema from "@/components/FAQSchema";
 import HowToSchema from "@/components/HowToSchema";

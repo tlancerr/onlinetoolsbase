@@ -13,7 +13,7 @@ import Head from "next/head";
 import { usePathname } from "next/navigation";
 
 type Props = {
-  slug: string;
+  slug?: string;
   title: string;
   description: string;
   category: string;
@@ -31,9 +31,17 @@ export default function ToolLayout({
   const siteUrl =
     process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
     "https://onlinetoolsbase.com";
-  const canonical = `${siteUrl}${pathname || `/tools/${slug}`}`;
+ const canonical = `${siteUrl}${pathname || `/tools/${inferredSlug}`}`;
 
-  const tool = toolsData.find((t) => t.slug === slug);
+
+  const inferredSlug =
+  slug ||
+  (pathname?.startsWith("/tools/")
+    ? pathname.replace("/tools/", "").split("/")[0]
+    : "");
+
+const tool = toolsData.find((t) => t.slug === inferredSlug);
+
 
   return (
     <>

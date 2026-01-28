@@ -18,7 +18,7 @@ type Props = {
   description: string;
   category: string;
   children: ReactNode;
-  slug?: string; // ✅ optional (fixes your page.tsx error)
+  slug?: string; // ✅ optional
 };
 
 export default function ToolLayout({
@@ -35,25 +35,21 @@ export default function ToolLayout({
     if (slug) return slug;
     const parts = (pathname || "").split("/").filter(Boolean);
     // expected: /tools/<slug>
-    const last = parts[parts.length - 1] || "";
-    return last;
+    return parts[parts.length - 1] || "";
   }, [pathname, slug]);
 
   const siteUrl =
     process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
     "https://onlinetoolsbase.com";
 
-  // ✅ canonical AFTER inferredSlug exists (fixes “used before declaration”)
   const canonical = `${siteUrl}${
     pathname || (inferredSlug ? `/tools/${inferredSlug}` : "")
   }`;
 
   const tool = useMemo(() => {
-    // primary match by slug
     const bySlug = toolsData.find((t) => t.slug === inferredSlug);
     if (bySlug) return bySlug;
 
-    // fallback match by title (in case slug mismatch)
     const byTitle = toolsData.find(
       (t) => t.title.trim().toLowerCase() === title.trim().toLowerCase()
     );
@@ -73,14 +69,12 @@ export default function ToolLayout({
     "Free online tool.";
 
   const related = useMemo(() => {
-    // same category, exclude current
     return toolsData
       .filter((t) => t.category === category && t.slug !== inferredSlug)
       .slice(0, 8);
   }, [category, inferredSlug]);
 
   const popular = useMemo(() => {
-    // simple “popular” list: first N tools
     return toolsData.slice(0, 25);
   }, []);
 
@@ -92,8 +86,8 @@ export default function ToolLayout({
         <link rel="canonical" href={canonical} />
       </Head>
 
-      {/* Schemas */}
-      <BreadcrumbSchema />
+      {/* ✅ Schemas (BreadcrumbSchema needs props in YOUR project) */}
+      <BreadcrumbSchema title={title} category={category} slug={inferredSlug} />
       <ToolSchema />
       <HowToSchema />
       <FAQSchema />
@@ -166,7 +160,7 @@ export default function ToolLayout({
           </aside>
         </div>
 
-        {/* ✅ Visible “About / Description” section (publisher content) */}
+        {/* ✅ Visible “About / Description” section */}
         <section className="my-6 p-4 rounded-xl bg-slate-800/40 border border-slate-700">
           <h2 className="text-lg font-semibold mb-2">About this tool</h2>
           <p className="text-sm opacity-90 leading-relaxed">
@@ -174,7 +168,7 @@ export default function ToolLayout({
           </p>
         </section>
 
-        {/* ✅ Visible How-To from toolsData */}
+        {/* ✅ Visible How-To */}
         {howtoSteps.length > 0 && (
           <section className="my-6 p-4 rounded-xl bg-slate-800/40 border border-slate-700">
             <h2 className="text-lg font-semibold mb-2">How to Use This Tool</h2>
@@ -186,7 +180,7 @@ export default function ToolLayout({
           </section>
         )}
 
-        {/* ✅ Visible FAQ from toolsData */}
+        {/* ✅ Visible FAQ */}
         {faqs.length > 0 && (
           <section className="my-6 p-4 rounded-xl bg-slate-800/40 border border-slate-700">
             <h2 className="text-lg font-semibold mb-3">
@@ -212,9 +206,7 @@ export default function ToolLayout({
         )}
 
         {/*
-          ✅ Ad #2 (COMMENTED ON PURPOSE for AdSense approval)
-          Reason: your rejection says “Google-served ads on screens without publisher-content”.
-          During approval, keep ads minimal. After approval, you can enable this.
+          ✅ Ad #2 (commented during AdSense approval)
 
           <AdSlot
             slot={process.env.NEXT_PUBLIC_ADSENSE_SLOT_TOOL_BEFORE_FAQ || "8471736863"}

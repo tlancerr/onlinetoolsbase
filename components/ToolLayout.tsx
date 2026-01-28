@@ -1,12 +1,15 @@
-"use client";
-
-import React from "react";
-import { toolsData, ToolItem } from "@/components/toolsData";
-import BreadcrumbSchema from "@/components/BreadcrumbSchema";
-import FAQSchema from "@/components/FAQSchema";
-import HowToSchema from "@/components/HowToSchema";
-import ToolSchema from "@/components/ToolSchema";
+import ToolSchema from "./ToolSchema";
+import FAQSchema from "./FAQSchema";
+import HowToSchema from "./HowToSchema";
 import AdSlot from "@/components/AdSlot";
+
+import BreadcrumbSchema from "./BreadcrumbSchema";
+
+import React, { ReactNode } from "react";
+import toolsData from "./toolsData";
+import SupportSection from "./SupportSection";
+import Head from "next/head";
+import { usePathname } from "next/navigation";
 
 type Props = {
   title: string;

@@ -400,3 +400,18 @@ html[data-theme='light'] .support-svg-btn:hover {
   transform: translateY(-4px);
   box-shadow: 0 6px 20px rgba(255, 221, 0, 0.32);
 }
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+img, svg, canvas, video {
+  max-width: 100%;
+  height: auto;
+}

@@ -29,42 +29,35 @@ export default function SiteHeader() {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const [hoverCategory, setHoverCategory] = useState<string | null>(null);
 
-  // Mobile menu (3-dots)
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  // Mobile menu state
+  const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileCategory, setMobileCategory] = useState<string>("");
 
   const searchRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const mobileMenuRef = useRef<HTMLDivElement>(null);
-  const mobileInputRef = useRef<HTMLInputElement>(null);
-
   // Container ref for chips + overlay panel, used to detect outside clicks
   const categoryRef = useRef<HTMLDivElement>(null);
+
+  // Mobile panel ref to detect outside clicks
+  const mobileRef = useRef<HTMLDivElement>(null);
+  const mobileInputRef = useRef<HTMLInputElement>(null);
 
   const debouncedQuery = useDebouncedValue(query, 300);
 
   /* ---------- close search dropdown on outside click ---------- */
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
-      // Desktop search
       if (searchRef.current && !searchRef.current.contains(e.target as Node)) {
         setQuery("");
         setActiveIndex(-1);
-      }
-      // Mobile menu
-      if (
-        mobileMenuRef.current &&
-        !mobileMenuRef.current.contains(e.target as Node)
-      ) {
-        setMobileMenuOpen(false);
       }
     }
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  /* ---------- ESC key closes search dropdown + category panel + mobile menu ---------- */
+  /* ---------- ESC key closes search dropdown + category panel + mobile panel ---------- */
   useEffect(() => {
     function handleEscape(e: KeyboardEvent) {
       if (e.key === "Escape") {
@@ -72,7 +65,6 @@ export default function SiteHeader() {
         setQuery("");
         setActiveIndex(-1);
         inputRef.current?.blur();
-        mobileInputRef.current?.blur();
 
         // Category panel
         setPanelOpen(false);
@@ -80,7 +72,7 @@ export default function SiteHeader() {
         setHoverCategory(null);
 
         // Mobile menu
-        setMobileMenuOpen(false);
+        setMobileOpen(false);
       }
     }
     document.addEventListener("keydown", handleEscape);
@@ -91,10 +83,7 @@ export default function SiteHeader() {
   useEffect(() => {
     function handleOutsideCategoryClick(e: MouseEvent) {
       if (!panelOpen) return;
-      if (
-        categoryRef.current &&
-        !categoryRef.current.contains(e.target as Node)
-      ) {
+      if (categoryRef.current && !categoryRef.current.contains(e.target as Node)) {
         setPanelOpen(false);
         setActiveCategory(null);
         setHoverCategory(null);
@@ -102,11 +91,31 @@ export default function SiteHeader() {
     }
 
     document.addEventListener("mousedown", handleOutsideCategoryClick);
-    return () =>
-      document.removeEventListener("mousedown", handleOutsideCategoryClick);
+    return () => document.removeEventListener("mousedown", handleOutsideCategoryClick);
   }, [panelOpen]);
 
-  // IMPORTANT: category names must match toolsData EXACTLY
+  /* ---------- close mobile panel on outside click ---------- */
+  useEffect(() => {
+    function handleOutsideMobileClick(e: MouseEvent) {
+      if (!mobileOpen) return;
+      if (mobileRef.current && !mobileRef.current.contains(e.target as Node)) {
+        setMobileOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleOutsideMobileClick);
+    return () => document.removeEventListener("mousedown", handleOutsideMobileClick);
+  }, [mobileOpen]);
+
+  // lock body scroll while mobile menu is open
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = prev;
+    };
+  }, [mobileOpen]);
+
   const approvedCategories = [
     "Time and Age Tools",
     "Finance Tools",
@@ -114,7 +123,7 @@ export default function SiteHeader() {
     "Image Tools",
     "Social Media Tools",
     "PDF Tools",
-    "SEO Tools", // ✅ FIXED (was "Seo Tools")
+    "Seo Tools",
     "Converter Tools",
     "Math Tools",
     "Health and Fitness Tools",
@@ -124,17 +133,10 @@ export default function SiteHeader() {
   const allCategories = Array.from(
     new Set(
       toolsData
-        .map((t) => (t.category || "").trim())
+        .map((t) => t.category.trim())
         .filter((c) => approvedCategories.includes(c))
     )
   );
-
-  // initialize mobile category (first available)
-  useEffect(() => {
-    if (!mobileCategory && allCategories.length) {
-      setMobileCategory(allCategories[0]);
-    }
-  }, [allCategories, mobileCategory]);
 
   /* ---------- FILTERED RESULTS (debounced) ---------- */
   const filtered = useMemo(() => {
@@ -194,6 +196,8 @@ export default function SiteHeader() {
 
   const panelCategory = activeCategory; // single source of truth for panel content
 
+  const categorySlug = (c: string) => c.toLowerCase().replace(/\s+/g, "-");
+
   return (
     <header className="border-b border-slate-800 bg-slate-950/80 backdrop-blur">
       <div className="main-container flex items-center justify-between py-3 gap-4">
@@ -208,13 +212,14 @@ export default function SiteHeader() {
               priority
               className="rounded"
             />
+
             <span className="text-[12px] text-slate-400">
               <center>Free online tools & calculators</center>
             </span>
           </div>
         </Link>
 
-        {/* Desktop Search + Categories */}
+        {/* Search (desktop only) */}
         <div
           ref={searchRef}
           className="relative hidden md:block min-w-[260px] max-w-sm"
@@ -314,9 +319,7 @@ export default function SiteHeader() {
 
                     <div className="flex items-center gap-3">
                       <Link
-                        href={`/tools/category/${panelCategory
-                          .toLowerCase()
-                          .replace(/\s+/g, "-")}`}
+                        href={`/tools/category/${categorySlug(panelCategory)}`}
                         className="text-[11px] text-[#64c1ff] hover:underline"
                         onClick={() => {
                           setPanelOpen(false);
@@ -366,124 +369,26 @@ export default function SiteHeader() {
           </div>
         </div>
 
-        {/* Right side controls */}
+        {/* Right controls */}
         <div className="flex items-center gap-2">
-          {/* Mobile 3-dots menu */}
-          <div ref={mobileMenuRef} className="relative md:hidden">
-            <button
-              type="button"
-              onClick={() => setMobileMenuOpen((v) => !v)}
-              className="btn-secondary text-[14px] px-3 py-2"
-              aria-label="Open menu"
-              aria-expanded={mobileMenuOpen}
-            >
-              ⋮
-            </button>
-
-            {mobileMenuOpen && (
-              <div className="absolute right-0 mt-2 w-[92vw] max-w-[360px] rounded-md border border-slate-800 bg-slate-950 shadow-lg z-50 p-3">
-                <div className="flex items-center justify-between mb-2">
-                  <div className="text-xs font-semibold text-white">Tools</div>
-                  <button
-                    type="button"
-                    className="text-slate-400 hover:text-slate-200 text-xs"
-                    aria-label="Close menu"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    ✖
-                  </button>
-                </div>
-
-                {/* Mobile Search */}
-                <div className="relative">
-                  <input
-                    ref={mobileInputRef}
-                    className="tool-input text-xs pr-7 w-full"
-                    placeholder="Search tools..."
-                    value={query}
-                    onChange={(e) => {
-                      setQuery(e.target.value);
-                      setActiveIndex(-1);
-                    }}
-                    onKeyDown={handleKeyDown}
-                  />
-
-                  {query && (
-                    <button
-                      type="button"
-                      onClick={() => {
-                        setQuery("");
-                        setActiveIndex(-1);
-                        mobileInputRef.current?.focus();
-                      }}
-                      className="absolute right-2 top-1/2 -translate-y-1/2 text-slate-400 text-xs"
-                      aria-label="Clear search"
-                    >
-                      ✖
-                    </button>
-                  )}
-
-                  {filtered.length > 0 && (
-                    <div className="mt-2 w-full rounded-md border border-slate-800 bg-slate-900 max-h-56 overflow-auto">
-                      {filtered.map((tool, i) => (
-                        <Link
-                          key={tool.slug}
-                          href={`/tools/${tool.slug}`}
-                          className={`block px-3 py-2 text-xs ${
-                            i === activeIndex ? "bg-[#64c1ff] text-white" : ""
-                          }`}
-                          onClick={() => {
-                            setQuery("");
-                            setActiveIndex(-1);
-                            setMobileMenuOpen(false);
-                          }}
-                        >
-                          <div className="font-medium">{tool.title}</div>
-                          <div className="text-[10px] opacity-80">
-                            {tool.category}
-                          </div>
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
-
-                {/* Mobile Category Dropdown */}
-                <div className="mt-3">
-                  <label className="block text-[11px] text-slate-400 mb-1">
-                    Category
-                  </label>
-                  <div className="flex gap-2">
-                    <select
-                      className="tool-input text-xs w-full"
-                      value={mobileCategory}
-                      onChange={(e) => setMobileCategory(e.target.value)}
-                    >
-                      {allCategories.map((cat) => (
-                        <option key={cat} value={cat}>
-                          {cat}
-                        </option>
-                      ))}
-                    </select>
-
-                    <button
-                      type="button"
-                      className="btn-primary text-xs px-3"
-                      onClick={() => {
-                        if (!mobileCategory) return;
-                        const path = `/tools/category/${mobileCategory
-                          .toLowerCase()
-                          .replace(/\s+/g, "-")}`;
-                        window.location.href = path;
-                      }}
-                    >
-                      Go
-                    </button>
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
+          {/* Mobile 3-dot menu */}
+          <button
+            type="button"
+            onClick={() => {
+              setMobileOpen((v) => !v);
+              // reset category if empty
+              if (!mobileCategory && allCategories.length) {
+                setMobileCategory(allCategories[0]);
+              }
+              // focus search after open
+              setTimeout(() => mobileInputRef.current?.focus(), 50);
+            }}
+            className="md:hidden btn-secondary text-[13px] px-3 py-2"
+            aria-label="Open tools menu"
+            aria-expanded={mobileOpen}
+          >
+            ⋮
+          </button>
 
           {/* Theme toggle */}
           <button
@@ -495,6 +400,114 @@ export default function SiteHeader() {
           </button>
         </div>
       </div>
+
+      {/* Mobile panel (fixed, fits screen) */}
+      {mobileOpen && (
+        <div className="md:hidden fixed inset-0 z-[999]">
+          {/* dim background */}
+          <div className="absolute inset-0 bg-black/40" />
+
+          {/* panel */}
+          <div
+            ref={mobileRef}
+            className="absolute top-16 left-1/2 -translate-x-1/2 w-[92vw] max-w-md rounded-xl border border-slate-800 bg-slate-950 shadow-2xl overflow-hidden"
+          >
+            <div className="flex items-center justify-between px-4 py-3 border-b border-slate-800">
+              <div className="text-sm font-semibold text-white">Find tools</div>
+              <button
+                type="button"
+                className="text-slate-300 hover:text-white text-lg leading-none"
+                aria-label="Close menu"
+                onClick={() => setMobileOpen(false)}
+              >
+                ✖
+              </button>
+            </div>
+
+            <div className="p-4 space-y-3">
+              {/* Mobile Search */}
+              <div className="relative">
+                <input
+                  ref={mobileInputRef}
+                  className="tool-input text-xs pr-7 w-full"
+                  placeholder="Search tools..."
+                  value={query}
+                  onChange={(e) => {
+                    setQuery(e.target.value);
+                    setActiveIndex(-1);
+                  }}
+                  onKeyDown={handleKeyDown}
+                />
+
+                {query && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setQuery("");
+                      setActiveIndex(-1);
+                      mobileInputRef.current?.focus();
+                    }}
+                    className="absolute right-2 top-1/2 -translate-y-1/2 text-slate-400 text-xs"
+                    aria-label="Clear search"
+                  >
+                    ✖
+                  </button>
+                )}
+
+                {/* Results */}
+                {filtered.length > 0 && (
+                  <div className="mt-2 w-full rounded-md border border-slate-800 bg-slate-950 max-h-56 overflow-auto">
+                    {filtered.map((tool, i) => (
+                      <Link
+                        key={tool.slug}
+                        href={`/tools/${tool.slug}`}
+                        className={`block px-3 py-2 text-xs ${
+                          i === activeIndex ? "bg-[#64c1ff] text-white" : "text-slate-200"
+                        }`}
+                        onClick={() => {
+                          setQuery("");
+                          setActiveIndex(-1);
+                          setMobileOpen(false);
+                        }}
+                      >
+                        <div className="font-medium">{tool.title}</div>
+                        <div className="text-[10px] opacity-80">{tool.category}</div>
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Category select + go */}
+              <div className="flex gap-2 items-center">
+                <select
+                  className="tool-input text-xs w-full"
+                  value={mobileCategory || (allCategories[0] ?? "")}
+                  onChange={(e) => setMobileCategory(e.target.value)}
+                >
+                  {allCategories.map((c) => (
+                    <option key={c} value={c}>
+                      {c}
+                    </option>
+                  ))}
+                </select>
+
+                <Link
+                  href={`/tools/category/${categorySlug(mobileCategory || allCategories[0] || "")}`}
+                  className="btn-secondary text-xs px-4 py-2 whitespace-nowrap"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  Go
+                </Link>
+              </div>
+
+              <div className="text-[11px] text-slate-400 leading-relaxed">
+                Tip: Use search to jump directly to a tool, or select a category to browse.
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   );
 }

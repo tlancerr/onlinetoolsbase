@@ -1048,39 +1048,6 @@ howtoSteps: [
 ]
 
 
-},
-
-{
-  title: "Keyword Density Checker",
-  slug: "keyword-density-checker",
-  category: "Text Tools",
-  description: "Analyze keyword frequency and density in any text.",
-  seoTitleTemplate: "Keyword Density Checker — SEO Keyword Tool",
-  seoDescriptionTemplate: "Analyze keyword density, frequency and word usage with this SEO-friendly Keyword Density Checker."
-,
-longDescription: "The Keyword Density Checker evaluates how often specific words and phrases appear in your text and calculates their density as a percentage. It’s widely used in SEO to ensure content is optimized without overusing keywords, which can negatively impact rankings.\n\nBy pasting your content into the tool, you can quickly identify dominant keywords, check frequency distribution, and adjust wording for better balance. This helps writers and SEO professionals create natural, readable content while staying aligned with search engine best practices.",
-
-faqs: [
-  {
-    q: "What does the Keyword Density Checker do?",
-    a: "It analyzes your text to measure keyword frequency and density for SEO optimization."
-  },
-  {
-    q: "Is this tool useful for SEO?",
-    a: "Yes, it helps writers and SEO professionals check keyword stuffing and maintain optimal keyword balance."
-  },
-  {
-  q: "What is a good keyword density?",
-  a: "There is no fixed ideal percentage. The goal is natural usage without keyword stuffing while maintaining readability."
-}
-
-],
-howtoSteps: [
-  "Paste your text into the input box.",
-  "Click Analyze to calculate keyword frequency and density.",
-  "Review the results for SEO optimization."
-]
-
 
 },
 

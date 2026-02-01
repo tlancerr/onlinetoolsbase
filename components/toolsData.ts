@@ -1051,18 +1051,18 @@ howtoSteps: [
 },
 
 {
-  title: "Keyword Density Analyzer",
-  slug: "keyword-density-analyzer",
+  title: "Keyword Density Checker",
+  slug: "keyword-density-checker",
   category: "Text Tools",
   description: "Analyze keyword frequency and density in any text.",
-  seoTitleTemplate: "Keyword Density Analyzer — SEO Keyword Tool",
-  seoDescriptionTemplate: "Analyze keyword density, frequency and word usage with this SEO-friendly Keyword Density Analyzer."
+  seoTitleTemplate: "Keyword Density Checker — SEO Keyword Tool",
+  seoDescriptionTemplate: "Analyze keyword density, frequency and word usage with this SEO-friendly Keyword Density Checker."
 ,
-longDescription: "The Keyword Density Analyzer evaluates how often specific words and phrases appear in your text and calculates their density as a percentage. It’s widely used in SEO to ensure content is optimized without overusing keywords, which can negatively impact rankings.\n\nBy pasting your content into the tool, you can quickly identify dominant keywords, check frequency distribution, and adjust wording for better balance. This helps writers and SEO professionals create natural, readable content while staying aligned with search engine best practices.",
+longDescription: "The Keyword Density Checker evaluates how often specific words and phrases appear in your text and calculates their density as a percentage. It’s widely used in SEO to ensure content is optimized without overusing keywords, which can negatively impact rankings.\n\nBy pasting your content into the tool, you can quickly identify dominant keywords, check frequency distribution, and adjust wording for better balance. This helps writers and SEO professionals create natural, readable content while staying aligned with search engine best practices.",
 
 faqs: [
   {
-    q: "What does the Keyword Density Analyzer do?",
+    q: "What does the Keyword Density Checker do?",
     a: "It analyzes your text to measure keyword frequency and density for SEO optimization."
   },
   {

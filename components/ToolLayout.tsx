@@ -134,7 +134,7 @@ export default function ToolLayout({
               </div>
 
               {/* ✅ SECOND AD SLOT — COMMENTED OUT UNTIL ADSENSE APPROVAL */}
-              {/*
+              
               <div className="mt-6 max-w-full overflow-x-hidden">
                 <AdSlot
                   slot={
@@ -143,7 +143,7 @@ export default function ToolLayout({
                   minHeight={280}
                 />
               </div>
-              */}
+              
             </section>
 
             {/* Sidebar */}

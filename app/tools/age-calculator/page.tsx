@@ -1,23 +1,38 @@
-import React, { Suspense } from "react";
-import ToolLayout from "../../../components/ToolLayout";
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { toolsData } from "@/components/toolsData";
+import ToolLayout from "@/components/ToolLayout";
 
-const AgeCalculator = React.lazy(() => import("./AgeCalculator"));
+// import your tool UI component (stays where it is)
+import AgeCalculator from "./AgeCalculator";
 
-export const dynamic = "force-static";
+type Props = { params: {} };
 
-export default function AgeCalculatorPage() {
+export async function generateMetadata(): Promise<Metadata> {
+  const tool = toolsData.find((t) => t.slug === "age-calculator");
+  if (!tool) return {};
+
+  return {
+    title: tool.seoTitleTemplate || `${tool.title} — OnlineToolsBase`,
+    description: tool.seoDescriptionTemplate || tool.description,
+    alternates: {
+      canonical: `https://onlinetoolsbase.com/tools/${tool.slug}`,
+    },
+  };
+}
+
+export default function Page() {
+  const tool = toolsData.find((t) => t.slug === "age-calculator");
+  if (!tool) return notFound();
+
   return (
     <ToolLayout
-      title="Age Calculator"
-      category="Time and Age Tools"
-      description="Calculate your exact age in years, months, and days."
-      slug="age-calculator"
+      title={tool.title}
+      description={tool.description}
+      category={tool.category}
+      slug={tool.slug}
     >
-      <Suspense fallback={<div>Loading tool…</div>}>
-        <AgeCalculator />
-      </Suspense>
+      <AgeCalculator />
     </ToolLayout>
   );
 }
-
-

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import ToolLayout from "../../../components/ToolLayout";
 
-export default function AgeWeeksMonthsPage() {
+export default function ToolLoader() {
   const [birthdate, setBirthdate] = useState("");
   const [result, setResult] = useState<string | null>(null);
 
@@ -35,11 +35,7 @@ export default function AgeWeeksMonthsPage() {
   }
 
   return (
-    <ToolLayout
-      title="Age in Weeks & Months Calculator"
-      description="Calculate your exact age in weeks, months, and days based on your birthdate."
-      category="Time and Age Tools"
-    >
+    
       <div className="space-y-4">
         <div>
           <label className="tool-label">Birthdate</label>
@@ -61,6 +57,6 @@ export default function AgeWeeksMonthsPage() {
           </div>
         )}
       </div>
-    </ToolLayout>
+    
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "@/components/ToolLayout";
+
 
 type OutputImage = {
   name: string;
@@ -10,7 +10,7 @@ type OutputImage = {
 
 type Format = "jpeg" | "png" | "webp";
 
-export default function ImageFormatConverterPage() {
+export default function ToolLoader() {
   const [files, setFiles] = useState<File[]>([]);
   const [format, setFormat] = useState<Format>("jpeg");
   const [outputs, setOutputs] = useState<OutputImage[]>([]);
@@ -111,11 +111,7 @@ export default function ImageFormatConverterPage() {
   };
 
   return (
-    <ToolLayout
-      title="Image Format Converter"
-      description="Convert images between JPG, PNG, WEBP and other formats."
-      category="Image Tools"
-    >
+    
       {/* INNER TOOL BOX ONLY */}
       <div className="rounded-lg border border-slate-700 bg-slate-900 p-6 space-y-4">
         {stage === "idle" && (
@@ -182,6 +178,6 @@ export default function ImageFormatConverterPage() {
           </div>
         )}
       </div>
-    </ToolLayout>
+    
   );
 }

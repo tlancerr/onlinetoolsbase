@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
 
-export default function HTACCESSRedirectGenerator() {
+
+export default function ToolLoader() {
   const [oldUrl, setOldUrl] = useState("");
   const [newUrl, setNewUrl] = useState("");
   const [output, setOutput] = useState("");
@@ -22,11 +22,7 @@ RewriteRule ^(.*)$ ${newUrl}/$1 [R=301,L]`;
   }
 
   return (
-    <ToolLayout
-      title=".htaccess Redirect Generator"
-      description="Generate 301 redirect rules for .htaccess."
-      category="SEO Tools"
-    >
+   
       <div className="space-y-4">
 
         <input
@@ -53,6 +49,6 @@ RewriteRule ^(.*)$ ${newUrl}/$1 [R=301,L]`;
           </pre>
         )}
       </div>
-    </ToolLayout>
+  
   );
 }

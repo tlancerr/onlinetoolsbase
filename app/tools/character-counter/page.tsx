@@ -1,33 +1,38 @@
-"use client";
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { toolsData } from "@/components/toolsData";
+import ToolLayout from "@/components/ToolLayout";
 
-import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
+// import your tool UI component (stays where it is)
+import ToolLoader from "./ToolLoader";
 
-export default function CharacterCounter() {
-  const [text, setText] = useState("");
+type Props = { params: {} };
+
+export async function generateMetadata(): Promise<Metadata> {
+  const tool = toolsData.find((t) => t.slug === "character-counter");
+  if (!tool) return {};
+
+  return {
+    title: tool.seoTitleTemplate || `${tool.title} — OnlineToolsBase`,
+    description: tool.seoDescriptionTemplate || tool.description,
+    alternates: {
+      canonical: `https://onlinetoolsbase.com/tools/${tool.slug}`,
+    },
+  };
+}
+
+export default function Page() {
+  const tool = toolsData.find((t) => t.slug === "character-counter");
+  if (!tool) return notFound();
 
   return (
     <ToolLayout
-      title="Character Counter"
-      description="Count characters, words, and spaces instantly."
-      category="Text Tools"
+      title={tool.title}
+      description={tool.description}
+      category={tool.category}
+      slug={tool.slug}
     >
-      <div className="space-y-4">
-
-        <textarea
-          className="tool-input h-48"
-          placeholder="Type your text here..."
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-        />
-
-        <div className="p-4 bg-slate-900 border border-slate-700 rounded-lg text-emerald-300 space-y-2">
-          <p>Total Characters: {text.length}</p>
-          <p>Without Spaces: {text.replace(/\s+/g, "").length}</p>
-          <p>Words: {text.trim() ? text.trim().split(/\s+/).length : 0}</p>
-        </div>
-
-      </div>
+      <ToolLoader />
     </ToolLayout>
   );
 }

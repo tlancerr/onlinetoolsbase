@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
+
 
 // ----------------------------------------------------
 //  TAX BRACKETS FOR MULTIPLE COUNTRIES
@@ -71,7 +71,7 @@ const taxBrackets: any = {
 // ----------------------------------------------------
 //  MAIN COMPONENT
 // ----------------------------------------------------
-export default function GlobalTaxCalculator() {
+export default function ToolLoader() {
   const [salary, setSalary] = useState("");
   const [country, setCountry] = useState("global");
   const [result, setResult] = useState<string | null>(null);
@@ -110,11 +110,7 @@ Effective Tax Rate: ${effectiveRate.toFixed(2)}%
   }
 
   return (
-    <ToolLayout
-      title="Global Tax Calculator"
-      description="Calculate income tax for multiple countries using accurate tax brackets."
-      category="Finance Tools"
-    >
+    
       <div className="space-y-4">
 
         {/* Salary Input */}
@@ -161,6 +157,6 @@ Effective Tax Rate: ${effectiveRate.toFixed(2)}%
         )}
 
       </div>
-    </ToolLayout>
+    
   );
 }

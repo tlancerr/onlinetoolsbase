@@ -1,9 +1,9 @@
 "use client";
 
 import { useRef, useState } from "react";
-import ToolLayout from "@/components/ToolLayout";
 
-export default function ImageCropperPage() {
+
+export default function ToolLoader() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const imgRef = useRef<HTMLImageElement | null>(null);
 
@@ -104,11 +104,7 @@ export default function ImageCropperPage() {
   };
 
   return (
-    <ToolLayout
-      title="Image Cropper"
-      description="Crop images to any size or aspect ratio quickly and easily."
-      category="Image Tools"
-    >
+    
       {/* INNER TOOL BOX ONLY */}
       <div className="rounded-lg border border-slate-700 bg-slate-900 p-6 space-y-4">
         {!imageLoaded && (
@@ -141,6 +137,6 @@ export default function ImageCropperPage() {
           </>
         )}
       </div>
-    </ToolLayout>
+   
   );
 }

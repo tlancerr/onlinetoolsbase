@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
 
-export default function DaysBetweenDates() {
+
+export default function ToolLoader() {
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
   const [result, setResult] = useState<string | null>(null);
@@ -37,11 +37,7 @@ export default function DaysBetweenDates() {
   }
 
   return (
-    <ToolLayout
-      title="Days Between Dates Calculator"
-      description="Calculate the total number of days, weeks, and months between two dates."
-      category="Time and Age Tools"
-    >
+    
       <div className="space-y-4">
 
         <div>
@@ -74,6 +70,6 @@ export default function DaysBetweenDates() {
           </div>
         )}
       </div>
-    </ToolLayout>
+    
   );
 }

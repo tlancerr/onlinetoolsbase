@@ -1,43 +1,38 @@
-"use client";
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { toolsData } from "@/components/toolsData";
+import ToolLayout from "@/components/ToolLayout";
 
-import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
+// import your tool UI component (stays where it is)
+import ToolLoader from "./ToolLoader";
 
-function capitalizeSentences(str: string) {
-  return str
-    .split(/([.?!]\s+)/)
-    .map((segment) => {
-      const s = segment.trim();
-      if (!s.length) return segment;
-      return s.charAt(0).toUpperCase() + s.slice(1);
-    })
-    .join("");
+type Props = { params: {} };
+
+export async function generateMetadata(): Promise<Metadata> {
+  const tool = toolsData.find((t) => t.slug === "capitalize-sentences");
+  if (!tool) return {};
+
+  return {
+    title: tool.seoTitleTemplate || `${tool.title} — OnlineToolsBase`,
+    description: tool.seoDescriptionTemplate || tool.description,
+    alternates: {
+      canonical: `https://onlinetoolsbase.com/tools/${tool.slug}`,
+    },
+  };
 }
 
-export default function CapitalizeSentences() {
-  const [text, setText] = useState("");
+export default function Page() {
+  const tool = toolsData.find((t) => t.slug === "capitalize-sentences");
+  if (!tool) return notFound();
 
   return (
     <ToolLayout
-      title="Capitalize Sentences"
-      description="Automatically capitalize the first letter of every sentence."
-      category="Text Tools"
+      title={tool.title}
+      description={tool.description}
+      category={tool.category}
+      slug={tool.slug}
     >
-      <div className="space-y-4">
-        <textarea
-          className="tool-input min-h-[200px]"
-          placeholder="Paste text here..."
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-        />
-
-        <button
-          className="btn-primary w-full"
-          onClick={() => setText(capitalizeSentences(text))}
-        >
-          Capitalize Sentences
-        </button>
-      </div>
+      <ToolLoader />
     </ToolLayout>
   );
 }

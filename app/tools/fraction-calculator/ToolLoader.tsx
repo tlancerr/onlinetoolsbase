@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
+
 
 function parseFraction(str: string) {
   const parts = str.split("/");
@@ -9,7 +9,7 @@ function parseFraction(str: string) {
   return { num: parseFloat(parts[0]), den: parseFloat(parts[1]) };
 }
 
-export default function FractionCalculator() {
+export default function ToolLoader() {
   const [f1, setF1] = useState("");
   const [f2, setF2] = useState("");
   const [operation, setOperation] = useState("add");
@@ -53,11 +53,7 @@ export default function FractionCalculator() {
   }
 
   return (
-    <ToolLayout
-      title="Fraction Calculator"
-      description="Add, subtract, multiply and divide fractions."
-      category="Math Tools"
-    >
+   
       <div className="space-y-4">
 
         <input className="tool-input" placeholder="Fraction 1 (e.g. 3/4)" value={f1} onChange={e => setF1(e.target.value)} />
@@ -74,6 +70,6 @@ export default function FractionCalculator() {
 
         {result && <div className="mt-4 text-emerald-300">{result}</div>}
       </div>
-    </ToolLayout>
+    
   );
 }

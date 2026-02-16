@@ -1,14 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "@/components/ToolLayout";
+
 
 type OutputImage = {
   name: string;
   url: string;
 };
 
-export default function ImageCompressorPage() {
+export default function ToolLoader() {
   const [files, setFiles] = useState<File[]>([]);
   const [quality, setQuality] = useState(0.75);
   const [outputs, setOutputs] = useState<OutputImage[]>([]);
@@ -102,11 +102,7 @@ export default function ImageCompressorPage() {
   };
 
   return (
-    <ToolLayout
-      title="Image Compressor"
-      description="Compress images without losing quality and reduce file size instantly."
-      category="Image Tools"
-    >
+   
       {/* INNER TOOL BOX ONLY */}
       <div className="rounded-lg border border-slate-700 bg-slate-900 p-6 space-y-4">
         {stage === "idle" && (
@@ -176,6 +172,6 @@ export default function ImageCompressorPage() {
           </div>
         )}
       </div>
-    </ToolLayout>
+    
   );
 }

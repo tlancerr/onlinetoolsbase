@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "@/components/ToolLayout";
+
 
 /**
  * Lazy-load pdfjs safely (Next.js App Router compatible)
@@ -18,7 +18,7 @@ async function loadPdfJs() {
   return mod;
 }
 
-export default function PdfToTextPage() {
+export default function ToolLoader() {
   const [file, setFile] = useState<File | null>(null);
   const [stage, setStage] =
     useState<"idle" | "uploading" | "uploaded" | "processing" | "done">("idle");
@@ -90,12 +90,8 @@ export default function PdfToTextPage() {
   };
 
   return (
-    <ToolLayout
-      title="PDF to Text"
-      description="Convert a PDF file into plain text instantly."
-      category="PDF Tools"
-    >
-      {/* INNER TOOL BOX — unchanged layout */}
+   
+     
       <div className="rounded-lg border border-slate-700 bg-slate-900 p-6 space-y-4">
         {stage === "idle" && (
           <input
@@ -143,6 +139,6 @@ export default function PdfToTextPage() {
           </a>
         )}
       </div>
-    </ToolLayout>
+    
   );
 }

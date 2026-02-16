@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
 
-export default function LengthConverter() {
+
+export default function ToolLoader() {
   const [value, setValue] = useState("");
   const [unit, setUnit] = useState("meters");
   const [result, setResult] = useState("");
@@ -45,11 +45,7 @@ export default function LengthConverter() {
   }
 
   return (
-    <ToolLayout
-      title="Length Converter"
-      description="Convert between meters, kilometers, miles, feet, inches, and more."
-      category="Converter Tools"
-    >
+    
       <div className="space-y-4">
 
         <input
@@ -83,6 +79,6 @@ export default function LengthConverter() {
           </pre>
         )}
       </div>
-    </ToolLayout>
+   
   );
 }

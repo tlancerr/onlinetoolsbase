@@ -1,45 +1,38 @@
-"use client";
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { toolsData } from "@/components/toolsData";
+import ToolLayout from "@/components/ToolLayout";
 
-import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
+// import your tool UI component (stays where it is)
+import ToolLoader from "./ToolLoader";
 
-export default function CanonicalURLGenerator() {
-  const [url, setUrl] = useState("");
-  const [output, setOutput] = useState("");
+type Props = { params: {} };
 
-  function generate() {
-    if (!url) return setOutput("Please enter a URL.");
+export async function generateMetadata(): Promise<Metadata> {
+  const tool = toolsData.find((t) => t.slug === "canonical-url-generator");
+  if (!tool) return {};
 
-    const tag = `<link rel="canonical" href="${url}">`;
-    setOutput(tag);
-  }
+  return {
+    title: tool.seoTitleTemplate || `${tool.title} — OnlineToolsBase`,
+    description: tool.seoDescriptionTemplate || tool.description,
+    alternates: {
+      canonical: `https://onlinetoolsbase.com/tools/${tool.slug}`,
+    },
+  };
+}
+
+export default function Page() {
+  const tool = toolsData.find((t) => t.slug === "canonical-url-generator");
+  if (!tool) return notFound();
 
   return (
     <ToolLayout
-      title="Canonical URL Generator"
-      description="Generate SEO-friendly canonical link tags to avoid duplicate content."
-      category="SEO Tools"
+      title={tool.title}
+      description={tool.description}
+      category={tool.category}
+      slug={tool.slug}
     >
-      <div className="space-y-4">
-
-        <input
-          className="tool-input"
-          placeholder="Enter full URL"
-          value={url}
-          onChange={(e) => setUrl(e.target.value)}
-        />
-
-        <button className="btn-primary" onClick={generate}>
-          Generate Canonical Tag
-        </button>
-
-        {output && (
-          <pre className="bg-slate-900 text-emerald-300 border border-slate-700 rounded-lg p-3 mt-4 whitespace-pre-wrap">
-            {output}
-          </pre>
-        )}
-
-      </div>
+      <ToolLoader />
     </ToolLayout>
   );
 }

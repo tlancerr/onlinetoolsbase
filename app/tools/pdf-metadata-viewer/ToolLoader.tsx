@@ -77,7 +77,7 @@ export default function ToolLoader() {
 
   return (
     
-      {/* INNER TOOL BOX — unchanged layout */}
+     
       <div className="rounded-lg border border-slate-700 bg-slate-900 p-6 space-y-4">
         {stage === "idle" && (
           <input

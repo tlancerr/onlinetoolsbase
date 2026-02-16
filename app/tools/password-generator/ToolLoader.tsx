@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
 
-export default function PasswordGenerator() {
+
+export default function ToolLoader() {
   const [length, setLength] = useState(12);
   const [useLower, setUseLower] = useState(true);
   const [useUpper, setUseUpper] = useState(true);
@@ -32,11 +32,7 @@ export default function PasswordGenerator() {
   }
 
   return (
-    <ToolLayout
-      title="Password Generator"
-      description="Generate secure random passwords with customizable length and character sets."
-      category="Security Tools"
-    >
+    
       <div className="space-y-4">
 
         <div>
@@ -102,6 +98,6 @@ export default function PasswordGenerator() {
           />
         )}
       </div>
-    </ToolLayout>
+   
   );
 }

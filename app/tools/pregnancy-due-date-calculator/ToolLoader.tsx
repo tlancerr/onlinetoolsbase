@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
 
-export default function PregnancyDueDateCalculator() {
+
+export default function ToolLoader() {
   const [lmp, setLmp] = useState("");
   const [result, setResult] = useState<string | null>(null);
 
@@ -44,11 +44,7 @@ Estimated Conception Date: ${conception.toDateString()}`
   }
 
   return (
-    <ToolLayout
-      title="Pregnancy Due Date Calculator"
-      description="Calculate your baby's estimated due date, current pregnancy week, trimester, and estimated conception date."
-      category="Health and Fitness Tools"
-    >
+    
       <div className="space-y-4">
         
         <div>
@@ -72,6 +68,6 @@ Estimated Conception Date: ${conception.toDateString()}`
         )}
 
       </div>
-    </ToolLayout>
+
   );
 }

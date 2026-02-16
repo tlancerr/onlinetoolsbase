@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
 
-export default function EMICalculator() {
+
+export default function ToolLoader() {
   const [amount, setAmount] = useState("");
   const [rate, setRate] = useState("");
   const [months, setMonths] = useState("");
@@ -42,11 +42,7 @@ Total Interest: ${totalInterest.toFixed(2)}`
   }
 
   return (
-    <ToolLayout
-      title="EMI Calculator"
-      description="Calculate monthly EMI, total payment, and total interest for your loan."
-      category="Finance Tools"
-    >
+    
       <div className="space-y-4">
 
         <div>
@@ -92,6 +88,6 @@ Total Interest: ${totalInterest.toFixed(2)}`
           </pre>
         )}
       </div>
-    </ToolLayout>
+    
   );
 }

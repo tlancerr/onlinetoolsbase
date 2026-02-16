@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
 
-export default function IdealWeightCalculator() {
+
+export default function ToolLoader() {
   const [height, setHeight] = useState("");
   const [gender, setGender] = useState("male");
   const [result, setResult] = useState<string | null>(null);
@@ -44,11 +44,7 @@ Hamwi Formula: ${hamwi.toFixed(1)} kg`
   }
 
   return (
-    <ToolLayout
-      title="Ideal Weight Calculator"
-      description="Calculate your ideal body weight using scientifically recognized formulas such as Devine, Robinson, Miller, and Hamwi."
-      category="Health and Fitness Tools"
-    >
+  
       <div className="space-y-4">
 
         <div>
@@ -84,6 +80,6 @@ Hamwi Formula: ${hamwi.toFixed(1)} kg`
           </pre>
         )}
       </div>
-    </ToolLayout>
+ 
   );
 }

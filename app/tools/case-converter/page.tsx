@@ -1,57 +1,38 @@
-"use client";
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { toolsData } from "@/components/toolsData";
+import ToolLayout from "@/components/ToolLayout";
 
-import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
+// import your tool UI component (stays where it is)
+import ToolLoader from "./ToolLoader";
 
-function toTitleCase(str: string) {
-  return str
-    .toLowerCase()
-    .split(" ")
-    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-    .join(" ");
+type Props = { params: {} };
+
+export async function generateMetadata(): Promise<Metadata> {
+  const tool = toolsData.find((t) => t.slug === "case-converter");
+  if (!tool) return {};
+
+  return {
+    title: tool.seoTitleTemplate || `${tool.title} — OnlineToolsBase`,
+    description: tool.seoDescriptionTemplate || tool.description,
+    alternates: {
+      canonical: `https://onlinetoolsbase.com/tools/${tool.slug}`,
+    },
+  };
 }
 
-function toSentenceCase(str: string) {
-  const trimmed = str.trim();
-  if (!trimmed) return "";
-  return trimmed.charAt(0).toUpperCase() + trimmed.slice(1).toLowerCase();
-}
-
-export default function CaseConverter() {
-  const [text, setText] = useState("");
+export default function Page() {
+  const tool = toolsData.find((t) => t.slug === "case-converter");
+  if (!tool) return notFound();
 
   return (
     <ToolLayout
-      title="Case Converter"
-      description="Convert text into uppercase, lowercase, title case, and sentence case."
-      category="Text Tools"
+      title={tool.title}
+      description={tool.description}
+      category={tool.category}
+      slug={tool.slug}
     >
-      <div className="space-y-4">
-        <textarea
-          className="tool-input min-h-[200px]"
-          placeholder="Enter your text here..."
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-        />
-
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-          <button className="btn-primary" onClick={() => setText(text.toUpperCase())}>
-            UPPERCASE
-          </button>
-
-          <button className="btn-primary" onClick={() => setText(text.toLowerCase())}>
-            lowercase
-          </button>
-
-          <button className="btn-primary" onClick={() => setText(toTitleCase(text))}>
-            Title Case
-          </button>
-
-          <button className="btn-primary" onClick={() => setText(toSentenceCase(text))}>
-            Sentence case
-          </button>
-        </div>
-      </div>
+      <ToolLoader />
     </ToolLayout>
   );
 }

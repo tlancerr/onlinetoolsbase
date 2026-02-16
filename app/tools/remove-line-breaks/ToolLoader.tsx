@@ -1,9 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
 
-export default function RemoveLineBreaks() {
+export default function ToolLoader() {
   const [text, setText] = useState("");
 
   function removeBreaks() {
@@ -12,11 +11,7 @@ export default function RemoveLineBreaks() {
   }
 
   return (
-    <ToolLayout
-      title="Remove Line Breaks"
-      description="Remove all line breaks and merge text into one line."
-      category="Text Tools"
-    >
+   
       <div className="space-y-4">
         <textarea
           className="tool-input min-h-[200px]"
@@ -29,6 +24,6 @@ export default function RemoveLineBreaks() {
           Remove Line Breaks
         </button>
       </div>
-    </ToolLayout>
+    
   );
 }

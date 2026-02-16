@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "@/components/ToolLayout";
+
 
 type OutputImage = {
   name: string;
@@ -10,7 +10,7 @@ type OutputImage = {
 
 type Preset = "custom" | "square" | "hd" | "fullhd";
 
-export default function ImageResizerPage() {
+export default function ToolLoader() {
   const [files, setFiles] = useState<File[]>([]);
   const [preset, setPreset] = useState<Preset>("custom");
   const [width, setWidth] = useState<number>(800);
@@ -143,11 +143,7 @@ export default function ImageResizerPage() {
   };
 
   return (
-    <ToolLayout
-      title="Image Resizer"
-      description="Resize images to custom dimensions or preset sizes in seconds."
-      category="Image Tools"
-    >
+    
       {/* INNER TOOL BOX ONLY */}
       <div className="rounded-lg border border-slate-700 bg-slate-900 p-6 space-y-4">
         {stage === "idle" && (
@@ -241,6 +237,6 @@ export default function ImageResizerPage() {
           </div>
         )}
       </div>
-    </ToolLayout>
+    
   );
 }

@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
 
-export default function NumberBaseConverter() {
+
+export default function ToolLoader() {
   const [input, setInput] = useState("");
   const [fromBase, setFromBase] = useState("decimal");
   const [result, setResult] = useState("");
@@ -28,11 +28,7 @@ Hexadecimal: ${hex}`);
   }
 
   return (
-    <ToolLayout
-      title="Number Base Converter"
-      description="Convert numbers between Decimal, Binary, and Hexadecimal."
-      category="Math Tools"
-    >
+   
       <div className="space-y-4">
 
         <input
@@ -62,6 +58,6 @@ Hexadecimal: ${hex}`);
           </pre>
         )}
       </div>
-    </ToolLayout>
+    
   );
 }

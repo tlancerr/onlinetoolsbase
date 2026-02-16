@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
 
-export default function PastDateCalculator() {
+
+export default function ToolLoader() {
   const [days, setDays] = useState("");
   const [weeks, setWeeks] = useState("");
   const [months, setMonths] = useState("");
@@ -32,11 +32,7 @@ export default function PastDateCalculator() {
   }
 
   return (
-    <ToolLayout
-      title="Past Date Calculator"
-      description="Find the exact date in the past by subtracting days, weeks, months, or years from today."
-      category="Time & Age Tools"
-    >
+    
       <div className="space-y-4">
 
         <div>
@@ -89,6 +85,6 @@ export default function PastDateCalculator() {
           </div>
         )}
       </div>
-    </ToolLayout>
+    
   );
 }

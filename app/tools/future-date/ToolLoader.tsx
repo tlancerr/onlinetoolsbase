@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
 
-export default function FutureDateCalculator() {
+
+export default function ToolLoader() {
   const [days, setDays] = useState("");
   const [weeks, setWeeks] = useState("");
   const [months, setMonths] = useState("");
@@ -32,11 +32,7 @@ export default function FutureDateCalculator() {
   }
 
   return (
-    <ToolLayout
-      title="Future Date Calculator"
-      description="Calculate the exact future date by adding days, weeks, months, or years to today's date."
-      category="Time & Age Tools"
-    >
+    
       <div className="space-y-4">
 
         <div>
@@ -89,6 +85,6 @@ export default function FutureDateCalculator() {
           </div>
         )}
       </div>
-    </ToolLayout>
+    
   );
 }

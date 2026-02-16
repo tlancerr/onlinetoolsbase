@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "@/components/ToolLayout";
 
-export default function PdfCompressorPage() {
+
+export default function ToolLoader() {
   const [file, setFile] = useState<File | null>(null);
   const [stage, setStage] =
     useState<"idle" | "uploading" | "uploaded" | "processing" | "done">("idle");
@@ -53,12 +53,7 @@ export default function PdfCompressorPage() {
   };
 
   return (
-    <ToolLayout
     
-      title="PDF Compressor"
-      description="Compress PDF files online without losing quality."
-      category ="PDF Tools"
-    >
       {/* ================= TOOL BOX ================= */}
       <div className="rounded-lg border border-slate-700 bg-slate-900 p-6 space-y-4">
         {/* IDLE */}
@@ -112,6 +107,6 @@ export default function PdfCompressorPage() {
         )}
       </div>
       {/* ================= END TOOL BOX ================= */}
-    </ToolLayout>
+   
   );
 }

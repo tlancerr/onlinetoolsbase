@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "@/components/ToolLayout";
 
-export default function ImageToBase64Page() {
+
+export default function ToolLoader() {
   const [base64, setBase64] = useState("");
   const [loaded, setLoaded] = useState(false);
 
@@ -22,11 +22,7 @@ export default function ImageToBase64Page() {
   };
 
   return (
-    <ToolLayout
-      title="Image to Base64 Converter"
-      description="Convert images into Base64 encoded strings within seconds."
-      category="Image Tools"
-    >
+    
       <div className="rounded-lg border border-slate-700 bg-slate-900 p-6 space-y-4">
         {!loaded && (
           <input
@@ -64,6 +60,6 @@ export default function ImageToBase64Page() {
           </>
         )}
       </div>
-    </ToolLayout>
+ 
   );
 }

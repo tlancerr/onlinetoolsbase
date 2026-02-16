@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
+
 
 function getStrength(password: string) {
   let score = 0;
@@ -18,17 +18,13 @@ function getStrength(password: string) {
   return { label: "Strong", color: "text-emerald-400" };
 }
 
-export default function PasswordStrengthChecker() {
+export default function ToolLoader() {
   const [password, setPassword] = useState("");
 
   const strength = getStrength(password);
 
   return (
-    <ToolLayout
-      title="Password Strength Checker"
-      description="Check how strong and secure your password is."
-      category="Security Tools"
-    >
+   
       <div className="space-y-4">
 
         <input
@@ -49,6 +45,6 @@ export default function PasswordStrengthChecker() {
           <li>Avoid common words or personal information</li>
         </ul>
       </div>
-    </ToolLayout>
+    
   );
 }

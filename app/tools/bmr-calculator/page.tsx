@@ -1,97 +1,38 @@
-"use client";
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { toolsData } from "@/components/toolsData";
+import ToolLayout from "@/components/ToolLayout";
 
-import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
+// import your tool UI component (stays where it is)
+import ToolLoader from "./ToolLoader";
 
-export default function BMRCalculator() {
-  const [age, setAge] = useState("");
-  const [height, setHeight] = useState("");
-  const [weight, setWeight] = useState("");
-  const [gender, setGender] = useState("male");
-  const [result, setResult] = useState<string | null>(null);
+type Props = { params: {} };
 
-  function calculateBMR() {
-    if (!age || !height || !weight) {
-      setResult("Please fill all fields.");
-      return;
-    }
+export async function generateMetadata(): Promise<Metadata> {
+  const tool = toolsData.find((t) => t.slug === "bmr-calculator");
+  if (!tool) return {};
 
-    const a = parseInt(age);
-    const h = parseFloat(height);
-    const w = parseFloat(weight);
+  return {
+    title: tool.seoTitleTemplate || `${tool.title} — OnlineToolsBase`,
+    description: tool.seoDescriptionTemplate || tool.description,
+    alternates: {
+      canonical: `https://onlinetoolsbase.com/tools/${tool.slug}`,
+    },
+  };
+}
 
-    let BMR = 0;
-
-    // Mifflin–St Jeor Equation
-    if (gender === "male") {
-      BMR = 88.36 + (13.4 * w) + (4.8 * h) - (5.7 * a);
-    } else {
-      BMR = 447.6 + (9.2 * w) + (3.1 * h) - (4.3 * a);
-    }
-
-    setResult(`Your Basal Metabolic Rate (BMR) is ${Math.round(BMR)} calories/day.`);
-  }
+export default function Page() {
+  const tool = toolsData.find((t) => t.slug === "bmr-calculator");
+  if (!tool) return notFound();
 
   return (
     <ToolLayout
-      title="BMR Calculator"
-      description="Calculate your Basal Metabolic Rate (BMR) to know how many calories your body burns at rest."
-      category="Health and Fitness Tools"
+      title={tool.title}
+      description={tool.description}
+      category={tool.category}
+      slug={tool.slug}
     >
-      <div className="space-y-4">
-
-        <div>
-          <label className="tool-label">Age (years)</label>
-          <input
-            type="number"
-            className="tool-input"
-            value={age}
-            onChange={(e) => setAge(e.target.value)}
-          />
-        </div>
-
-        <div>
-          <label className="tool-label">Height (cm)</label>
-          <input
-            type="number"
-            className="tool-input"
-            value={height}
-            onChange={(e) => setHeight(e.target.value)}
-          />
-        </div>
-
-        <div>
-          <label className="tool-label">Weight (kg)</label>
-          <input
-            type="number"
-            className="tool-input"
-            value={weight}
-            onChange={(e) => setWeight(e.target.value)}
-          />
-        </div>
-
-        <div>
-          <label className="tool-label">Gender</label>
-          <select
-            className="tool-input"
-            value={gender}
-            onChange={(e) => setGender(e.target.value)}
-          >
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-          </select>
-        </div>
-
-        <button onClick={calculateBMR} className="btn-primary">
-          Calculate BMR
-        </button>
-
-        {result && (
-          <div className="mt-4 rounded-lg bg-slate-900 border border-slate-700 px-3 py-3 text-sm text-emerald-300">
-            {result}
-          </div>
-        )}
-      </div>
+      <ToolLoader />
     </ToolLayout>
   );
 }

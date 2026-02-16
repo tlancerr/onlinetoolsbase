@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
 
-export default function InvestmentReturnCalculator() {
+
+export default function ToolLoader() {
   const [initial, setInitial] = useState("");
   const [finalValue, setFinalValue] = useState("");
   const [years, setYears] = useState("");
@@ -34,11 +34,7 @@ Annualized Return (CAGR): ${cagr.toFixed(2)}%`
   }
 
   return (
-    <ToolLayout
-      title="Investment Return Calculator"
-      description="Calculate ROI, total profit, and annualized return (CAGR) for your investment."
-      category="Finance Tools"
-    >
+    
       <div className="space-y-4">
 
         <div>
@@ -85,6 +81,6 @@ Annualized Return (CAGR): ${cagr.toFixed(2)}%`
         )}
 
       </div>
-    </ToolLayout>
+ 
   );
 }

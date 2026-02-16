@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "@/components/ToolLayout";
+
 import { PDFDocument } from "pdf-lib";
 
-export default function ProtectPdfPage() {
+export default function ToolLoader() {
   const [file, setFile] = useState<File | null>(null);
   const [password, setPassword] = useState("");
   const [stage, setStage] =
@@ -76,12 +76,7 @@ const blob = new Blob([ab], { type: "application/pdf" });
   };
 
   return (
-    <ToolLayout
-      title="Protect PDF"
-      description="Add a password to protect your PDF file."
-      category="PDF Tools"
-    >
-      {/* INNER TOOL BOX — unchanged layout */}
+
       <div className="rounded-lg border border-slate-700 bg-slate-900 p-6 space-y-4">
         {stage === "idle" && (
           <input
@@ -135,6 +130,6 @@ const blob = new Blob([ab], { type: "application/pdf" });
           </a>
         )}
       </div>
-    </ToolLayout>
+   
   );
 }

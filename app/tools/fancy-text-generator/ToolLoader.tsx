@@ -1,12 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
+
 
 // Unicode maps for popular fancy fonts
 import fancyFonts from "./fonts";
 
-export default function FancyTextGenerator() {
+export default function ToolLoader() {
   const [input, setInput] = useState("");
   const [results, setResults] = useState<string[]>([]);
 
@@ -24,11 +24,7 @@ export default function FancyTextGenerator() {
   }
 
   return (
-    <ToolLayout
-      title="Fancy Text Generator"
-      description="Convert text into 10+ stylish fancy fonts for Instagram, TikTok, Twitter, and more."
-      category="Social Media Tools"
-    >
+    
       <div className="space-y-4">
         <textarea
           className="tool-input min-h-[100px]"
@@ -58,6 +54,6 @@ export default function FancyTextGenerator() {
           ))}
         </div>
       </div>
-    </ToolLayout>
+    
   );
 }

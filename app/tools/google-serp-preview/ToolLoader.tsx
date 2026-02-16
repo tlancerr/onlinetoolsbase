@@ -1,19 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
 
-export default function GoogleSERPPreview() {
+
+export default function ToolLoader() {
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
   const [url, setUrl] = useState("");
 
   return (
-    <ToolLayout
-      title="Google SERP Preview"
-      description="Preview how your webpage will appear in Google search results."
-      category="SEO Tools"
-    >
+   
       <div className="space-y-4">
 
         <input
@@ -49,6 +45,6 @@ export default function GoogleSERPPreview() {
         </div>
 
       </div>
-    </ToolLayout>
+    
   );
 }

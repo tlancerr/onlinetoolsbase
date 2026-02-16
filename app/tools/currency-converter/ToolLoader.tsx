@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
 
-export default function CurrencyConverter() {
+
+export default function ToolLoader() {
   const [rates, setRates] = useState<any>({});
   const [amount, setAmount] = useState("");
   const [from, setFrom] = useState("USD");
@@ -40,11 +40,7 @@ export default function CurrencyConverter() {
 
 
   return (
-    <ToolLayout
-      title="Currency Converter"
-      description="Convert between currencies using real-time exchange rates."
-      category="Finance Tools"
-    >
+    
       <div className="space-y-4">
 
         {!currencyList.length && (
@@ -100,6 +96,6 @@ export default function CurrencyConverter() {
         )}
 
       </div>
-    </ToolLayout>
+    
   );
 }

@@ -1,9 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
 
-export default function OvulationCalculator() {
+export default function ToolLoader() {
   const [lmp, setLmp] = useState("");
   const [cycle, setCycle] = useState("28");
   const [result, setResult] = useState<string | null>(null);
@@ -40,11 +39,7 @@ Next Expected Period: ${nextPeriod.toDateString()}`
   }
 
   return (
-    <ToolLayout
-      title="Ovulation Calculator"
-      description="Calculate your ovulation day, fertile window, and next expected period based on your cycle length."
-      category="Health & Fitness Tools"
-    >
+    
       <div className="space-y-4">
 
         {/* LMP */}
@@ -83,6 +78,6 @@ Next Expected Period: ${nextPeriod.toDateString()}`
           </pre>
         )}
       </div>
-    </ToolLayout>
+    
   );
 }

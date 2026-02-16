@@ -1,9 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
 
-export default function RemoveExtraSpaces() {
+export default function ToolLoader() {
   const [text, setText] = useState("");
 
   function clean() {
@@ -12,11 +11,7 @@ export default function RemoveExtraSpaces() {
   }
 
   return (
-    <ToolLayout
-      title="Remove Extra Spaces"
-      description="Clean up extra spaces, tabs, and whitespace from text."
-      category="Text Tools"
-    >
+    
       <div className="space-y-4">
         <textarea
           className="tool-input min-h-[200px]"
@@ -29,6 +24,6 @@ export default function RemoveExtraSpaces() {
           Remove Extra Spaces
         </button>
       </div>
-    </ToolLayout>
+   
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
+
 
 const sets: Record<string, string[]> = {
   travel: [
@@ -15,7 +15,7 @@ const sets: Record<string, string[]> = {
   fashion: ["#fashion #style #ootd #model #streetstyle #fashionblogger"],
 };
 
-export default function InstagramHashtagGenerator() {
+export default function ToolLoader() {
   const [keyword, setKeyword] = useState("");
   const [result, setResult] = useState<string[]>([]);
 
@@ -32,11 +32,7 @@ export default function InstagramHashtagGenerator() {
   }
 
   return (
-    <ToolLayout
-      title="Instagram Hashtag Generator"
-      description="Generate popular Instagram hashtags for any niche."
-      category="Social Media Tools"
-    >
+   
       <div className="space-y-4">
         <input
           className="tool-input"
@@ -66,6 +62,6 @@ export default function InstagramHashtagGenerator() {
           ))}
         </div>
       </div>
-    </ToolLayout>
+   
   );
 }

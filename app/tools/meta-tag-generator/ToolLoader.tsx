@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
 
-export default function MetaTagGenerator() {
+
+export default function ToolLoader() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [keywords, setKeywords] = useState("");
@@ -24,11 +24,7 @@ export default function MetaTagGenerator() {
   }
 
   return (
-    <ToolLayout
-      title="Meta Tag Generator"
-      description="Generate SEO-friendly meta title, description, and keywords instantly."
-      category="SEO Tools"
-    >
+    
       <div className="space-y-4">
 
         <input
@@ -63,6 +59,6 @@ export default function MetaTagGenerator() {
         )}
 
       </div>
-    </ToolLayout>
+   
   );
 }

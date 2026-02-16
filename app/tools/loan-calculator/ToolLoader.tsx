@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
 
-export default function LoanCalculator() {
+
+export default function ToolLoader() {
   const [amount, setAmount] = useState("");
   const [rate, setRate] = useState("");
   const [years, setYears] = useState("");
@@ -48,11 +48,7 @@ Total Interest: ${totalInterest.toFixed(2)}`
   }
 
   return (
-    <ToolLayout
-      title="Loan Calculator"
-      description="Calculate monthly EMI, total interest, and total payment for home, auto, or personal loans."
-      category="Finance Tools"
-    >
+    
       <div className="space-y-4">
 
         <div>
@@ -98,6 +94,6 @@ Total Interest: ${totalInterest.toFixed(2)}`
           </pre>
         )}
       </div>
-    </ToolLayout>
+  
   );
 }

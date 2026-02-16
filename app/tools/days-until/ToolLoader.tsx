@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
 
-export default function DaysUntil() {
+
+export default function ToolLoader() {
   const [futureDate, setFutureDate] = useState("");
   const [result, setResult] = useState<string | null>(null);
 
@@ -36,11 +36,7 @@ export default function DaysUntil() {
   }
 
   return (
-    <ToolLayout
-      title="Days Until Calculator"
-      description="Find out how many days, weeks, and months are left until a specific future date."
-      category="Time and Age Tools"
-    >
+    
       <div className="space-y-4">
 
         <div>
@@ -63,6 +59,6 @@ export default function DaysUntil() {
           </div>
         )}
       </div>
-    </ToolLayout>
+
   );
 }

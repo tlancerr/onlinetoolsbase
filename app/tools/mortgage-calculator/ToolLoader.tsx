@@ -3,7 +3,7 @@
 import { useState } from "react";
 import ToolLayout from "../../../components/ToolLayout";
 
-export default function MortgageCalculator() {
+export default function ToolLoader() {
   const [homePrice, setHomePrice] = useState("");
   const [downPayment, setDownPayment] = useState("");
   const [rate, setRate] = useState("");
@@ -63,11 +63,7 @@ HOA Fees: $${hoaFee.toFixed(2)}`
   }
 
   return (
-    <ToolLayout
-      title="Mortgage Calculator"
-      description="Calculate mortgage payments including principal, interest, taxes, insurance, and HOA fees."
-      category="Finance Tools"
-    >
+   
       <div className="space-y-4">
 
         <div>
@@ -154,6 +150,6 @@ HOA Fees: $${hoaFee.toFixed(2)}`
           </pre>
         )}
       </div>
-    </ToolLayout>
+    
   );
 }

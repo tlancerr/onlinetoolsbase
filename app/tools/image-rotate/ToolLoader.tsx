@@ -1,9 +1,9 @@
 "use client";
 
 import { useRef, useState } from "react";
-import ToolLayout from "@/components/ToolLayout";
 
-export default function ImageRotatePage() {
+
+export default function ToolLoader() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const imgRef = useRef<HTMLImageElement | null>(null);
 
@@ -100,11 +100,7 @@ export default function ImageRotatePage() {
   };
 
   return (
-    <ToolLayout
-      title="Image Rotate Tool"
-      description="Rotate images clockwise, counterclockwise, or flip them effortlessly."
-      category="Image Tools"
-    >
+    
       {/* INNER TOOL BOX ONLY */}
       <div className="rounded-lg border border-slate-700 bg-slate-900 p-6 space-y-4">
         {!loaded && (
@@ -164,6 +160,6 @@ export default function ImageRotatePage() {
           </>
         )}
       </div>
-    </ToolLayout>
+    
   );
 }

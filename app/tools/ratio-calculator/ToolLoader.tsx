@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
 
-export default function RatioCalculator() {
+
+export default function ToolLoader() {
   const [a, setA] = useState("");
   const [b, setB] = useState("");
   const [result, setResult] = useState("");
@@ -23,11 +23,7 @@ export default function RatioCalculator() {
   }
 
   return (
-    <ToolLayout
-      title="Ratio Calculator"
-      description="Simplify and calculate ratios easily."
-      category="Math Tools"
-    >
+   
       <div className="space-y-4">
 
         <input className="tool-input" type="number" placeholder="First number" value={a} onChange={e => setA(e.target.value)} />
@@ -39,6 +35,6 @@ export default function RatioCalculator() {
 
         {result && <div className="mt-4 text-emerald-300">{result}</div>}
       </div>
-    </ToolLayout>
+    
   );
 }

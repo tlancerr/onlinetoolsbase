@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
 
-export default function PercentageCalculator() {
+
+export default function ToolLoader() {
   // States for 3 calculators
   const [a, setA] = useState(""); // X% of Y
   const [b, setB] = useState("");
@@ -44,11 +44,7 @@ export default function PercentageCalculator() {
   }
 
   return (
-    <ToolLayout
-      title="Percentage Calculator"
-      description="Calculate percentage values, percentage change, and what percent one number is of another."
-      category="Math Tools"
-    >
+    
       <div className="space-y-10">
 
         {/* 1. X% of Y */}
@@ -100,6 +96,6 @@ export default function PercentageCalculator() {
         </div>
 
       </div>
-    </ToolLayout>
+    
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
+
 
 const fonts = [
   (txt: string) => txt.toUpperCase(), // SIMPLE
@@ -76,7 +76,7 @@ const fonts = [
       .join(""),
 ];
 
-export default function InstagramFontGenerator() {
+export default function ToolLoader() {
   const [text, setText] = useState("");
   const [results, setResults] = useState<string[]>([]);
 
@@ -86,11 +86,7 @@ export default function InstagramFontGenerator() {
   }
 
   return (
-    <ToolLayout
-      title="Instagram Fancy Font Generator"
-      description="Convert normal text into stylish Instagram fonts."
-      category="Social Media Tools"
-    >
+    
       <div className="space-y-4">
         <textarea
           placeholder="Type something..."
@@ -120,6 +116,6 @@ export default function InstagramFontGenerator() {
           ))}
         </div>
       </div>
-    </ToolLayout>
+    
   );
 }

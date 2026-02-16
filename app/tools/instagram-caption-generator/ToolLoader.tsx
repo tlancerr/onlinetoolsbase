@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
+
 
 const styles = {
   aesthetic: [
@@ -21,7 +21,7 @@ const styles = {
   ],
 };
 
-export default function InstagramCaptionGenerator() {
+export default function ToolLoader() {
   const [keyword, setKeyword] = useState("");
   const [captions, setCaptions] = useState<string[]>([]);
 
@@ -43,11 +43,7 @@ export default function InstagramCaptionGenerator() {
   }
 
   return (
-    <ToolLayout
-      title="Instagram Caption Generator"
-      description="Generate creative, aesthetic, motivational, or funny captions for your Instagram posts."
-      category="Social Media Tools"
-    >
+   
       <div className="space-y-4">
         <input
           className="tool-input"
@@ -77,6 +73,6 @@ export default function InstagramCaptionGenerator() {
           ))}
         </div>
       </div>
-    </ToolLayout>
+    
   );
 }

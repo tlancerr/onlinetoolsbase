@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "@/components/ToolLayout";
+
 import { PDFDocument } from "pdf-lib";
 
 type Meta = {
@@ -16,7 +16,7 @@ type Meta = {
   pages?: number;
 };
 
-export default function PdfMetadataViewerPage() {
+export default function ToolLoader() {
   const [file, setFile] = useState<File | null>(null);
   const [stage, setStage] =
     useState<"idle" | "uploading" | "processing" | "done">("idle");
@@ -76,11 +76,7 @@ export default function PdfMetadataViewerPage() {
   };
 
   return (
-    <ToolLayout
-      title="PDF Metadata Viewer"
-      description="View detailed metadata information from a PDF file."
-      category="PDF Tools"
-    >
+    
       {/* INNER TOOL BOX — unchanged layout */}
       <div className="rounded-lg border border-slate-700 bg-slate-900 p-6 space-y-4">
         {stage === "idle" && (
@@ -124,6 +120,6 @@ export default function PdfMetadataViewerPage() {
           </div>
         )}
       </div>
-    </ToolLayout>
+    
   );
 }

@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
 
-export default function FindReplace() {
+
+export default function ToolLoader() {
   const [text, setText] = useState("");
   const [find, setFind] = useState("");
   const [replace, setReplace] = useState("");
@@ -19,11 +19,7 @@ export default function FindReplace() {
   }
 
   return (
-    <ToolLayout
-      title="Find & Replace"
-      description="Find any word or phrase and replace it with new text."
-      category="Text Tools"
-    >
+    
       <div className="space-y-4">
         <textarea
           className="tool-input min-h-[200px]"
@@ -50,6 +46,6 @@ export default function FindReplace() {
           Replace
         </button>
       </div>
-    </ToolLayout>
+    
   );
 }

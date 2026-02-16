@@ -3024,6 +3024,38 @@ faqs: [
 
   howtoSteps: ["Enter weight and activity.", "Click calculate.", "View recommended intake."]
 },
+  {
+  title: "Ovulation Calculator",
+  slug: "ovulation-calculator",
+  category: "Health and Fitness Tools",
+  description: "Calculate your ovulation day, fertile window, and next expected period based on your cycle length.",
+  seoTitleTemplate: "Ovulation Calculator — Fertile Window & Ovulation Day",
+  seoDescriptionTemplate: "Use this Ovulation Calculator to estimate ovulation day, fertile window, and next period based on LMP and cycle length. Fast and easy.",
+  longDescription:
+    "The Ovulation Calculator helps you estimate your ovulation day, fertile window, and next expected period using the first day of your last menstrual period (LMP) and your average cycle length.\n\nIt’s useful for planning, cycle tracking, and understanding your most fertile days. The tool applies a common estimation method where ovulation typically occurs about 14 days before the next period, then calculates a fertile window around that date.\n\nResults are estimates and can vary between individuals, so for medical decisions or irregular cycles, consider confirming with a healthcare professional.",
+
+  faqs: [
+    {
+      q: "How is the ovulation day calculated?",
+      a: "A common estimate is ovulation occurs about 14 days before your next period. The tool calculates ovulation as LMP + (cycle length − 14)."
+    },
+    {
+      q: "What is the fertile window?",
+      a: "The fertile window is the range of days when pregnancy is most likely, typically the 5 days before ovulation plus the ovulation day (and sometimes the day after)."
+    },
+    {
+      q: "Is this accurate for irregular cycles?",
+      a: "It’s an estimate based on an average cycle length. If your cycle is irregular, the results may be less accurate and you may need additional tracking methods."
+    }
+  ],
+
+  howtoSteps: [
+    "Select the first day of your last menstrual period (LMP).",
+    "Enter your average cycle length in days (for example, 28).",
+    "Click Calculate Ovulation to view your estimated ovulation day and fertile window.",
+    "Use the results for planning and cycle tracking."
+  ]
+},
 /*{
   title: "Macro Calculator",
   slug: "macro-calculator",

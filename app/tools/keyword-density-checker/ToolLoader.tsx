@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
 
-export default function KeywordDensityChecker() {
+
+export default function ToolLoader() {
   const [text, setText] = useState("");
   const [keyword, setKeyword] = useState("");
   const [output, setOutput] = useState("");
@@ -28,11 +28,7 @@ Keyword Density: ${density}%`
   }
 
   return (
-    <ToolLayout
-      title="Keyword Density Checker"
-      description="Analyze keyword density, word count, and keyword frequency."
-      category="SEO Tools"
-    >
+    
       <div className="space-y-4">
 
         <textarea
@@ -59,6 +55,6 @@ Keyword Density: ${density}%`
           </pre>
         )}
       </div>
-    </ToolLayout>
+  
   );
 }

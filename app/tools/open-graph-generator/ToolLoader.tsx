@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
 
-export default function OpenGraphGenerator() {
+
+export default function ToolLoader() {
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
   const [url, setUrl] = useState("");
@@ -23,11 +23,7 @@ export default function OpenGraphGenerator() {
   }
 
   return (
-    <ToolLayout
-      title="Open Graph Tag Generator"
-      description="Generate Open Graph (OG) meta tags for social media previews."
-      category="SEO Tools"
-    >
+   
       <div className="space-y-4">
 
         <input className="tool-input" placeholder="OG Title" value={title} onChange={e => setTitle(e.target.value)} />
@@ -46,6 +42,6 @@ export default function OpenGraphGenerator() {
           </pre>
         )}
       </div>
-    </ToolLayout>
+    
   );
 }

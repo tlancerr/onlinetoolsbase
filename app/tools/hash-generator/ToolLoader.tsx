@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
+
 
 async function hashString(text: string, algo: "MD5" | "SHA-256") {
   if (algo === "MD5") {
@@ -159,7 +159,7 @@ async function hashString(text: string, algo: "MD5" | "SHA-256") {
   return hashHex;
 }
 
-export default function HashGenerator() {
+export default function ToolLoader() {
   const [text, setText] = useState("");
   const [algo, setAlgo] = useState<"MD5" | "SHA-256">("MD5");
   const [hash, setHash] = useState("");
@@ -174,11 +174,7 @@ export default function HashGenerator() {
   }
 
   return (
-    <ToolLayout
-      title="Hash Generator (MD5 / SHA-256)"
-      description="Generate MD5 or SHA-256 hashes for any text."
-      category="Security Tools"
-    >
+    
       <div className="space-y-4">
 
         <textarea
@@ -210,6 +206,6 @@ export default function HashGenerator() {
         )}
 
       </div>
-    </ToolLayout>
+    
   );
 }

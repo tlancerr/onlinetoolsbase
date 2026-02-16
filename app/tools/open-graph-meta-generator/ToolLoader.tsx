@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
 
-export default function OpenGraphMetaGenerator() {
+
+export default function ToolLoader() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [url, setUrl] = useState("");
@@ -38,11 +38,7 @@ export default function OpenGraphMetaGenerator() {
   };
 
   return (
-    <ToolLayout
-      title="Open Graph Meta Tag Generator"
-      description="Generate Open Graph and Twitter meta tags for your pages and improve social previews."
-      category="Social Media Tools"
-    >
+    
       <div className="grid md:grid-cols-2 gap-6">
         {/* Left: Form */}
         <div className="space-y-3">
@@ -110,6 +106,6 @@ export default function OpenGraphMetaGenerator() {
           </pre>
         </div>
       </div>
-    </ToolLayout>
+    
   );
 }

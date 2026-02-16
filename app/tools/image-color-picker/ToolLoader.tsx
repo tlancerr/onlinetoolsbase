@@ -1,9 +1,9 @@
 "use client";
 
 import { useRef, useState } from "react";
-import ToolLayout from "@/components/ToolLayout";
 
-export default function ImageColorPickerPage() {
+
+export default function ToolLoader() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const imgRef = useRef<HTMLImageElement | null>(null);
 
@@ -108,11 +108,7 @@ export default function ImageColorPickerPage() {
   };
 
   return (
-    <ToolLayout
-      title="Image Color Picker"
-      description="Pick color codes from any image, including HEX, RGB and HSL."
-      category="Image Tools"
-    >
+    
       {/* INNER TOOL BOX ONLY */}
       <div className="rounded-lg border border-slate-700 bg-slate-900 p-6 space-y-4">
         {!loaded && (
@@ -161,6 +157,6 @@ export default function ImageColorPickerPage() {
           </>
         )}
       </div>
-    </ToolLayout>
+   
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
+
 
 const templates = [
   "{keyword} • Dreamer ✨ | Believer 💫 | Achiever 🚀",
@@ -11,7 +11,7 @@ const templates = [
   "Turning {keyword} into lifestyle 💎",
 ];
 
-export default function InstagramBioGenerator() {
+export default function ToolLoader() {
   const [keyword, setKeyword] = useState("");
   const [bios, setBios] = useState<string[]>([]);
 
@@ -29,11 +29,7 @@ export default function InstagramBioGenerator() {
   }
 
   return (
-    <ToolLayout
-      title="Instagram Bio Generator"
-      description="Generate stylish Instagram bios using your keyword."
-      category="Social Media Tools"
-    >
+    
       <div className="space-y-4">
         <input
           className="tool-input"
@@ -63,6 +59,6 @@ export default function InstagramBioGenerator() {
           ))}
         </div>
       </div>
-    </ToolLayout>
+   
   );
 }

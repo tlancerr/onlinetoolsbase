@@ -1,12 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
+
 
 const lorem =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed luctus dui id libero dictum, sed volutpat dolor tristique. In vel dolor nec velit laoreet aliquet. Praesent a nibh nec ipsum hendrerit faucibus.";
 
-export default function LoremIpsumGenerator() {
+export default function ToolLoader() {
   const [count, setCount] = useState(3);
   const [output, setOutput] = useState("");
 
@@ -20,11 +20,7 @@ export default function LoremIpsumGenerator() {
   }
 
   return (
-    <ToolLayout
-      title="Lorem Ipsum Generator"
-      description="Generate placeholder lorem ipsum text for design and development."
-      category="Text Tools"
-    >
+    
       <div className="space-y-4">
 
         <input
@@ -46,6 +42,6 @@ export default function LoremIpsumGenerator() {
           value={output}
         />
       </div>
-    </ToolLayout>
+    
   );
 }

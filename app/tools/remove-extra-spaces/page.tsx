@@ -22,7 +22,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function Page() {
-  const tool = toolsData.find((t) => t.slug === "remove-extra-spaces);
+  const tool = toolsData.find((t) => t.slug === "remove-extra-spaces");
   if (!tool) return notFound();
 
   return (

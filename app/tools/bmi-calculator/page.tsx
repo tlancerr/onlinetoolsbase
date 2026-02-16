@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
 
-export default function BMICalculator() {
+
+export default function ToolLoader() {
   const [height, setHeight] = useState("");
   const [weight, setWeight] = useState("");
   const [result, setResult] = useState<string | null>(null);
@@ -34,11 +34,7 @@ export default function BMICalculator() {
   }
 
   return (
-    <ToolLayout
-      title="BMI Calculator"
-      description="Calculate your Body Mass Index (BMI) using your height and weight to determine if you are underweight, normal, overweight, or obese."
-      category="Health and Fitness Tools"
-    >
+    
       <div className="space-y-4">
 
         <div>
@@ -78,6 +74,6 @@ export default function BMICalculator() {
           </div>
         )}
       </div>
-    </ToolLayout>
+    
   );
 }

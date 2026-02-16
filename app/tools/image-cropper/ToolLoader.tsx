@@ -105,7 +105,7 @@ export default function ToolLoader() {
 
   return (
     
-      {/* INNER TOOL BOX ONLY */}
+      
       <div className="rounded-lg border border-slate-700 bg-slate-900 p-6 space-y-4">
         {!imageLoaded && (
           <input

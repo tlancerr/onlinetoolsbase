@@ -1,9 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
 
-export default function SpeedConverter() {
+export default function ToolLoader() {
   const [value, setValue] = useState("");
   const [unit, setUnit] = useState("kmh");
   const [result, setResult] = useState("");
@@ -38,11 +37,7 @@ export default function SpeedConverter() {
   }
 
   return (
-    <ToolLayout
-      title="Speed Converter"
-      description="Convert between km/h, mph, m/s, and knots."
-      category="Converter Tools"
-    >
+    
       <div className="space-y-4">
 
         <input
@@ -71,6 +66,6 @@ export default function SpeedConverter() {
           </pre>
         )}
       </div>
-    </ToolLayout>
+   
   );
 }

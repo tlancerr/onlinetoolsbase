@@ -1,9 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
 
-export default function SlugGenerator() {
+export default function ToolLoader() {
   const [input, setInput] = useState("");
   const [slug, setSlug] = useState("");
 
@@ -18,11 +17,7 @@ export default function SlugGenerator() {
   }
 
   return (
-    <ToolLayout
-      title="Slug Generator"
-      description="Convert text into clean, SEO-friendly URL slugs."
-      category="Text Tools"
-    >
+    
       <div className="space-y-4">
         <input
           className="tool-input"
@@ -47,6 +42,6 @@ export default function SlugGenerator() {
           </div>
         )}
       </div>
-    </ToolLayout>
+    
   );
 }

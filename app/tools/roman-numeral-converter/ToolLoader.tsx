@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
+
 
 function toRoman(num: number) {
   const map: any = {
@@ -30,16 +30,12 @@ function fromRoman(str: string) {
   return total;
 }
 
-export default function RomanNumeralConverter() {
+export default function ToolLoader() {
   const [number, setNumber] = useState("");
   const [roman, setRoman] = useState("");
 
   return (
-    <ToolLayout
-      title="Roman Numeral Converter"
-      description="Convert numbers to Roman numerals and Roman numerals to numbers."
-      category="Math Tools"
-    >
+  
 
       <div className="space-y-6">
 
@@ -76,6 +72,6 @@ export default function RomanNumeralConverter() {
 
       </div>
 
-    </ToolLayout>
+    
   );
 }

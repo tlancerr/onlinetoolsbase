@@ -1,9 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "@/components/ToolLayout";
 
-export default function UnlockPdfPage() {
+export default function ToolLoader() {
   const [file, setFile] = useState<File | null>(null);
   const [password, setPassword] = useState("");
   const [stage, setStage] =
@@ -55,12 +54,7 @@ export default function UnlockPdfPage() {
   };
 
   return (
-    <ToolLayout
-      title="Unlock PDF"
-      description="Remove password protection from a PDF file (when you have permission)."
-      category="PDF Tools"
-    >
-      {/* INNER TOOL BOX ONLY */}
+   
       <div className="rounded-lg border border-slate-700 bg-slate-900 p-6 space-y-4">
         {stage === "idle" && (
           <input
@@ -121,6 +115,6 @@ export default function UnlockPdfPage() {
           </a>
         )}
       </div>
-    </ToolLayout>
+    
   );
 }

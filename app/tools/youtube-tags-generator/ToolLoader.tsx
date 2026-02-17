@@ -1,9 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
 
-export default function YouTubeTagsGenerator() {
+export default function ToolLoader() {
   const [keyword, setKeyword] = useState("");
   const [tags, setTags] = useState("");
 
@@ -34,11 +33,7 @@ export default function YouTubeTagsGenerator() {
   }
 
   return (
-    <ToolLayout
-      title="YouTube Tags Generator"
-      description="Generate optimized YouTube tags using your keyword."
-      category="Social Media Tools"
-    >
+    
       <div className="space-y-4">
         <input
           className="tool-input"
@@ -59,6 +54,5 @@ export default function YouTubeTagsGenerator() {
           />
         )}
       </div>
-    </ToolLayout>
   );
 }

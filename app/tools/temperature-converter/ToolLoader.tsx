@@ -1,9 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
 
-export default function TemperatureConverter() {
+export default function ToolLoader() {
   const [value, setValue] = useState("");
   const [unit, setUnit] = useState("celsius");
   const [result, setResult] = useState("");
@@ -34,11 +33,7 @@ export default function TemperatureConverter() {
   }
 
   return (
-    <ToolLayout
-      title="Temperature Converter"
-      description="Convert between Celsius, Fahrenheit, and Kelvin."
-      category="Converter Tools"
-    >
+    
       <div className="space-y-4">
 
         <input
@@ -68,6 +63,6 @@ export default function TemperatureConverter() {
           </pre>
         )}
       </div>
-    </ToolLayout>
+    
   );
 }

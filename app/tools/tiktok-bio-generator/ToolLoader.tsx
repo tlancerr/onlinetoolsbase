@@ -1,7 +1,7 @@
-"use client";
+To"use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
+
 
 const bioTemplates = [
   "{keyword} addict 💥🔥",
@@ -13,7 +13,7 @@ const bioTemplates = [
   "{keyword} content almost daily 📍",
 ];
 
-export default function TikTokBioGenerator() {
+export default function ToolLoader() {
   const [keyword, setKeyword] = useState("");
   const [bios, setBios] = useState<string[]>([]);
 
@@ -27,11 +27,7 @@ export default function TikTokBioGenerator() {
   }
 
   return (
-    <ToolLayout
-      title="TikTok Bio Generator"
-      description="Create short, viral TikTok bios using a keyword."
-      category="Social Media Tools"
-    >
+    
       <div className="space-y-4">
         <input
           className="tool-input"
@@ -61,6 +57,6 @@ export default function TikTokBioGenerator() {
           ))}
         </div>
       </div>
-    </ToolLayout>
+  
   );
 }

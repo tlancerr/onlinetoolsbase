@@ -1,9 +1,8 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import ToolLayout from "../../../components/ToolLayout";
 
-export default function SocialShareLinkBuilder() {
+export default function ToolLoader() {
   const [url, setUrl] = useState("");
   const [text, setText] = useState("");
   const [hashtags, setHashtags] = useState("onlinetools,tools,web");
@@ -34,11 +33,7 @@ export default function SocialShareLinkBuilder() {
   };
 
   return (
-    <ToolLayout
-      title="Social Share Link Builder"
-      description="Generate ready-to-use share URLs for Facebook, Twitter (X), LinkedIn, and WhatsApp."
-      category="Social Media Tools"
-    >
+   
       <div className="space-y-4">
         <input
           className="tool-input"
@@ -76,6 +71,6 @@ export default function SocialShareLinkBuilder() {
           ))}
         </div>
       </div>
-    </ToolLayout>
+   
   );
 }

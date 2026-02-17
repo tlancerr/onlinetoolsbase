@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
 
 const bioTemplates = [
   "{keyword} • Opinions are my own",
@@ -13,7 +12,7 @@ const bioTemplates = [
   "Tweets about {keyword}, life & creativity 🧠",
 ];
 
-export default function TwitterBioGenerator() {
+export default function ToolLoader() {
   const [keyword, setKeyword] = useState("");
   const [output, setOutput] = useState<string[]>([]);
 
@@ -28,11 +27,7 @@ export default function TwitterBioGenerator() {
   }
 
   return (
-    <ToolLayout
-      title="Twitter Bio Generator"
-      description="Generate clean and professional bios for Twitter / X."
-      category="Social Media Tools"
-    >
+    
       <div className="space-y-4">
         <input
           className="tool-input"
@@ -62,6 +57,5 @@ export default function TwitterBioGenerator() {
           ))}
         </div>
       </div>
-    </ToolLayout>
   );
 }

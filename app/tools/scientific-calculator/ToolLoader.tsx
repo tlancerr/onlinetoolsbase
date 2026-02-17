@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
 
-export default function ScientificCalculator() {
+
+export default function ToolLoader() {
   const [input, setInput] = useState("");
 
   function append(val: string) {
@@ -24,11 +24,7 @@ export default function ScientificCalculator() {
   }
 
   return (
-    <ToolLayout
-      title="Scientific Calculator"
-      description="A simple scientific calculator supporting + - × ÷ %, powers and parentheses."
-      category="Math Tools"
-    >
+    
       <div className="max-w-sm mx-auto">
 
         <input
@@ -57,6 +53,6 @@ export default function ScientificCalculator() {
         </div>
 
       </div>
-    </ToolLayout>
+   
   );
 }

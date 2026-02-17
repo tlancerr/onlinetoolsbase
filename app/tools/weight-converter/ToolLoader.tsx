@@ -1,9 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
 
-export default function WeightConverter() {
+export default function ToolLoader() {
   const [value, setValue] = useState("");
   const [unit, setUnit] = useState("kg");
   const [result, setResult] = useState("");
@@ -40,11 +39,7 @@ export default function WeightConverter() {
   }
 
   return (
-    <ToolLayout
-      title="Weight Converter"
-      description="Convert between kilograms, pounds, grams, ounces, and stones."
-      category="Converter Tools"
-    >
+    
       <div className="space-y-4">
 
         <input
@@ -76,6 +71,5 @@ export default function WeightConverter() {
           </pre>
         )}
       </div>
-    </ToolLayout>
   );
 }

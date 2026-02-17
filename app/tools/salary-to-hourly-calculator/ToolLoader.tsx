@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
 
-export default function SalaryToHourlyCalculator() {
+
+export default function ToolLoader() {
   const [salary, setSalary] = useState("");
   const [period, setPeriod] = useState("year");
   const [hoursPerWeek, setHoursPerWeek] = useState("40");
@@ -40,11 +40,7 @@ Weekly Salary: $${(annualSalary / wpy).toFixed(2)}`
   }
 
   return (
-    <ToolLayout
-      title="Salary to Hourly Calculator"
-      description="Convert your salary into an hourly rate based on hours worked per week and weeks worked per year."
-      category="Finance Tools"
-    >
+   
       <div className="space-y-4">
 
         {/* Salary input */}
@@ -109,6 +105,6 @@ Weekly Salary: $${(annualSalary / wpy).toFixed(2)}`
         )}
 
       </div>
-    </ToolLayout>
+    
   );
 }

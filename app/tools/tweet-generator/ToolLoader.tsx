@@ -1,9 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
 
-export default function TweetGenerator() {
+export default function ToolLoader() {
   const [name, setName] = useState("John Doe");
   const [username, setUsername] = useState("johndoe");
   const [avatar, setAvatar] = useState("");
@@ -14,11 +13,7 @@ export default function TweetGenerator() {
   const [theme, setTheme] = useState<"light" | "dark">("dark");
 
   return (
-    <ToolLayout
-      title="Tweet Generator"
-      description="Create fake tweet previews for fun or mockups. Screenshot the card and share anywhere."
-      category="Social Media Tools"
-    >
+    
       <div className="grid md:grid-cols-2 gap-6">
         {/* Form */}
         <div className="space-y-3">
@@ -129,6 +124,5 @@ export default function TweetGenerator() {
           </div>
         </div>
       </div>
-    </ToolLayout>
   );
 }

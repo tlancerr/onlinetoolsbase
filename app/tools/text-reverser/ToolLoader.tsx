@@ -1,9 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
 
-export default function TextReverser() {
+export default function ToolLoader() {
   const [text, setText] = useState("");
   const [mode, setMode] = useState("full");
 
@@ -24,11 +23,7 @@ export default function TextReverser() {
   }
 
   return (
-    <ToolLayout
-      title="Text Reverser"
-      description="Reverse entire text or reverse each word individually."
-      category="Text Tools"
-    >
+   
       <div className="space-y-4">
         <textarea
           className="tool-input min-h-[200px]"
@@ -50,6 +45,6 @@ export default function TextReverser() {
           Reverse Text
         </button>
       </div>
-    </ToolLayout>
+   
   );
 }

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
 
 const templates = [
   "Top {keyword} Tips You Need to Know",
@@ -13,7 +12,7 @@ const templates = [
   "{keyword} Explained: Everything You Need To Know",
 ];
 
-export default function YouTubeTitleGenerator() {
+export default function ToolLoader() {
   const [keyword, setKeyword] = useState("");
   const [titles, setTitles] = useState<string[]>([]);
 
@@ -23,11 +22,7 @@ export default function YouTubeTitleGenerator() {
   }
 
   return (
-    <ToolLayout
-      title="YouTube Title Generator"
-      description="Generate compelling YouTube titles based on your keywords."
-      category="Social Media Tools"
-    >
+   
       <div className="space-y-4">
         <input
           className="tool-input"
@@ -57,6 +52,5 @@ export default function YouTubeTitleGenerator() {
           ))}
         </div>
       </div>
-    </ToolLayout>
   );
 }

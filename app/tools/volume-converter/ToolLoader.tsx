@@ -1,9 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
 
-export default function VolumeConverter() {
+export default function ToolLoader() {
   const [value, setValue] = useState("");
   const [unit, setUnit] = useState("liters");
   const [result, setResult] = useState("");
@@ -38,11 +37,7 @@ export default function VolumeConverter() {
   }
 
   return (
-    <ToolLayout
-      title="Volume Converter"
-      description="Convert between liters, milliliters, gallons, and cubic meters."
-      category="Converter Tools"
-    >
+   
       <div className="space-y-4">
 
         <input
@@ -71,6 +66,5 @@ export default function VolumeConverter() {
           </pre>
         )}
       </div>
-    </ToolLayout>
   );
 }

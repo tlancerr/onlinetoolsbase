@@ -1,9 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
 
-export default function SitemapGenerator() {
+export default function ToolLoader() {
   const [domain, setDomain] = useState("");
   const [urls, setUrls] = useState("");
   const [output, setOutput] = useState("");
@@ -26,11 +25,7 @@ ${list}
   }
 
   return (
-    <ToolLayout
-      title="XML Sitemap Generator"
-      description="Generate a clean XML sitemap for your website."
-      category="SEO Tools"
-    >
+    
       <div className="space-y-4">
 
         <input
@@ -60,6 +55,6 @@ ${list}
           </pre>
         )}
       </div>
-    </ToolLayout>
+    
   );
 }

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
 
 const captionTemplates = [
   "POV: you're learning about {keyword} 👀✨",
@@ -13,7 +12,7 @@ const captionTemplates = [
   "{keyword} in 2025 just hits different 💥",
 ];
 
-export default function TikTokCaptionGenerator() {
+export default function ToolLoader() {
   const [keyword, setKeyword] = useState("");
   const [captions, setCaptions] = useState<string[]>([]);
 
@@ -28,11 +27,7 @@ export default function TikTokCaptionGenerator() {
   }
 
   return (
-    <ToolLayout
-      title="TikTok Caption Generator"
-      description="Generate viral TikTok captions based on your keyword."
-      category="Social Media Tools"
-    >
+    
       <div className="space-y-4">
         <input
           className="tool-input"
@@ -62,6 +57,6 @@ export default function TikTokCaptionGenerator() {
           ))}
         </div>
       </div>
-    </ToolLayout>
+   
   );
 }

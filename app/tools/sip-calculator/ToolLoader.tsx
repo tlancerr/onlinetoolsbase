@@ -1,9 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
 
-export default function SIPCalculator() {
+export default function ToolLoader() {
   const [monthly, setMonthly] = useState("");
   const [rate, setRate] = useState("");
   const [years, setYears] = useState("");
@@ -32,11 +31,7 @@ Total Gain: ₹${gain.toFixed(2)}`
   }
 
   return (
-    <ToolLayout
-      title="SIP Calculator"
-      description="Calculate SIP maturity amount, total invested amount, and total gains based on expected annual return."
-      category="Finance Tools"
-    >
+    
       <div className="space-y-4">
 
         <div>
@@ -80,6 +75,6 @@ Total Gain: ₹${gain.toFixed(2)}`
         )}
 
       </div>
-    </ToolLayout>
+  
   );
 }

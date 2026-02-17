@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
 
-export default function SimpleInterestCalculator() {
+
+export default function ToolLoader() {
   const [principal, setPrincipal] = useState("");
   const [rate, setRate] = useState("");
   const [years, setYears] = useState("");
@@ -29,11 +29,7 @@ Total Amount: ${total.toFixed(2)}`
   }
 
   return (
-    <ToolLayout
-      title="Simple Interest Calculator"
-      description="Calculate simple interest and total amount based on principal, rate, and time."
-      category="Finance Tools"
-    >
+   
       <div className="space-y-4">
 
         <div>
@@ -80,6 +76,6 @@ Total Amount: ${total.toFixed(2)}`
         )}
 
       </div>
-    </ToolLayout>
+   
   );
 }

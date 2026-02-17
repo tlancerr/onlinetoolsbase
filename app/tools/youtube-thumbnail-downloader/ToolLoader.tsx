@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
 
 function extractVideoId(url: string) {
   const reg =
@@ -10,7 +9,7 @@ function extractVideoId(url: string) {
   return match ? match[1] : null;
 }
 
-export default function YouTubeThumbnailTool() {
+export default function ToolLoader() {
   const [videoUrl, setVideoUrl] = useState("");
   const [thumb, setThumb] = useState("");
 
@@ -25,11 +24,7 @@ export default function YouTubeThumbnailTool() {
   }
 
   return (
-    <ToolLayout
-      title="YouTube Thumbnail Preview"
-      description="Preview HD YouTube video thumbnails instantly."
-      category="Social Media Tools"
-    >
+    
       <div className="space-y-4">
         <input
           className="tool-input"
@@ -57,6 +52,5 @@ export default function YouTubeThumbnailTool() {
           </div>
         )}
       </div>
-    </ToolLayout>
   );
 }

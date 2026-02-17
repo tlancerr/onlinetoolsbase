@@ -1,9 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
 
-export default function WeeksCalculator() {
+export default function ToolLoader() {
   const [days, setDays] = useState("");
   const [weeks, setWeeks] = useState("");
   const [startDate, setStartDate] = useState("");
@@ -50,11 +49,7 @@ export default function WeeksCalculator() {
   }
 
   return (
-    <ToolLayout
-      title="Weeks Calculator"
-      description="Convert between days and weeks or calculate the total weeks between two dates."
-      category="Time & Age Tools"
-    >
+    
       <div className="space-y-6">
 
         {/* Days → Weeks */}
@@ -125,6 +120,6 @@ export default function WeeksCalculator() {
           </div>
         )}
       </div>
-    </ToolLayout>
+   
   );
 }

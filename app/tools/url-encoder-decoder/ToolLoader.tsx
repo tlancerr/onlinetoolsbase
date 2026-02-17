@@ -1,9 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
 
-export default function UrlEncoderDecoder() {
+export default function ToolLoader() {
   const [text, setText] = useState("");
   const [output, setOutput] = useState("");
 
@@ -24,11 +23,7 @@ export default function UrlEncoderDecoder() {
   }
 
   return (
-    <ToolLayout
-      title="URL Encoder / Decoder"
-      description="Encode or decode URLs instantly for SEO and development."
-      category="SEO Tools"
-    >
+
       <div className="space-y-4">
 
         <textarea
@@ -51,6 +46,6 @@ export default function UrlEncoderDecoder() {
           />
         )}
       </div>
-    </ToolLayout>
+   
   );
 }

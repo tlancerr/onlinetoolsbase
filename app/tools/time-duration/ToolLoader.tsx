@@ -1,9 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
 
-export default function TimeDurationCalculator() {
+export default function ToolLoader() {
   const [start, setStart] = useState("");
   const [end, setEnd] = useState("");
   const [result, setResult] = useState<string | null>(null);
@@ -42,11 +41,7 @@ export default function TimeDurationCalculator() {
   }
 
   return (
-    <ToolLayout
-      title="Time Duration Calculator"
-      description="Calculate the exact duration between two date & time values including days, hours, and minutes."
-      category="Time and Age Tools"
-    >
+   
       <div className="space-y-4">
 
         <div>
@@ -79,6 +74,5 @@ export default function TimeDurationCalculator() {
           </div>
         )}
       </div>
-    </ToolLayout>
   );
 }

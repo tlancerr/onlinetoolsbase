@@ -1,9 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
 
-export default function WaterIntakeCalculator() {
+export default function ToolLoader() {
   const [weight, setWeight] = useState("");
   const [activity, setActivity] = useState("0");
   const [climate, setClimate] = useState("normal");
@@ -34,11 +33,7 @@ export default function WaterIntakeCalculator() {
   }
 
   return (
-    <ToolLayout
-      title="Daily Water Intake Calculator"
-      description="Calculate your recommended daily water intake based on weight, activity level, and climate."
-      category="Health and Fitness Tools"
-    >
+   
       <div className="space-y-4">
 
         <div>
@@ -89,6 +84,5 @@ export default function WaterIntakeCalculator() {
           </div>
         )}
       </div>
-    </ToolLayout>
   );
 }

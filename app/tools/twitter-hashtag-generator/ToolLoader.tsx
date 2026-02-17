@@ -1,9 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
 
-export default function TwitterHashtagGenerator() {
+export default function ToolLoader() {
   const [keyword, setKeyword] = useState("");
   const [tags, setTags] = useState<string[]>([]);
 
@@ -30,11 +29,7 @@ export default function TwitterHashtagGenerator() {
   }
 
   return (
-    <ToolLayout
-      title="Twitter Hashtag Generator"
-      description="Generate trending-style hashtags for Twitter / X posts."
-      category="Social Media Tools"
-    >
+   
       <div className="space-y-4">
         <input
           className="tool-input"
@@ -64,6 +59,5 @@ export default function TwitterHashtagGenerator() {
           ))}
         </div>
       </div>
-    </ToolLayout>
   );
 }

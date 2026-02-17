@@ -1,9 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
 
-export default function TextSorter() {
+export default function ToolLoader() {
   const [text, setText] = useState("");
 
   const lines = text.split(/\r?\n/);
@@ -25,11 +24,7 @@ export default function TextSorter() {
   }
 
   return (
-    <ToolLayout
-      title="Text Sorter"
-      description="Sort text lines alphabetically or by length, and remove duplicates."
-      category="Text Tools"
-    >
+   
       <div className="space-y-4">
 
         <textarea
@@ -47,6 +42,6 @@ export default function TextSorter() {
         </div>
 
       </div>
-    </ToolLayout>
+  
   );
 }

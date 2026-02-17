@@ -1,9 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
 
-export default function TweetThreadGenerator() {
+export default function ToolLoader() {
   const [keyword, setKeyword] = useState("");
   const [threads, setThreads] = useState<string[]>([]);
 
@@ -23,11 +22,7 @@ export default function TweetThreadGenerator() {
   }
 
   return (
-    <ToolLayout
-      title="Tweet Thread Generator"
-      description="Create structured, viral-style tweet threads using a keyword."
-      category="Social Media Tools"
-    >
+    
       <div className="space-y-4">
         <input
           className="tool-input"
@@ -51,6 +46,6 @@ export default function TweetThreadGenerator() {
           ))}
         </div>
       </div>
-    </ToolLayout>
+  
   );
 }

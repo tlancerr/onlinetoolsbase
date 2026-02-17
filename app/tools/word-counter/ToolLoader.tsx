@@ -1,9 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
 
-export default function WordCounter() {
+export default function ToolLoader() {
   const [text, setText] = useState("");
 
   const words = text.trim() === "" ? 0 : text.trim().split(/\s+/).length;
@@ -11,11 +10,7 @@ export default function WordCounter() {
   const sentences = text.split(/[.!?]+/).filter(s => s.trim().length > 0).length;
 
   return (
-    <ToolLayout
-      title="Word Counter"
-      description="Count words, characters, and sentences instantly."
-      category="Text Tools"
-    >
+    
       <div className="space-y-4">
 
         <textarea
@@ -32,6 +27,5 @@ export default function WordCounter() {
         </div>
 
       </div>
-    </ToolLayout>
   );
 }

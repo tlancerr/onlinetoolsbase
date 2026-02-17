@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
+
 
 // Very simple stopword list
 const stopwords = [
@@ -153,7 +153,7 @@ function generateTopics(main: string): string[] {
   return t;
 }
 
-export default function SemanticKeywordGenerator() {
+export default function ToolLoader() {
   const [keyword, setKeyword] = useState("");
   const [semanticList, setSemanticList] = useState<string[]>([]);
   const [longTailList, setLongTailList] = useState<string[]>([]);
@@ -177,11 +177,7 @@ export default function SemanticKeywordGenerator() {
   }
 
   return (
-    <ToolLayout
-      title="Semantic Keyword Generator"
-      description="Generate semantic, LSI, long-tail keywords and topic ideas for SEO content."
-      category="SEO Tools"
-    >
+   
       <div className="space-y-4">
 
         <input
@@ -259,6 +255,6 @@ export default function SemanticKeywordGenerator() {
           </div>
         )}
       </div>
-    </ToolLayout>
+    
   );
 }

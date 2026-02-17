@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
 
 const hashtagSets: Record<string, string[]> = {
   fitness: [
@@ -21,7 +20,7 @@ const hashtagSets: Record<string, string[]> = {
   ],
 };
 
-export default function TikTokHashtagGenerator() {
+export default function ToolLoader() {
   const [keyword, setKeyword] = useState("");
   const [result, setResult] = useState<string[]>([]);
 
@@ -38,11 +37,7 @@ export default function TikTokHashtagGenerator() {
   }
 
   return (
-    <ToolLayout
-      title="TikTok Hashtag Generator"
-      description="Generate trending TikTok hashtags for any niche."
-      category="Social Media Tools"
-    >
+   
       <div className="space-y-4">
         <input
           className="tool-input"
@@ -72,6 +67,6 @@ export default function TikTokHashtagGenerator() {
           ))}
         </div>
       </div>
-    </ToolLayout>
+   
   );
 }

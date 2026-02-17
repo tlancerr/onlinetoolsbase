@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
 
-export default function RobotsTxtGenerator() {
+
+export default function ToolLoader() {
   const [mode, setMode] = useState("allow");
   const [sitemap, setSitemap] = useState("");
   const [custom, setCustom] = useState("");
@@ -22,11 +22,7 @@ export default function RobotsTxtGenerator() {
   }
 
   return (
-    <ToolLayout
-      title="Robots.txt Generator"
-      description="Create a clean SEO-friendly robots.txt file for your website."
-      category="SEO Tools"
-    >
+    
       <div className="space-y-4">
 
         <select
@@ -66,6 +62,6 @@ export default function RobotsTxtGenerator() {
         )}
 
       </div>
-    </ToolLayout>
+    
   );
 }

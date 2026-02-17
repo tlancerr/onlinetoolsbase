@@ -1,9 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import ToolLayout from "../../../components/ToolLayout";
 
-export default function YouTubeDescriptionGenerator() {
+export default function ToolLoader() {
   const [keyword, setKeyword] = useState("");
   const [result, setResult] = useState("");
 
@@ -40,11 +39,7 @@ Website: https://onlinetoolsbase.com
   }
 
   return (
-    <ToolLayout
-      title="YouTube Description Generator"
-      description="Generate SEO-friendly YouTube descriptions using a keyword."
-      category="Social Media Tools"
-    >
+   
       <div className="space-y-4">
         <input
           className="tool-input"
@@ -65,6 +60,5 @@ Website: https://onlinetoolsbase.com
           />
         )}
       </div>
-    </ToolLayout>
   );
 }

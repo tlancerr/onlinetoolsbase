@@ -2,61 +2,72 @@
 
 import { useState } from "react";
 
-
-const bioTemplates = [
-  "{keyword} addict 💥🔥",
-  "Making {keyword} simple 🎯",
-  "Daily {keyword} vibes ✨",
-  "{keyword} • Creator • Dreamer",
-  "Turning {keyword} into magic 💫",
-  "I do {keyword} so you don’t have to 😉",
-  "{keyword} content almost daily 📍",
-];
-
 export default function ToolLoader() {
   const [keyword, setKeyword] = useState("");
   const [bios, setBios] = useState<string[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  function generate() {
-    if (!keyword.trim()) return;
+  async function generate() {
+    const k = keyword.trim();
+    if (!k) return;
 
-    const out = bioTemplates.map((tpl) =>
-      tpl.replace("{keyword}", keyword)
-    );
-    setBios(out);
+    setLoading(true);
+    setError(null);
+
+    try {
+      const r = await fetch("/api/ai/tiktok-bio", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ keyword: k }),
+      });
+
+      const data = await r.json();
+      if (!r.ok) throw new Error(data?.error || "Failed to generate.");
+
+      setBios(Array.isArray(data?.bios) ? data.bios : []);
+    } catch (e: any) {
+      setError(e?.message || "Something went wrong.");
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
-    
-      <div className="space-y-4">
-        <input
-          className="tool-input"
-          placeholder="Enter keyword (example: fitness, cooking)"
-          value={keyword}
-          onChange={(e) => setKeyword(e.target.value)}
-        />
+    <div className="space-y-4">
+      <input
+        className="tool-input"
+        placeholder="Enter keyword (fitness, cooking...)"
+        value={keyword}
+        onChange={(e) => setKeyword(e.target.value)}
+      />
 
-        <button className="btn-primary w-full" onClick={generate}>
-          Generate Bios
-        </button>
+      <button className="btn-primary w-full" onClick={generate} disabled={loading}>
+        {loading ? "Generating..." : "Generate Bios"}
+      </button>
 
-        <div className="space-y-3">
-          {bios.map((bio, i) => (
-            <div
-              key={i}
-              className="bg-slate-950 border border-slate-800 p-3 rounded-lg text-sm flex justify-between text-slate-100"
-            >
-              <span>{bio}</span>
-              <button
-                className="text-blue-400 text-xs"
-                onClick={() => navigator.clipboard.writeText(bio)}
-              >
-                Copy
-              </button>
-            </div>
-          ))}
+      {error && (
+        <div className="rounded-lg border border-red-700 bg-red-950/40 px-3 py-2 text-sm text-red-200">
+          {error}
         </div>
+      )}
+
+      <div className="space-y-3">
+        {bios.map((bio, i) => (
+          <div
+            key={i}
+            className="bg-slate-950 border border-slate-800 p-3 rounded-lg text-sm flex justify-between gap-3 text-slate-100"
+          >
+            <span className="min-w-0 break-words">{bio}</span>
+            <button
+              className="text-blue-400 text-xs shrink-0"
+              onClick={() => navigator.clipboard.writeText(bio)}
+            >
+              Copy
+            </button>
+          </div>
+        ))}
       </div>
-  
+    </div>
   );
 }

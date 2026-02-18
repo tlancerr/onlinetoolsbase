@@ -2,10 +2,6 @@
 
 import { useState } from "react";
 
-type AiResult = {
-  bios: string[];
-};
-
 export default function ToolLoader() {
   const [keyword, setKeyword] = useState("");
   const [bios, setBios] = useState<string[]>([]);
@@ -21,20 +17,18 @@ export default function ToolLoader() {
 
     setLoading(true);
     setError(null);
-    setBios([]);
 
     try {
-      const r = await fetch("/api/ai/instagram-bio", {
+      const r = await fetch("/api/ai/instagram", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ keyword: k }),
+        body: JSON.stringify({ keyword: k, kind: "bio" }),
       });
 
       const data = (await r.json()) as any;
       if (!r.ok) throw new Error(data?.error || "Failed to generate.");
 
-      const out = data as AiResult;
-      setBios(out.bios || []);
+      setBios(Array.isArray(data.items) ? data.items : []);
     } catch (e: any) {
       setError(e?.message || "Something went wrong.");
     } finally {
@@ -67,7 +61,7 @@ export default function ToolLoader() {
             key={i}
             className="bg-slate-950 border border-slate-800 rounded-lg p-3 text-sm text-slate-100 flex justify-between gap-3"
           >
-            <span className="break-words">{bio}</span>
+            <span className="min-w-0 flex-1 break-words">{bio}</span>
             <button
               className="text-blue-400 text-xs shrink-0"
               onClick={() => navigator.clipboard.writeText(bio)}

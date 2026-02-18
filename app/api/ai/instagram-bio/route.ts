@@ -3,9 +3,10 @@ import { NextResponse } from "next/server";
 export const runtime = "nodejs";
 
 type Provider = "openrouter" | "groq";
+type Kind = "bio" | "caption";
 
 function getProvider(): Provider {
-  return (process.env.AI_PROVIDER as Provider) || "groq";
+  return (process.env.AI_PROVIDER as Provider) || "groq"; // default to groq for these tools
 }
 
 function getApiConfig(provider: Provider) {
@@ -30,30 +31,59 @@ function getApiConfig(provider: Provider) {
 
 export async function POST(req: Request) {
   try {
-    const { keyword } = (await req.json()) as { keyword?: string };
+    const body = (await req.json()) as {
+      keyword?: string;
+      kind?: Kind;
+      tone?: string; // optional
+    };
 
-    if (!keyword || !keyword.trim()) {
+    const keyword = (body.keyword || "").trim();
+    const kind = (body.kind || "bio") as Kind;
+    const tone = (body.tone || "").trim();
+
+    if (!keyword) {
       return NextResponse.json({ error: "Keyword is required." }, { status: 400 });
+    }
+    if (!["bio", "caption"].includes(kind)) {
+      return NextResponse.json({ error: "Invalid kind." }, { status: 400 });
     }
 
     const provider = getProvider();
     const { url, key, model } = getApiConfig(provider);
 
     const system =
-      "You are a social media copywriter. Return ONLY valid JSON. No markdown. No extra text.";
-    const user = `
-Create Instagram bio ideas for this niche/keyword: "${keyword}"
+      `You are a social media copy assistant. ` +
+      `Return ONLY valid JSON (no markdown, no extra text).`;
 
-Return JSON EXACTLY like:
-{ "bios": string[] }
+    const user =
+      kind === "bio"
+        ? `
+Generate Instagram bio ideas for this niche/keyword: "${keyword}"
+${tone ? `Tone: "${tone}"` : ""}
+
+Return JSON exactly as:
+{ "items": string[] }
 
 Rules:
-- Return 12 bios
-- Each bio must be <= 150 characters
-- No duplicates
-- Mix styles: professional, playful, minimalist, creator, business
-- Use emojis lightly (0-3). Do not spam emojis.
-- No hashtags unless absolutely necessary (max 1).
+- 12 items
+- Each bio max 120 characters
+- Mix styles: clean, aesthetic, professional, witty
+- Avoid duplicates
+- No numbering, no bullets
+`
+        : `
+Generate Instagram caption ideas for this topic/keyword: "${keyword}"
+${tone ? `Tone: "${tone}"` : ""}
+
+Return JSON exactly as:
+{ "items": string[] }
+
+Rules:
+- 15 items
+- Each caption max 180 characters
+- Mix styles: short, medium, CTA, question, storytelling
+- Avoid duplicates
+- No numbering, no bullets
 `;
 
     const r = await fetch(url, {
@@ -75,7 +105,7 @@ Rules:
           { role: "system", content: system },
           { role: "user", content: user },
         ],
-        temperature: 0.9,
+        temperature: 0.8,
       }),
     });
 
@@ -99,23 +129,9 @@ Rules:
       parsed = JSON.parse(match[0]);
     }
 
-    const bios = Array.isArray(parsed?.bios) ? parsed.bios : [];
-
-    // Clean + hard limit
-    const cleaned = Array.from(
-      new Set(
-        bios
-          .map((b: any) => String(b || "").trim())
-          .filter(Boolean)
-          .map((b: string) => (b.length > 150 ? b.slice(0, 150).trim() : b))
-      )
-    ).slice(0, 12);
-
-    return NextResponse.json({ bios: cleaned });
+    const items = Array.isArray(parsed.items) ? parsed.items : [];
+    return NextResponse.json({ items });
   } catch (e: any) {
-    return NextResponse.json(
-      { error: e?.message || "Server error" },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: e?.message || "Server error" }, { status: 500 });
   }
 }

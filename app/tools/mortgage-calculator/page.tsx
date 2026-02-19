@@ -16,7 +16,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title: tool.seoTitleTemplate || `${tool.title} — OnlineToolsBase`,
     description: tool.seoDescriptionTemplate || tool.description,
     alternates: {
-      canonical: `https://onlinetoolsbase.com/tools/${tool.slug}`,
+      canonical: `/tools/${tool.slug}`,
     },
   };
 }

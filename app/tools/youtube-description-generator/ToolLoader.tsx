@@ -2,63 +2,62 @@
 
 import { useState } from "react";
 
+type AiOut = { description: string };
+
 export default function ToolLoader() {
   const [keyword, setKeyword] = useState("");
   const [result, setResult] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  function generate() {
-    if (!keyword.trim()) return;
+  async function generate() {
+    const k = keyword.trim();
+    if (!k) return;
 
-    const template = `
-🎬 **About This Video**
-Welcome to this video about ${keyword}! In today’s content, we explore valuable tips, insights, and information to help you understand everything about ${keyword} in a simple and engaging way.
+    setLoading(true);
+    setError(null);
 
-⭐ **What You Will Learn**
-- What is ${keyword}
-- Why ${keyword} matters
-- Best tips for ${keyword}
-- Common mistakes to avoid
-- Real examples of ${keyword}
+    try {
+      const r = await fetch("/api/ai/youtube-description", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ keyword: k }),
+      });
 
-📌 **Chapters**
-00:00 – Introduction  
-00:30 – What is ${keyword}?  
-02:15 – Tips & Strategies  
-05:40 – Real Examples  
-08:10 – Summary & Final Thoughts  
+      const data = (await r.json()) as any;
+      if (!r.ok) throw new Error(data?.error || "Failed to generate.");
 
-🔔 Don’t forget to LIKE, SHARE & SUBSCRIBE if you enjoyed this video!
-
-👇 **FOLLOW US**
-Instagram: https://instagram.com  
-Facebook: https://facebook.com  
-Website: https://onlinetoolsbase.com
-`;
-
-    setResult(template.trim());
+      const out = data as AiOut;
+      setResult(out.description || "");
+    } catch (e: any) {
+      setError(e?.message || "Something went wrong.");
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
-   
-      <div className="space-y-4">
-        <input
-          className="tool-input"
-          value={keyword}
-          placeholder="Enter keyword (example: travel vlog)"
-          onChange={(e) => setKeyword(e.target.value)}
-        />
+    <div className="space-y-4">
+      <input
+        className="tool-input"
+        value={keyword}
+        placeholder="Enter keyword (example: travel vlog)"
+        onChange={(e) => setKeyword(e.target.value)}
+      />
 
-        <button className="btn-primary w-full" onClick={generate}>
-          Generate Description
-        </button>
+      <button className="btn-primary w-full" onClick={generate} disabled={loading}>
+        {loading ? "Generating..." : "Generate Description"}
+      </button>
 
-        {result && (
-          <textarea
-            className="tool-input min-h-[300px]"
-            value={result}
-            readOnly
-          />
-        )}
-      </div>
+      {error && (
+        <div className="rounded-lg border border-red-700 bg-red-950/40 px-3 py-2 text-sm text-red-200">
+          {error}
+        </div>
+      )}
+
+      {result && (
+        <textarea className="tool-input min-h-[300px]" value={result} readOnly />
+      )}
+    </div>
   );
 }

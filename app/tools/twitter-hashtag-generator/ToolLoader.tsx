@@ -2,62 +2,75 @@
 
 import { useState } from "react";
 
+type AiOut = { hashtags: string[] };
+
 export default function ToolLoader() {
   const [keyword, setKeyword] = useState("");
   const [tags, setTags] = useState<string[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  function generate() {
-    if (!keyword.trim()) return;
-    const k = keyword.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, "");
+  async function generate() {
+    const k = keyword.trim();
+    if (!k) return;
 
-    const out = [
-      `#${k}`,
-      `#${k}Tips`,
-      `#${k}Twitter`,
-      `#${k}Community`,
-      `#${k}Experts`,
-      `#${k}Guide`,
-      `#${k}X`,
-      `#${k}Insights`,
-      `#${k}News`,
-      `#${k}Daily`,
-      `#${k}Thread`,
-      `#Trending #Viral #FYP`,
-    ];
+    setLoading(true);
+    setError(null);
 
-    setTags(out);
+    try {
+      const r = await fetch("/api/ai/twitter-hashtags", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ keyword: k }),
+      });
+
+      const data = (await r.json()) as any;
+      if (!r.ok) throw new Error(data?.error || "Failed to generate.");
+
+      const out = data as AiOut;
+      setTags(Array.isArray(out.hashtags) ? out.hashtags : []);
+    } catch (e: any) {
+      setError(e?.message || "Something went wrong.");
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
-   
-      <div className="space-y-4">
-        <input
-          className="tool-input"
-          placeholder="Enter keyword (example: crypto, fitness)"
-          value={keyword}
-          onChange={(e) => setKeyword(e.target.value)}
-        />
+    <div className="space-y-4">
+      <input
+        className="tool-input"
+        placeholder="Enter keyword (example: crypto, fitness)"
+        value={keyword}
+        onChange={(e) => setKeyword(e.target.value)}
+      />
 
-        <button onClick={generate} className="btn-primary w-full">
-          Generate Hashtags
-        </button>
+      <button onClick={generate} className="btn-primary w-full" disabled={loading}>
+        {loading ? "Generating..." : "Generate Hashtags"}
+      </button>
 
-        <div className="space-y-3">
-          {tags.map((t, i) => (
-            <div
-              key={i}
-              className="bg-slate-950 border border-slate-800 p-3 rounded-lg text-sm flex justify-between text-slate-100"
-            >
-              <span>{t}</span>
-              <button
-                className="text-blue-400 text-xs"
-                onClick={() => navigator.clipboard.writeText(t)}
-              >
-                Copy
-              </button>
-            </div>
-          ))}
+      {error && (
+        <div className="rounded-lg border border-red-700 bg-red-950/40 px-3 py-2 text-sm text-red-200">
+          {error}
         </div>
+      )}
+
+      <div className="space-y-3">
+        {tags.map((t, i) => (
+          <div
+            key={i}
+            className="bg-slate-950 border border-slate-800 p-3 rounded-lg text-sm flex justify-between text-slate-100"
+          >
+            <span>{t}</span>
+            <button
+              className="text-blue-400 text-xs"
+              onClick={() => navigator.clipboard.writeText(t)}
+            >
+              Copy
+            </button>
+          </div>
+        ))}
       </div>
+    </div>
   );
 }

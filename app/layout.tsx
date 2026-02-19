@@ -49,9 +49,7 @@ export const metadata: Metadata = {
   },
 };
 
-export const metadata = {
-  metadataBase: new URL("https://onlinetoolsbase.com"),
-};
+
 
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

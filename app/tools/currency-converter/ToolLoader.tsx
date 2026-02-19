@@ -2,111 +2,113 @@
 
 import { useEffect, useMemo, useState } from "react";
 
-type SymbolsResponse = {
-  success?: boolean;
-  symbols?: Record<string, { description: string; code: string }>;
-};
-
-type LatestResponse = {
-  success?: boolean;
-  base?: string;
-  rates?: Record<string, number>;
-};
-
-const API_BASE = "https://api.exchangerate.host"; // (their API host)
-
-const POPULAR = ["USD", "EUR", "GBP", "PKR", "AED", "SAR", "TRY", "CAD", "AUD", "INR"];
-
-const FLAG_MAP: Record<string, string> = {
-  USD: "🇺🇸",
-  EUR: "🇪🇺",
-  GBP: "🇬🇧",
-  PKR: "🇵🇰",
-  AED: "🇦🇪",
-  SAR: "🇸🇦",
-  TRY: "🇹🇷",
-  CAD: "🇨🇦",
-  AUD: "🇦🇺",
-  INR: "🇮🇳",
+type RatesResponse = {
+  base: string;
+  date: string;
+  rates: Record<string, number>;
 };
 
 export default function ToolLoader() {
-  const [rates, setRates] = useState<Record<string, number>>({});
-  const [symbols, setSymbols] = useState<Record<string, { description: string; code: string }>>({});
-
+  const [currencies, setCurrencies] = useState<string[]>([]);
   const [amount, setAmount] = useState("");
   const [from, setFrom] = useState("USD");
   const [to, setTo] = useState("EUR");
   const [result, setResult] = useState<string | null>(null);
-  const [loading, setLoading] = useState(true);
 
+  const [loadingCurrencies, setLoadingCurrencies] = useState(true);
+  const [loadingConvert, setLoadingConvert] = useState(false);
+
+  // Load supported currencies once
   useEffect(() => {
     let alive = true;
 
-    async function load() {
-      setLoading(true);
-      setResult(null);
-
+    (async () => {
       try {
-        const [symRes, latestRes] = await Promise.all([
-          fetch(`${API_BASE}/symbols`, { cache: "no-store" }),
-          fetch(`${API_BASE}/latest`, { cache: "no-store" }),
-        ]);
-
-        const symJson = (await symRes.json()) as SymbolsResponse;
-        const latestJson = (await latestRes.json()) as LatestResponse;
+        setLoadingCurrencies(true);
+        const r = await fetch("https://api.frankfurter.dev/v1/currencies");
+        const data = (await r.json()) as Record<string, string>;
+        const list = Object.keys(data).sort();
 
         if (!alive) return;
 
-        setSymbols(symJson.symbols || {});
-        setRates(latestJson.rates || {});
+        setCurrencies(list);
+
+        // keep defaults valid
+        if (!list.includes("USD")) setFrom(list[0] || "EUR");
+        if (!list.includes("EUR")) setTo(list[1] || list[0] || "USD");
       } catch {
         if (!alive) return;
-        setSymbols({});
-        setRates({});
+        setCurrencies([]);
       } finally {
         if (!alive) return;
-        setLoading(false);
+        setLoadingCurrencies(false);
       }
-    }
+    })();
 
-    load();
     return () => {
       alive = false;
     };
   }, []);
 
-  const currencyList = useMemo(() => {
-    const all = Object.keys(symbols);
-    const popular = POPULAR.filter((c) => all.includes(c));
-    const rest = all.filter((c) => !POPULAR.includes(c)).sort();
-    return [...popular, ...rest];
-  }, [symbols]);
+  const canConvert = useMemo(() => {
+    const n = Number(amount);
+    return Number.isFinite(n) && n > 0 && from && to && from !== to;
+  }, [amount, from, to]);
 
-  function convert() {
-    if (!amount) {
-      setResult("Please enter an amount.");
+  async function convert() {
+    const n = Number(amount);
+    if (!Number.isFinite(n) || n <= 0) {
+      setResult("Please enter a valid amount.");
       return;
     }
-    if (!rates[from] || !rates[to]) {
-      setResult("Rates not loaded for selected currencies yet.");
+    if (!from || !to) {
+      setResult("Please select both currencies.");
       return;
     }
-
-    const amountNum = Number(amount);
-    if (!Number.isFinite(amountNum)) {
-      setResult("Invalid amount.");
+    if (from === to) {
+      setResult(`${n.toFixed(2)} ${from} = ${n.toFixed(2)} ${to}`);
       return;
     }
 
-    const converted = (amountNum / rates[from]) * rates[to];
-    setResult(`${amountNum} ${from} = ${converted.toFixed(2)} ${to}`);
+    setLoadingConvert(true);
+    setResult(null);
+
+    try {
+      const r = await fetch(
+        `/api/finance/rates?base=${encodeURIComponent(from)}&symbols=${encodeURIComponent(to)}`,
+        { method: "GET" }
+      );
+
+      const data = (await r.json()) as any;
+
+      if (!r.ok) throw new Error(data?.error || "Failed to load rates.");
+
+      const rr = data as RatesResponse;
+      const rate = rr?.rates?.[to];
+
+      if (!rate || typeof rate !== "number") {
+        throw new Error("Rate not available for selected pair.");
+      }
+
+      const converted = n * rate;
+      setResult(`${n.toFixed(2)} ${from} = ${converted.toFixed(2)} ${to}`);
+    } catch (e: any) {
+      setResult(e?.message || "Conversion failed.");
+    } finally {
+      setLoadingConvert(false);
+    }
   }
 
   return (
     <div className="space-y-4">
-      {loading && (
-        <p className="text-yellow-400 text-sm">Loading exchange rates...</p>
+      {loadingCurrencies && (
+        <p className="text-yellow-400 text-sm">Loading currencies...</p>
+      )}
+
+      {!loadingCurrencies && currencies.length === 0 && (
+        <p className="text-red-300 text-sm">
+          Could not load currencies. Please try again later.
+        </p>
       )}
 
       <div>
@@ -116,15 +118,21 @@ export default function ToolLoader() {
           className="tool-input"
           value={amount}
           onChange={(e) => setAmount(e.target.value)}
+          inputMode="decimal"
         />
       </div>
 
       <div>
         <label className="tool-label">From</label>
-        <select className="tool-input" value={from} onChange={(e) => setFrom(e.target.value)}>
-          {currencyList.map((c) => (
+        <select
+          className="tool-input"
+          value={from}
+          onChange={(e) => setFrom(e.target.value)}
+          disabled={!currencies.length}
+        >
+          {currencies.map((c) => (
             <option key={c} value={c}>
-              {(FLAG_MAP[c] ? `${FLAG_MAP[c]} ` : "")}{c} — {symbols[c]?.description || c}
+              {c}
             </option>
           ))}
         </select>
@@ -132,17 +140,26 @@ export default function ToolLoader() {
 
       <div>
         <label className="tool-label">To</label>
-        <select className="tool-input" value={to} onChange={(e) => setTo(e.target.value)}>
-          {currencyList.map((c) => (
+        <select
+          className="tool-input"
+          value={to}
+          onChange={(e) => setTo(e.target.value)}
+          disabled={!currencies.length}
+        >
+          {currencies.map((c) => (
             <option key={c} value={c}>
-              {(FLAG_MAP[c] ? `${FLAG_MAP[c]} ` : "")}{c} — {symbols[c]?.description || c}
+              {c}
             </option>
           ))}
         </select>
       </div>
 
-      <button onClick={convert} className="btn-primary">
-        Convert
+      <button
+        onClick={convert}
+        className="btn-primary"
+        disabled={loadingConvert || !currencies.length || !canConvert}
+      >
+        {loadingConvert ? "Converting..." : "Convert"}
       </button>
 
       {result && (

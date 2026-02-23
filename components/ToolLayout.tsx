@@ -109,9 +109,10 @@ export default function ToolLayout({
           {/* ✅ LONG DESCRIPTION ABOVE TOOL (AdSense-safe publisher content) */}
           <section className="mt-4 p-4 rounded-xl bg-slate-800/40 border border-slate-700 max-w-full overflow-x-hidden">
             <h2 className="text-lg font-semibold mb-2">About this tool</h2>
-            <p className="text-sm opacity-90 leading-6 break-words whitespace-pre-line">
-              {longDescription}
-            </p>
+            <div
+  className="text-sm opacity-90 leading-6 break-words whitespace-pre-line"
+  dangerouslySetInnerHTML={{ __html: longDescription }}
+/>
           </section>
 
           {/* ✅ AdSlot #1 AFTER content, BEFORE tool UI (best for approval) */}

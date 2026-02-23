@@ -762,8 +762,11 @@ howtoSteps: [
   seoTitleTemplate: "Character Counter — Count Characters Instantly",
   seoDescriptionTemplate: "Count characters with or without spaces instantly using this free Character Counter. Perfect for social media limits and SEO optimization."
 ,
-longDescription: "The Character Counter instantly counts characters in your text in real time, both with spaces and without spaces. It’s especially useful when writing for platforms with strict limits—like social media posts, meta descriptions, SMS messages, form fields, or ad copy—where a few extra characters can cause content to be rejected or cut off.\n\nPaste or type your text and the tool updates counts automatically as you edit. Because different platforms treat spacing and emojis differently, seeing both totals helps you stay within limits with confidence. It’s fast, simple, and works smoothly on desktop and mobile.",
+longDescription: `The Character Counter instantly counts characters in your text in real time, both with spaces and without spaces. It’s especially useful for platforms with strict limits—like meta descriptions, ad copy, form fields, SMS, and social posts—where a few extra characters can cause content to be rejected or cut off.
 
+Paste or type your text and the tool updates counts automatically as you edit. Seeing both totals helps you stay within limits with confidence. It’s fast, simple, and works smoothly on desktop and mobile.
+
+Need word, sentence, and paragraph counts too? Use the <a href="/tools/word-counter" title="Word Counter">Word Counter</a>. If your text is inflated by formatting issues, clean it first using <a href="/tools/remove-extra-spaces" title="Remove Extra Spaces">Remove Extra Spaces</a>.`,
 faqs: [
   {
     q: "What is a Character Counter used for?",
@@ -796,8 +799,11 @@ howtoSteps: [
   seoTitleTemplate: "Case Converter — Convert Text Case Online",
   seoDescriptionTemplate: "Convert text to uppercase, lowercase, title case, sentence case and more with this fast and easy Case Converter tool."
 ,
-longDescription: "The Case Converter helps you change text formatting instantly without retyping. You can convert content into uppercase, lowercase, sentence case, title case, and other common formats used in writing, documentation, and publishing. It’s ideal for cleaning copied text, formatting headings, preparing content for social media, or standardizing text in reports and spreadsheets.\n\nJust paste your text, select the case style you want, and copy the converted result. This tool saves time and reduces mistakes, especially when handling long paragraphs or repeated formatting tasks across multiple pieces of content.",
+longDescription: `The Case Converter helps you change text formatting instantly without retyping. You can convert content into uppercase, lowercase, sentence case, title case, and other common formats used in writing, documentation, and publishing. It’s ideal for cleaning copied text, formatting headings, preparing content for social media, or standardizing text in reports.
 
+Just paste your text, select the case style you want, and copy the converted result. This tool saves time and reduces mistakes, especially when handling long paragraphs or repeated formatting tasks across multiple pieces of content.
+
+For fixing only sentence starts (without changing other words), try <a href="/tools/capitalize-sentences" title="Capitalize Sentences">Capitalize Sentences</a>. If the text you pasted has messy spacing, use <a href="/tools/remove-extra-spaces" title="Remove Extra Spaces">Remove Extra Spaces</a> before converting.`,
 faqs: [
   {
     q: "What can I do with the Case Converter?",
@@ -830,8 +836,11 @@ howtoSteps: [
   seoTitleTemplate: "Remove Extra Spaces — Clean Text Instantly",
   seoDescriptionTemplate: "Remove unnecessary spaces from text instantly. Perfect for formatting, cleaning documents and improving readability."
 ,
-longDescription: "The Remove Extra Spaces tool cleans text by fixing unwanted spacing issues such as double spaces, leading spaces, trailing spaces, and inconsistent gaps between words. It’s useful when you copy text from PDFs, websites, emails, or documents where formatting often introduces messy spacing that reduces readability or breaks layouts.\n\nPaste your content and the tool normalizes spacing while keeping your words and sentences intact. The result is cleaner text you can confidently use for emails, articles, forms, SEO work, or any place where formatting consistency matters.",
+longDescription: `The Remove Extra Spaces tool cleans text by fixing unwanted spacing issues such as double spaces, leading spaces, trailing spaces, and inconsistent gaps between words. It’s perfect when you copy text from PDFs, websites, emails, or documents where formatting introduces messy spacing that hurts readability or breaks layouts.
 
+Paste your content and the tool normalizes spacing while keeping your words and sentences intact. The result is cleaner text you can confidently use for emails, articles, forms, SEO work, or any place where formatting consistency matters.
+
+If your copied text is broken into many short lines, use <a href="/tools/remove-line-breaks" title="Remove Line Breaks">Remove Line Breaks</a>. After cleaning, you can quickly check length with <a href="/tools/word-counter" title="Word Counter">Word Counter</a> or <a href="/tools/character-counter" title="Character Counter">Character Counter</a>.`,
 faqs: [
   {
     q: "What does the Remove Extra Spaces tool do?",
@@ -864,8 +873,11 @@ howtoSteps: [
   seoTitleTemplate: "Remove Line Breaks — Clean Text Formatting",
   seoDescriptionTemplate: "Remove newlines and line breaks from text instantly. Ideal for merging text, formatting emails, and fixing copied content."
 ,
-longDescription: "The Remove Line Breaks tool converts text with unwanted newlines into a cleaner format—typically a single continuous paragraph. This is especially helpful when text is copied from PDFs, web pages, or scanned documents where line breaks appear at the end of every line and make the content hard to reuse.\n\nPaste your text, choose your preferred cleanup option, and generate a version without extra line breaks. You can then copy the cleaned output into emails, documents, blog posts, or forms without broken formatting. It’s quick, reliable, and designed for both short and long text.",
+longDescription: `The Remove Line Breaks tool converts text with unwanted newlines into a cleaner format—typically a single continuous paragraph. This is especially helpful when text is copied from PDFs, web pages, or scanned documents where line breaks appear at the end of every line and make the content hard to reuse.
 
+Paste your text, choose your preferred cleanup option, and generate a version without extra line breaks. You can then copy the cleaned output into emails, documents, blog posts, or forms without broken formatting. It’s quick, reliable, and designed for both short and long text.
+
+For fixing messy spacing after merging lines, run <a href="/tools/remove-extra-spaces" title="Remove Extra Spaces">Remove Extra Spaces</a>. If you’re preparing the final version for a word limit, check it with <a href="/tools/word-counter" title="Word Counter">Word Counter</a>.`,
 faqs: [
   {
     q: "Why use a Remove Line Breaks tool?",
@@ -902,8 +914,11 @@ howtoSteps: [
   seoTitleTemplate: "Text Reverser — Reverse Text Online",
   seoDescriptionTemplate: "Reverse text instantly by characters, words or full sentences. A simple and fast tool for creative and technical use."
 ,
-longDescription: "The Text Reverser lets you reverse text instantly by characters, by words, or by full sentence order. It’s a fun tool for creative writing and puzzles, but also practical for developers and testers who need reversed strings to validate input handling, UI rendering, or edge cases.\n\nPaste your text, choose how you want it reversed, and the tool generates the output immediately. You can copy the reversed result for experiments, formatting checks, or just for creative content. It works in real time and supports both short and long text.",
+longDescription: `The Text Reverser lets you reverse text instantly by characters, by words, or by full sentence order. It’s fun for creative writing and puzzles, but also practical for developers and testers who need reversed strings to validate input handling, UI rendering, or edge cases.
 
+Paste your text, choose how you want it reversed, and the tool generates the output immediately. You can copy the reversed result for experiments, formatting checks, or creative content. It works in real time and supports both short and long text.
+
+If you want to analyze patterns in the reversed output, use <a href="/tools/character-frequency-counter" title="Character Frequency Counter">Character Frequency Counter</a>. If you’re reversing long lists line-by-line, you may want to clean duplicates first using <a href="/tools/remove-duplicate-lines" title="Remove Duplicate Lines">Remove Duplicate Lines</a>.`,
 faqs: [
   {
     q: "What does the Text Reverser do?",
@@ -936,8 +951,11 @@ howtoSteps: [
   seoTitleTemplate: "Remove Duplicate Lines — Clean Duplicate Text",
   seoDescriptionTemplate: "Remove duplicate lines from any text instantly. Great for cleaning lists, logs, and SEO keyword files."
 ,
-longDescription: "The Remove Duplicate Lines tool cleans lists by removing repeated lines while keeping only unique entries. It’s useful for cleaning keyword lists, email lists, logs, exported data, search queries, and any text where duplicates cause noise or incorrect results.\n\nPaste your list (one item per line) and the tool removes duplicate entries while preserving the original order of the first occurrences. This makes the output easier to use in spreadsheets, SEO workflows, automation scripts, and reporting without breaking your existing sequence.",
+longDescription: `The Remove Duplicate Lines tool cleans lists by removing repeated lines while keeping only unique entries. It’s useful for cleaning keyword lists, email lists, logs, exported data, search queries, and any text where duplicates create noise or inflate results.
 
+Paste your list (one item per line) and the tool removes duplicate entries while preserving the original order of first occurrences. This makes the output easier to use in spreadsheets, SEO workflows, automation scripts, and reporting without breaking your existing sequence.
+
+After de-duplicating, you can organize the list using <a href="/tools/text-sorter" title="Text Sorter">Text Sorter</a>. If you need to update terms across the whole list, use <a href="/tools/find-and-replace" title="Find & Replace">Find & Replace</a>.`,
 faqs: [
   {
     q: "What is the purpose of the Remove Duplicate Lines tool?",
@@ -970,8 +988,11 @@ howtoSteps: [
   seoTitleTemplate: "Find & Replace — Search and Replace Text Online",
   seoDescriptionTemplate: "Find and replace text strings instantly with this free online tool. Supports simple and advanced replacements."
 ,
-longDescription: "The Find & Replace tool helps you quickly search for specific words or phrases in a block of text and replace them with new content. It’s especially useful when editing long documents, updating repeated terms, fixing typos at scale, or making consistent wording changes across articles, emails, or data exports.\n\nInstead of manually editing line by line, you can replace all matching instances in one action. This saves time, reduces errors, and ensures consistency—making it ideal for writers, editors, developers, and SEO professionals working with large amounts of text.",
+longDescription: `The Find & Replace tool helps you quickly search for specific words or phrases in a block of text and replace them with new content. It’s especially useful when editing long documents, updating repeated terms, fixing typos at scale, or making consistent wording changes across articles, emails, or data exports.
 
+Instead of manually editing line by line, you can replace all matching instances in one action. This saves time, reduces errors, and ensures consistency—making it ideal for writers, editors, developers, and SEO professionals working with large amounts of text.
+
+If your text has inconsistent casing, normalize it first using <a href="/tools/case-converter" title="Case Converter">Case Converter</a>. For list-style content, you may also want to remove duplicates with <a href="/tools/remove-duplicate-lines" title="Remove Duplicate Lines">Remove Duplicate Lines</a> after replacements.`,
 faqs: [
   {
     q: "How does the Find & Replace tool work?",
@@ -1005,8 +1026,11 @@ howtoSteps: [
   seoTitleTemplate: "Capitalize Sentences — Auto Sentence Capitalization",
   seoDescriptionTemplate: "Automatically capitalize each sentence in your text. A perfect tool for formatting essays, documents and blog posts."
 ,
-longDescription: "The Capitalize Sentences tool automatically fixes sentence capitalization by ensuring the first letter of every sentence is uppercase. It’s ideal for cleaning text copied from chats, notes, transcripts, or drafts where proper sentence formatting is missing.\n\nSimply paste your text and the tool corrects capitalization without changing words, punctuation, or spacing. This helps improve readability and presentation for essays, blog posts, emails, and documents without manual editing.",
+longDescription: `The Capitalize Sentences tool automatically fixes sentence capitalization by ensuring the first letter of every sentence is uppercase. It’s ideal for cleaning text copied from chats, notes, transcripts, or drafts where proper sentence formatting is missing.
 
+Simply paste your text and the tool corrects capitalization without changing words, punctuation, or spacing. This improves readability and presentation for essays, blog posts, emails, and documents without manual editing.
+
+If you want broader formatting options like Title Case or ALL CAPS, use the <a href="/tools/case-converter" title="Case Converter">Case Converter</a>. For final length checks (especially for meta descriptions and snippets), use <a href="/tools/character-counter" title="Character Counter">Character Counter</a>.`,
 faqs: [
   {
     q: "What is the Capitalize Sentences tool used for?",
@@ -1039,8 +1063,11 @@ howtoSteps: [
   seoTitleTemplate: "Text Sorter — Sort Lines Alphabetically or Randomly",
   seoDescriptionTemplate: "Sort text lines alphabetically, numerically or randomly with this fast online Text Sorter."
 ,
-longDescription: "The Text Sorter tool lets you rearrange lines of text in a specific order—alphabetical, reverse alphabetical, numerical, or random. It’s commonly used for sorting lists, names, keywords, data entries, or log files without altering the content itself.\n\nPaste your text (one item per line), choose a sorting method, and instantly get a reordered list. Because only the order changes and not the text, it’s a safe and fast way to organize information for analysis, presentation, or cleanup.",
+longDescription: `The Text Sorter tool lets you rearrange lines of text in a specific order—alphabetical, reverse alphabetical, numerical, or random. It’s commonly used for sorting lists, names, keywords, data entries, or log files without altering the content itself.
 
+Paste your text (one item per line), choose a sorting method, and instantly get a reordered list. Because only the order changes and not the text, it’s a safe and fast way to organize information for analysis, presentation, or cleanup.
+
+If your list contains duplicates, clean it first with <a href="/tools/remove-duplicate-lines" title="Remove Duplicate Lines">Remove Duplicate Lines</a>. To standardize formatting before sorting (like making everything lowercase), use <a href="/tools/case-converter" title="Case Converter">Case Converter</a>.`,
 faqs: [
   {
     q: "What can I do with the Text Sorter?",
@@ -1073,8 +1100,11 @@ howtoSteps: [
   seoTitleTemplate: "Lorem Ipsum Generator — Generate Dummy Text",
   seoDescriptionTemplate: "Generate lorem ipsum placeholder text instantly for design, development and content layout testing."
 ,
-longDescription: "The Lorem Ipsum Generator creates placeholder text that designers and developers use to preview layouts before real content is ready. It helps focus on visual design, spacing, typography, and structure without being distracted by meaningful text.\n\nYou can generate placeholder content by paragraphs, words, or characters depending on your needs. This makes the tool useful for website mockups, UI testing, print layouts, and content templates across different projects.",
+longDescription: `The Lorem Ipsum Generator creates placeholder text that designers and developers use to preview layouts before real content is ready. It helps you focus on visual design, spacing, typography, and structure without being distracted by meaningful text.
 
+Generate placeholder content by paragraphs, words, or characters depending on your needs. This makes the tool useful for website mockups, UI testing, print layouts, landing pages, and template building.
+
+To test real-world limits in your layout, measure the output using <a href="/tools/word-counter" title="Word Counter">Word Counter</a> or <a href="/tools/character-counter" title="Character Counter">Character Counter</a>. If you need a clean URL-friendly version of a heading for a demo page, use <a href="/tools/slug-generator" title="Slug Generator">Slug Generator</a>.`,
 faqs: [
   {
     q: "What does the Lorem Ipsum Generator create?",
@@ -1108,8 +1138,11 @@ howtoSteps: [
   seoTitleTemplate: "Character Frequency Counter — Analyze Character Usage",
   seoDescriptionTemplate: "Count character frequency in any text instantly. Ideal for cryptography, statistics and text analysis."
 ,
-longDescription: "The Character Frequency Counter analyzes your text and shows how many times each character appears, including letters, numbers, symbols, and spaces. It’s useful for text analysis, data validation, cryptography basics, and understanding character distribution patterns.\n\nAfter pasting your text, the tool instantly produces a frequency breakdown that can be used for academic research, programming tasks, statistical checks, or language analysis. It works for both short strings and large blocks of text.",
+longDescription: `The Character Frequency Counter analyzes your text and shows how many times each character appears, including letters, numbers, symbols, and spaces. It’s useful for text analysis, data validation, cryptography basics, QA checks, and understanding character distribution patterns.
 
+After pasting your text, the tool instantly produces a frequency breakdown that can be used for academic research, programming tasks, statistical checks, or language analysis. It works for both short strings and large blocks of text.
+
+If you want to clean formatting noise before analysis, use <a href="/tools/remove-extra-spaces" title="Remove Extra Spaces">Remove Extra Spaces</a> first. For quick overall length metrics (not per-character), use <a href="/tools/word-counter" title="Word Counter">Word Counter</a>.`,
 faqs: [
   {
     q: "What is the purpose of the Character Frequency Counter?",
@@ -1142,8 +1175,11 @@ howtoSteps: [
   seoTitleTemplate: "Slug Generator — Create SEO-Friendly URLs",
   seoDescriptionTemplate: "Generate SEO-friendly URL slugs instantly. Perfect for blogs, websites and content management."
 ,
-longDescription: "The Slug Generator converts any text into a clean, SEO-friendly URL slug that’s suitable for web pages, blog posts, and content management systems. It removes special characters, replaces spaces with hyphens, and formats text in a way search engines and browsers prefer.\n\nThis tool is especially helpful for bloggers, developers, and SEO professionals who want consistent, readable URLs without manual formatting. The generated slugs are lowercase, simple, and optimized for clarity and search visibility.",
+longDescription: `The Slug Generator converts any text into a clean, SEO-friendly URL slug that’s suitable for web pages, blog posts, and content management systems. It removes special characters, replaces spaces with hyphens, and formats text in a way search engines and browsers prefer.
 
+This tool is especially helpful for bloggers, developers, and SEO professionals who want consistent, readable URLs without manual formatting. The generated slugs are lowercase, simple, and optimized for clarity and search visibility.
+
+Before generating a slug, you can standardize headings using <a href="/tools/case-converter" title="Case Converter">Case Converter</a> or fix messy spacing with <a href="/tools/remove-extra-spaces" title="Remove Extra Spaces">Remove Extra Spaces</a>. If you’re cleaning a large list of slugs or keywords, remove repeats using <a href="/tools/remove-duplicate-lines" title="Remove Duplicate Lines">Remove Duplicate Lines</a> and then organize them with <a href="/tools/text-sorter" title="Text Sorter">Text Sorter</a>.`,
 faqs: [
   {
     q: "What is the Slug Generator used for?",

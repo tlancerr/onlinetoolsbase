@@ -725,8 +725,11 @@ howtoSteps: [
   seoTitleTemplate: "Word Counter — Count Words & Characters Online",
   seoDescriptionTemplate: "Use this free Word Counter to count words, characters, sentences and paragraphs instantly. Ideal for writers, students and SEO experts."
 ,
-longDescription: "The Word Counter tool instantly analyzes your text and displays the number of words, characters, sentences, and paragraphs in real time. It’s ideal for writers, students, journalists, SEO specialists, and anyone working with text limits or formatting requirements.\n\nSimply type or paste your content into the text box and watch the counts update automatically. This makes it easy to meet academic word limits, optimize SEO content length, track social media character counts, or review writing structure quickly and accurately on any device.",
+longDescription: `The Word Counter tool instantly analyzes your text and displays the number of words, characters, sentences, and paragraphs in real time. It’s ideal for writers, students, journalists, SEO specialists, and anyone working with word limits, content briefs, or platform requirements.
 
+Simply type or paste your content into the text box and watch the counts update automatically. This makes it easy to meet academic word limits, optimize SEO content length, track social media character limits, or review writing structure quickly and accurately on any device.
+
+If you only care about character limits (with and without spaces), use the <a href="/tools/character-counter" title="Character Counter">Character Counter</a>. To clean messy pasted content before counting, run it through <a href="/tools/remove-extra-spaces" title="Remove Extra Spaces">Remove Extra Spaces</a> or <a href="/tools/remove-line-breaks" title="Remove Line Breaks">Remove Line Breaks</a> first.`,
 faqs: [
   {
     q: "What does the Word Counter tool do?",

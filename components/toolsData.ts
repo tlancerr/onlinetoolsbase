@@ -27,9 +27,9 @@ export const toolsData: ToolItem[] = [
   popular: true,
   description: "Calculate your exact age in years, months, days, hours, and minutes instantly.",
   seoTitleTemplate: "Age Calculator — Calculate Exact Age Online",
-  seoDescriptionTemplate: "Use this free Age Calculator to find your exact age in years, months, days, and more. Fast, accurate, and mobile-friendly.",   // <-- COMMA HERE
-  longDescription: "Need your exact age right now? This Age Calculator gives a precise breakdown of your age in years, months, days, hours, and minutes based on your date of birth and today’s date. It’s useful for everyday questions like “How old am I exactly?” as well as formal situations where accuracy matters, such as school admissions, job applications, registrations, or profile details.\n\nThe calculation accounts for real calendar rules, including different month lengths and leap years, so you’re not relying on rough estimates. You can also use it to calculate someone else’s age—just enter any valid birth date. Results are instant, easy to understand, and work smoothly on mobile and desktop.",
-
+  seoDescriptionTemplate: "Use this free Age Calculator to find your exact age in years, months, days, and more. Fast, accurate, and mobile-friendly.",
+  longDescription: "Need your exact age right now? This Age Calculator gives a precise breakdown of your age in years, months, days, hours, and minutes based on your date of birth and today’s date. It’s useful for everyday questions like “How old am I exactly?” as well as formal situations where accuracy matters, such as school admissions, job applications, registrations, or profile details.\n\nThe calculation accounts for real calendar rules, including different month lengths and leap years, so you’re not relying on rough estimates. You can also use it to calculate someone else’s age—just enter any valid birth date. Results are instant, easy to understand, and work smoothly on mobile and desktop.\n\nIf you're planning ahead for deadlines, subscriptions, or important milestones, you may also find our <a href=\"/tools/future-date\" title=\"Future Date Calculator\">future date calculator tool</a> helpful for calculating a date after a specific number of days, weeks, or months."
+}
   faqs: [
     {
       q: "How does the Age Calculator work?",

@@ -119,8 +119,8 @@ howtoSteps: [
   slug: "weeks-calculator",
   category: "Time and Age Tools",
   description: "Convert dates to weeks and calculate weeks between dates instantly.",
-  seoTitleTemplate: "{title} — Weeks Between Dates Calculator",
-  seoDescriptionTemplate: "Use {title} to calculate weeks between two dates or convert days to weeks. Fast and accurate.",
+  seoTitleTemplate: "Weeks Calculator — Weeks Between Dates Calculator",
+  seoDescriptionTemplate: "Use Weeks Calculator to calculate weeks between two dates or convert days to weeks. Fast and accurate.",
  longDescription: "Need to calculate how many weeks fall between two dates, or convert a day range into weeks quickly? The Weeks Calculator helps you measure time in a clean, week-based format that’s easy to understand for planning and reporting. It’s useful for pregnancy tracking, project timelines, school terms, fitness programs, payroll periods, and any schedule that’s managed in weekly cycles.\n\nSelect a start and end date and the tool returns the total number of weeks between them (and can also help interpret day ranges as weeks). The calculation is based on real calendar dates, so it naturally accounts for varying month lengths and leap years. Results appear instantly and work smoothly across mobile and desktop, making it a simple tool to keep planning accurate.",
 
 faqs: [
@@ -358,8 +358,8 @@ howtoSteps: [
   slug: "simple-interest-calculator",
   category: "Finance Tools",
   description: "Calculate simple interest, total amount, and profit instantly.",
-  seoTitleTemplate: "{title} — Simple Interest Calculator",
-  seoDescriptionTemplate: "Use {title} to calculate simple interest and total return. Fast and accurate.",
+  seoTitleTemplate: "Simple Interest Calculator — Simple Interest Calculator",
+  seoDescriptionTemplate: "Use Simple Interest Calculator to calculate simple interest and total return. Fast and accurate.",
 longDescription: `The Simple Interest Calculator allows you to quickly calculate interest earned or paid using the basic simple interest formula. It’s commonly used for short-term loans, informal lending, basic savings calculations, and educational purposes where compound interest does not apply.
 Enter the principal amount, interest rate, and time period to instantly see the interest earned and the total amount payable. The calculator is fast, easy to understand, and ideal when you need a straightforward financial estimate without complex compounding.
     
@@ -1528,8 +1528,8 @@ howtoSteps: [
   slug: "instagram-bio-generator",
   category: "Social Media Tools",
   description: "Generate Instagram bio ideas based on your niche and style.",
-  seoTitleTemplate: "{title} — Create Instagram Bio Ideas",
-  seoDescriptionTemplate: "Use {title} to generate unique Instagram bio ideas instantly. Fast and free.",
+  seoTitleTemplate: "Instagram Bio Generator — Create Instagram Bio Ideas",
+  seoDescriptionTemplate: "Use Instagram Bio Generator to generate unique Instagram bio ideas instantly. Fast and free.",
  longDescription: "The Instagram Bio Generator helps you create short, creative, and niche-specific bio ideas that fit Instagram’s character limits. A strong bio makes a powerful first impression and clearly communicates who you are, what you do, or what followers can expect from your content.\n\nSimply enter your niche or keywords, choose a style or tone, and generate multiple bio ideas instantly. The tool is useful for personal profiles, creators, businesses, influencers, and brand pages looking to refresh or optimize their Instagram presence.",
 
 faqs: [
@@ -1550,8 +1550,8 @@ faqs: [
   slug: "instagram-caption-generator",
   category: "Social Media Tools",
   description: "Generate captions for Instagram posts and reels instantly.",
-  seoTitleTemplate: "{title} — Instagram Caption Ideas",
-  seoDescriptionTemplate: "Use {title} to generate engaging captions for Instagram content. Free and fast.",
+  seoTitleTemplate: "Instagram Caption Generator — Instagram Caption Ideas",
+  seoDescriptionTemplate: "Use Instagram Caption Generator to generate engaging captions for Instagram content. Free and fast.",
   longDescription: "The Instagram Caption Generator creates engaging caption ideas tailored to your topic, niche, or tone. Captions play a key role in engagement by encouraging likes, comments, and shares while reinforcing your content message.\n\nEnter a keyword or topic, choose a tone (fun, professional, motivational, etc.), and generate caption ideas instantly. This tool is ideal for posts, reels, carousels, and brand promotions.",
 
 faqs: [
@@ -1572,8 +1572,8 @@ faqs: [
   slug: "instagram-font-generator",
   category: "Social Media Tools",
   description: "Convert text into stylish Instagram-ready fonts.",
-  seoTitleTemplate: "{title} — Instagram Fancy Font Generator",
-  seoDescriptionTemplate: "Use {title} to generate stylish fonts for Instagram bios, captions and posts.",
+  seoTitleTemplate: "Instagram Fancy Font Generator — Instagram Fancy Font Generator",
+  seoDescriptionTemplate: "Use Instagram Fancy Font Generator to generate stylish fonts for Instagram bios, captions and posts.",
   longDescription: "The Instagram Fancy Font Generator converts normal text into stylish, decorative fonts that can be used in Instagram bios, captions, comments, and highlights. Fancy fonts help your profile stand out visually and attract attention.\n\nType your text, choose from a variety of font styles, and copy the formatted version instantly. All fonts are Unicode-based, meaning they work across Instagram and most modern devices.",
 
 faqs: [
@@ -1594,8 +1594,8 @@ faqs: [
   slug: "open-graph-meta-generator",
   category: "Social Media Tools",
   description: "Generate OG meta tags quickly for better link previews.",
-  seoTitleTemplate: "{title} — Open Graph Meta Tag Generator",
-  seoDescriptionTemplate: "Use {title} to create Open Graph meta tags and improve how your links appear on social platforms.",
+  seoTitleTemplate: "Open Graph Meta Tag Generator — Open Graph Meta Tag Generator",
+  seoDescriptionTemplate: "Use Open Graph Meta Tag Generator to create Open Graph meta tags and improve how your links appear on social platforms.",
   longDescription: "The Open Graph Meta Tag Generator helps you create OG meta tags that control how your links appear when shared on social platforms like Facebook, LinkedIn, WhatsApp, and Twitter/X. Proper Open Graph tags improve click-through rates and visual consistency.\n\nEnter your page title, description, image URL, and page URL, then generate ready-to-use meta tags. These tags can be copied directly into your website’s HTML head section.",
 
 faqs: [
@@ -1616,8 +1616,8 @@ faqs: [
   slug: "social-share-link-builder",
   category: "Social Media Tools",
   description: "Create share links for WhatsApp, Facebook, Twitter/X, LinkedIn and more.",
-  seoTitleTemplate: "{title} — Build Social Share Links",
-  seoDescriptionTemplate: "Use {title} to generate ready-to-use share URLs for major social platforms.",
+  seoTitleTemplate: "Social Share Link Builder — Build Social Share Links",
+  seoDescriptionTemplate: "Use Social Share Link Builder to generate ready-to-use share URLs for major social platforms.",
  longDescription: "The Social Share Link Builder creates ready-to-use sharing URLs for popular platforms such as WhatsApp, Facebook, Twitter/X, LinkedIn, and more. These links allow users to share your content with a single click.\n\nEnter your page URL, choose a platform, and instantly generate a share link. This tool is useful for websites, blogs, email campaigns, landing pages, and call-to-action buttons.",
 
 faqs: [
@@ -2109,8 +2109,8 @@ howtoSteps: [
   slug: "images-to-pdf",
   category: "PDF Tools",
   description: "Convert multiple images into a single PDF file instantly.",
-  seoTitleTemplate: "{title} — Convert Images to PDF",
-  seoDescriptionTemplate: "Use {title} to combine JPG/PNG/WEBP images into one PDF. Fast, free and secure.",
+  seoTitleTemplate: "Images to PDF — Convert Images to PDF",
+  seoDescriptionTemplate: "Use Images to PDF to combine JPG/PNG/WEBP images into one PDF. Fast, free and secure.",
   longDescription: "The Images to PDF tool lets you combine multiple images into a single PDF file quickly and easily. It’s useful for creating documents from scanned pages, photos, screenshots, or design files that need to be shared or archived in one file.\n\nUpload your images, arrange them in the desired order, and generate a PDF instantly. The tool supports common image formats and produces a clean, shareable PDF suitable for work, school, or personal use.",
 
 faqs: [
@@ -2131,8 +2131,8 @@ faqs: [
   slug: "merge-pdfs",
   category: "PDF Tools",
   description: "Merge multiple PDF files into one document.",
-  seoTitleTemplate: "{title} — Merge PDF Files Online",
-  seoDescriptionTemplate: "Use {title} to merge PDFs into one file. Fast, free and works on any device.",
+  seoTitleTemplate: "Merge PDF — Merge PDF Files Online",
+  seoDescriptionTemplate: "Use Merge PDF to merge PDFs into one file. Fast, free and works on any device.",
   longDescription: "The Merge PDF tool allows you to combine multiple PDF documents into a single file. It’s useful for consolidating reports, contracts, invoices, scanned documents, or study materials into one organized PDF.\n\nUpload your PDF files, arrange them in the correct order, and merge them instantly. The resulting file keeps the original layout and quality while simplifying storage and sharing.",
 
 faqs: [
@@ -2153,8 +2153,8 @@ faqs: [
   slug: "protect-pdf",
   category: "PDF Tools",
   description: "Add a password to protect your PDF file.",
-  seoTitleTemplate: "{title} — Password Protect a PDF",
-  seoDescriptionTemplate: "Use {title} to add password protection to PDFs. Secure and easy.",
+  seoTitleTemplate: "Protect PDF — Password Protect a PDF",
+  seoDescriptionTemplate: "Use Protect PDF to add password protection to PDFs. Secure and easy.",
   longDescription: "The Protect PDF tool lets you add password protection to a PDF file, helping secure sensitive or confidential information. It’s ideal for documents such as contracts, reports, invoices, and personal records.\n\nUpload your PDF, set a password, and download the protected version instantly. Once protected, the PDF can only be opened by users who know the password.",
 
 faqs: [
@@ -2175,8 +2175,8 @@ faqs: [
   slug: "split-pdf",
   category: "PDF Tools",
   description: "Split a PDF into separate pages or page ranges.",
-  seoTitleTemplate: "{title} — Split PDF Pages Online",
-  seoDescriptionTemplate: "Split PDF pages instantly with {title}. Extract specific page ranges quickly.",
+  seoTitleTemplate: "Split PDF — Split PDF Pages Online",
+  seoDescriptionTemplate: "Split PDF pages instantly with Split PDF. Extract specific page ranges quickly.",
   longDescription: "The Split PDF tool allows you to divide a PDF into separate pages or extract specific page ranges. It’s useful when you only need part of a document instead of sharing or storing the entire file.\n\nUpload your PDF, select how you want to split it, and download the resulting files instantly. This makes document handling faster and more efficient.",
 
 faqs: [
@@ -2197,8 +2197,8 @@ faqs: [
   slug: "unlock-pdf",
   category: "PDF Tools",
   description: "Remove password protection from a PDF (when you have permission).",
-  seoTitleTemplate: "{title} — Unlock a PDF File Online",
-  seoDescriptionTemplate: "Use {title} to unlock PDFs when you know the password. Fast and secure.",
+  seoTitleTemplate: "Unlock PDF — Unlock a PDF File Online",
+  seoDescriptionTemplate: "Use Unlock PDF to unlock PDFs when you know the password. Fast and secure.",
   longDescription: "The Unlock PDF tool removes password protection from a PDF file when you have permission to do so. It’s useful when you need to edit, print, or share a document that you own but is locked.\n\nUpload the protected PDF, enter the correct password, and download an unlocked version instantly. This tool should only be used on files you are authorized to unlock.",
 
 faqs: [
@@ -2220,7 +2220,7 @@ faqs: [
   slug: "pdf-compressor",
   category: "PDF Tools",
   description: "Compress PDF files online without losing quality. Fast, free, and secure.",
-  seoTitleTemplate: "{title} — Compress PDF Files Online",
+  seoTitleTemplate: "PDF Compressor — Compress PDF Files Online",
   seoDescriptionTemplate: "Compress PDF files online for free. Reduce file size without losing quality.",
  longDescription: "The PDF Compressor reduces the file size of PDF documents while preserving readability and visual quality. It’s ideal for sharing large PDFs via email, uploading to websites, or saving storage space.\n\nUpload your PDF, choose a compression level, and download the optimized file. The tool balances file size reduction with clarity, making it suitable for documents containing text, images, or both.",
 
@@ -2246,7 +2246,7 @@ faqs: [
   slug: "pdf-extract-images",
   category: "PDF Tools",
   description: "Extract all images from a PDF instantly.",
-  seoTitleTemplate: "{title} — Extract All Images from PDF",
+  seoTitleTemplate: "Extract Images from PDF — Extract All Images from PDF",
   seoDescriptionTemplate: "Upload your PDF and extract all embedded images automatically.",
   longDescription: "The Extract Images from PDF tool pulls all embedded images from a PDF file automatically. It’s useful when you need original images for reuse, editing, archiving, or design work.\n\nUpload your PDF and extract all images in one step. The images are downloaded separately, saving time compared to manual extraction.",
 
@@ -2272,7 +2272,7 @@ faqs: [
   slug: "pdf-metadata-viewer",
   category: "PDF Tools",
   description: "View metadata stored inside your PDF files.",
-  seoTitleTemplate: "{title} — View PDF Metadata Online",
+  seoTitleTemplate: "PDF Metadata Viewer — View PDF Metadata Online",
   seoDescriptionTemplate: "Check PDF metadata including author, creation date, modification date, and more.",
  longDescription: "The PDF Metadata Viewer displays hidden information stored inside a PDF file, such as author name, creation date, modification date, and software used. This information is useful for document auditing, research, and file verification.\n\nUpload a PDF and view its metadata instantly without modifying the file. The tool is read-only and does not change document content.",
 
@@ -2298,7 +2298,7 @@ faqs: [
   slug: "pdf-page-numbering",
   category: "PDF Tools",
   description: "Add custom page numbers to your PDF online.",
-  seoTitleTemplate: "{title} — Add Page Numbers to PDF",
+  seoTitleTemplate: "PDF Page Numbering Tool — Add Page Numbers to PDF",
   seoDescriptionTemplate: "Add page numbers to your PDF in seconds. Free and easy.",
  longDescription: "The PDF Page Numbering Tool allows you to add page numbers to a PDF with custom position and style. It’s useful for reports, books, assignments, legal documents, and manuals that require clear pagination.\n\nUpload your PDF, choose numbering preferences, apply the changes, and download the final document instantly.",
 
@@ -2325,7 +2325,7 @@ faqs: [
   slug: "pdf-to-images",
   category: "PDF Tools",
   description: "Convert PDF pages into high-quality images.",
-  seoTitleTemplate: "{title} — Convert PDF to Images",
+  seoTitleTemplate: "PDF to Images — Convert PDF to Images",
   seoDescriptionTemplate: "Convert PDF to JPG or PNG instantly.",
   longDescription: "The PDF to Images tool converts each page of a PDF into high-quality image files such as JPG or PNG. It’s useful for sharing pages individually, creating previews, or reusing content in designs and presentations.\n\nUpload your PDF, choose an output format, and download the generated images instantly. Each page is converted separately with clear resolution.",
 
@@ -2351,7 +2351,7 @@ faqs: [
   slug: "pdf-to-text",
   category: "PDF Tools",
   description: "Extract text from PDF files using fast text processing.",
-  seoTitleTemplate: "{title} — Extract Text from PDF",
+  seoTitleTemplate: "PDF to Text — Extract Text from PDF",
   seoDescriptionTemplate: "Convert PDF documents into plain text.",
   longDescription: "The PDF to Images tool converts each page of a PDF into high-quality image files such as JPG or PNG. It’s useful for sharing pages individually, creating previews, or reusing content in designs and presentations.\n\nUpload your PDF, choose an output format, and download the generated images instantly. Each page is converted separately with clear resolution.",
 
@@ -2378,7 +2378,7 @@ faqs: [
   slug: "pdf-watermark",
   category: "PDF Tools",
   description: "Add text or image watermarks to your PDF files.",
-  seoTitleTemplate: "{title} — Add Watermark to PDF",
+  seoTitleTemplate: "PDF Watermark Tool — Add Watermark to PDF",
   seoDescriptionTemplate: "Add professional watermarks to your PDFs online for free.",
   longDescription: "The PDF Watermark Tool allows you to add text or image watermarks to your PDF files for branding, copyright protection, or document identification. Watermarks are commonly used on reports, contracts, invoices, and confidential documents.\n\nUpload your PDF, enter custom text or upload a watermark image, and apply it instantly. You can clearly mark ownership or status without altering the original content structure.",
 
@@ -2405,7 +2405,7 @@ faqs: [
   slug: "pdf-word-converter",
   category: "PDF Tools",
   description: "Convert Word documents into PDF format and PDF to Word",
-  seoTitleTemplate: "{title} — Convert Word to PDF",
+  seoTitleTemplate: "Word and PDF Converter — Convert Word to PDF",
   seoDescriptionTemplate: "Upload your DOC or DOCX file and convert it to PDF.",
   longDescription: "The Word and PDF Converter allows you to convert Word documents (DOC or DOCX) into PDF format and convert PDFs back into editable Word files. This is useful for sharing documents while preserving layout or making locked PDFs editable again.\n\nUpload your file, convert it instantly, and download the result. The tool maintains formatting accuracy for most standard documents, making it suitable for work, academic, and personal use.",
 
@@ -2434,8 +2434,8 @@ faqs: [
   slug: "open-graph-generator",
   category: "SEO Tools",
   description: "Generate Open Graph meta tags for better social previews.",
-  seoTitleTemplate: "{title} — Generate Open Graph Tags",
-  seoDescriptionTemplate: "Use {title} to generate OG meta tags for Facebook, WhatsApp, Twitter/X and other platforms.",
+  seoTitleTemplate: "Open Graph Tag Generator — Generate Open Graph Tags",
+  seoDescriptionTemplate: "Use Open Graph Tag Generator to generate OG meta tags for Facebook, WhatsApp, Twitter/X and other platforms.",
   longDescription: "The Open Graph Tag Generator helps you create Open Graph meta tags that control how your website links appear when shared on social platforms such as Facebook, WhatsApp, LinkedIn, and Twitter/X.\n\nEnter page details like title, description, and image URL, then generate ready-to-use meta tags. This improves click-through rates and ensures consistent previews across social networks.",
 
 faqs: [
@@ -2707,8 +2707,8 @@ longDescription: "The .htaccess Redirect Generator creates SEO-safe 301 redirect
   slug: "area-converter",
   category: "Converter Tools",
   description: "Convert area units instantly (sq ft, sq m, acres, hectares and more).",
-  seoTitleTemplate: "{title} — Convert Area Units Online",
-  seoDescriptionTemplate: "Use {title} to convert square feet, square meters, acres, hectares and more. Fast, free and accurate.",
+  seoTitleTemplate: "Area Converter — Convert Area Units Online",
+  seoDescriptionTemplate: "Use Area Converter to convert square feet, square meters, acres, hectares and more. Fast, free and accurate.",
   longDescription: "The Area Converter helps you convert between common area units such as square meters, square feet, acres, hectares, and more. It’s useful for real estate, construction, land measurement, academic work, and everyday conversions where accuracy matters.\n\nEnter a value, choose the input unit and the output unit, and get the converted result instantly. This tool is designed to be fast, clear, and reliable across both metric and imperial systems.",
 
   faqs: [
@@ -2729,8 +2729,8 @@ longDescription: "The .htaccess Redirect Generator creates SEO-safe 301 redirect
   slug: "length-converter",
   category: "Converter Tools",
   description: "Convert length units instantly (mm, cm, m, km, inches, feet and more).",
-  seoTitleTemplate: "{title} — Convert Length Units Online",
-  seoDescriptionTemplate: "Use {title} to convert mm, cm, meters, kilometers, inches, feet and more. Fast and accurate.",
+  seoTitleTemplate: "Length Converter — Convert Length Units Online",
+  seoDescriptionTemplate: "Use Length Converter to convert mm, cm, meters, kilometers, inches, feet and more. Fast and accurate.",
   longDescription: "The Length Converter allows you to convert between metric and imperial length units such as millimeters, centimeters, meters, kilometers, inches, feet, and more. It’s useful for schoolwork, construction measurements, travel planning, engineering, and online shopping.\n\nEnter a value, select your input unit and output unit, and the tool calculates the exact conversion instantly. It’s designed for quick, error-free conversions without manual math.",
 
   faqs: [
@@ -2751,8 +2751,8 @@ longDescription: "The .htaccess Redirect Generator creates SEO-safe 301 redirect
   slug: "speed-converter",
   category: "Converter Tools",
   description: "Convert speed units instantly (km/h, mph, m/s and more).",
-  seoTitleTemplate: "{title} — Convert Speed Units Online",
-  seoDescriptionTemplate: "Convert speed units like km/h, mph and m/s using {title}. Free, fast and accurate.",
+  seoTitleTemplate: "Speed Converter — Convert Speed Units Online",
+  seoDescriptionTemplate: "Convert speed units like km/h, mph and m/s using Speed Converter. Free, fast and accurate.",
   longDescription: "The Speed Converter helps you convert speed values between units such as km/h, mph, m/s, and more. It’s useful for driving conversions, athletics, engineering calculations, travel, and understanding weather or transport speed data.\n\nEnter your speed, choose the source unit and target unit, and get the converted speed instantly. The tool ensures accurate conversions using standard unit relationships.",
 
   faqs: [
@@ -2773,8 +2773,8 @@ longDescription: "The .htaccess Redirect Generator creates SEO-safe 301 redirect
   slug: "temperature-converter",
   category: "Converter Tools",
   description: "Convert Celsius, Fahrenheit and Kelvin instantly.",
-  seoTitleTemplate: "{title} — Convert Celsius, Fahrenheit & Kelvin",
-  seoDescriptionTemplate: "Use {title} to convert Celsius to Fahrenheit, Kelvin and vice versa. Accurate and instant.",
+  seoTitleTemplate: "Temperature Converter — Convert Celsius, Fahrenheit & Kelvin",
+  seoDescriptionTemplate: "Use Temperature Converter to convert Celsius to Fahrenheit, Kelvin and vice versa. Accurate and instant.",
   longDescription: "The Temperature Converter instantly converts between Celsius, Fahrenheit, and Kelvin. It’s useful for cooking, travel, science homework, lab work, and international weather comparisons.\n\nEnter a temperature value, choose the source scale and target scale, and get the converted result immediately. The tool uses precise formulas for accurate conversions across all supported scales.",
 
   faqs: [
@@ -2795,8 +2795,8 @@ longDescription: "The .htaccess Redirect Generator creates SEO-safe 301 redirect
   slug: "volume-converter",
   category: "Converter Tools",
   description: "Convert volume units instantly (liters, ml, gallons, cups and more).",
-  seoTitleTemplate: "{title} — Convert Volume Units Online",
-  seoDescriptionTemplate: "Convert liters, milliliters, gallons, cups and more with {title}. Fast and free.",
+  seoTitleTemplate: "Volume Converter — Convert Volume Units Online",
+  seoDescriptionTemplate: "Convert liters, milliliters, gallons, cups and more with Volume Converter. Fast and free.",
   longDescription: "The Volume Converter lets you convert between volume units such as liters, milliliters, gallons, cups, and more. It’s useful for cooking, baking, chemistry, product measurements, and international unit conversions.\n\nEnter a value, choose your input and output units, and the tool converts it instantly. It’s designed to make volume conversions quick and clear without manual calculations.",
 
   faqs: [],
@@ -2807,8 +2807,8 @@ longDescription: "The .htaccess Redirect Generator creates SEO-safe 301 redirect
   slug: "weight-converter",
   category: "Converter Tools",
   description: "Convert weight units instantly (kg, g, lbs, oz and more).",
-  seoTitleTemplate: "{title} — Convert Weight Units Online",
-  seoDescriptionTemplate: "Convert kilograms, grams, pounds and ounces with {title}. Fast and accurate.",
+  seoTitleTemplate: "Weight Converter — Convert Weight Units Online",
+  seoDescriptionTemplate: "Convert kilograms, grams, pounds and ounces with Weight Converter. Fast and accurate.",
   longDescription: "The Weight Converter allows you to convert between common weight units such as kilograms, grams, pounds, ounces, and more. It is useful for cooking, fitness tracking, shipping calculations, and international measurements.\n\nEnter a value, choose the input and output units, and get instant results with high accuracy. The tool eliminates manual calculations and conversion errors.",
 
 faqs: [
@@ -2832,8 +2832,8 @@ faqs: [
   slug: "average-calculator",
   category: "Math Tools",
   description: "Calculate mean (average) for a list of numbers instantly.",
-  seoTitleTemplate: "{title} — Calculate Mean Online",
-  seoDescriptionTemplate: "Use {title} to calculate the mean (average) of any set of numbers. Fast, free and accurate.",
+  seoTitleTemplate: "Average Calculator — Calculate Mean Online",
+  seoDescriptionTemplate: "Use Average Calculator to calculate the mean (average) of any set of numbers. Fast, free and accurate.",
  longDescription: "The Average Calculator computes the mean value of a list of numbers instantly. It is commonly used in statistics, academics, finance, and everyday calculations where understanding central values is important.\n\nEnter numbers separated by commas or spaces and calculate the average with one click. The tool handles both small and large datasets efficiently.",
 
 faqs: [
@@ -2854,8 +2854,8 @@ faqs: [
   slug: "fraction-calculator",
   category: "Math Tools",
   description: "Add, subtract, multiply and divide fractions with steps.",
-  seoTitleTemplate: "{title} — Fraction Math Online",
-  seoDescriptionTemplate: "Use {title} to add, subtract, multiply or divide fractions instantly. Includes simplified results.",
+  seoTitleTemplate: "Fraction Calculator — Fraction Math Online",
+  seoDescriptionTemplate: "Use Fraction Calculator to add, subtract, multiply or divide fractions instantly. Includes simplified results.",
   longDescription: "The Fraction Calculator helps you add, subtract, multiply, and divide fractions with simplified results. It is useful for students, teachers, and anyone working with fractional values.\n\nEnter the fractions, choose an operation, and view the simplified answer instantly. The tool removes the complexity of manual fraction math.",
 
 faqs: [
@@ -2876,8 +2876,8 @@ faqs: [
   slug: "number-base-converter",
   category: "Math Tools",
   description: "Convert between binary, decimal, hexadecimal and more.",
-  seoTitleTemplate: "{title} — Convert Binary, Decimal, Hex",
-  seoDescriptionTemplate: "Convert numbers between binary, decimal, hex and other bases using {title}. Fast and accurate.",
+  seoTitleTemplate: "Number Base Converter — Convert Binary, Decimal, Hex",
+  seoDescriptionTemplate: "Convert numbers between binary, decimal, hex and other bases using Number Base Converter. Fast and accurate.",
  longDescription: "The Number Base Converter converts values between binary, decimal, hexadecimal, and other numeral systems. It is commonly used in computer science, programming, networking, and digital electronics.\n\nEnter a number, select the input and output bases, and convert instantly. The tool ensures accurate base conversions without manual calculation.",
 
 faqs: [
@@ -2898,8 +2898,8 @@ faqs: [
   slug: "percentage-calculator",
   category: "Math Tools",
   description: "Calculate percentages quickly for any value.",
-  seoTitleTemplate: "{title} — Fast Percentage Calculator",
-  seoDescriptionTemplate: "Use {title} to calculate percent increase, decrease, and percentage of any number instantly.",
+  seoTitleTemplate: "Percentage Calculator — Fast Percentage Calculator",
+  seoDescriptionTemplate: "Use Percentage Calculator to calculate percent increase, decrease, and percentage of any number instantly.",
   longDescription: "The Percentage Calculator helps you calculate percentages quickly for various use cases such as discounts, growth rates, comparisons, and financial analysis.\n\nEnter the values, select the percentage mode, and view results instantly. This tool removes guesswork and speeds up percentage calculations.",
 
 faqs: [
@@ -2916,8 +2916,8 @@ faqs: [
   slug: "ratio-calculator",
   category: "Math Tools",
   description: "Simplify and compare ratios instantly.",
-  seoTitleTemplate: "{title} — Simplify Ratios Online",
-  seoDescriptionTemplate: "Use {title} to simplify ratios and calculate proportional values. Fast and free.",
+  seoTitleTemplate: "Ratio Calculator — Simplify Ratios Online",
+  seoDescriptionTemplate: "Use Ratio Calculator to simplify ratios and calculate proportional values. Fast and free.",
  longDescription: "The Ratio Calculator simplifies and compares ratios instantly. It is useful in mathematics, cooking, design scaling, finance, and proportional analysis.\n\nEnter ratio values and simplify them with one click. The tool ensures accurate proportional results without manual reduction.",
 
 faqs: [
@@ -2934,8 +2934,8 @@ faqs: [
   slug: "roman-numeral-converter",
   category: "Math Tools",
   description: "Convert Roman numerals to numbers and numbers to Roman numerals.",
-  seoTitleTemplate: "{title} — Roman Numeral Converter",
-  seoDescriptionTemplate: "Convert Roman numerals to integers and integers to Roman numerals with {title}.",
+  seoTitleTemplate: "Roman Numeral Converter — Roman Numeral Converter",
+  seoDescriptionTemplate: "Convert Roman numerals to integers and integers to Roman numerals with Roman Numeral Converter.",
   longDescription: "The Roman Numeral Converter allows you to convert Roman numerals into standard numbers and convert numbers back into Roman numerals. It is useful for education, history references, and document formatting.\n\nEnter a value, choose the conversion direction, and get results instantly using correct Roman numeral rules.",
 
 faqs: [
@@ -2952,8 +2952,8 @@ faqs: [
   slug: "scientific-calculator",
   category: "Math Tools",
   description: "Advanced scientific calculator for everyday calculations.",
-  seoTitleTemplate: "{title} — Online Scientific Calculator",
-  seoDescriptionTemplate: "Use {title} for advanced calculations including scientific functions. Fast and mobile-friendly.",
+  seoTitleTemplate: "Scientific Calculator — Online Scientific Calculator",
+  seoDescriptionTemplate: "Use Scientific Calculator for advanced calculations including scientific functions. Fast and mobile-friendly.",
   longDescription: "The Scientific Calculator provides advanced mathematical functions for complex calculations. It supports trigonometric, logarithmic, exponential, and scientific operations commonly used in education and engineering.\n\nEnter expressions directly or use built-in functions to calculate results instantly. The calculator is optimized for both desktop and mobile use.",
 
 faqs: [
@@ -2974,8 +2974,8 @@ faqs: [
   slug: "bmi-calculator",
   category: "Health and Fitness Tools",
   description: "Calculate Body Mass Index (BMI) instantly and understand your category.",
-  seoTitleTemplate: "{title} — Body Mass Index Calculator",
-  seoDescriptionTemplate: "Use {title} to calculate BMI instantly. Helpful for fitness tracking and health goals.",
+  seoTitleTemplate: "BMI Calculator — Body Mass Index Calculator",
+  seoDescriptionTemplate: "Use BMI Calculator to calculate BMI instantly. Helpful for fitness tracking and health goals.",
   longDescription: "The BMI Calculator helps you determine your Body Mass Index based on height and weight. BMI is commonly used as a screening measure to assess weight categories.\n\nEnter your height and weight to calculate BMI instantly and view your corresponding category.",
 
 faqs: [
@@ -2992,8 +2992,8 @@ faqs: [
   slug: "bmr-calculator",
   category: "Health and Fitness Tools",
   description: "Calculate Basal Metabolic Rate (BMR) to estimate daily calorie needs.",
-  seoTitleTemplate: "{title} — Calculate BMR Online",
-  seoDescriptionTemplate: "Use {title} to estimate BMR and daily calorie requirements. Fast, free and accurate.",
+  seoTitleTemplate: "BMR Calculator — Calculate BMR Online",
+  seoDescriptionTemplate: "Use BMR Calculator to estimate BMR and daily calorie requirements. Fast, free and accurate.",
   longDescription: "The BMR Calculator estimates your Basal Metabolic Rate, which represents the number of calories your body needs at rest. It is useful for weight management and nutrition planning.\n\nEnter basic body information and calculate your BMR instantly using established formulas.",
 
 faqs: [
@@ -3041,8 +3041,8 @@ faqs: [
   slug: "body-fat-calculator",
   category: "Health and Fitness Tools",
   description: "Estimate your body fat percentage using standard measurements.",
-  seoTitleTemplate: "{title} — Estimate Body Fat Percentage",
-  seoDescriptionTemplate: "Use {title} to estimate body fat percentage using proven formulas. Fast and easy.",
+  seoTitleTemplate: "Body Fat Percentage Calculator — Estimate Body Fat Percentage",
+  seoDescriptionTemplate: "Use Body Fat Percentage Calculator to estimate body fat percentage using proven formulas. Fast and easy.",
   longDescription: "The Body Fat Percentage Calculator estimates how much of your body weight is fat using standard measurement formulas. It is useful for fitness tracking and body composition analysis.\n\nEnter the required measurements and receive an estimated body fat percentage instantly.",
 
 faqs: [
@@ -3059,8 +3059,8 @@ faqs: [
   slug: "calorie-calculator",
   category: "Health and Fitness Tools",
   description: "Estimate daily calorie needs for maintenance, loss or gain.",
-  seoTitleTemplate: "{title} — Daily Calorie Needs",
-  seoDescriptionTemplate: "Use {title} to estimate daily calories based on goals and activity level. Free and accurate.",
+  seoTitleTemplate: "Calorie Calculator — Daily Calorie Needs",
+  seoDescriptionTemplate: "Use Calorie Calculator to estimate daily calories based on goals and activity level. Free and accurate.",
  longDescription: "The Calorie Calculator estimates daily calorie needs based on body details and activity level. It helps plan calorie intake for maintenance, weight loss, or muscle gain.\n\nEnter your information, choose an activity level, and get an instant calorie estimate.",
 
 faqs: [
@@ -3077,8 +3077,8 @@ faqs: [
   slug: "ideal-weight-calculator",
   category: "Health and Fitness Tools",
   description: "Estimate ideal weight range using common medical formulas.",
-  seoTitleTemplate: "{title} — Ideal Weight Estimator",
-  seoDescriptionTemplate: "Use {title} to estimate an ideal weight range based on height and gender. Fast and free.",
+  seoTitleTemplate: "Ideal Weight Calculator — Ideal Weight Estimator",
+  seoDescriptionTemplate: "Use Ideal Weight Calculator to estimate an ideal weight range based on height and gender. Fast and free.",
   longDescription: "The Ideal Weight Calculator estimates a healthy weight range using commonly accepted medical formulas. It is useful as a general reference for fitness and wellness goals.\n\nEnter your height and gender to view an estimated ideal weight range instantly.",
 
 faqs: [
@@ -3095,8 +3095,8 @@ faqs: [
   slug: "water-intake-calculator",
   category: "Health and Fitness Tools",
   description: "Calculate recommended daily water intake based on your body and activity.",
-  seoTitleTemplate: "{title} — Daily Water Intake Calculator",
-  seoDescriptionTemplate: "Use {title} to estimate how much water you should drink daily. Simple and fast.",
+  seoTitleTemplate: "Water Intake Calculator — Daily Water Intake Calculator",
+  seoDescriptionTemplate: "Use Water Intake Calculator to estimate how much water you should drink daily. Simple and fast.",
   longDescription: "The Water Intake Calculator estimates how much water you should drink daily based on body weight and activity level. Proper hydration supports overall health and physical performance.\n\nEnter your details and get a recommended daily water intake instantly.",
 
 faqs: [
@@ -3145,8 +3145,8 @@ faqs: [
   slug: "macro-calculator",
   category: "Health and Fitness Tools",
   description: "Calculate protein, carbs and fat targets for your goals.",
-  seoTitleTemplate: "{title} — Macro Nutrient Calculator",
-  seoDescriptionTemplate: "Use {title} to calculate daily macros (protein, carbs, fat) based on your goal and calories.",
+  seoTitleTemplate: "Macro Calculator — Macro Nutrient Calculator",
+  seoDescriptionTemplate: "Use Macro Calculator to calculate daily macros (protein, carbs, fat) based on your goal and calories.",
   faqs: [],
   howtoSteps: ["Enter calories and goal.", "Pick macro style.", "View macro breakdown."]
 },
@@ -3155,8 +3155,8 @@ faqs: [
   slug: "protein-intake-calculator",
   category: "Health and Fitness Tools",
   description: "Estimate daily protein intake for muscle gain or fat loss goals.",
-  seoTitleTemplate: "{title} — Daily Protein Calculator",
-  seoDescriptionTemplate: "Use {title} to estimate protein needs based on weight and fitness goal. Fast and free.",
+  seoTitleTemplate: "Protein Intake Calculator — Daily Protein Calculator",
+  seoDescriptionTemplate: "Use Protein Intake Calculator to estimate protein needs based on weight and fitness goal. Fast and free.",
   faqs: [],
   howtoSteps: ["Enter weight and goal.", "Click calculate.", "View protein recommendation."]
 },
@@ -3169,8 +3169,8 @@ faqs: [
   slug: "hash-generator",
   category: "Security Tools",
   description: "Generate MD5, SHA-1 and SHA-256 hashes for any text.",
-  seoTitleTemplate: "{title} — Generate Hash Online",
-  seoDescriptionTemplate: "Generate MD5, SHA-1 or SHA-256 hashes instantly using {title}. Secure and fast.",
+  seoTitleTemplate: "Hash Generator — Generate Hash Online",
+  seoDescriptionTemplate: "Generate MD5, SHA-1 or SHA-256 hashes instantly using Hash Generator. Secure and fast.",
   longDescription: "The Hash Generator creates cryptographic hashes such as MD5, SHA-1, and SHA-256 from any text input. Hashes are commonly used for data integrity checks, password storage, and verification purposes.\n\nEnter text, select a hashing algorithm, and generate a hash instantly. The tool is fast, deterministic, and produces the same hash every time for identical input.",
 
 faqs: [
@@ -3191,8 +3191,8 @@ faqs: [
   slug: "password-generator",
   category: "Security Tools",
   description: "Generate strong passwords with custom length and rules.",
-  seoTitleTemplate: "{title} — Strong Password Generator",
-  seoDescriptionTemplate: "Create secure passwords instantly using {title}. Customize length and character sets.",
+  seoTitleTemplate: "Password Generator — Strong Password Generator",
+  seoDescriptionTemplate: "Create secure passwords instantly using Password Generator. Customize length and character sets.",
   longDescription: "The Password Generator helps you create strong, random passwords with customizable length and character rules. Strong passwords reduce the risk of brute-force attacks and unauthorized access.\n\nChoose password length, include numbers, symbols, and uppercase letters, then generate a secure password instantly. This tool is ideal for creating passwords for accounts, apps, and systems.",
 
 faqs: [
@@ -3213,8 +3213,8 @@ faqs: [
   slug: "password-strength-checker",
   category: "Security Tools",
   description: "Check password strength and get improvement tips instantly.",
-  seoTitleTemplate: "{title} — Check Password Strength",
-  seoDescriptionTemplate: "Use {title} to test password strength and improve security. Fast and private.",
+  seoTitleTemplate: "Password Strength Checker — Check Password Strength",
+  seoDescriptionTemplate: "Use Password Strength Checker to test password strength and improve security. Fast and private.",
  longDescription: "The Password Strength Checker evaluates how secure a password is based on length, complexity, and common attack patterns. It provides instant feedback to help improve weak passwords.\n\nType a password to see a strength score and suggestions for improvement. The tool works locally and does not store or transmit password data.",
 
 faqs: [

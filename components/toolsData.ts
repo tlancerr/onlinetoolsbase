@@ -1218,7 +1218,9 @@ howtoSteps: [
   seoTitleTemplate: "Image Compressor — Compress Images Without Quality Loss",
   seoDescriptionTemplate: "Compress images online without losing quality. Reduce file size instantly for websites, emails, and social media."
 ,
-longDescription: "The Image Compressor reduces image file size while preserving visual quality, making images faster to load and easier to share. It’s ideal for websites, blogs, online stores, emails, and social media where large images slow down performance or exceed upload limits.\n\nSimply upload your image, choose a compression level, and download the optimized version instantly. The tool uses smart compression techniques to remove unnecessary data without visibly degrading quality, helping improve page speed, storage efficiency, and user experience.",
+longDescription: `The Image Compressor reduces image file size while preserving visual quality, helping your pages load faster and your uploads stay within size limits. It’s ideal for websites, blogs, online stores, emails, and social media where large images can hurt performance and user experience.
+
+Upload an image, choose a compression level, and download the optimized version instantly. For the best results, compress first, then resize if you also need smaller dimensions. If you need to change width/height, use the <a href="/tools/image-resizer" title="Image Resizer">Image Resizer</a>. If the image needs tighter framing, crop it using the <a href="/tools/image-cropper" title="Image Cropper">Image Cropper</a>.`,
 
 faqs: [
   {
@@ -1253,7 +1255,9 @@ howtoSteps: [
   seoTitleTemplate: "Image Resizer — Resize Images Online",
   seoDescriptionTemplate: "Resize images to any width or height instantly. Fast, free, and perfect for web, print, and social media."
 ,
-longDescription: "The Image Resizer lets you change image dimensions quickly without complex software. It’s perfect for preparing images for websites, social media platforms, profile photos, presentations, and print layouts that require specific sizes or aspect ratios.\n\nUpload your image, enter custom width and height values or select a preset size, and resize instantly. The tool maintains image clarity as much as possible, making it easy to adapt visuals for different platforms and use cases.",
+longDescription: `The Image Resizer lets you change image dimensions quickly without any design software. It’s perfect for preparing images for websites, social media, profile photos, presentations, and print layouts that require specific sizes or aspect ratios.
+
+Upload your image, set a custom width and height (or choose a preset), and resize instantly. If your image is too large in file size, compress it first using the <a href="/tools/image-compressor" title="Image Compressor">Image Compressor</a>. If resizing changes the framing and you want a perfect crop (like square or banner), use the <a href="/tools/image-cropper" title="Image Cropper">Image Cropper</a> after resizing.`,
 
 faqs: [
   {
@@ -1288,7 +1292,9 @@ howtoSteps: [
   seoTitleTemplate: "Image Cropper — Crop Images Online",
   seoDescriptionTemplate: "Crop images to custom dimensions or fixed aspect ratios instantly. Ideal for profile photos, social media posts, and banners."
 ,
-longDescription: "The Image Cropper helps you remove unwanted areas from an image and focus on the part that matters. It’s commonly used for profile photos, thumbnails, social media posts, banners, and product images where precise framing is important.\n\nUpload your image, drag the crop box to select the desired area, and crop with one click. You can crop freely or follow fixed aspect ratios, then download a clean, perfectly framed image ready for use.",
+longDescription: `The Image Cropper helps you remove unwanted areas and focus on the part that matters. It’s commonly used for profile photos, thumbnails, social media posts, banners, and product images where precise framing is important.
+
+Upload an image, drag the crop box to select your area, and crop with one click. If you need to crop to a specific platform size, you may want to resize afterward using the <a href="/tools/image-resizer" title="Image Resizer">Image Resizer</a>. If the final cropped image is still heavy, reduce its file size with the <a href="/tools/image-compressor" title="Image Compressor">Image Compressor</a>.`,
 
 faqs: [
   {
@@ -1323,7 +1329,9 @@ howtoSteps: [
   seoTitleTemplate: "Image Blur Tool — Blur Images Online",
   seoDescriptionTemplate: "Blur any part of an image instantly. Perfect for hiding sensitive information or creating aesthetic blur effects."
 ,
-longDescription: "The Image Blur Tool allows you to blur entire images or specific areas for privacy, security, or creative purposes. It’s useful for hiding sensitive information, faces, license plates, or creating aesthetic background effects for social media and design work.\n\nUpload your image, adjust the blur intensity, and apply the effect instantly. You can control how strong the blur appears and download the final image in seconds without installing any software.",
+longDescription: `The Image Blur Tool lets you blur an entire image or selected areas for privacy, security, or creative design. It’s useful for hiding sensitive details (faces, license plates, documents), or creating aesthetic background blur effects for social posts and marketing graphics.
+
+Upload your image, adjust blur intensity, and apply the effect instantly. If your image is sideways or upside down, correct it first using the <a href="/tools/image-rotate" title="Image Rotate Tool">Image Rotate Tool</a>. After blurring, you can reduce the final file size with the <a href="/tools/image-compressor" title="Image Compressor">Image Compressor</a> for faster sharing and loading.`,
 
 faqs: [
   {
@@ -1358,7 +1366,9 @@ howtoSteps: [
   seoTitleTemplate: "Image Rotate Tool — Rotate or Flip Images Online",
   seoDescriptionTemplate: "Rotate or flip images instantly. Supports 90°, 180°, 270° rotations and horizontal or vertical flips."
 ,
-longDescription: "The Image Rotate Tool lets you rotate or flip images quickly to correct orientation or adjust layout. It’s especially useful for photos taken on mobile devices, scanned documents, and images that appear sideways or upside down after upload.\n\nUpload your image and rotate it by 90°, 180°, or 270°, or flip it horizontally or vertically. Changes apply instantly, allowing you to download a correctly oriented image without editing software.",
+longDescription: `The Image Rotate Tool helps you fix image orientation quickly—perfect for photos taken on mobile devices, scanned documents, and images that appear sideways after upload.
+
+Upload your image and rotate it by 90°, 180°, or 270°, or flip it horizontally/vertically. If you also need a specific frame or aspect ratio, use the <a href="/tools/image-cropper" title="Image Cropper">Image Cropper</a> after rotating. To shrink file size for web use, finish with the <a href="/tools/image-compressor" title="Image Compressor">Image Compressor</a>.`,
 
 faqs: [
   {
@@ -1389,7 +1399,9 @@ howtoSteps: [
   seoTitleTemplate: "Image Format Converter — Convert Images to JPG, PNG, WEBP",
   seoDescriptionTemplate: "Convert images to JPG, PNG, WEBP, GIF and more instantly. Fast, free and built for high-quality output."
 ,
-longDescription: "The Image Format Converter lets you change images between common formats such as JPG, PNG, WEBP, GIF, and more without installing any software. It’s useful when different platforms require specific formats—for example, JPG for smaller file sizes, PNG for transparency, or WEBP for modern web performance.\n\nUpload your image, select the desired output format, and convert instantly. The tool preserves visual quality as much as possible while adapting to the characteristics of each format, making it ideal for web publishing, design work, and everyday image compatibility.",
+longDescription: `The Image Format Converter lets you change images between common formats like JPG, PNG, WEBP, GIF, and more—without installing any software. It’s useful when a platform requires a specific format (PNG for transparency, JPG for compatibility, WEBP for modern web performance).
+
+Upload your image, choose the output format, and convert instantly. If you’re optimizing for website speed, converting to WEBP and then compressing can help—use the <a href="/tools/image-compressor" title="Image Compressor">Image Compressor</a> after converting. If you need exact dimensions for your new format, resize using the <a href="/tools/image-resizer" title="Image Resizer">Image Resizer</a>.`,
 
 faqs: [
   {
@@ -1425,7 +1437,9 @@ howtoSteps: [
   seoTitleTemplate: "Image Color Picker — Extract HEX & RGB From Any Image",
   seoDescriptionTemplate: "Pick any color from an image and get HEX, RGB, and HSL values instantly. Great for designers and developers."
 ,
-longDescription: "The Image Color Picker allows you to extract exact color values from any image by clicking directly on it. It instantly displays the color in HEX, RGB, and HSL formats, making it easy to reuse colors in design, branding, and development projects.\n\nUpload an image and click anywhere to sample a color with pixel-level accuracy. This tool is especially helpful for designers matching brand colors, developers implementing UI elements, or anyone needing precise color codes from photos, screenshots, or graphics.",
+longDescription: `The Image Color Picker extracts exact color values from any image with a simple click. It instantly shows HEX, RGB, and HSL, making it ideal for designers matching brand colors, developers implementing UI themes, and anyone recreating palettes from screenshots, photos, or graphics.
+
+Upload an image and click anywhere to sample a pixel-perfect color. If you’re working with a large screenshot that’s slow to upload, you can reduce its size first using the <a href="/tools/image-compressor" title="Image Compressor">Image Compressor</a>, or resize it with the <a href="/tools/image-resizer" title="Image Resizer">Image Resizer</a> before picking colors.`,
 
 faqs: [
   {
@@ -1460,7 +1474,9 @@ howtoSteps: [
   seoTitleTemplate: "Image to Base64 Converter — Convert Images to Base64",
   seoDescriptionTemplate: "Convert images to Base64 encoding instantly for CSS, HTML, and data-URI usage. Secure and fast."
 ,
-longDescription: "The Image to Base64 Converter transforms image files into Base64-encoded strings that can be embedded directly into HTML, CSS, or JSON. This is commonly used when you want to include images inline without relying on external image files or URLs.\n\nUpload an image and the tool generates a Base64 representation instantly. Developers often use this method for small icons, email templates, API responses, or prototypes where bundling assets into a single file is convenient.",
+longDescription: `The Image to Base64 Converter turns an image into a Base64-encoded string that you can embed directly into HTML, CSS, JSON, or data-URI fields. This is commonly used for small icons, email templates, API payloads, prototypes, and cases where bundling assets into one file is convenient.
+
+Upload an image and get the Base64 output instantly. Since Base64 can increase size, it’s smart to reduce the image first using the <a href="/tools/image-compressor" title="Image Compressor">Image Compressor</a>. If you need to decode later, use the <a href="/tools/base64-to-image" title="Base64 to Image Converter">Base64 to Image Converter</a>.`,
 
 faqs: [
   {
@@ -1494,7 +1510,9 @@ howtoSteps: [
   seoTitleTemplate: "Base64 to Image Converter — Decode Base64 to Image",
   seoDescriptionTemplate: "Convert Base64 strings back to images instantly. Supports JPG, PNG, WEBP and more."
 ,
-longDescription: "The Base64 to Image Converter decodes Base64-encoded image strings back into normal image files you can view and download. It’s useful when working with data-URIs, API responses, or embedded images that need to be restored to standard formats.\n\nPaste your Base64 string into the tool and convert it instantly into a downloadable image. The output format depends on the original encoding, and the tool supports common image types such as JPG and PNG.",
+longDescription: `The Base64 to Image Converter decodes Base64 image strings back into normal image files you can preview and download. It’s useful when working with data-URIs, API responses, logs, or embedded image content that needs to be restored into a standard file format.
+
+Paste your Base64 string and convert instantly into a downloadable image. After decoding, you can optimize the output for web delivery with the <a href="/tools/image-compressor" title="Image Compressor">Image Compressor</a>, or change the file type using the <a href="/tools/image-format-converter" title="Image Format Converter">Image Format Converter</a>. If you need to encode again, use the <a href="/tools/image-to-base64" title="Image to Base64 Converter">Image to Base64 Converter</a>.`,
 
 faqs: [
   {
@@ -1530,8 +1548,7 @@ howtoSteps: [
   description: "Generate Instagram bio ideas based on your niche and style.",
   seoTitleTemplate: "Instagram Bio Generator — Create Instagram Bio Ideas",
   seoDescriptionTemplate: "Use Instagram Bio Generator to generate unique Instagram bio ideas instantly. Fast and free.",
- longDescription: "The Instagram Bio Generator helps you create short, creative, and niche-specific bio ideas that fit Instagram’s character limits. A strong bio makes a powerful first impression and clearly communicates who you are, what you do, or what followers can expect from your content.\n\nSimply enter your niche or keywords, choose a style or tone, and generate multiple bio ideas instantly. The tool is useful for personal profiles, creators, businesses, influencers, and brand pages looking to refresh or optimize their Instagram presence.",
-
+ longDescription: `The Instagram Bio Generator helps you create short, creative, and niche-specific bio ideas that fit Instagram’s character limits. A strong bio makes a powerful first impression and clearly communicates who you are, what you do, or what followers can expect from your content.\n\nSimply enter your niche or keywords, choose a style or tone, and generate multiple bio ideas instantly. If you want matching post text too, use the <a href="/tools/instagram-caption-generator" title="Instagram Caption Generator">Instagram Caption Generator</a>. For profile styling, the <a href="/tools/instagram-font-generator" title="Instagram Fancy Font Generator">Instagram Fancy Font Generator</a> can help your bio stand out visually.`,
 faqs: [
   {
     q: "Can I use the generated bio directly on Instagram?",
@@ -1552,7 +1569,7 @@ faqs: [
   description: "Generate captions for Instagram posts and reels instantly.",
   seoTitleTemplate: "Instagram Caption Generator — Instagram Caption Ideas",
   seoDescriptionTemplate: "Use Instagram Caption Generator to generate engaging captions for Instagram content. Free and fast.",
-  longDescription: "The Instagram Caption Generator creates engaging caption ideas tailored to your topic, niche, or tone. Captions play a key role in engagement by encouraging likes, comments, and shares while reinforcing your content message.\n\nEnter a keyword or topic, choose a tone (fun, professional, motivational, etc.), and generate caption ideas instantly. This tool is ideal for posts, reels, carousels, and brand promotions.",
+  longDescription: `The Instagram Caption Generator creates engaging caption ideas tailored to your topic, niche, or tone. Captions play a key role in engagement by encouraging likes, comments, and shares while reinforcing your content message.\n\nEnter a keyword or topic, choose a tone (fun, professional, motivational, etc.), and generate caption ideas instantly. To boost reach, pair your caption with the <a href="/tools/instagram-hashtag-generator" title="Instagram Hashtag Generator">Instagram Hashtag Generator</a>. If you’re also refreshing your profile, try the <a href="/tools/instagram-bio-generator" title="Instagram Bio Generator">Instagram Bio Generator</a>.`,
 
 faqs: [
   {
@@ -1574,7 +1591,7 @@ faqs: [
   description: "Convert text into stylish Instagram-ready fonts.",
   seoTitleTemplate: "Instagram Fancy Font Generator — Instagram Fancy Font Generator",
   seoDescriptionTemplate: "Use Instagram Fancy Font Generator to generate stylish fonts for Instagram bios, captions and posts.",
-  longDescription: "The Instagram Fancy Font Generator converts normal text into stylish, decorative fonts that can be used in Instagram bios, captions, comments, and highlights. Fancy fonts help your profile stand out visually and attract attention.\n\nType your text, choose from a variety of font styles, and copy the formatted version instantly. All fonts are Unicode-based, meaning they work across Instagram and most modern devices.",
+  longDescription: `The Instagram Fancy Font Generator converts normal text into stylish, decorative fonts that can be used in Instagram bios, captions, comments, and highlights. Fancy fonts help your profile stand out visually and attract attention.\n\nType your text, choose from a variety of font styles, and copy the formatted version instantly. For complete profile optimization, combine it with the <a href="/tools/instagram-bio-generator" title="Instagram Bio Generator">Instagram Bio Generator</a>, and for post text ideas use the <a href="/tools/instagram-caption-generator" title="Instagram Caption Generator">Instagram Caption Generator</a>.`,
 
 faqs: [
   {
@@ -1596,8 +1613,7 @@ faqs: [
   description: "Generate OG meta tags quickly for better link previews.",
   seoTitleTemplate: "Open Graph Meta Tag Generator — Open Graph Meta Tag Generator",
   seoDescriptionTemplate: "Use Open Graph Meta Tag Generator to create Open Graph meta tags and improve how your links appear on social platforms.",
-  longDescription: "The Open Graph Meta Tag Generator helps you create OG meta tags that control how your links appear when shared on social platforms like Facebook, LinkedIn, WhatsApp, and Twitter/X. Proper Open Graph tags improve click-through rates and visual consistency.\n\nEnter your page title, description, image URL, and page URL, then generate ready-to-use meta tags. These tags can be copied directly into your website’s HTML head section.",
-
+  longDescription: `The Open Graph Meta Tag Generator helps you create OG meta tags that control how your links appear when shared on social platforms like Facebook, LinkedIn, WhatsApp, and Twitter/X. Proper Open Graph tags improve click-through rates and visual consistency.\n\nEnter your page title, description, image URL, and page URL, then generate ready-to-use meta tags. After setting OG tags, you can create one-click sharing URLs with the <a href="/tools/social-share-link-builder" title="Social Share Link Builder">Social Share Link Builder</a> for buttons on your website or landing pages.`,
 faqs: [
   {
     q: "Why are Open Graph tags important?",
@@ -1618,7 +1634,7 @@ faqs: [
   description: "Create share links for WhatsApp, Facebook, Twitter/X, LinkedIn and more.",
   seoTitleTemplate: "Social Share Link Builder — Build Social Share Links",
   seoDescriptionTemplate: "Use Social Share Link Builder to generate ready-to-use share URLs for major social platforms.",
- longDescription: "The Social Share Link Builder creates ready-to-use sharing URLs for popular platforms such as WhatsApp, Facebook, Twitter/X, LinkedIn, and more. These links allow users to share your content with a single click.\n\nEnter your page URL, choose a platform, and instantly generate a share link. This tool is useful for websites, blogs, email campaigns, landing pages, and call-to-action buttons.",
+ longDescription: `The Social Share Link Builder creates ready-to-use sharing URLs for popular platforms such as WhatsApp, Facebook, Twitter/X, LinkedIn, and more. These links allow users to share your content with a single click.\n\nEnter your page URL, choose a platform, and instantly generate a share link. For better-looking link previews when people share, configure your page’s OG tags using the <a href="/tools/open-graph-meta-generator" title="Open Graph Meta Tag Generator">Open Graph Meta Tag Generator</a>.`,
 
 faqs: [
   {
@@ -1641,8 +1657,7 @@ faqs: [
   description: "Generate short, catchy TikTok bios using a keyword.",
   seoTitleTemplate: "TikTok Bio Generator — Create Viral TikTok Bios",
   seoDescriptionTemplate: "Create viral TikTok bio ideas instantly using a keyword. Free and easy to use.",
-longDescription: "The TikTok Bio Generator creates short, catchy bio ideas designed to fit TikTok’s limited profile space. A strong bio helps communicate your niche quickly and encourages visitors to follow your account.\n\nEnter a keyword or niche and generate multiple bio ideas instantly. The tool is ideal for creators, influencers, businesses, and personal profiles looking to improve profile clarity and appeal.",
-
+longDescription: `The TikTok Bio Generator creates short, catchy bio ideas designed to fit TikTok’s limited profile space. A strong bio helps communicate your niche quickly and encourages visitors to follow your account.\n\nEnter a keyword or niche and generate multiple bio ideas instantly. To keep your posting consistent, pair it with the <a href="/tools/tiktok-caption-generator" title="TikTok Caption Generator">TikTok Caption Generator</a>, and improve discoverability using the <a href="/tools/tiktok-hashtag-generator" title="TikTok Hashtag Generator">TikTok Hashtag Generator</a>.`,
 faqs: [
   {
     q: "Are TikTok bios limited in length?",
@@ -1668,8 +1683,7 @@ faqs: [
   description: "Generate viral TikTok captions based on your content keyword.",
   seoTitleTemplate: "TikTok Caption Generator — Viral Caption Ideas",
   seoDescriptionTemplate: "Generate trending TikTok captions instantly to boost engagement.",
- longDescription: "The TikTok Caption Generator produces caption ideas designed to increase engagement and visibility on TikTok. Captions help provide context, encourage interaction, and support hashtag strategy.\n\nEnter a keyword related to your video content and generate caption ideas instantly. This tool is useful for creators aiming to improve reach and consistency.",
-
+ longDescription: `The TikTok Caption Generator produces caption ideas designed to increase engagement and visibility on TikTok. Captions help provide context, encourage interaction, and support hashtag strategy.\n\nEnter a keyword related to your video content and generate caption ideas instantly. For reach optimization, generate matching tags with the <a href="/tools/tiktok-hashtag-generator" title="TikTok Hashtag Generator">TikTok Hashtag Generator</a>. If you’re also refining your profile, try the <a href="/tools/tiktok-bio-generator" title="TikTok Bio Generator">TikTok Bio Generator</a>.`,
 faqs: [
   {
     q: "Do captions affect TikTok reach?",
@@ -1695,8 +1709,7 @@ faqs: [
   description: "Generate trending TikTok hashtags for any niche.",
   seoTitleTemplate: "TikTok Hashtag Generator — Trending Hashtags Tool",
   seoDescriptionTemplate: "Generate trending TikTok hashtags to increase reach and visibility.",
-  longDescription: "The TikTok Hashtag Generator helps you discover trending and niche-relevant hashtags to improve content reach and visibility. Hashtags help TikTok understand your content and show it to the right audience.\n\nEnter your niche or keyword and generate hashtag sets instantly. The tool is ideal for creators, marketers, and brands aiming to optimize discoverability.",
-
+  longDescription: `The TikTok Hashtag Generator helps you discover trending and niche-relevant hashtags to improve content reach and visibility. Hashtags help TikTok understand your content and show it to the right audience.\n\nEnter your niche or keyword and generate hashtag sets instantly. Use these alongside a strong caption from the <a href="/tools/tiktok-caption-generator" title="TikTok Caption Generator">TikTok Caption Generator</a>, and keep your profile messaging consistent with the <a href="/tools/tiktok-bio-generator" title="TikTok Bio Generator">TikTok Bio Generator</a>.`,
 faqs: [
   {
     q: "How many hashtags should I use?",
@@ -1722,7 +1735,7 @@ faqs: [
   description: "Create realistic tweet previews for mockups or fun.",
   seoTitleTemplate: "Tweet Generator — Create Fake Tweet Previews",
   seoDescriptionTemplate: "Generate fake tweet previews for mockups, demos, or social media designs.",
-  longDescription: "The Tweet Generator lets you create realistic tweet previews for mockups, demos, presentations, or creative projects. It allows customization of usernames, content, likes, and retweets to simulate real tweets.\n\nThis tool is commonly used by designers, marketers, educators, and content creators who need realistic Twitter/X visuals without posting live content.",
+  longDescription: `The Tweet Generator lets you create realistic tweet previews for mockups, demos, presentations, or creative projects. It allows customization of usernames, content, likes, and retweets to simulate real tweets.\n\nThis tool is commonly used by designers, marketers, educators, and content creators who need realistic Twitter/X visuals without posting live content. If you want multi-post storytelling instead, use the <a href="/tools/tweet-thread-generator" title="Tweet Thread Generator">Tweet Thread Generator</a> to structure threads around a topic.`,
 
 faqs: [
   {
@@ -1749,8 +1762,7 @@ faqs: [
   description: "Generate structured tweet threads using a keyword.",
   seoTitleTemplate: "Tweet Thread Generator — Create Viral Twitter Threads",
   seoDescriptionTemplate: "Generate viral-style Twitter/X threads instantly using a keyword.",
-  longDescription: "The Tweet Thread Generator helps you structure multi-tweet threads around a topic or keyword. Threads are effective for storytelling, education, and long-form ideas on Twitter/X.\n\nEnter a topic and generate a sequence of connected tweets that flow naturally. This tool is useful for creators, educators, and marketers building informative or viral threads.",
-
+  longDescription: `The Tweet Thread Generator helps you structure multi-tweet threads around a topic or keyword. Threads are effective for storytelling, education, and long-form ideas on Twitter/X.\n\nEnter a topic and generate a sequence of connected tweets that flow naturally. For single-post mockups or realistic previews, you can also use the <a href="/tools/tweet-generator" title="Tweet Generator">Tweet Generator</a>. To improve discoverability when posting, consider pairing with the <a href="/tools/twitter-hashtag-generator" title="Twitter Hashtag Generator">Twitter Hashtag Generator</a>.`,
 faqs: [
   {
     q: "Can I edit the generated thread?",
@@ -1776,7 +1788,7 @@ faqs: [
   description: "Generate clean and professional Twitter/X bios.",
   seoTitleTemplate: "Twitter Bio Generator — Create Professional Bios",
   seoDescriptionTemplate: "Generate professional Twitter/X bio ideas using keywords.",
-  longDescription: "The Twitter Bio Generator creates clean, professional, and niche-specific bio ideas for Twitter/X profiles. A well-written bio helps establish credibility and attract the right audience.\n\nEnter a keyword or niche and generate multiple bio ideas instantly. This tool is useful for professionals, creators, startups, and personal brands looking to refine their online presence.",
+  longDescription: `The Twitter Bio Generator creates clean, professional, and niche-specific bio ideas for Twitter/X profiles. A well-written bio helps establish credibility and attract the right audience.\n\nEnter a keyword or niche and generate multiple bio ideas instantly. When you post, boost visibility with the <a href="/tools/twitter-hashtag-generator" title="Twitter Hashtag Generator">Twitter Hashtag Generator</a>, and for structured long-form posting use the <a href="/tools/tweet-thread-generator" title="Tweet Thread Generator">Tweet Thread Generator</a>.`,
 
 faqs: [
   {
@@ -1803,8 +1815,7 @@ faqs: [
   description: "Generate trending hashtags for Twitter/X posts.",
   seoTitleTemplate: "Twitter Hashtag Generator — Trending Hashtags Tool",
   seoDescriptionTemplate: "Generate relevant and trending Twitter/X hashtags instantly.",
- longDescription: "The Twitter Hashtag Generator helps you discover relevant and trending hashtags for Twitter/X posts. Hashtags improve tweet visibility by helping content reach users who follow or search for specific topics.\n\nEnter a keyword related to your tweet and generate a list of suggested hashtags instantly. This tool is useful for creators, marketers, and brands looking to increase engagement, impressions, and discoverability on Twitter/X.",
-
+ longDescription: `The Twitter Hashtag Generator helps you discover relevant and trending hashtags for Twitter/X posts. Hashtags improve tweet visibility by helping content reach users who follow or search for specific topics.\n\nEnter a keyword related to your tweet and generate a list of suggested hashtags instantly. For long-form content, pair hashtags with a structured thread from the <a href="/tools/tweet-thread-generator" title="Tweet Thread Generator">Tweet Thread Generator</a>. If you’re optimizing your profile too, try the <a href="/tools/twitter-bio-generator" title="Twitter Bio Generator">Twitter Bio Generator</a>.`,
 faqs: [
   {
     q: "How do hashtags help on Twitter/X?",
@@ -1830,8 +1841,7 @@ faqs: [
   description: "Generate SEO-friendly YouTube video descriptions.",
   seoTitleTemplate: "YouTube Description Generator — SEO Video Descriptions",
   seoDescriptionTemplate: "Generate optimized YouTube descriptions using keywords to improve ranking.",
-longDescription: "The YouTube Description Generator creates SEO-friendly video descriptions designed to improve search visibility and viewer understanding. A well-written description helps YouTube understand your content and encourages users to watch longer.\n\nEnter your video keyword or topic and generate a structured description instantly. This tool is useful for creators who want to save time, improve rankings, and maintain consistency across multiple videos.",
-
+longDescription: `The YouTube Description Generator creates SEO-friendly video descriptions designed to improve search visibility and viewer understanding. A well-written description helps YouTube understand your content and encourages users to watch longer.\n\nEnter your video keyword or topic and generate a structured description instantly. To keep everything consistent, pair it with the <a href="/tools/youtube-title-generator" title="YouTube Title Generator">YouTube Title Generator</a> for clickable titles and the <a href="/tools/youtube-tags-generator" title="YouTube Tags Generator">YouTube Tags Generator</a> for relevant tag sets.`,
 faqs: [
   {
     q: "Do video descriptions affect YouTube SEO?",
@@ -1857,8 +1867,7 @@ faqs: [
   description: "Generate optimized YouTube tags using a keyword.",
   seoTitleTemplate: "YouTube Tags Generator — Optimize Video Tags",
   seoDescriptionTemplate: "Generate SEO-friendly YouTube tags instantly to improve discoverability.",
- longDescription: "The YouTube Tags Generator helps you create optimized tag lists that support video discovery and relevance. While tags are not the most important ranking factor, they still help YouTube understand context, especially for new or niche content.\n\nEnter a keyword related to your video and generate a set of relevant tags instantly. This tool is useful for improving content categorization and consistency across your channel.",
-
+ longDescription: `The YouTube Tags Generator helps you create optimized tag lists that support video discovery and relevance. While tags are not the most important ranking factor, they still help YouTube understand context, especially for new or niche content.\n\nEnter a keyword related to your video and generate a set of relevant tags instantly. For a complete upload package, generate a strong title with the <a href="/tools/youtube-title-generator" title="YouTube Title Generator">YouTube Title Generator</a> and a structured summary using the <a href="/tools/youtube-description-generator" title="YouTube Description Generator">YouTube Description Generator</a>.`,
 faqs: [
   {
     q: "Are YouTube tags still useful?",
@@ -1884,8 +1893,7 @@ faqs: [
   description: "Generate engaging YouTube video titles.",
   seoTitleTemplate: "YouTube Title Generator — Catchy Video Titles",
   seoDescriptionTemplate: "Generate clickable and engaging YouTube titles using keywords.",
-  longDescription: "The YouTube Title Generator helps you create engaging and clickable video titles based on your topic or keyword. Titles are one of the most important factors influencing click-through rate and viewer interest.\n\nEnter your video topic and generate multiple title ideas instantly. This tool is ideal for creators aiming to improve visibility, attract viewers, and test different headline styles before publishing.",
-
+  longDescription: `The YouTube Title Generator helps you create engaging and clickable video titles based on your topic or keyword. Titles are one of the most important factors influencing click-through rate and viewer interest.\n\nEnter your video topic and generate multiple title ideas instantly. To strengthen SEO and clarity, pair your title with the <a href="/tools/youtube-description-generator" title="YouTube Description Generator">YouTube Description Generator</a>, and add supporting keywords using the <a href="/tools/youtube-tags-generator" title="YouTube Tags Generator">YouTube Tags Generator</a>.`,
 faqs: [
   {
     q: "Do titles affect YouTube performance?",
@@ -1915,8 +1923,7 @@ faqs: [
   seoTitleTemplate: "YouTube Thumbnail Downloader — Download HD Thumbnails",
   seoDescriptionTemplate: "Download YouTube thumbnails in HD, Full HD, and 4K instantly. Fast, secure, and completely free."
 ,
-longDescription: "The YouTube Thumbnail Downloader lets you download video thumbnails directly from YouTube in multiple resolutions, including HD, Full HD, and 4K. Thumbnails are useful for previews, presentations, research, design mockups, or content analysis.\n\nSimply paste the YouTube video URL and the tool instantly fetches all available thumbnail sizes. No account or login is required, and downloads are fast and straightforward across all devices.",
-
+longDescription: `The YouTube Thumbnail Downloader lets you download video thumbnails directly from YouTube in multiple resolutions, including HD, Full HD, and 4K. Thumbnails are useful for previews, presentations, research, design mockups, or content analysis.\n\nSimply paste the YouTube video URL and the tool instantly fetches all available thumbnail sizes. If you’re building a full upload workflow, you may also want the <a href="/tools/youtube-title-generator" title="YouTube Title Generator">YouTube Title Generator</a> and <a href="/tools/youtube-description-generator" title="YouTube Description Generator">YouTube Description Generator</a> to keep metadata consistent.`,
 faqs: [
   {
     q: "How does the YouTube Thumbnail Downloader work?",
@@ -1972,8 +1979,7 @@ howtoSteps: [
   seoTitleTemplate: "Instagram Hashtag Generator — Get Trending Hashtags",
   seoDescriptionTemplate: "Generate trending Instagram hashtags from any keyword. Boost reach and engagement instantly."
 ,
-longDescription: "The Instagram Hashtag Generator helps you discover relevant and trending hashtags based on your content keyword. Hashtags play a key role in improving reach, visibility, and engagement by helping Instagram categorize your posts and show them to interested audiences.\n\nEnter a keyword related to your post and generate hashtag suggestions instantly. This tool is useful for creators, influencers, businesses, and marketers who want to expand reach without manually researching hashtags.",
-
+longDescription: `The Instagram Hashtag Generator helps you discover relevant and trending hashtags based on your content keyword. Hashtags play a key role in improving reach, visibility, and engagement by helping Instagram categorize your posts and show them to interested audiences.\n\nEnter a keyword related to your post and generate hashtag suggestions instantly. For a complete posting setup, pair hashtags with an engaging caption from the <a href="/tools/instagram-caption-generator" title="Instagram Caption Generator">Instagram Caption Generator</a>. If you’re also optimizing your profile, use the <a href="/tools/instagram-bio-generator" title="Instagram Bio Generator">Instagram Bio Generator</a>.`,
 faqs: [
   {
     q: "How does the Instagram Hashtag Generator work?",
@@ -2111,8 +2117,7 @@ howtoSteps: [
   description: "Convert multiple images into a single PDF file instantly.",
   seoTitleTemplate: "Images to PDF — Convert Images to PDF",
   seoDescriptionTemplate: "Use Images to PDF to combine JPG/PNG/WEBP images into one PDF. Fast, free and secure.",
-  longDescription: "The Images to PDF tool lets you combine multiple images into a single PDF file quickly and easily. It’s useful for creating documents from scanned pages, photos, screenshots, or design files that need to be shared or archived in one file.\n\nUpload your images, arrange them in the desired order, and generate a PDF instantly. The tool supports common image formats and produces a clean, shareable PDF suitable for work, school, or personal use.",
-
+  longDescription: `The Images to PDF tool lets you combine multiple images into a single PDF file quickly and easily. It’s useful for creating documents from scanned pages, photos, screenshots, or design files that need to be shared or archived in one file.\n\nUpload your images, arrange them in the desired order, and generate a PDF instantly. For pages you already have as a PDF, use <a href="/tools/merge-pdfs" title="Merge PDF">Merge PDF</a> to combine documents, or <a href="/tools/pdf-to-images" title="PDF to Images">PDF to Images</a> if you need each page exported as JPG/PNG.`,
 faqs: [
   {
     q: "Which image formats are supported?",
@@ -2133,8 +2138,7 @@ faqs: [
   description: "Merge multiple PDF files into one document.",
   seoTitleTemplate: "Merge PDF — Merge PDF Files Online",
   seoDescriptionTemplate: "Use Merge PDF to merge PDFs into one file. Fast, free and works on any device.",
-  longDescription: "The Merge PDF tool allows you to combine multiple PDF documents into a single file. It’s useful for consolidating reports, contracts, invoices, scanned documents, or study materials into one organized PDF.\n\nUpload your PDF files, arrange them in the correct order, and merge them instantly. The resulting file keeps the original layout and quality while simplifying storage and sharing.",
-
+  longDescription: `The Merge PDF tool allows you to combine multiple PDF documents into a single file. It’s useful for consolidating reports, contracts, invoices, scanned documents, or study materials into one organized PDF.\n\nUpload your PDF files, arrange them in the correct order, and merge them instantly. If you only need certain pages, use <a href="/tools/split-pdf" title="Split PDF">Split PDF</a> first. To add page numbers after merging, try <a href="/tools/pdf-page-numbering" title="PDF Page Numbering Tool">PDF Page Numbering</a>.`,
 faqs: [
   {
     q: "Will merging PDFs affect formatting?",
@@ -2155,8 +2159,7 @@ faqs: [
   description: "Add a password to protect your PDF file.",
   seoTitleTemplate: "Protect PDF — Password Protect a PDF",
   seoDescriptionTemplate: "Use Protect PDF to add password protection to PDFs. Secure and easy.",
-  longDescription: "The Protect PDF tool lets you add password protection to a PDF file, helping secure sensitive or confidential information. It’s ideal for documents such as contracts, reports, invoices, and personal records.\n\nUpload your PDF, set a password, and download the protected version instantly. Once protected, the PDF can only be opened by users who know the password.",
-
+  longDescription: `The Protect PDF tool lets you add password protection to a PDF file, helping secure sensitive or confidential information. It’s ideal for documents such as contracts, reports, invoices, and personal records.\n\nUpload your PDF, set a password, and download the protected version instantly. If you need to share a marked copy (e.g., “Draft” or “Confidential”), use <a href="/tools/pdf-watermark" title="PDF Watermark Tool">PDF Watermark</a>. If you later need to remove protection (with permission), use <a href="/tools/unlock-pdf" title="Unlock PDF">Unlock PDF</a>.`,
 faqs: [
   {
     q: "What does password protection do?",
@@ -2177,7 +2180,7 @@ faqs: [
   description: "Split a PDF into separate pages or page ranges.",
   seoTitleTemplate: "Split PDF — Split PDF Pages Online",
   seoDescriptionTemplate: "Split PDF pages instantly with Split PDF. Extract specific page ranges quickly.",
-  longDescription: "The Split PDF tool allows you to divide a PDF into separate pages or extract specific page ranges. It’s useful when you only need part of a document instead of sharing or storing the entire file.\n\nUpload your PDF, select how you want to split it, and download the resulting files instantly. This makes document handling faster and more efficient.",
+  longDescription: `The Split PDF tool allows you to divide a PDF into separate pages or extract specific page ranges. It’s useful when you only need part of a document instead of sharing or storing the entire file.\n\nUpload your PDF, select how you want to split it, and download the resulting files instantly. If you want to combine selected parts into one document afterward, use <a href="/tools/merge-pdfs" title="Merge PDF">Merge PDF</a>. To export split pages as images, use <a href="/tools/pdf-to-images" title="PDF to Images">PDF to Images</a>.`,
 
 faqs: [
   {
@@ -2199,8 +2202,7 @@ faqs: [
   description: "Remove password protection from a PDF (when you have permission).",
   seoTitleTemplate: "Unlock PDF — Unlock a PDF File Online",
   seoDescriptionTemplate: "Use Unlock PDF to unlock PDFs when you know the password. Fast and secure.",
-  longDescription: "The Unlock PDF tool removes password protection from a PDF file when you have permission to do so. It’s useful when you need to edit, print, or share a document that you own but is locked.\n\nUpload the protected PDF, enter the correct password, and download an unlocked version instantly. This tool should only be used on files you are authorized to unlock.",
-
+  longDescription: `The Unlock PDF tool removes password protection from a PDF file when you have permission to do so. It’s useful when you need to edit, print, or share a document that you own but is locked.\n\nUpload the protected PDF, enter the correct password, and download an unlocked version instantly. If you need to secure it again with a new password, use <a href="/tools/protect-pdf" title="Protect PDF">Protect PDF</a>.`,
 faqs: [
   {
     q: "Is it legal to unlock a PDF?",
@@ -2222,7 +2224,7 @@ faqs: [
   description: "Compress PDF files online without losing quality. Fast, free, and secure.",
   seoTitleTemplate: "PDF Compressor — Compress PDF Files Online",
   seoDescriptionTemplate: "Compress PDF files online for free. Reduce file size without losing quality.",
- longDescription: "The PDF Compressor reduces the file size of PDF documents while preserving readability and visual quality. It’s ideal for sharing large PDFs via email, uploading to websites, or saving storage space.\n\nUpload your PDF, choose a compression level, and download the optimized file. The tool balances file size reduction with clarity, making it suitable for documents containing text, images, or both.",
+ longDescription: `The PDF Compressor reduces the file size of PDF documents while preserving readability and visual quality. It’s ideal for sharing large PDFs via email, uploading to websites, or saving storage space.\n\nUpload your PDF, choose a compression level, and download the optimized file. If your PDF was created from photos or scans, you may want to generate it first using <a href="/tools/images-to-pdf" title="Images to PDF">Images to PDF</a>, then compress for faster sharing. If you have multiple PDFs, you can combine them using <a href="/tools/merge-pdfs" title="Merge PDF">Merge PDF</a> before compressing.`,
 
   faqs: [
     {
@@ -2248,8 +2250,7 @@ faqs: [
   description: "Extract all images from a PDF instantly.",
   seoTitleTemplate: "Extract Images from PDF — Extract All Images from PDF",
   seoDescriptionTemplate: "Upload your PDF and extract all embedded images automatically.",
-  longDescription: "The Extract Images from PDF tool pulls all embedded images from a PDF file automatically. It’s useful when you need original images for reuse, editing, archiving, or design work.\n\nUpload your PDF and extract all images in one step. The images are downloaded separately, saving time compared to manual extraction.",
-
+  longDescription: `The Extract Images from PDF tool pulls all embedded images from a PDF file automatically. It’s useful when you need original images for reuse, editing, archiving, or design work.\n\nUpload your PDF and extract all images in one step. If you need full-page screenshots of each PDF page (not just embedded images), use <a href="/tools/pdf-to-images" title="PDF to Images">PDF to Images</a>. To verify document details like author or creation date, use <a href="/tools/pdf-metadata-viewer" title="PDF Metadata Viewer">PDF Metadata Viewer</a>.`,
 faqs: [
   {
     q: "Are images extracted in original quality?",
@@ -2274,7 +2275,7 @@ faqs: [
   description: "View metadata stored inside your PDF files.",
   seoTitleTemplate: "PDF Metadata Viewer — View PDF Metadata Online",
   seoDescriptionTemplate: "Check PDF metadata including author, creation date, modification date, and more.",
- longDescription: "The PDF Metadata Viewer displays hidden information stored inside a PDF file, such as author name, creation date, modification date, and software used. This information is useful for document auditing, research, and file verification.\n\nUpload a PDF and view its metadata instantly without modifying the file. The tool is read-only and does not change document content.",
+ longDescription: `The PDF Metadata Viewer displays hidden information stored inside a PDF file, such as author name, creation date, modification date, and software used. This is useful for document auditing, research, and file verification.\n\nUpload a PDF and view its metadata instantly without modifying the file. If you want to secure the document after reviewing details, use <a href="/tools/protect-pdf" title="Protect PDF">Protect PDF</a>.`,
 
 faqs: [
   {
@@ -2300,7 +2301,7 @@ faqs: [
   description: "Add custom page numbers to your PDF online.",
   seoTitleTemplate: "PDF Page Numbering Tool — Add Page Numbers to PDF",
   seoDescriptionTemplate: "Add page numbers to your PDF in seconds. Free and easy.",
- longDescription: "The PDF Page Numbering Tool allows you to add page numbers to a PDF with custom position and style. It’s useful for reports, books, assignments, legal documents, and manuals that require clear pagination.\n\nUpload your PDF, choose numbering preferences, apply the changes, and download the final document instantly.",
+ longDescription: `The PDF Page Numbering Tool allows you to add page numbers to a PDF with custom position and style. It’s useful for reports, books, assignments, legal documents, and manuals that require clear pagination.\n\nUpload your PDF, choose numbering preferences, apply the changes, and download the final document instantly. If your document is split across multiple PDFs, merge them first using <a href="/tools/merge-pdfs" title="Merge PDF">Merge PDF</a>.`,
 
 faqs: [
   {
@@ -2327,8 +2328,7 @@ faqs: [
   description: "Convert PDF pages into high-quality images.",
   seoTitleTemplate: "PDF to Images — Convert PDF to Images",
   seoDescriptionTemplate: "Convert PDF to JPG or PNG instantly.",
-  longDescription: "The PDF to Images tool converts each page of a PDF into high-quality image files such as JPG or PNG. It’s useful for sharing pages individually, creating previews, or reusing content in designs and presentations.\n\nUpload your PDF, choose an output format, and download the generated images instantly. Each page is converted separately with clear resolution.",
-
+  longDescription: `The PDF to Images tool converts each page of a PDF into high-quality image files such as JPG or PNG. It’s useful for sharing pages individually, creating previews, or reusing content in designs and presentations.\n\nUpload your PDF, choose an output format, and download the generated images instantly. If you only need the embedded photos/graphics from the PDF (not full pages), use <a href="/tools/pdf-extract-images" title="Extract Images from PDF">Extract Images from PDF</a>. If you want to convert images back into a PDF after editing, use <a href="/tools/images-to-pdf" title="Images to PDF">Images to PDF</a>.`,
 faqs: [
   {
     q: "Can I convert specific pages only?",
@@ -2353,8 +2353,7 @@ faqs: [
   description: "Extract text from PDF files using fast text processing.",
   seoTitleTemplate: "PDF to Text — Extract Text from PDF",
   seoDescriptionTemplate: "Convert PDF documents into plain text.",
-  longDescription: "The PDF to Images tool converts each page of a PDF into high-quality image files such as JPG or PNG. It’s useful for sharing pages individually, creating previews, or reusing content in designs and presentations.\n\nUpload your PDF, choose an output format, and download the generated images instantly. Each page is converted separately with clear resolution.",
-
+  longDescription: `The PDF to Text tool extracts selectable text from a PDF and converts it into plain text you can copy, edit, or reuse. It’s useful for turning reports, articles, forms, and documents into editable content without retyping.\n\nUpload your PDF and extract text instantly. For locked PDFs, unlock them first (with permission) using <a href="/tools/unlock-pdf" title="Unlock PDF">Unlock PDF</a>. If you also want to check document author or creation details, use <a href="/tools/pdf-metadata-viewer" title="PDF Metadata Viewer">PDF Metadata Viewer</a>.`,
 faqs: [
   {
     q: "Can I convert specific pages only?",
@@ -2380,8 +2379,7 @@ faqs: [
   description: "Add text or image watermarks to your PDF files.",
   seoTitleTemplate: "PDF Watermark Tool — Add Watermark to PDF",
   seoDescriptionTemplate: "Add professional watermarks to your PDFs online for free.",
-  longDescription: "The PDF Watermark Tool allows you to add text or image watermarks to your PDF files for branding, copyright protection, or document identification. Watermarks are commonly used on reports, contracts, invoices, and confidential documents.\n\nUpload your PDF, enter custom text or upload a watermark image, and apply it instantly. You can clearly mark ownership or status without altering the original content structure.",
-
+  longDescription: `The PDF Watermark Tool allows you to add text or image watermarks to your PDF files for branding, copyright protection, or document identification. Watermarks are commonly used on reports, contracts, invoices, and confidential documents.\n\nUpload your PDF, enter custom text or upload a watermark image, and apply it instantly. For sensitive documents, consider adding a password afterward using <a href="/tools/protect-pdf" title="Protect PDF">Protect PDF</a>.`,
 faqs: [
   {
     q: "Can I add both text and image watermarks?",
@@ -2407,7 +2405,7 @@ faqs: [
   description: "Convert Word documents into PDF format and PDF to Word",
   seoTitleTemplate: "Word and PDF Converter — Convert Word to PDF",
   seoDescriptionTemplate: "Upload your DOC or DOCX file and convert it to PDF.",
-  longDescription: "The Word and PDF Converter allows you to convert Word documents (DOC or DOCX) into PDF format and convert PDFs back into editable Word files. This is useful for sharing documents while preserving layout or making locked PDFs editable again.\n\nUpload your file, convert it instantly, and download the result. The tool maintains formatting accuracy for most standard documents, making it suitable for work, academic, and personal use.",
+  longDescription: `The Word and PDF Converter allows you to convert Word documents (DOC or DOCX) into PDF format and convert PDFs back into editable Word files. This is useful for sharing documents while preserving layout or making PDFs editable again.\n\nUpload your file, convert it instantly, and download the result. After converting to PDF, you can reduce file size with <a href="/tools/pdf-compressor" title="PDF Compressor">PDF Compressor</a> or secure it using <a href="/tools/protect-pdf" title="Protect PDF">Protect PDF</a>.`,
 
 faqs: [
   {
@@ -2436,8 +2434,8 @@ faqs: [
   description: "Generate Open Graph meta tags for better social previews.",
   seoTitleTemplate: "Open Graph Tag Generator — Generate Open Graph Tags",
   seoDescriptionTemplate: "Use Open Graph Tag Generator to generate OG meta tags for Facebook, WhatsApp, Twitter/X and other platforms.",
-  longDescription: "The Open Graph Tag Generator helps you create Open Graph meta tags that control how your website links appear when shared on social platforms such as Facebook, WhatsApp, LinkedIn, and Twitter/X.\n\nEnter page details like title, description, and image URL, then generate ready-to-use meta tags. This improves click-through rates and ensures consistent previews across social networks.",
-
+  longDescription: `<p>The Open Graph Tag Generator helps you create OG meta tags that control how your website links appear when shared on platforms like Facebook, WhatsApp, LinkedIn, and Twitter/X. Correct OG tags improve click-through rate by ensuring the right title, description, and image show in the preview.</p>
+<p>Enter your page details and generate ready-to-use tags in seconds. If you also want standard SEO tags (title + meta description) and social tags together, use our <a href="/tools/meta-tag-generator" title="Meta Tag Generator">Meta Tag Generator</a>. To see how your title/description may appear in Google results, try the <a href="/tools/google-serp-preview" title="Google SERP Preview">Google SERP Preview</a>.</p>`,
 faqs: [
   {
     q: "Where do I place Open Graph tags?",
@@ -2459,7 +2457,8 @@ faqs: [
   description: "Encode or decode URLs instantly for SEO, tracking parameters, and development use.",
   seoTitleTemplate: "URL Encoder Decoder — Encode & Decode URLs Online",
   seoDescriptionTemplate: "Encode or decode URLs instantly. Perfect for SEO, UTM parameters, redirects and web development.",
-  longDescription: "The URL Encoder / Decoder tool converts URLs and text into encoded formats that are safe for transmission over the web, and decodes them back into readable form. This is commonly used for SEO tracking parameters, redirects, APIs, and development tasks.\n\nPaste your URL or string, encode or decode it instantly, and copy the result. The tool ensures special characters are handled correctly without breaking URLs.",
+  longDescription:  `<p>The URL Encoder / Decoder tool converts URLs and text into a safe encoded format for the web (and decodes it back into readable form). It’s commonly used for UTM parameters, redirects, APIs, web development, and SEO workflows where special characters can break a URL.</p>
+<p>Paste your URL or string, encode/decode instantly, and copy the result. If you’re building redirect rules, you may also need the <a href="/tools/htaccess-redirect-generator" title=".htaccess Redirect Generator">.htaccess Redirect Generator</a>. For duplicate URL variations (UTMs, filters, tracking), generate a clean canonical tag with the <a href="/tools/canonical-url-generator" title="Canonical URL Generator">Canonical URL Generator</a>.</p>`,
 
   faqs: [
     {
@@ -2486,7 +2485,8 @@ faqs: [
   description: "Generate semantically related keywords to improve topical relevance and SEO rankings.",
   seoTitleTemplate: "Semantic Keyword Generator — Find Related SEO Keywords",
   seoDescriptionTemplate: "Generate semantic and related keywords to improve topical authority and SEO performance.",
-  longDescription: "The Semantic Keyword Generator helps you discover related keywords and phrases that strengthen topical relevance. Instead of relying on a single keyword, semantic terms help search engines better understand your content.\n\nEnter a main keyword and generate semantically related terms that can be used naturally in headings, paragraphs, and subtopics. This improves SEO depth and reduces over-optimization risks.",
+  longDescription: `<p>The Semantic Keyword Generator helps you discover semantically related keywords and phrases that strengthen topical relevance. Instead of relying on one exact keyword, semantic terms help search engines understand context and improve your chances of ranking for more queries.</p>
+<p>Enter a main keyword to generate related terms you can use in headings, subtopics, and supporting paragraphs. After drafting your content, check balance and overuse with the <a href="/tools/keyword-density-checker" title="Keyword Density Checker">Keyword Density Checker</a>, and preview your final title/description with the <a href="/tools/google-serp-preview" title="Google SERP Preview">Google SERP Preview</a>.</p>`,
 
   faqs: [
     {
@@ -2516,7 +2516,8 @@ faqs: [
   description: "Generate a clean XML sitemap for your website pages.",
   seoTitleTemplate: "XML Sitemap Generator — Create Sitemap.xml Online",
   seoDescriptionTemplate: "Create SEO-friendly XML sitemaps to help search engines crawl your website efficiently.",
-  longDescription: "The XML Sitemap Generator creates a structured sitemap file that helps search engines discover and crawl your website pages efficiently. Sitemaps are essential for large sites, new websites, and frequently updated content.\n\nEnter your website URL, add page paths if needed, and generate a sitemap.xml file ready for submission to Google Search Console and other search engines.",
+  longDescription:  `<p>The XML Sitemap Generator creates a structured sitemap.xml that helps search engines discover and crawl your website pages efficiently. Sitemaps are especially useful for large sites, new websites, and frequently updated content.</p>
+<p>Generate a clean sitemap file ready for submission to Google Search Console. After creating it, you’ll usually reference it inside robots.txt—use our <a href="/tools/robots-txt-generator" title="Robots.txt Generator">Robots.txt Generator</a>. If you’re also consolidating duplicate URLs, consider adding canonicals with the <a href="/tools/canonical-url-generator" title="Canonical URL Generator">Canonical URL Generator</a>.</p>`,
 
   faqs: [
     {
@@ -2546,8 +2547,8 @@ faqs: [
   description: "Create SEO-friendly robots.txt files to control search engine crawling.",
   seoTitleTemplate: "Robots.txt Generator — Control Search Engine Crawling",
   seoDescriptionTemplate: "Generate robots.txt files to allow or block search engines from specific pages.",
-  longDescription: "The Robots.txt Generator helps you create a valid robots.txt file that controls how search engine crawlers access your website. It allows or blocks specific pages, directories, or bots from crawling.\n\nChoose your crawl rules, add sitemap references, and generate a ready-to-use robots.txt file. Proper configuration helps manage crawl budget and prevent unwanted indexing.",
-
+  longDescription: `<p>The Robots.txt Generator helps you create a valid robots.txt file that controls how search engine crawlers access your website. You can allow or disallow specific paths, manage crawl budget, and guide bots away from low-value or duplicate areas.</p>
+<p>Add your crawl rules and include your sitemap URL for easier discovery. If you haven’t created a sitemap yet, generate one with the <a href="/tools/xml-sitemap-generator" title="XML Sitemap Generator">XML Sitemap Generator</a>. For duplicate content caused by URL parameters, use the <a href="/tools/canonical-url-generator" title="Canonical URL Generator">Canonical URL Generator</a> as well.</p>`,
   faqs: [
     {
       q: "What is robots.txt?",
@@ -2576,8 +2577,8 @@ faqs: [
   description: "Generate SEO-optimized meta titles, descriptions and OG tags.",
   seoTitleTemplate: "Meta Tag Generator — Create SEO Meta Tags",
   seoDescriptionTemplate: "Generate meta titles, descriptions, Open Graph and Twitter tags instantly.",
- longDescription: "The Meta Tag Generator creates SEO-optimized meta titles, descriptions, and social meta tags for your web pages. Well-written meta tags improve click-through rates and help search engines understand page content.\n\nEnter your page details and generate ready-to-use meta tags instantly. This tool is useful for bloggers, marketers, and developers managing multiple pages.",
-
+ longDescription: `<p>The Meta Tag Generator creates SEO-optimized meta titles, meta descriptions, and social tags for your web pages. Strong meta tags improve click-through rate and help search engines understand page intent.</p>
+<p>Enter your page details and generate ready-to-use tags instantly. For social sharing previews specifically, use the <a href="/tools/open-graph-generator" title="Open Graph Tag Generator">Open Graph Tag Generator</a>. Before publishing, check truncation and appearance in search results with the <a href="/tools/google-serp-preview" title="Google SERP Preview">Google SERP Preview</a>.</p>`,
   faqs: [
     {
       q: "Why are meta tags important?",
@@ -2602,8 +2603,8 @@ faqs: [
   description: "Analyze keyword frequency and density in your content.",
   seoTitleTemplate: "Keyword Density Checker — Analyze SEO Keyword Usage",
   seoDescriptionTemplate: "Check keyword density to avoid over-optimization and improve SEO balance.",
-  longDescription: "The Keyword Density Checker analyzes how often a keyword appears in your content and calculates its percentage relative to total word count. This helps prevent keyword stuffing while maintaining SEO relevance.\n\nPaste your content, enter a target keyword, and review density metrics instantly. The tool supports balanced optimization for modern search engines.",
-
+  longDescription: `<p>The Keyword Density Checker analyzes how often a keyword appears in your content and calculates its percentage relative to the full word count. This helps you avoid keyword stuffing while keeping relevance and readability strong.</p>
+<p>Paste your content, set a target keyword, and review density metrics instantly. If you need more related terms to improve topical coverage naturally, use the <a href="/tools/semantic-keyword-generator" title="Semantic Keyword Generator">Semantic Keyword Generator</a>. For better click-through, finalize your meta title/description with the <a href="/tools/meta-tag-generator" title="Meta Tag Generator">Meta Tag Generator</a>.</p>`,
   faqs: [
     {
       q: "What is ideal keyword density?",
@@ -2628,8 +2629,8 @@ faqs: [
   description: "Generate 301 redirect rules for .htaccess files.",
   seoTitleTemplate: ".htaccess Redirect Generator — Create 301 Redirects",
   seoDescriptionTemplate: "Generate SEO-safe 301 redirect rules for domain or page changes.",
-longDescription: "The .htaccess Redirect Generator creates SEO-safe 301 redirect rules used when URLs change. Redirects help preserve search rankings, traffic, and backlinks when moving or restructuring pages.\n\nEnter the old and new URLs to generate ready-to-paste redirect rules for Apache servers.",
-
+longDescription: `<p>The .htaccess Redirect Generator creates SEO-safe 301 redirect rules for Apache servers when URLs change. Redirects preserve rankings, traffic, and backlink equity during migrations, URL cleanups, and site restructures.</p>
+<p>Enter the old and new URL to generate ready-to-paste rules. If the goal is consolidating duplicate URL variations rather than moving pages, generate a canonical tag using the <a href="/tools/canonical-url-generator" title="Canonical URL Generator">Canonical URL Generator</a>. To preview how a migrated page may appear in Google after updates, use the <a href="/tools/google-serp-preview" title="Google SERP Preview">Google SERP Preview</a>.</p>`,
   faqs: [
     {
       q: "Why use 301 redirects?",
@@ -2654,8 +2655,8 @@ longDescription: "The .htaccess Redirect Generator creates SEO-safe 301 redirect
   description: "Preview how your page appears in Google search results.",
   seoTitleTemplate: "Google SERP Preview — See How Your Page Appears",
   seoDescriptionTemplate: "Preview page titles, URLs and meta descriptions exactly like Google search results.",
-  longDescription: "The Google SERP Preview tool shows how your page title, URL, and meta description will appear in Google search results. It helps you optimize length, wording, and clarity before publishing.\n\nEnter your page details and preview a realistic search snippet instantly. This helps improve click-through rates and avoid truncation.",
-
+  longDescription: `<p>The Google SERP Preview tool shows how your page title, URL, and meta description may appear in Google search results. It helps you optimize wording, clarity, and length to reduce truncation and improve click-through rate.</p>
+<p>Enter your title and description to see a realistic snippet instantly. To generate optimized meta tags first, use the <a href="/tools/meta-tag-generator" title="Meta Tag Generator">Meta Tag Generator</a>. After writing content, keep keyword usage natural with the <a href="/tools/keyword-density-checker" title="Keyword Density Checker">Keyword Density Checker</a>.</p>`,
   faqs: [
     {
       q: "Does SERP preview match Google exactly?",
@@ -2680,8 +2681,8 @@ longDescription: "The .htaccess Redirect Generator creates SEO-safe 301 redirect
   description: "Generate canonical link tags to prevent duplicate content issues.",
   seoTitleTemplate: "Canonical URL Generator — Avoid Duplicate Content",
   seoDescriptionTemplate: "Create canonical link tags to consolidate SEO signals and avoid duplication.",
-  longDescription: "The Canonical URL Generator creates a canonical link tag that tells search engines which version of a page should be treated as the primary one. This helps prevent duplicate content issues caused by URL parameters, tracking codes, category filters, or multiple URLs showing the same content.\n\nEnter the full preferred URL and generate a ready-to-paste <link rel=\"canonical\"> tag for your HTML <head>. Using canonical tags correctly helps consolidate ranking signals, avoid indexing confusion, and keep SEO performance clean across similar or duplicated pages.",
-
+  longDescription:  `<p>The Canonical URL Generator creates a canonical link tag that tells search engines which version of a page should be treated as the primary one. This prevents duplicate content issues caused by URL parameters, tracking codes, filters, or multiple URLs showing the same content.</p>
+<p>Enter the preferred full URL and generate a ready-to-paste <code>&lt;link rel="canonical"&gt;</code> tag for your HTML <code>&lt;head&gt;</code>. If you’re managing crawl behavior, pair canonicals with a clean robots file using the <a href="/tools/robots-txt-generator" title="Robots.txt Generator">Robots.txt Generator</a> and submit your URLs via a sitemap from the <a href="/tools/xml-sitemap-generator" title="XML Sitemap Generator">XML Sitemap Generator</a>. For permanent URL changes, use the <a href="/tools/htaccess-redirect-generator" title=".htaccess Redirect Generator">.htaccess Redirect Generator</a> instead.</p>`,
   faqs: [
     {
       q: "What is a canonical URL?",
@@ -2709,8 +2710,8 @@ longDescription: "The .htaccess Redirect Generator creates SEO-safe 301 redirect
   description: "Convert area units instantly (sq ft, sq m, acres, hectares and more).",
   seoTitleTemplate: "Area Converter — Convert Area Units Online",
   seoDescriptionTemplate: "Use Area Converter to convert square feet, square meters, acres, hectares and more. Fast, free and accurate.",
-  longDescription: "The Area Converter helps you convert between common area units such as square meters, square feet, acres, hectares, and more. It’s useful for real estate, construction, land measurement, academic work, and everyday conversions where accuracy matters.\n\nEnter a value, choose the input unit and the output unit, and get the converted result instantly. This tool is designed to be fast, clear, and reliable across both metric and imperial systems.",
-
+  longDescription: `<p>The Area Converter allows you to convert between common area units such as square meters, square feet, acres, hectares, and more. It is especially useful for real estate calculations, land measurement, construction planning, academic tasks, and property comparisons.</p>
+<p>Enter a value, select your input and output units, and get instant results based on standard conversion factors. If you also need linear measurements for property dimensions, use the <a href="/tools/length-converter" title="Length Converter">Length Converter</a>. For volume-related measurements, try the <a href="/tools/volume-converter" title="Volume Converter">Volume Converter</a>.</p>`,
   faqs: [
   {
     q: "Which area units are supported?",
@@ -2731,8 +2732,8 @@ longDescription: "The .htaccess Redirect Generator creates SEO-safe 301 redirect
   description: "Convert length units instantly (mm, cm, m, km, inches, feet and more).",
   seoTitleTemplate: "Length Converter — Convert Length Units Online",
   seoDescriptionTemplate: "Use Length Converter to convert mm, cm, meters, kilometers, inches, feet and more. Fast and accurate.",
-  longDescription: "The Length Converter allows you to convert between metric and imperial length units such as millimeters, centimeters, meters, kilometers, inches, feet, and more. It’s useful for schoolwork, construction measurements, travel planning, engineering, and online shopping.\n\nEnter a value, select your input unit and output unit, and the tool calculates the exact conversion instantly. It’s designed for quick, error-free conversions without manual math.",
-
+  longDescription: `<p>The Length Converter makes it easy to convert between metric and imperial units such as millimeters, centimeters, meters, kilometers, inches, and feet. It is ideal for engineering, schoolwork, construction, travel planning, and international product measurements.</p>
+<p>Simply enter a value and choose your units to get an accurate result instantly. For area calculations based on dimensions, use the <a href="/tools/area-converter" title="Area Converter">Area Converter</a>. If you’re converting weight or mass for shipping or fitness tracking, try the <a href="/tools/weight-converter" title="Weight Converter">Weight Converter</a>.</p>`,
   faqs: [
   {
     q: "Does it support both metric and imperial units?",
@@ -2753,8 +2754,8 @@ longDescription: "The .htaccess Redirect Generator creates SEO-safe 301 redirect
   description: "Convert speed units instantly (km/h, mph, m/s and more).",
   seoTitleTemplate: "Speed Converter — Convert Speed Units Online",
   seoDescriptionTemplate: "Convert speed units like km/h, mph and m/s using Speed Converter. Free, fast and accurate.",
-  longDescription: "The Speed Converter helps you convert speed values between units such as km/h, mph, m/s, and more. It’s useful for driving conversions, athletics, engineering calculations, travel, and understanding weather or transport speed data.\n\nEnter your speed, choose the source unit and target unit, and get the converted speed instantly. The tool ensures accurate conversions using standard unit relationships.",
-
+  longDescription:  `<p>The Speed Converter allows you to convert speed units such as km/h, mph, and m/s quickly and accurately. It is useful for driving comparisons, athletics, aviation data, weather interpretation, and transport calculations.</p>
+<p>Enter your speed value, select the source and target units, and get instant results using precise conversion standards. If you need temperature-related conversions alongside weather data, use the <a href="/tools/temperature-converter" title="Temperature Converter">Temperature Converter</a>. For distance calculations, pair it with the <a href="/tools/length-converter" title="Length Converter">Length Converter</a>.</p>`,
   faqs: [
   {
     q: "Can I convert mph to km/h and vice versa?",
@@ -2775,8 +2776,8 @@ longDescription: "The .htaccess Redirect Generator creates SEO-safe 301 redirect
   description: "Convert Celsius, Fahrenheit and Kelvin instantly.",
   seoTitleTemplate: "Temperature Converter — Convert Celsius, Fahrenheit & Kelvin",
   seoDescriptionTemplate: "Use Temperature Converter to convert Celsius to Fahrenheit, Kelvin and vice versa. Accurate and instant.",
-  longDescription: "The Temperature Converter instantly converts between Celsius, Fahrenheit, and Kelvin. It’s useful for cooking, travel, science homework, lab work, and international weather comparisons.\n\nEnter a temperature value, choose the source scale and target scale, and get the converted result immediately. The tool uses precise formulas for accurate conversions across all supported scales.",
-
+  longDescription: `<p>The Temperature Converter instantly converts between Celsius, Fahrenheit, and Kelvin using precise scientific formulas. It is useful for cooking, travel, lab work, academic assignments, and international weather comparisons.</p>
+<p>Enter a temperature value, choose your source and target scale, and get an immediate result. If you’re also converting physical measurements for experiments or projects, you may use the <a href="/tools/volume-converter" title="Volume Converter">Volume Converter</a> or the <a href="/tools/weight-converter" title="Weight Converter">Weight Converter</a>.</p>`,
   faqs: [
   {
     q: "Does it support Celsius, Fahrenheit, and Kelvin?",
@@ -2797,8 +2798,8 @@ longDescription: "The .htaccess Redirect Generator creates SEO-safe 301 redirect
   description: "Convert volume units instantly (liters, ml, gallons, cups and more).",
   seoTitleTemplate: "Volume Converter — Convert Volume Units Online",
   seoDescriptionTemplate: "Convert liters, milliliters, gallons, cups and more with Volume Converter. Fast and free.",
-  longDescription: "The Volume Converter lets you convert between volume units such as liters, milliliters, gallons, cups, and more. It’s useful for cooking, baking, chemistry, product measurements, and international unit conversions.\n\nEnter a value, choose your input and output units, and the tool converts it instantly. It’s designed to make volume conversions quick and clear without manual calculations.",
-
+  longDescription: `<p>The Volume Converter helps you convert between liters, milliliters, gallons, cups, and other common volume units. It is particularly useful for cooking, baking, laboratory measurements, product packaging, and international conversions.</p>
+<p>Enter your value, select the units, and receive an accurate conversion instantly. For mass-based measurements in recipes or shipping, use the <a href="/tools/weight-converter" title="Weight Converter">Weight Converter</a>. For dimensional calculations, try the <a href="/tools/length-converter" title="Length Converter">Length Converter</a>.</p>`,
   faqs: [],
   howtoSteps: ["Enter volume.", "Select units.", "Get conversion instantly."]
 },
@@ -2809,7 +2810,8 @@ longDescription: "The .htaccess Redirect Generator creates SEO-safe 301 redirect
   description: "Convert weight units instantly (kg, g, lbs, oz and more).",
   seoTitleTemplate: "Weight Converter — Convert Weight Units Online",
   seoDescriptionTemplate: "Convert kilograms, grams, pounds and ounces with Weight Converter. Fast and accurate.",
-  longDescription: "The Weight Converter allows you to convert between common weight units such as kilograms, grams, pounds, ounces, and more. It is useful for cooking, fitness tracking, shipping calculations, and international measurements.\n\nEnter a value, choose the input and output units, and get instant results with high accuracy. The tool eliminates manual calculations and conversion errors.",
+  longDescription: `<p>The Weight Converter allows you to convert between kilograms, grams, pounds, ounces, and other common weight units with high accuracy. It is ideal for cooking measurements, fitness tracking, shipping calculations, and international trade conversions.</p>
+<p>Enter a value, choose the input and output units, and get precise results instantly. For related cooking measurements involving liquids, use the <a href="/tools/volume-converter" title="Volume Converter">Volume Converter</a>. If you are calculating dimensions or space, the <a href="/tools/area-converter" title="Area Converter">Area Converter</a> may also be helpful.</p>`,
 
 faqs: [
   {

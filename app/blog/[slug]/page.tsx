@@ -1,38 +1,117 @@
+import { notFound } from "next/navigation";
+import Link from "next/link";
+
 async function getPost(slug: string) {
   const res = await fetch(
-  `https://cms.onlinetoolsbase.com/wp-json/wp/v2/posts?slug=${slug}&_embed=1`,
-  { cache: "no-store" }
-);
+    `https://cms.onlinetoolsbase.com/wp-json/wp/v2/posts?slug=${slug}&_embed=1`,
+    { cache: "no-store" }
+  );
+
+  if (!res.ok) {
+    return null;
+  }
 
   const data = await res.json();
-  return data[0];
+  return data?.[0] || null;
 }
 
-export default async function BlogPost({ params }: any) {
+function stripHtml(html: string) {
+  return html.replace(/<[^>]*>/g, "").trim();
+}
 
+export async function generateMetadata({ params }: { params: { slug: string } }) {
   const post = await getPost(params.slug);
 
   if (!post) {
-    return <div>Post not found</div>;
+    return {
+      title: "Post Not Found | OnlineToolsBase",
+    };
   }
 
-  return (
-    <div className="container mx-auto max-w-3xl py-10">
+  const title = stripHtml(post.title.rendered);
+  const description = stripHtml(post.excerpt.rendered).slice(0, 160);
 
-      <h1
-        className="text-4xl font-bold mb-6"
-        dangerouslySetInnerHTML={{
-          __html: post.title.rendered,
-        }}
+  return {
+    title: `${title} | OnlineToolsBase Blog`,
+    description,
+    alternates: {
+      canonical: `https://onlinetoolsbase.com/blog/${post.slug}`,
+    },
+  };
+}
+
+export default async function BlogPostPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const post = await getPost(params.slug);
+
+  if (!post) {
+    notFound();
+  }
+
+  const featuredImage =
+    post?._embedded?.["wp:featuredmedia"]?.[0]?.source_url || null;
+
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: stripHtml(post.title.rendered),
+    description: stripHtml(post.excerpt.rendered),
+    datePublished: post.date,
+    dateModified: post.modified,
+    image: featuredImage ? [featuredImage] : [],
+    author: {
+      "@type": "Organization",
+      name: "OnlineToolsBase",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "OnlineToolsBase",
+    },
+    mainEntityOfPage: `https://onlinetoolsbase.com/blog/${post.slug}`,
+  };
+
+  return (
+    <main className="mx-auto max-w-3xl px-4 py-10">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
 
-      <div
-        className="prose max-w-none"
+      <div className="mb-6">
+        <Link href="/blog" className="text-sm hover:underline">
+          ← Back to Blog
+        </Link>
+      </div>
+
+      {featuredImage && (
+        <img
+          src={featuredImage}
+          alt={stripHtml(post.title.rendered)}
+          className="mb-6 h-auto w-full rounded-xl object-cover"
+        />
+      )}
+
+      <h1 className="text-4xl font-bold">
+        <span
+          dangerouslySetInnerHTML={{
+            __html: post.title.rendered,
+          }}
+        />
+      </h1>
+
+      <p className="mt-3 text-sm text-gray-500">
+        {new Date(post.date).toLocaleDateString()}
+      </p>
+
+      <article
+        className="prose prose-slate mt-8 max-w-none"
         dangerouslySetInnerHTML={{
           __html: post.content.rendered,
         }}
       />
-
-    </div>
+    </main>
   );
 }

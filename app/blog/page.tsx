@@ -2,7 +2,7 @@ import Link from "next/link";
 
 async function getPosts() {
   const res = await fetch(
-  "https://cms.onlinetoolsbase.com/wp-json/wp/v2/posts?per_page=10&_embed=1",
+  "https://cms.onlinetoolsbase.com/wp-json/wp/v2/posts?per_page=12&_embed=1",
   { cache: "no-store" }
 );
 

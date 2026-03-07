@@ -30,7 +30,7 @@ export default function ContactPage() {
               href="mailto:contact@onlinetoolsbase.com"
               className="text-blue-400 underline underline-offset-2"
             >
-              contact@onlineotoolsbase.com
+              armantariq189@gmail.com
             </a>
           </p>
 

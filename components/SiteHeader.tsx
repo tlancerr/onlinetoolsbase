@@ -123,7 +123,7 @@ export default function SiteHeader() {
     "Image Tools",
     "Social Media Tools",
     "PDF Tools",
-    "Seo Tools",
+    "SEO Tools",
     "Converter Tools",
     "Math Tools",
     "Health and Fitness Tools",

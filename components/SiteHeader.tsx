@@ -369,37 +369,51 @@ export default function SiteHeader() {
           </div>
         </div>
 
-        {/* Right controls */}
-        <div className="flex items-center gap-2">
-          {/* Mobile 3-dot menu */}
-          <button
-            type="button"
-            onClick={() => {
-              setMobileOpen((v) => !v);
-              // reset category if empty
-              if (!mobileCategory && allCategories.length) {
-                setMobileCategory(allCategories[0]);
-              }
-              // focus search after open
-              setTimeout(() => mobileInputRef.current?.focus(), 50);
-            }}
-            className="md:hidden btn-secondary text-[13px] px-3 py-2"
-            aria-label="Open tools menu"
-            aria-expanded={mobileOpen}
-          >
-            ⋮
-          </button>
+       {/* Right controls */}
+<div className="flex items-center gap-2">
+  {/* Desktop blog link */}
+  <Link
+    href="/blog"
+    className="hidden md:inline-flex btn-secondary text-[11px] px-3 py-1"
+  >
+    Blog
+  </Link>
 
-          {/* Theme toggle */}
-          <button
-            type="button"
-            onClick={toggleTheme}
-            className="btn-secondary text-[11px] px-2 py-1"
-          >
-            {theme === "dark" ? "🌙 Dark" : "☀️ Light"}
-          </button>
-        </div>
-      </div>
+  {/* Desktop contact link */}
+  <Link
+    href="/contact"
+    className="hidden md:inline-flex btn-secondary text-[11px] px-3 py-1"
+  >
+    Contact
+  </Link>
+
+  {/* Mobile 3-dot menu */}
+  <button
+    type="button"
+    onClick={() => {
+      setMobileOpen((v) => !v);
+      if (!mobileCategory && allCategories.length) {
+        setMobileCategory(allCategories[0]);
+      }
+      setTimeout(() => mobileInputRef.current?.focus(), 50);
+    }}
+    className="md:hidden btn-secondary text-[13px] px-3 py-2"
+    aria-label="Open tools menu"
+    aria-expanded={mobileOpen}
+  >
+    ⋮
+  </button>
+
+  {/* Theme toggle */}
+  <button
+    type="button"
+    onClick={toggleTheme}
+    className="btn-secondary text-[11px] px-2 py-1"
+  >
+    {theme === "dark" ? "🌙 Dark" : "☀️ Light"}
+  </button>
+</div>
+</div>
 
       {/* Mobile panel (fixed, fits screen) */}
       {mobileOpen && (
@@ -425,6 +439,25 @@ export default function SiteHeader() {
             </div>
 
             <div className="p-4 space-y-3">
+
+<div className="grid grid-cols-2 gap-2">
+  <Link
+    href="/blog"
+    className="btn-secondary text-xs px-4 py-2 text-center"
+    onClick={() => setMobileOpen(false)}
+  >
+    Blog
+  </Link>
+
+  <Link
+    href="/contact"
+    className="btn-secondary text-xs px-4 py-2 text-center"
+    onClick={() => setMobileOpen(false)}
+  >
+    Contact
+  </Link>
+</div>
+              
               {/* Mobile Search */}
               <div className="relative">
                 <input

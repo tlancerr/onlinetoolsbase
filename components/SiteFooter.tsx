@@ -23,6 +23,7 @@ export default function SiteFooter() {
 
         {/* Links */}
         <div className="flex gap-4">
+          <Link href="/blog">Blog</Link>
           <Link href="/about">About</Link>
           <Link href="/privacy-policy">Privacy</Link>
           <Link href="/contact">Contact</Link>

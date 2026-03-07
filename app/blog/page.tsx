@@ -2,9 +2,9 @@ import Link from "next/link";
 
 async function getPosts() {
   const res = await fetch(
-    "https://cms.onlinetoolsbase.com/wp-json/wp/v2/posts?per_page=10",
-    { next: { revalidate: 3600 } }
-  );
+  "https://cms.onlinetoolsbase.com/wp-json/wp/v2/posts?per_page=10&_embed=1",
+  { cache: "no-store" }
+);
 
   return res.json();
 }

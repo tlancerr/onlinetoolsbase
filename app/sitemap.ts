@@ -1,7 +1,22 @@
 import { MetadataRoute } from "next";
 import toolsData from "../components/toolsData";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+async function getBlogPosts() {
+  const res = await fetch(
+    "https://cms.onlinetoolsbase.com/wp-json/wp/v2/posts?per_page=100",
+    {
+      next: { revalidate: 3600 },
+    }
+  );
+
+  if (!res.ok) {
+    return [];
+  }
+
+  return res.json();
+}
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const domain = "https://onlinetoolsbase.com";
   const now = new Date().toISOString();
 
@@ -32,6 +47,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/terms-of-service",
     "/tools-sitemap.xml",
     "/tools-pages-sitemap.xml",
+    "/blog",
   ].map((path) => ({
     url: `${domain}${path}`,
     lastModified: now,
@@ -46,5 +62,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticPages, ...toolPages, ...categoryPages];
+  const posts = await getBlogPosts();
+
+  const blogPages = posts.map((post: any) => ({
+    url: `${domain}/blog/${post.slug}`,
+    lastModified: post.modified || now,
+    changeFrequency: "weekly" as const,
+    priority: 0.8,
+  }));
+
+  return [
+    ...staticPages,
+    ...toolPages,
+    ...categoryPages,
+    ...blogPages,
+  ];
 }

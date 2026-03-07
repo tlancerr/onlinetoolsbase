@@ -1,7 +1,7 @@
 async function getPost(slug: string) {
   const res = await fetch(
     `https://cms.onlinetoolsbase.com/wp-json/wp/v2/posts?slug=${slug}`,
-    { next: { revalidate: 3600 } }
+    { { cache: "no-store" } }
   );
 
   const data = await res.json();

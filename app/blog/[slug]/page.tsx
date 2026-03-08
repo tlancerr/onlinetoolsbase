@@ -12,14 +12,18 @@ async function getPost(slug: string) {
   }
 
   const data = await res.json();
-  return data?.[0] || null;
+  return data && data.length > 0 ? data[0] : null;
 }
 
 function stripHtml(html: string) {
   return html.replace(/<[^>]*>/g, "").trim();
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const post = await getPost(params.slug);
 
   if (!post) {
@@ -95,11 +99,7 @@ export default async function BlogPostPage({
       )}
 
       <h1 className="text-4xl font-bold">
-        <span
-          dangerouslySetInnerHTML={{
-            __html: post.title.rendered,
-          }}
-        />
+        <span dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
       </h1>
 
       <p className="mt-3 text-sm text-gray-500">
@@ -108,9 +108,7 @@ export default async function BlogPostPage({
 
       <article
         className="prose prose-slate mt-8 max-w-none"
-        dangerouslySetInnerHTML={{
-          __html: post.content.rendered,
-        }}
+        dangerouslySetInnerHTML={{ __html: post.content.rendered }}
       />
     </main>
   );

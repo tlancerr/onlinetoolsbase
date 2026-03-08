@@ -408,37 +408,41 @@ export default function SiteHeader() {
         {/* Right controls */}
         <div className="flex items-center gap-2">
           {/* Desktop Blog dropdown */}
-          <div ref={blogMenuRef} className="relative hidden md:block">
+          {/* Desktop Blog dropdown */}
+<div ref={blogMenuRef} className="relative hidden md:block">
   <button
     type="button"
     onClick={() => setBlogMenuOpen((v) => !v)}
-    className="btn-secondary text-[11px] px-3 py-1"
+    className="btn-secondary inline-flex items-center justify-center text-[11px] px-4 py-2"
     aria-expanded={blogMenuOpen}
+    aria-haspopup="menu"
   >
     Blog
   </button>
 
   {blogMenuOpen && (
-    <div className="absolute right-0 mt-2 w-64 rounded-xl border border-slate-800 bg-slate-950 shadow-xl z-50 overflow-hidden">
-      <div className="py-2">
-        <Link
-          href="/blog"
-          className="block px-4 py-3 text-sm text-slate-200 hover:bg-slate-900 whitespace-nowrap"
-          onClick={() => setBlogMenuOpen(false)}
-        >
-          All Articles
-        </Link>
-
-        {blogCategories.map((cat) => (
+    <div className="absolute right-0 top-full z-50 mt-2">
+      <div className="min-w-[220px] w-max max-w-[280px] rounded-xl border border-slate-800 bg-slate-950 shadow-2xl overflow-hidden">
+        <div className="py-2">
           <Link
-            key={cat.slug}
-            href={`/blog/category/${cat.slug}`}
-            className="block px-4 py-3 text-sm text-slate-200 hover:bg-slate-900 whitespace-nowrap"
+            href="/blog"
+            className="block w-full px-4 py-3 text-left text-sm text-slate-200 hover:bg-slate-900 whitespace-nowrap"
             onClick={() => setBlogMenuOpen(false)}
           >
-            {cat.name}
+            All Articles
           </Link>
-        ))}
+
+          {blogCategories.map((cat) => (
+            <Link
+              key={cat.slug}
+              href={`/blog/category/${cat.slug}`}
+              className="block w-full px-4 py-3 text-left text-sm text-slate-200 hover:bg-slate-900 whitespace-nowrap"
+              onClick={() => setBlogMenuOpen(false)}
+            >
+              {cat.name}
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   )}

@@ -12,7 +12,7 @@ async function getPost(slug: string) {
   }
 
   const data = await res.json();
-  return data && data.length > 0 ? data[0] : null;
+  return Array.isArray(data) && data.length > 0 ? data[0] : null;
 }
 
 function stripHtml(html: string) {
@@ -22,9 +22,10 @@ function stripHtml(html: string) {
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const post = await getPost(params.slug);
+  const { slug } = await params;
+  const post = await getPost(slug);
 
   if (!post) {
     return {
@@ -47,9 +48,10 @@ export async function generateMetadata({
 export default async function BlogPostPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const post = await getPost(params.slug);
+  const { slug } = await params;
+  const post = await getPost(slug);
 
   if (!post) {
     notFound();

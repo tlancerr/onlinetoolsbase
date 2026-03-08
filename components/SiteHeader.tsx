@@ -5,6 +5,7 @@ import toolsData from "./toolsData";
 import { useMemo, useState, useEffect, useRef } from "react";
 import { useTheme } from "./useTheme";
 import Image from "next/image";
+import { getBlogCategories } from "../lib/getBlogCategories";
 
 /* ---------- debounce hook (local, lightweight) ---------- */
 function useDebouncedValue<T>(value: T, delay = 300) {
@@ -19,6 +20,10 @@ function useDebouncedValue<T>(value: T, delay = 300) {
 }
 
 export default function SiteHeader() {
+  const [blogCategories, setBlogCategories] = useState<
+    { name: string; slug: string }[]
+  >([]);
+
   const { theme, toggleTheme } = useTheme();
 
   const [query, setQuery] = useState("");
@@ -28,6 +33,10 @@ export default function SiteHeader() {
   const [panelOpen, setPanelOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const [hoverCategory, setHoverCategory] = useState<string | null>(null);
+
+  // Blog dropdown state
+  const [blogMenuOpen, setBlogMenuOpen] = useState(false);
+  const blogMenuRef = useRef<HTMLDivElement>(null);
 
   // Mobile menu state
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -57,7 +66,7 @@ export default function SiteHeader() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  /* ---------- ESC key closes search dropdown + category panel + mobile panel ---------- */
+  /* ---------- ESC key closes search dropdown + category panel + mobile panel + blog menu ---------- */
   useEffect(() => {
     function handleEscape(e: KeyboardEvent) {
       if (e.key === "Escape") {
@@ -66,10 +75,13 @@ export default function SiteHeader() {
         setActiveIndex(-1);
         inputRef.current?.blur();
 
-        // Category panel
+        // Tool category panel
         setPanelOpen(false);
         setActiveCategory(null);
         setHoverCategory(null);
+
+        // Blog menu
+        setBlogMenuOpen(false);
 
         // Mobile menu
         setMobileOpen(false);
@@ -77,6 +89,20 @@ export default function SiteHeader() {
     }
     document.addEventListener("keydown", handleEscape);
     return () => document.removeEventListener("keydown", handleEscape);
+  }, []);
+
+  /* --------- blog categories pull from wordpress -------- */
+  useEffect(() => {
+    async function loadCategories() {
+      try {
+        const cats = await getBlogCategories();
+        setBlogCategories(cats);
+      } catch (err) {
+        console.error("Failed to load blog categories", err);
+      }
+    }
+
+    loadCategories();
   }, []);
 
   /* ---------- close category panel on outside click ---------- */
@@ -93,6 +119,19 @@ export default function SiteHeader() {
     document.addEventListener("mousedown", handleOutsideCategoryClick);
     return () => document.removeEventListener("mousedown", handleOutsideCategoryClick);
   }, [panelOpen]);
+
+  /* ---------- close blog menu on outside click ---------- */
+  useEffect(() => {
+    function handleOutsideBlogMenuClick(e: MouseEvent) {
+      if (!blogMenuOpen) return;
+      if (blogMenuRef.current && !blogMenuRef.current.contains(e.target as Node)) {
+        setBlogMenuOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleOutsideBlogMenuClick);
+    return () => document.removeEventListener("mousedown", handleOutsideBlogMenuClick);
+  }, [blogMenuOpen]);
 
   /* ---------- close mobile panel on outside click ---------- */
   useEffect(() => {
@@ -181,9 +220,8 @@ export default function SiteHeader() {
     }
   }
 
-  // Click-to-open behavior for category panel
+  // Click-to-open behavior for tool category panel
   function toggleCategory(cat: string) {
-    // If clicking same active category, toggle open/close
     if (panelOpen && activeCategory === cat) {
       setPanelOpen(false);
       setActiveCategory(null);
@@ -194,8 +232,7 @@ export default function SiteHeader() {
     setPanelOpen(true);
   }
 
-  const panelCategory = activeCategory; // single source of truth for panel content
-
+  const panelCategory = activeCategory;
   const categorySlug = (c: string) => c.toLowerCase().replace(/\s+/g, "-");
 
   return (
@@ -212,7 +249,6 @@ export default function SiteHeader() {
               priority
               className="rounded"
             />
-
             <span className="text-[12px] text-slate-400">
               <center>Free online tools & calculators</center>
             </span>
@@ -274,7 +310,7 @@ export default function SiteHeader() {
             </div>
           )}
 
-          {/* Category chips + overlay panel (CLICK-based) */}
+          {/* Tool category chips + overlay panel */}
           <div ref={categoryRef} className="mt-1 relative">
             <div className="flex flex-wrap gap-1 text-[10px] text-slate-400">
               {allCategories.map((cat) => {
@@ -369,53 +405,82 @@ export default function SiteHeader() {
           </div>
         </div>
 
-       {/* Right controls */}
-<div className="flex items-center gap-2">
-  {/* Desktop blog link */}
-  <Link
-    href="/blog"
-    className="hidden md:inline-flex btn-secondary text-[11px] px-3 py-1"
-  >
-    Blog
-  </Link>
+        {/* Right controls */}
+        <div className="flex items-center gap-2">
+          {/* Desktop Blog dropdown */}
+          <div ref={blogMenuRef} className="relative hidden md:block">
+            <button
+              type="button"
+              onClick={() => setBlogMenuOpen((v) => !v)}
+              className="btn-secondary text-[11px] px-3 py-1"
+              aria-expanded={blogMenuOpen}
+            >
+              Blog
+            </button>
 
-  {/* Desktop contact link */}
-  <Link
-    href="/contact"
-    className="hidden md:inline-flex btn-secondary text-[11px] px-3 py-1"
-  >
-    Contact
-  </Link>
+            {blogMenuOpen && (
+              <div className="absolute right-0 mt-2 w-60 rounded-md border border-slate-800 bg-slate-950 shadow-lg z-50">
+                <div className="p-2">
+                  <Link
+                    href="/blog"
+                    className="block rounded px-3 py-2 text-xs text-slate-200 hover:bg-slate-900"
+                    onClick={() => setBlogMenuOpen(false)}
+                  >
+                    All Articles
+                  </Link>
 
-  {/* Mobile 3-dot menu */}
-  <button
-    type="button"
-    onClick={() => {
-      setMobileOpen((v) => !v);
-      if (!mobileCategory && allCategories.length) {
-        setMobileCategory(allCategories[0]);
-      }
-      setTimeout(() => mobileInputRef.current?.focus(), 50);
-    }}
-    className="md:hidden btn-secondary text-[13px] px-3 py-2"
-    aria-label="Open tools menu"
-    aria-expanded={mobileOpen}
-  >
-    ⋮
-  </button>
+                  {blogCategories.map((cat) => (
+                    <Link
+                      key={cat.slug}
+                      href={`/blog/category/${cat.slug}`}
+                      className="block rounded px-3 py-2 text-xs text-slate-200 hover:bg-slate-900"
+                      onClick={() => setBlogMenuOpen(false)}
+                    >
+                      {cat.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
 
-  {/* Theme toggle */}
-  <button
-    type="button"
-    onClick={toggleTheme}
-    className="btn-secondary text-[11px] px-2 py-1"
-  >
-    {theme === "dark" ? "🌙 Dark" : "☀️ Light"}
-  </button>
-</div>
-</div>
+          {/* Desktop contact link */}
+          <Link
+            href="/contact"
+            className="hidden md:inline-flex btn-secondary text-[11px] px-3 py-1"
+          >
+            Contact
+          </Link>
 
-      {/* Mobile panel (fixed, fits screen) */}
+          {/* Mobile 3-dot menu */}
+          <button
+            type="button"
+            onClick={() => {
+              setMobileOpen((v) => !v);
+              if (!mobileCategory && allCategories.length) {
+                setMobileCategory(allCategories[0]);
+              }
+              setTimeout(() => mobileInputRef.current?.focus(), 50);
+            }}
+            className="md:hidden btn-secondary text-[13px] px-3 py-2"
+            aria-label="Open tools menu"
+            aria-expanded={mobileOpen}
+          >
+            ⋮
+          </button>
+
+          {/* Theme toggle */}
+          <button
+            type="button"
+            onClick={toggleTheme}
+            className="btn-secondary text-[11px] px-2 py-1"
+          >
+            {theme === "dark" ? "🌙 Dark" : "☀️ Light"}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile panel */}
       {mobileOpen && (
         <div className="md:hidden fixed inset-0 z-[999]">
           {/* dim background */}
@@ -438,26 +503,47 @@ export default function SiteHeader() {
               </button>
             </div>
 
-            <div className="p-4 space-y-3">
+            <div className="p-4 space-y-4">
+              {/* Top quick links */}
+              <div className="grid grid-cols-2 gap-2">
+                <Link
+                  href="/blog"
+                  className="btn-secondary text-xs px-4 py-2 text-center"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  Blog
+                </Link>
 
-<div className="grid grid-cols-2 gap-2">
-  <Link
-    href="/blog"
-    className="btn-secondary text-xs px-4 py-2 text-center"
-    onClick={() => setMobileOpen(false)}
-  >
-    Blog
-  </Link>
+                <Link
+                  href="/contact"
+                  className="btn-secondary text-xs px-4 py-2 text-center"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  Contact
+                </Link>
+              </div>
 
-  <Link
-    href="/contact"
-    className="btn-secondary text-xs px-4 py-2 text-center"
-    onClick={() => setMobileOpen(false)}
-  >
-    Contact
-  </Link>
-</div>
-              
+              {/* Blog categories */}
+              {blogCategories.length > 0 && (
+                <div>
+                  <div className="mb-2 text-[11px] uppercase tracking-wide text-slate-400">
+                    Blog Categories
+                  </div>
+                  <div className="grid grid-cols-2 gap-2">
+                    {blogCategories.map((cat) => (
+                      <Link
+                        key={cat.slug}
+                        href={`/blog/category/${cat.slug}`}
+                        className="rounded-md border border-slate-800 px-3 py-2 text-xs text-slate-200 hover:bg-slate-900 text-center"
+                        onClick={() => setMobileOpen(false)}
+                      >
+                        {cat.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+
               {/* Mobile Search */}
               <div className="relative">
                 <input
@@ -487,7 +573,6 @@ export default function SiteHeader() {
                   </button>
                 )}
 
-                {/* Results */}
                 {filtered.length > 0 && (
                   <div className="mt-2 w-full rounded-md border border-slate-800 bg-slate-950 max-h-56 overflow-auto">
                     {filtered.map((tool, i) => (
@@ -495,7 +580,9 @@ export default function SiteHeader() {
                         key={tool.slug}
                         href={`/tools/${tool.slug}`}
                         className={`block px-3 py-2 text-xs ${
-                          i === activeIndex ? "bg-[#64c1ff] text-white" : "text-slate-200"
+                          i === activeIndex
+                            ? "bg-[#64c1ff] text-white"
+                            : "text-slate-200"
                         }`}
                         onClick={() => {
                           setQuery("");
@@ -511,7 +598,7 @@ export default function SiteHeader() {
                 )}
               </div>
 
-              {/* Category select + go */}
+              {/* Tool category select + go */}
               <div className="flex gap-2 items-center">
                 <select
                   className="tool-input text-xs w-full"
@@ -526,7 +613,9 @@ export default function SiteHeader() {
                 </select>
 
                 <Link
-                  href={`/tools/category/${categorySlug(mobileCategory || allCategories[0] || "")}`}
+                  href={`/tools/category/${categorySlug(
+                    mobileCategory || allCategories[0] || ""
+                  )}`}
                   className="btn-secondary text-xs px-4 py-2 whitespace-nowrap"
                   onClick={() => setMobileOpen(false)}
                 >
@@ -535,7 +624,8 @@ export default function SiteHeader() {
               </div>
 
               <div className="text-[11px] text-slate-400 leading-relaxed">
-                Tip: Use search to jump directly to a tool, or select a category to browse.
+                Tip: Use search to jump directly to a tool, browse tool categories,
+                or explore blog topics.
               </div>
             </div>
           </div>

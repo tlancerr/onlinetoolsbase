@@ -3,13 +3,14 @@ import { notFound } from "next/navigation";
 
 async function getCategoryBySlug(slug: string) {
   const res = await fetch(
-    `https://cms.onlinetoolsbase.com/wp-json/wp/v2/categories?slug=${slug}`,
+    `https://cms.onlinetoolsbase.com/wp-json/wp/v2/categories?slug=${encodeURIComponent(slug)}`,
     { cache: "no-store" }
   );
 
   if (!res.ok) return null;
+
   const data = await res.json();
-  return data?.[0] || null;
+  return Array.isArray(data) && data.length > 0 ? data[0] : null;
 }
 
 async function getPostsByCategory(categoryId: number) {
@@ -26,8 +27,13 @@ function stripHtml(html: string) {
   return html.replace(/<[^>]*>/g, "").trim();
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const category = await getCategoryBySlug(params.slug);
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const category = await getCategoryBySlug(slug);
 
   if (!category) {
     return {
@@ -36,8 +42,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   }
 
   return {
-    title: `${category.name} Blog Articles | OnlineToolsBase`,
-    description: `Read the latest ${category.name} articles on OnlineToolsBase.`,
+    title: `${category.name} Articles | OnlineToolsBase`,
+    description: `Browse the latest ${category.name} articles on OnlineToolsBase.`,
     alternates: {
       canonical: `https://onlinetoolsbase.com/blog/category/${category.slug}`,
     },
@@ -47,9 +53,10 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 export default async function BlogCategoryPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const category = await getCategoryBySlug(params.slug);
+  const { slug } = await params;
+  const category = await getCategoryBySlug(slug);
 
   if (!category) {
     notFound();
@@ -64,12 +71,12 @@ export default async function BlogCategoryPage({
           ← Back to Blog
         </Link>
 
-        <h1 className="mt-3 text-3xl font-bold">
-          {category.name}
-        </h1>
+        <h1 className="mt-3 text-3xl font-bold">{category.name}</h1>
 
         {category.description ? (
-          <p className="mt-2 text-gray-600">{stripHtml(category.description)}</p>
+          <p className="mt-2 text-gray-600">
+            {stripHtml(category.description)}
+          </p>
         ) : null}
       </div>
 

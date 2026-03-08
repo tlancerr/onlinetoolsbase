@@ -409,40 +409,40 @@ export default function SiteHeader() {
         <div className="flex items-center gap-2">
           {/* Desktop Blog dropdown */}
           <div ref={blogMenuRef} className="relative hidden md:block">
-            <button
-              type="button"
-              onClick={() => setBlogMenuOpen((v) => !v)}
-              className="btn-secondary text-[11px] px-3 py-1"
-              aria-expanded={blogMenuOpen}
-            >
-              Blog
-            </button>
+  <button
+    type="button"
+    onClick={() => setBlogMenuOpen((v) => !v)}
+    className="btn-secondary text-[11px] px-3 py-1"
+    aria-expanded={blogMenuOpen}
+  >
+    Blog
+  </button>
 
-            {blogMenuOpen && (
-              <div className="absolute right-0 mt-2 w-60 rounded-md border border-slate-800 bg-slate-950 shadow-lg z-50">
-                <div className="p-2">
-                  <Link
-                    href="/blog"
-                    className="block rounded px-3 py-2 text-xs text-slate-200 hover:bg-slate-900"
-                    onClick={() => setBlogMenuOpen(false)}
-                  >
-                    All Articles
-                  </Link>
+  {blogMenuOpen && (
+    <div className="absolute right-0 mt-2 w-64 rounded-xl border border-slate-800 bg-slate-950 shadow-xl z-50 overflow-hidden">
+      <div className="py-2">
+        <Link
+          href="/blog"
+          className="block px-4 py-3 text-sm text-slate-200 hover:bg-slate-900 whitespace-nowrap"
+          onClick={() => setBlogMenuOpen(false)}
+        >
+          All Articles
+        </Link>
 
-                  {blogCategories.map((cat) => (
-                    <Link
-                      key={cat.slug}
-                      href={`/blog/category/${cat.slug}`}
-                      className="block rounded px-3 py-2 text-xs text-slate-200 hover:bg-slate-900"
-                      onClick={() => setBlogMenuOpen(false)}
-                    >
-                      {cat.name}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
+        {blogCategories.map((cat) => (
+          <Link
+            key={cat.slug}
+            href={`/blog/category/${cat.slug}`}
+            className="block px-4 py-3 text-sm text-slate-200 hover:bg-slate-900 whitespace-nowrap"
+            onClick={() => setBlogMenuOpen(false)}
+          >
+            {cat.name}
+          </Link>
+        ))}
+      </div>
+    </div>
+  )}
+</div>
 
           {/* Desktop contact link */}
           <Link

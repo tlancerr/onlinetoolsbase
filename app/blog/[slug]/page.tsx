@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import Link from "next/link";
+import Link from "next/link"
 
 async function getPost(slug: string) {
   const res = await fetch(

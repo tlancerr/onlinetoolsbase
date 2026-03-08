@@ -3,13 +3,11 @@ import Link from "next/link";
 
 async function getPost(slug: string) {
   const res = await fetch(
-    `https://cms.onlinetoolsbase.com/wp-json/wp/v2/posts?slug=${slug}&_embed=1`,
+    `https://cms.onlinetoolsbase.com/wp-json/wp/v2/posts?slug=${encodeURIComponent(slug)}&_embed=1`,
     { cache: "no-store" }
   );
 
-  if (!res.ok) {
-    return null;
-  }
+  if (!res.ok) return null;
 
   const data = await res.json();
   return Array.isArray(data) && data.length > 0 ? data[0] : null;
@@ -33,12 +31,9 @@ export async function generateMetadata({
     };
   }
 
-  const title = stripHtml(post.title.rendered);
-  const description = stripHtml(post.excerpt.rendered).slice(0, 160);
-
   return {
-    title: `${title} | OnlineToolsBase Blog`,
-    description,
+    title: `${stripHtml(post.title.rendered)} | OnlineToolsBase Blog`,
+    description: stripHtml(post.excerpt.rendered).slice(0, 160),
     alternates: {
       canonical: `https://onlinetoolsbase.com/blog/${post.slug}`,
     },

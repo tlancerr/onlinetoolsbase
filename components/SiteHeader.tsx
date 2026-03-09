@@ -1,5 +1,5 @@
 "use client";
-
+.
 import Link from "next/link";
 import toolsData from "./toolsData";
 import { useMemo, useState, useEffect, useRef } from "react";

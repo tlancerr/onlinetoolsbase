@@ -4,7 +4,7 @@ import Link from "next/link";
 async function getPost(slug: string) {
   const res = await fetch(
     `https://cms.onlinetoolsbase.com/wp-json/wp/v2/posts?slug=${encodeURIComponent(slug)}&_embed=1`,
-    { cache: "no-store" }
+    { next: { revalidate: 300 } }
   );
 
   if (!res.ok) return null;

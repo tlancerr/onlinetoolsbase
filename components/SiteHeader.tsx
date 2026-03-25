@@ -408,51 +408,55 @@ export default function SiteHeader() {
         {/* Right controls */}
         <div className="flex items-center gap-2">
           {/* Desktop Blog dropdown */}
-<div ref={blogMenuRef} className="relative hidden md:block">
-  <button
-    type="button"
-    onClick={() => setBlogMenuOpen((v) => !v)}
-    className="btn-secondary inline-flex h-11 items-center justify-center px-5 text-sm leading-none"
-    aria-expanded={blogMenuOpen}
-    aria-haspopup="menu"
-  >
-    Blog
-  </button>
+<div className="flex items-center gap-2">
+  <div ref={blogMenuRef} className="relative hidden md:block">
+    <button
+      type="button"
+      onClick={() => setBlogMenuOpen((v) => !v)}
+      className="btn-secondary inline-flex h-11 items-center justify-center px-5 text-sm leading-none"
+      aria-expanded={blogMenuOpen}
+      aria-haspopup="menu"
+    >
+      Blog
+    </button>
 
-  {blogMenuOpen && (
-    <div className="absolute right-0 top-full z-50 mt-2">
-      <div className="min-w-[220px] w-max max-w-[280px] rounded-xl border border-slate-800 bg-slate-950 shadow-2xl overflow-hidden">
-        <div className="py-2">
-          <Link
-            href="/blog"
-            className="block w-full px-4 py-3 text-left text-sm text-slate-200 hover:bg-slate-900 whitespace-nowrap"
-            onClick={() => setBlogMenuOpen(false)}
-          >
-            All Articles
-          </Link>
-
-          {blogCategories.map((cat) => (
+    {blogMenuOpen && (
+      <div className="absolute right-0 top-full z-50 mt-2">
+        <div className="min-w-[220px] w-max max-w-[280px] rounded-xl border border-slate-800 bg-slate-950 shadow-2xl overflow-hidden">
+          <div className="py-2">
             <Link
-              key={cat.slug}
-              href={`/blog/category/${cat.slug}`}
+              prefetch
+              href="/blog"
               className="block w-full px-4 py-3 text-left text-sm text-slate-200 hover:bg-slate-900 whitespace-nowrap"
               onClick={() => setBlogMenuOpen(false)}
             >
-              {cat.name}
+              All Articles
             </Link>
-          ))}
+
+            {blogCategories.map((cat) => (
+              <Link
+                prefetch
+                key={cat.slug}
+                href={`/blog/category/${cat.slug}`}
+                className="block w-full px-4 py-3 text-left text-sm text-slate-200 hover:bg-slate-900 whitespace-nowrap"
+                onClick={() => setBlogMenuOpen(false)}
+              >
+                {cat.name}
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
-  )}
+    )}
+  </div>
+
+  <Link
+    href="/contact"
+    className="hidden md:inline-flex btn-secondary h-11 items-center justify-center px-5 text-sm leading-none"
+  >
+    Contact
+  </Link>
 </div>
-          {/* Desktop contact link */}
-          <Link
-            href="/contact"
-            className="hidden md:inline-flex btn-secondary text-[11px] px-3 py-1"
-          >
-            Contact
-          </Link>
 
           {/* Mobile 3-dot menu */}
           <button

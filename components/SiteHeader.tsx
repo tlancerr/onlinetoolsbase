@@ -408,7 +408,6 @@ export default function SiteHeader() {
         {/* Right controls */}
         <div className="flex items-center gap-2">
           {/* Desktop Blog dropdown */}
-        {/* Desktop Blog dropdown */}
 <div ref={blogMenuRef} className="relative hidden md:block">
   <button
     type="button"

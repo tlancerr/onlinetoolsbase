@@ -2,7 +2,7 @@ export async function getBlogCategories() {
   try {
     const res = await fetch(
       "https://cms.onlinetoolsbase.com/wp-json/wp/v2/categories?per_page=100",
-      { cache: "no-store" }
+      { next: { revalidate: 300 } }
     );
 
     if (!res.ok) return [];

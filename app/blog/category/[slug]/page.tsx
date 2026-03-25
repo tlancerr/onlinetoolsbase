@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 async function getCategoryBySlug(slug: string) {
   const res = await fetch(
     `https://cms.onlinetoolsbase.com/wp-json/wp/v2/categories?slug=${encodeURIComponent(slug)}`,
-    { cache: "no-store" }
+    { next: { revalidate: 300 } }
   );
 
   if (!res.ok) return null;
@@ -16,7 +16,7 @@ async function getCategoryBySlug(slug: string) {
 async function getPostsByCategory(categoryId: number) {
   const res = await fetch(
     `https://cms.onlinetoolsbase.com/wp-json/wp/v2/posts?categories=${categoryId}&per_page=20&_embed=1`,
-    { cache: "no-store" }
+    { next: { revalidate: 300 } }
   );
 
   if (!res.ok) return [];

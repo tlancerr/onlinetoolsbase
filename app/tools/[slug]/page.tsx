@@ -60,8 +60,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function ToolPage({ params }: Props) {
-  const tool = toolsData.find((t) => t.slug === params.slug);
+export default async function ToolPage({ params }: Props) {
+  const { slug } = await params;
+
+  const tool = toolsData.find((t) => t.slug === slug);
 
   if (!tool) notFound();
 

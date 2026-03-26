@@ -2,7 +2,7 @@ import Link from "next/link";
 
 async function getPosts() {
   const res = await fetch(
-    "https://cms.onlinetoolsbase.com/wp-json/wp/v2/posts?per_page=12&_embed=1&_fields=id,slug,title,excerpt,date,_embedded",
+    "https://cms.onlinetoolsbase.com/wp-json/wp/v2/posts?per_page=12&_embed=1",
     { next: { revalidate: 300 } }
   );
 

@@ -10,11 +10,11 @@ import { toolsData } from "@/components/toolsData";
 // Replace <div>Tool UI</div> with your actual tool component.
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const slug = params.slug;
+  const { slug } = await params;
   const tool = toolsData.find((t) => t.slug === slug);
 
   if (!tool) {

@@ -104,9 +104,9 @@ export default async function BlogPostPage({
       </p>
 
       <article
-        className="prose prose-slate mt-8 max-w-none"
-        dangerouslySetInnerHTML={{ __html: post.content.rendered }}
-      />
+  className="wp-content mt-8"
+  dangerouslySetInnerHTML={{ __html: post.content.rendered }}
+/>
     </main>
   );
 }

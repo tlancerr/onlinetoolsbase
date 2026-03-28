@@ -259,7 +259,7 @@ howtoSteps: [
   description: "Add days, weeks, months or years to any date to find a future date.",
   seoTitleTemplate: "Future Date Calculator — Add Days to Date",
   seoDescriptionTemplate: "Calculate future dates easily by adding days, weeks, months, or years. Great for planning and scheduling.",
-  longDescription: `The Future Date Calculator allows you to add days, weeks, months, or years to any selected starting date to determine an exact future date. It is useful for contracts, subscription renewals, payment schedules, project milestones, and long-term planning.
+  longDescription: `The Future Date Calculator allows you to add days, weeks, months, or years to any selected starting date to determine an exact future date. It is useful for contracts, subscription renewals, payment schedules, project milestones, and long-term planning and day until.
 
 Select a starting date, enter the time period to add, and calculate the precise future date instantly. The tool accounts for leap years and month-length variations automatically. To subtract time instead, use the <a href="/tools/past-date" title="Past Date Calculator">Past Date Calculator</a>. If you want to calculate age on that future date, the <a href="/tools/age-calculator" title="Age Calculator">Age Calculator</a> can assist.`,
   faqs: [

@@ -104,7 +104,7 @@ export default async function BlogPostPage({
       </p>
 
       <article
-  className="wp-content mt-9"
+  className="wp-content mt-8"
   dangerouslySetInnerHTML={{ __html: post.content.rendered }}
 />
     </main>

@@ -17,4 +17,4 @@ jobs:
           username: ${{ secrets.HETZNER_USER }}
           key: ${{ secrets.HETZNER_SSH_KEY }}
           script: |
-            /home/ops/apps/OnlineToolsBase/deploy.sh
+            /home/ops/deploy-onlinetoolsbase.sh

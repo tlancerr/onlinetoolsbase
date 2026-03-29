@@ -64,7 +64,7 @@ The calculation follows real calendar logic, automatically handling leap years a
   seoDescriptionTemplate: "Calculate your age in total weeks and months with this free online tool. Simple, fast, and perfect for parents, students, and planners.",
   longDescription: `The Age in Weeks & Months tool converts your age into total completed weeks and total months, offering a clearer view of time passed beyond simple year counts. It is especially helpful for baby milestones, parenting schedules, academic planning, and medical tracking.
 
-Enter your birth date to instantly see your total age in weeks and months using precise calendar calculations. If you need a full breakdown including years, days, and minutes, use the <a href="/tools/age-calculator" title="Age Calculator">Age Calculator</a>. To compare two ages directly, the <a href="/tools/age-difference" title="Age Difference Calculator">Age Difference Calculator</a> provides exact differences.`,
+Enter your birth date to instantly see your total age in weeks and months using precise calendar calculations. If you need a full breakdown including years, days, and minutes, use the <a href="/tools/age-calculator" title="Age Calculator">Age Calculator</a>. To compare two ages directly, the <a href="/tools/age-difference" title="Age Difference Calculator">Age Difference Calculator</a> provides exact accurate differences.`,
 
 faqs: [
   {

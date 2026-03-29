@@ -414,8 +414,8 @@ export default function SiteHeader() {
       type="button"
       onClick={() => setBlogMenuOpen((v) => !v)}
       className="btn-secondary inline-flex h-9 items-center justify-center px-3 text-sm leading-none"
-      aria-expanded={blogMenuOpen}9
-      aria-haspopup="menu"9
+      aria-expanded={blogMenuOpen}
+      aria-haspopup="menu"
     >
       Blog
     </button>

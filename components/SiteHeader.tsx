@@ -413,9 +413,9 @@ export default function SiteHeader() {
     <button
       type="button"
       onClick={() => setBlogMenuOpen((v) => !v)}
-      className="btn-secondary inline-flex h-10 items-center justify-center px-2 text-sm leading-none"
-      aria-expanded={blogMenuOpen}
-      aria-haspopup="menu"
+      className="btn-secondary inline-flex h-9 items-center justify-center px-3 text-sm leading-none"
+      aria-expanded={blogMenuOpen}9
+      aria-haspopup="menu"9
     >
       Blog
     </button>
@@ -452,7 +452,7 @@ export default function SiteHeader() {
 
   <Link
     href="/contact"
-    className="hidden md:inline-flex btn-secondary h-10 items-center justify-center px-2 text-sm leading-none"
+    className="hidden md:inline-flex btn-secondary h-9 items-center justify-center px-3 text-sm leading-none"
   >
     Contact
   </Link>

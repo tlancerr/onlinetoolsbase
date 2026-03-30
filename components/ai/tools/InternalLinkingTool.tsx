@@ -1,4 +1,4 @@
-'use client'
+"use client"
 
 import { useState } from "react"
 import ToolLayout from "@/components/ai/ToolLayout"
@@ -6,7 +6,7 @@ import ToolHeader from "@/components/ai/ToolHeader"
 import ToolInput from "@/components/ai/ToolInput"
 import ToolOutput from "@/components/ai/ToolOutput"
 
-export default function InternalLinkingToolPage() {
+export default function InternalLinkingTool() {
   const [content, setContent] = useState("")
   const [urls, setUrls] = useState("")
   const [result, setResult] = useState("")
@@ -113,17 +113,10 @@ ${urls}
           <div className="border rounded-2xl p-5 bg-gray-50">
             <h3 className="text-lg font-semibold mb-3">Best Results</h3>
             <ul className="space-y-2 text-sm text-gray-600">
-              <li>Use full article text, not just one paragraph.</li>
-              <li>Add only URLs that are closely relevant.</li>
+              <li>Use the full article, not only one paragraph.</li>
+              <li>Keep target URLs tightly relevant.</li>
               <li>Review suggested anchors before publishing.</li>
             </ul>
-          </div>
-
-          <div className="border rounded-2xl p-5 bg-white">
-            <h3 className="text-lg font-semibold mb-3">Coming Next</h3>
-            <p className="text-sm text-gray-600 leading-6">
-              We will reuse this exact layout for the Meta Generator and Schema Generator.
-            </p>
           </div>
         </div>
       }

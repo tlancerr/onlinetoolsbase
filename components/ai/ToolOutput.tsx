@@ -22,7 +22,7 @@ export default function ToolOutput({
         )}
       </div>
 
-      <div className="min-h-[220px] rounded-2xl border border-slate-200 bg-white p-4 whitespace-pre-wrap text-sm leading-7 text-slate-700 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">
+      <div className="min-h-[180px] rounded-2xl border border-slate-200 bg-white p-4 whitespace-pre-wrap text-sm leading-7 text-slate-700 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">
         {loading
           ? "Please wait while the AI generates your result..."
           : result || "Your output will appear here."}

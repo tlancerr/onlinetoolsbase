@@ -21,6 +21,24 @@ type Props = {
   children: ReactNode;
 };
 
+const TOOL_BENEFITS: Record<string, string[]> = {
+  "internal-linking": [
+    "Find contextual internal links faster",
+    "Improve topical relevance and crawl paths",
+    "Get copy-ready anchor suggestions",
+  ],
+  "meta-generator": [
+    "Generate titles and descriptions faster",
+    "Reduce manual SEO drafting time",
+    "Create copy-ready search snippets",
+  ],
+  "schema-generator": [
+    "Generate JSON-LD without writing code manually",
+    "Speed up SEO implementation",
+    "Create markup-ready structured data",
+  ],
+};
+
 export default function AiToolLayout({
   title,
   description,
@@ -73,6 +91,12 @@ export default function AiToolLayout({
     return popular.length > 0 ? popular : aiToolsData.slice(0, 8);
   }, []);
 
+  const benefits = TOOL_BENEFITS[inferredSlug] || [
+    "Fast AI output",
+    "Beginner-friendly workflow",
+    "Copy-ready results",
+  ];
+
   return (
     <>
       <Head>
@@ -89,10 +113,10 @@ export default function AiToolLayout({
       <HowToSchema title={title} steps={howToSteps} slug={inferredSlug} />
       <FAQSchema faqs={faqs} />
 
-      <div className="w-full max-w-full overflow-x-hidden bg-white text-slate-900 dark:bg-slate-950 dark:text-white">
+      <div className="w-full max-w-full overflow-x-hidden bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-white">
         <div className="main-container py-8 lg:py-10 w-full max-w-full overflow-x-hidden">
           {/* HERO */}
-          <section className="relative overflow-hidden rounded-[28px] border border-slate-200 bg-white px-6 py-8 shadow-sm dark:border-slate-800 dark:bg-slate-900 md:px-8 md:py-10">
+          <section className="relative overflow-hidden rounded-[28px] border border-slate-200 bg-white px-6 py-8 shadow-[0_1px_2px_rgba(15,23,42,0.05)] dark:border-slate-800 dark:bg-slate-900 md:px-8 md:py-10">
             <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_top_right,rgba(139,92,246,0.12),transparent_30%),radial-gradient(circle_at_left,rgba(6,182,212,0.10),transparent_25%)] dark:bg-[radial-gradient(circle_at_top_right,rgba(139,92,246,0.18),transparent_30%),radial-gradient(circle_at_left,rgba(6,182,212,0.14),transparent_25%)]" />
 
             <div className="relative">
@@ -107,17 +131,29 @@ export default function AiToolLayout({
               <p className="mt-4 max-w-3xl text-base md:text-lg leading-8 text-slate-600 dark:text-slate-300">
                 {description}
               </p>
+
+              <div className="mt-5 flex flex-wrap gap-3 text-sm">
+                <span className="rounded-full border border-slate-200 bg-white/80 px-3 py-1 text-slate-700 shadow-sm dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300">
+                  No signup required
+                </span>
+                <span className="rounded-full border border-slate-200 bg-white/80 px-3 py-1 text-slate-700 shadow-sm dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300">
+                  Fast AI output
+                </span>
+                <span className="rounded-full border border-slate-200 bg-white/80 px-3 py-1 text-slate-700 shadow-sm dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300">
+                  SEO-friendly results
+                </span>
+              </div>
             </div>
           </section>
 
           {/* ABOUT */}
-          <section className="mt-6 rounded-[24px] border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+          <section className="mt-6 rounded-[24px] border border-slate-200 bg-white p-6 shadow-[0_1px_2px_rgba(15,23,42,0.05)] dark:border-slate-800 dark:bg-slate-900">
             <h2 className="text-xl font-semibold text-slate-900 dark:text-white">
               About this tool
             </h2>
 
             <div
-              className="mt-4 prose prose-slate max-w-none dark:prose-invert"
+              className="mt-4 prose prose-slate max-w-none dark:prose-invert prose-a:text-violet-600 hover:prose-a:text-violet-700 dark:prose-a:text-violet-400"
               dangerouslySetInnerHTML={{ __html: longDescription }}
             />
           </section>
@@ -132,7 +168,7 @@ export default function AiToolLayout({
           {/* MAIN GRID */}
           <div className="mt-8 grid gap-8 lg:grid-cols-[minmax(0,1.9fr)_320px]">
             <section className="min-w-0">
-              <div className="rounded-[28px] border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900 md:p-6">
+              <div className="rounded-[28px] border border-slate-200 bg-white p-5 shadow-[0_1px_2px_rgba(15,23,42,0.05)] dark:border-slate-800 dark:bg-slate-900 md:p-6">
                 {children}
               </div>
 
@@ -145,7 +181,24 @@ export default function AiToolLayout({
             </section>
 
             <aside className="space-y-6 min-w-0">
-              <div className="rounded-[24px] border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+              <div className="rounded-[24px] border border-slate-200 bg-white p-5 shadow-[0_1px_2px_rgba(15,23,42,0.05)] dark:border-slate-800 dark:bg-slate-900">
+                <h2 className="text-base font-semibold text-slate-900 dark:text-white">
+                  Why use this tool
+                </h2>
+
+                <ul className="mt-4 space-y-3">
+                  {benefits.map((item, idx) => (
+                    <li
+                      key={idx}
+                      className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm leading-6 text-slate-700 dark:border-slate-800 dark:bg-slate-950/60 dark:text-slate-300"
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="rounded-[24px] border border-slate-200 bg-white p-5 shadow-[0_1px_2px_rgba(15,23,42,0.05)] dark:border-slate-800 dark:bg-slate-900">
                 <h2 className="text-base font-semibold text-slate-900 dark:text-white">
                   Related AI tools
                 </h2>
@@ -160,7 +213,7 @@ export default function AiToolLayout({
                       <li key={t.slug}>
                         <a
                           href={`/ai/${t.slug}`}
-                          className="block rounded-xl border border-slate-200 px-3 py-3 text-sm font-medium text-slate-700 transition hover:border-violet-300 hover:bg-violet-50 hover:text-slate-900 dark:border-slate-800 dark:text-slate-300 dark:hover:border-violet-700 dark:hover:bg-slate-800 dark:hover:text-white"
+                          className="block rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-medium text-slate-700 transition hover:border-violet-300 hover:bg-violet-50 hover:text-slate-900 dark:border-slate-800 dark:bg-slate-950/60 dark:text-slate-300 dark:hover:border-violet-700 dark:hover:bg-slate-800 dark:hover:text-white"
                         >
                           {t.title}
                         </a>
@@ -170,7 +223,7 @@ export default function AiToolLayout({
                 )}
               </div>
 
-              <div className="rounded-[24px] border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+              <div className="rounded-[24px] border border-slate-200 bg-white p-5 shadow-[0_1px_2px_rgba(15,23,42,0.05)] dark:border-slate-800 dark:bg-slate-900">
                 <h2 className="text-base font-semibold text-slate-900 dark:text-white">
                   Popular AI tools
                 </h2>
@@ -180,7 +233,7 @@ export default function AiToolLayout({
                     <li key={t.slug}>
                       <a
                         href={`/ai/${t.slug}`}
-                        className="block rounded-xl border border-slate-200 px-3 py-3 text-sm font-medium text-slate-700 transition hover:border-cyan-300 hover:bg-cyan-50 hover:text-slate-900 dark:border-slate-800 dark:text-slate-300 dark:hover:border-cyan-700 dark:hover:bg-slate-800 dark:hover:text-white"
+                        className="block rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-medium text-slate-700 transition hover:border-cyan-300 hover:bg-cyan-50 hover:text-slate-900 dark:border-slate-800 dark:bg-slate-950/60 dark:text-slate-300 dark:hover:border-cyan-700 dark:hover:bg-slate-800 dark:hover:text-white"
                       >
                         {t.title}
                       </a>
@@ -193,7 +246,7 @@ export default function AiToolLayout({
 
           {/* HOW TO */}
           {howToSteps.length > 0 && (
-            <section className="mt-8 rounded-[24px] border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+            <section className="mt-8 rounded-[24px] border border-slate-200 bg-white p-6 shadow-[0_1px_2px_rgba(15,23,42,0.05)] dark:border-slate-800 dark:bg-slate-900">
               <h2 className="text-xl font-semibold text-slate-900 dark:text-white">
                 How to use this tool
               </h2>
@@ -210,7 +263,7 @@ export default function AiToolLayout({
 
           {/* FAQ */}
           {faqs.length > 0 && (
-            <section className="mt-8 rounded-[24px] border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+            <section className="mt-8 rounded-[24px] border border-slate-200 bg-white p-6 shadow-[0_1px_2px_rgba(15,23,42,0.05)] dark:border-slate-800 dark:bg-slate-900">
               <h2 className="text-xl font-semibold text-slate-900 dark:text-white">
                 Frequently asked questions
               </h2>
@@ -219,7 +272,7 @@ export default function AiToolLayout({
                 {faqs.map((item, idx) => (
                   <details
                     key={idx}
-                    className="group rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 dark:border-slate-800 dark:bg-slate-950/60"
+                    className="group rounded-2xl border border-slate-200 bg-white px-5 py-4 shadow-sm transition open:border-violet-300 open:bg-violet-50/40 dark:border-slate-800 dark:bg-slate-900 dark:open:border-violet-700 dark:open:bg-slate-800"
                   >
                     <summary className="cursor-pointer list-none font-medium text-slate-900 dark:text-white">
                       {item.q}

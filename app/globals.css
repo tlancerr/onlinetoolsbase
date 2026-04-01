@@ -1,217 +1,845 @@
 @tailwind base;
+
 @tailwind components;
+
 @tailwind utilities;
 
-/* =========================
-   BASE THEME SYSTEM
-========================= */
+@layer components {
 
-/* Default = LIGHT (important fix) */
-html {
-  color-scheme: light;
-}
-
-html[data-theme='dark'] {
-  color-scheme: dark;
-}
-
-/* =========================
-   GLOBAL BODY
-========================= */
+/* Global layout */
 
 body {
-  @apply antialiased transition-colors duration-300;
-}
 
-/* LIGHT MODE (DEFAULT) */
-html:not([data-theme='dark']) body {
-  background: #f8fafc;
-  color: #0f172a;
-}
+@apply bg-slate-950 text-slate-100 antialiased;
 
-/* DARK MODE */
-html[data-theme='dark'] body {
-  background: #020617;
-  color: #e2e8f0;
 }
-
-/* =========================
-   LAYOUT
-========================= */
 
 .main-shell {
-  @apply min-h-screen flex flex-col;
+
+@apply min-h-screen flex flex-col bg-slate-950;
+
 }
 
 .main-container {
-  @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+
+@apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+
 }
 
-/* =========================
-   CARDS (VERY IMPORTANT FIX)
-========================= */
+/* Layout with sidebar */
 
-/* LIGHT */
-html:not([data-theme='dark']) .card,
-html:not([data-theme='dark']) .tool-result-card,
-html:not([data-theme='dark']) .category-card,
-html:not([data-theme='dark']) .tool-card,
-html:not([data-theme='dark']) .quick-access-card {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  color: #0f172a;
-  border-radius: 12px;
-  transition: all 0.2s ease;
+.content-with-sidebar {
+
+@apply mt-6 grid gap-8 lg:grid-cols-[minmax(0,1.6fr)_minmax(260px,0.8fr)];
+
 }
 
-/* DARK */
-html[data-theme='dark'] .card,
-html[data-theme='dark'] .tool-result-card,
-html[data-theme='dark'] .category-card,
-html[data-theme='dark'] .tool-card,
-html[data-theme='dark'] .quick-access-card {
-  background: #0f172a;
-  border: 1px solid #1e293b;
-  color: #e2e8f0;
+/* Cards */
+
+.card {
+
+@apply rounded-xl border border-slate-800 bg-slate-900/80 p-4 shadow-sm hover:border-blue-500/70 transition;
+
 }
 
-/* Hover */
-.card:hover,
-.category-card:hover {
-  transform: translateY(-4px);
+/* Tags / badges */
+
+.badge {
+
+@apply inline-flex items-center rounded-full bg-slate-800 px-3 py-1 text-xs font-medium text-slate-200;
+
 }
 
-/* =========================
-   INPUTS
-========================= */
+/* Links */
 
-/* LIGHT */
-html:not([data-theme='dark']) .tool-input,
-html:not([data-theme='dark']) .tool-select,
-html:not([data-theme='dark']) .tool-textarea {
-  background: #ffffff;
-  border: 1px solid #cbd5f5;
-  color: #0f172a;
+a {
+
+@apply text-blue-400 hover:text-blue-300;
+
 }
 
-/* DARK */
-html[data-theme='dark'] .tool-input,
-html[data-theme='dark'] .tool-select,
-html[data-theme='dark'] .tool-textarea {
-  background: #020617;
-  border: 1px solid #1e293b;
-  color: #e2e8f0;
+a.no-style {
+
+@apply text-inherit hover:text-inherit;
+
 }
 
-/* Focus */
+/* Headings */
+
+h1 {
+
+@apply text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight;
+
+}
+
+h2 {
+
+@apply text-xl sm:text-2xl font-semibold;
+
+}
+
+h3 {
+
+@apply text-lg font-semibold;
+
+}
+
+/* Tool layout */
+
+.tool-layout {
+
+@apply w-full;
+
+}
+
+.tool-header {
+
+@apply mb-4 flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between;
+
+}
+
+.tool-title {
+
+@apply text-lg sm:text-xl md:text-2xl font-semibold text-slate-50;
+
+}
+
+.tool-subtitle {
+
+@apply text-xs sm:text-sm text-slate-400 max-w-2xl;
+
+}
+
+/* Tool grid (inputs + results) */
+
+.tool-grid {
+
+@apply grid gap-6 md:grid-cols-[minmax(0,1.6fr)_minmax(260px,0.9fr)];
+
+}
+
+/* Labels & inputs */
+
+.tool-label {
+
+@apply block text-xs font-medium text-slate-300 mb-1.5;
+
+}
+
+.tool-input,
+
+.tool-select,
+
+.tool-textarea {
+
+@apply w-full rounded-lg border border-slate-700 bg-slate-900/70 px-3 py-2 text-sm text-slate-100 outline-none transition;
+
+}
+
 .tool-input:focus,
+
 .tool-select:focus,
+
 .tool-textarea:focus {
-  outline: none;
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 1px #3b82f6;
+
+@apply border-blue-500 ring-1 ring-blue-500;
+
 }
 
-/* =========================
-   TEXT COLORS FIX (CRITICAL)
-========================= */
+.tool-input::placeholder,
 
-/* LIGHT MODE */
-html:not([data-theme='dark']) h1,
-html:not([data-theme='dark']) h2,
-html:not([data-theme='dark']) h3 {
-  color: #0f172a;
+.tool-textarea::placeholder {
+
+@apply text-slate-500;
+
 }
 
-html:not([data-theme='dark']) p {
-  color: #475569;
-}
-
-/* DARK MODE */
-html[data-theme='dark'] h1,
-html[data-theme='dark'] h2,
-html[data-theme='dark'] h3 {
-  color: #f8fafc;
-}
-
-html[data-theme='dark'] p {
-  color: #cbd5f5;
-}
-
-/* =========================
-   HEADER / FOOTER
-========================= */
-
-/* LIGHT */
-html:not([data-theme='dark']) .site-header,
-html:not([data-theme='dark']) .site-footer {
-  background: #ffffff;
-  border-color: #e5e7eb;
-}
-
-/* DARK */
-html[data-theme='dark'] .site-header,
-html[data-theme='dark'] .site-footer {
-  background: #020617;
-  border-color: #1e293b;
-}
-
-/* =========================
-   BUTTONS
-========================= */
+/* Buttons */
 
 .btn-primary {
-  @apply inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-white;
-  background: linear-gradient(to right, #2563eb, #3b82f6);
-}
 
-.btn-primary:hover {
-  opacity: 0.9;
+@apply inline-flex items-center justify-center rounded-md bg-blue-500 px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:bg-blue-400 hover:shadow-blue-500/40;
+
 }
 
 .btn-secondary {
-  @apply rounded-md px-4 py-2 text-sm;
+
+@apply inline-flex items-center justify-center rounded-md border border-slate-600 bg-slate-900 px-4 py-2 text-sm font-medium text-slate-100 transition hover:border-blue-500 hover:text-blue-300;
+
 }
 
-/* =========================
-   SUPPORT SECTION
-========================= */
+.btn-ghost {
 
-/* LIGHT */
-html:not([data-theme='dark']) .support-section {
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
+@apply inline-flex items-center gap-1 text-xs text-slate-400 hover:text-blue-300;
+
 }
 
-/* DARK */
-html[data-theme='dark'] .support-section {
-  background: linear-gradient(to right, #020617, #020617);
-  border: 1px solid #1e293b;
+/* Cards inside tool result area */
+
+.tool-result-card {
+
+@apply rounded-xl border border-slate-800 bg-slate-900/80 p-4 text-sm;
+
 }
 
-/* =========================
-   REMOVE YOUR OLD PROBLEMATIC RULES
-========================= */
+/* Sidebar */
 
-/* IMPORTANT: DELETE THESE FROM YOUR OLD FILE IF EXISTS:
+.sidebar {
 
-body { @apply bg-slate-950 ... }   ❌
-html[data-theme='light'] overrides ❌
-force text-slate overrides ❌
+@apply space-y-6;
 
-These were BREAKING your toggle.
-*/
+}
 
-/* =========================
-   RESPONSIVE FIXES
-========================= */
+.sidebar-section-title {
+
+@apply text-xs font-semibold uppercase tracking-wide text-slate-400;
+
+}
+
+.sidebar-list {
+
+@apply mt-2 space-y-1 text-sm;
+
+}
+
+/* Category & tool cards */
+
+.category-card {
+
+@apply flex flex-col gap-2 rounded-xl border border-slate-800 bg-slate-900/70 p-4 text-sm transition hover:border-blue-500/70 hover:bg-slate-900;
+
+}
+
+.category-card-title {
+
+@apply text-sm font-semibold text-slate-100;
+
+}
+
+.category-card-desc {
+
+@apply text-xs text-slate-400;
+
+}
+
+.tool-card {
+
+@apply flex items-center justify-between rounded-lg border border-slate-800 bg-slate-900/60 px-3 py-2 text-sm transition hover:border-blue-500/70 hover:bg-slate-900;
+
+}
+
+.tool-card-title {
+
+@apply text-sm font-medium text-slate-100;
+
+}
+
+.tool-card-tag {
+
+@apply text-[10px] rounded-full bg-slate-800 px-2 py-0.5 text-slate-300;
+
+}
+
+/* Search input for tools */
+
+.tool-search-input {
+
+@apply w-full rounded-lg border border-slate-700 bg-slate-900/70 px-3 py-2 text-xs text-slate-100 outline-none transition;
+
+}
+
+.tool-search-input:focus {
+
+@apply border-blue-500 ring-1 ring-blue-500;
+
+}
+
+/* Quick access cards (home page) */
+
+.quick-access-card {
+
+@apply flex flex-col justify-between rounded-xl border border-slate-800 bg-slate-900/80 p-3 text-xs transition;
+
+}
+
+/* Header & footer */
+
+.site-header {
+
+@apply sticky top-0 z-40 border-b border-slate-800/80 bg-slate-950/90 backdrop-blur;
+
+}
+
+.site-header-inner {
+
+@apply mx-auto flex h-14 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8;
+
+}
+
+.site-footer {
+
+@apply border-t border-slate-800/80 bg-slate-950/90;
+
+}
+
+.site-footer-inner {
+
+@apply mx-auto flex max-w-6xl flex-col gap-3 px-4 py-4 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8;
+
+}
+
+/* Logo */
+
+.site-logo {
+
+@apply flex items-center gap-2 text-sm font-semibold tracking-tight text-slate-50;
+
+}
+
+/* Theme toggle */
+
+.theme-toggle-btn {
+
+@apply inline-flex h-8 w-8 items-center justify-center rounded-full border border-slate-700 bg-slate-900 text-slate-200 text-xs transition hover:border-blue-500 hover:bg-slate-900/60;
+
+}
+
+/* Support section */
+
+.support-section {
+
+@apply mt-12 rounded-2xl border border-slate-800 bg-gradient-to-r from-slate-900 via-slate-900 to-slate-950 px-5 py-6 sm:flex sm:items-center sm:justify-between sm:gap-6;
+
+}
+
+.support-heading {
+
+@apply text-sm font-semibold text-slate-50;
+
+}
+
+.support-text {
+
+@apply mt-1 text-xs text-slate-400 max-w-md;
+
+}
+
+.support-cta {
+
+@apply mt-3 flex flex-wrap gap-2 text-xs;
+
+}
+
+/* Support SVG button */
+
+.support-svg-btn-wrapper {
+
+@apply inline-flex items-center gap-2;
+
+}
+
+.support-svg-btn {
+
+@apply inline-flex items-center justify-center rounded-xl border border-amber-400/60 bg-gradient-to-br from-amber-300 via-yellow-300 to-amber-400 px-4 py-2 text-xs font-semibold text-amber-950 shadow-sm transition;
+
+}
+
+/* Theme variants: DARK & LIGHT */
+
+/* SEARCH DROPDOWN HOVER FIX */
+
+html[data-theme='light'] .search-item:hover {
+
+background: #b1d9f0 !important; /* light gray hover */
+
+color: #0f172a !important;
+
+}
+
+/* LIGHT MODE OVERRIDES */
+
+html[data-theme='light'] body {
+
+background: #f8fafc;
+
+color: #0f172a;
+
+}
+
+html[data-theme='light'] .main-shell,
+
+html[data-theme='light'] .main-container {
+
+background: transparent;
+
+}
+
+html[data-theme='light'] .site-header,
+
+html[data-theme='light'] .site-footer {
+
+background-color: #ffffff;
+
+border-color: #e5e7eb;
+
+}
+
+html[data-theme='light'] .card,
+
+html[data-theme='light'] .tool-result-card,
+
+html[data-theme='light'] .category-card,
+
+html[data-theme='light'] .tool-card
+
+{
+
+background: #ffffff;
+
+border-color: #78e0ff;
+
+color: #27111e;
+
+}
+
+html[data-theme='light'] .quick-access-card {
+
+background: #ffffff;
+
+border-color: #64c1ff;
+
+color: #112717;
+
+}
+
+html[data-theme='light'] .tool-input,
+
+html[data-theme='light'] .tool-select,
+
+html[data-theme='light'] .tool-textarea,
+
+html[data-theme='light'] .tool-search-input {
+
+background: #f9fafb;
+
+border-color: #d1d5db;
+
+color: #111827;
+
+}
+
+html[data-theme='light'] .tool-input::placeholder,
+
+html[data-theme='light'] .tool-textarea::placeholder {
+
+color: #9ca3af;
+
+}
+
+html[data-theme='light'] .btn-secondary {
+
+@apply bg-white border-slate-300 text-slate-800 hover:border-blue-500 hover:text-blue-600;
+
+}
+
+html[data-theme='light'] .category-card:hover,
+
+html[data-theme='light'] .card:hover {
+
+transform: translateY(-4px);
+
+background: #e5f3ff;
+
+}
+
+html[data-theme='dark'] .category-card:hover,
+
+html[data-theme='dark'] .card:hover {
+
+transform: translateY(-4px);
+
+}
+
+/* QUICK ACCESS CARD HOVER */
+
+html[data-theme='dark'] .quick-access-card:hover {
+
+transform: translateY(-4px);
+
+box-shadow: 0 6px 20px rgba(30, 58, 138, 0.45);
+
+border-color: #1d4ed8;
+
+}
+
+html[data-theme='light'] .quick-access-card:hover {
+
+transform: translateY(-4px) scale(1.01);
+
+box-shadow: 0 6px 20px rgba(28, 4, 112, 0.9);
+
+border-color: #2563eb;
+
+background: #42a4f588 !important;
+
+}
+
+/* popular button quick access */
+
+html[data-theme='dark'] .popular-btn:hover {
+
+transform: translateY(-4px);
+
+box-shadow: 0 6px 20px rgba(30, 58, 138, 0.45);
+
+border-color: #1d4ed8;
+
+color:#090c0e !important;
+
+background:#ecde19 !important;
+
+font-style:bold !important;
+
+}
+
+html[data-theme='dark'] .popular-btn {
+
+box-shadow: 0 6px 20px rgba(30, 58, 138, 0.45);
+
+color:#090c0e !important;
+
+}
+
+html[data-theme='dark'] .search-item:hover {
+
+background: #090c0e !important;
+
+color: #f1f1f1 !important;}
+
+/* =============================== */
+
+/* FORCE DARK TEXT IN LIGHT MODE   */
+
+/* =============================== */
+
+html[data-theme='light'] .text-slate-50,
+
+html[data-theme='light'] .text-slate-100,
+
+html[data-theme='light'] .text-slate-200,
+
+html[data-theme='light'] .text-slate-300,
+
+html[data-theme='light'] .text-slate-400 {
+
+color: #0f172a !important;   /* Pure dark */
+
+}
+
+html[data-theme='light'] .text-slate-200,
+
+html[data-theme='light'] .text-slate-400
+
+{
+
+color: #f3f3f5 !important;   /* Pure dark */
+
+}
+
+/* HERO BLUE TEXT FIX */
+
+html[data-theme='light'] .text-blue-400 {
+
+color: #1d4ed8 !important;  /* deep blue */
+
+}
+
+/* PARAGRAPH SUBTEXT */
+
+html[data-theme='light'] p {
+
+color: #334155 !important;  /* slate-700 */
+
+}
+
+/* CATEGORY SUBTEXT */
+
+html[data-theme='light'] .category-card-desc {
+
+color: #475569 !important;  /* slate-600 */
+
+}
+
+/* SIDEBAR LIST */
+
+html[data-theme='light'] .sidebar-list a {
+
+color: #1e293b !important; /* slate-800 */
+
+}
+
+/* TOOL DROPDOWN */
+
+html[data-theme='light'] select,
+
+html[data-theme='light'] option {
+
+color: #0f172a !important;   /* black text in options */
+
+background-color: #ffffff !important;
+
+}
+
+/* SEARCH AUTOCOMPLETE DROPDOWN ITEMS */
+
+html[data-theme='light'] .search-item {
+
+color: #0f172a !important;
+
+background: #ffffff !important;
+
+}
+
+/*
+
+html[data-theme='light'] .search-item:hover {
+
+background: #dcebff !important;
+
+color: #0f172a !important;
+
+}*/
+
+/* Keep text white on dark backgrounds, even in light mode */
+
+html[data-theme='light'] .on-dark-text {
+
+color: #f9fafb !important; /* white-ish */
+
+}
+
+} /* end @layer components */
+
+/* The SVG */
+
+.support-svg {
+
+height: 52px;
+
+width: auto;
+
+border-radius: 12px;
+
+transition: inherit;
+
+}
+
+/* DARK MODE HOVER EFFECT */
+
+html[data-theme='dark'] .support-svg-btn:hover {
+
+transform: translateY(-4px);
+
+box-shadow: 0 6px 20px rgba(255, 221, 0, 0.45);
+
+}
+
+/* LIGHT MODE HOVER EFFECT */
+
+html[data-theme='light'] .support-svg-btn:hover {
+
+transform: translateY(-4px);
+
+box-shadow: 0 6px 20px rgba(255, 221, 0, 0.32);
+
+}
 
 html, body {
-  max-width: 100%;
-  overflow-x: hidden;
+
+max-width: 100%;
+
+overflow-x: hidden;
+
 }
 
-img {
-  max-width: 100%;
-  height: auto;
+*,
+
+*::before,
+
+*::after {
+
+box-sizing: border-box;
+
+}
+
+img,
+
+svg,
+
+canvas,
+
+video {
+
+max-width: 100%;
+
+height: auto;
+
+}
+
+/* WordPress article content */
+
+.wp-content {
+
+color: #e5e7eb;
+
+font-size: 16px;
+
+line-height: 1.8;
+
+}
+
+.wp-content p {
+
+margin: 0 0 1rem;
+
+}
+
+.wp-content h1,
+
+.wp-content h2,
+
+.wp-content h3,
+
+.wp-content h4,
+
+.wp-content h5,
+
+.wp-content h6 {
+
+color: #f8fafc;
+
+font-weight: 700;
+
+line-height: 1.3;
+
+margin: 1.5rem 0 0.75rem;
+
+}
+
+.wp-content h1 { font-size: 2rem; }
+
+.wp-content h2 { font-size: 1.75rem; }
+
+.wp-content h3 { font-size: 1.5rem; }
+
+.wp-content h4 { font-size: 1.25rem; }
+
+.wp-content ul {
+
+list-style: disc;
+
+padding-left: 1.5rem;
+
+margin: 0 0 1rem;
+
+}
+
+.wp-content ol {
+
+list-style: decimal;
+
+padding-left: 1.5rem;
+
+margin: 0 0 1rem;
+
+}
+
+.wp-content li {
+
+margin: 0.35rem 0;
+
+}
+
+.wp-content ul ul {
+
+list-style: circle;
+
+}
+
+.wp-content ol ol {
+
+list-style: lower-alpha;
+
+}
+
+.wp-content strong {
+
+font-weight: 700;
+
+color: #f8fafc;
+
+}
+
+.wp-content em {
+
+font-style: italic;
+
+}
+
+.wp-content a {
+
+color: #60a5fa;
+
+text-decoration: underline;
+
+}
+
+.wp-content img {
+
+max-width: 100%;
+
+height: auto;
+
+border-radius: 12px;
+
+margin: 1rem 0;
+
+}
+
+.wp-content figure {
+
+margin: 1.25rem 0;
+
+}
+
+.wp-content figcaption {
+
+font-size: 0.875rem;
+
+color: #94a3b8;
+
+margin-top: 0.5rem;
+
+}
+
+.wp-content blockquote {
+
+border-left: 4px solid #334155;
+
+padding-left: 1rem;
+
+margin: 1.25rem 0;
+
+color: #cbd5e1;
+
+}
+
+.wp-content hr {
+
+border: 0;
+
+border-top: 1px solid #334155;
+
+margin: 2rem 0;
+
 }

@@ -23,7 +23,7 @@ export default function AboutPage() {
             {/* Replace /founder.jpg with your real photo in /public */}
             <div className="relative h-40 w-40 overflow-hidden rounded-full border border-slate-700 bg-slate-900">
               <Image
-                src="/founder.jpg"
+                src="/founder.png"
                 alt="Founder of OnlineToolsBase"
                 fill
                 className="object-cover"

@@ -50,7 +50,7 @@ export default function AboutPage() {
                 everyday tools should be fast, clean and free
               </span>
               . No pop-ups, no confusing menus, no login forms — just useful
-              calculators and utilities that work on any device.
+              calculators and utilities that work on any device..
             </p>
 
             <p>

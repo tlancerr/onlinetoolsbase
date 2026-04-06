@@ -1,16 +1,36 @@
 import Link from "next/link";
 
-async function getPosts() {
-  const res = await fetch(
-    "https://cms.onlinetoolsbase.com/wp-json/wp/v2/posts?per_page=12&_embed=1",
-    { next: { revalidate: 300 } }
-  );
+export const dynamic = "force-dynamic";
+export const revalidate = 300;
 
-  if (!res.ok) {
+async function fetchWithTimeout(url: string) {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 10000);
+
+  try {
+    const res = await fetch(url, {
+      next: { revalidate: 300 },
+      signal: controller.signal,
+    });
+
+    if (!res.ok) {
+      console.error("WP fetch failed:", res.status, res.statusText, url);
+      return [];
+    }
+
+    return await res.json();
+  } catch (error) {
+    console.error("WP fetch error:", url, error);
     return [];
+  } finally {
+    clearTimeout(timeout);
   }
+}
 
-  return res.json();
+async function getPosts() {
+  return fetchWithTimeout(
+    "https://cms.onlinetoolsbase.com/wp-json/wp/v2/posts?per_page=12&_embed=1"
+  );
 }
 
 function stripHtml(html: string) {

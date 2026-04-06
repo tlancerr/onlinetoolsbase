@@ -1,26 +1,47 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 300;
+
+async function fetchWithTimeout(url: string) {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 10000);
+
+  try {
+    const res = await fetch(url, {
+      next: { revalidate: 300 },
+      signal: controller.signal,
+    });
+
+    if (!res.ok) {
+      console.error("WP fetch failed:", res.status, res.statusText, url);
+      return null;
+    }
+
+    return await res.json();
+  } catch (error) {
+    console.error("WP fetch error:", url, error);
+    return null;
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
 async function getCategoryBySlug(slug: string) {
-  const res = await fetch(
-    `https://cms.onlinetoolsbase.com/wp-json/wp/v2/categories?slug=${encodeURIComponent(slug)}`,
-    { next: { revalidate: 300 } }
+  const data = await fetchWithTimeout(
+    `https://cms.onlinetoolsbase.com/wp-json/wp/v2/categories?slug=${encodeURIComponent(slug)}`
   );
 
-  if (!res.ok) return null;
-
-  const data = await res.json();
   return Array.isArray(data) && data.length > 0 ? data[0] : null;
 }
 
 async function getPostsByCategory(categoryId: number) {
-  const res = await fetch(
-    `https://cms.onlinetoolsbase.com/wp-json/wp/v2/posts?categories=${categoryId}&per_page=20&_embed=1`,
-    { next: { revalidate: 300 } }
+  const data = await fetchWithTimeout(
+    `https://cms.onlinetoolsbase.com/wp-json/wp/v2/posts?categories=${categoryId}&per_page=20&_embed=1`
   );
 
-  if (!res.ok) return [];
-  return res.json();
+  return Array.isArray(data) ? data : [];
 }
 
 function stripHtml(html: string) {

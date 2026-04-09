@@ -17,23 +17,21 @@ export default function ToolLayout({
     <div>
       {header}
 
-      <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,1.6fr)_280px] gap-6">
-        <div className="space-y-6 min-w-0">
+      <div className="ai-tool-inner-grid mt-6">
+        <div className="ai-stack min-w-0">
           {input}
           {output}
         </div>
 
         <aside className="min-w-0">
           {sidebar ?? (
-            <div className="rounded-[24px] border border-slate-200 bg-slate-50 p-5 dark:border-slate-800 dark:bg-slate-950/60">
-              <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">
-                Tool tips
-              </h3>
-              <ul className="space-y-2 text-sm leading-7 text-slate-600 dark:text-slate-300">
-                <li>Use clear input for better results.</li>
-                <li>Give enough context.</li>
-                <li>Review output before publishing.</li>
-              </ul>
+            <div className="ai-side-card">
+              <h3 className="ai-side-title">Tool tips</h3>
+              <div className="ai-side-list">
+                <div className="ai-side-link">Use clear input for better results.</div>
+                <div className="ai-side-link">Give enough context.</div>
+                <div className="ai-side-link">Review output before publishing.</div>
+              </div>
             </div>
           )}
         </aside>

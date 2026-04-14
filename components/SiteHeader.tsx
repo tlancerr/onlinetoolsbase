@@ -456,6 +456,12 @@ export default function SiteHeader() {
   >
     Contact
   </Link>
+  <Link
+    href="/about"
+    className="hidden md:inline-flex btn-secondary h-9 items-center justify-center px-3 text-sm leading-none"
+  >
+    About
+  </Link>
 </div>
 
           {/* Mobile 3-dot menu */}

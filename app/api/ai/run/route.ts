@@ -1,4 +1,12 @@
+import { auth } from "@clerk/nextjs/server";
+import { cookies } from "next/headers";
+import { randomUUID } from "crypto";
+import { getUsage, incrementUsage } from "@/lib/usage";
+
 type Provider = "openrouter" | "groq";
+
+const GUEST_FREE_LIMIT = 2;
+const USER_FREE_LIMIT = 5;
 
 function getProvider(): Provider {
   return (process.env.AI_PROVIDER as Provider) || "openrouter";
@@ -26,15 +34,64 @@ function getApiConfig(provider: Provider) {
   };
 }
 
+async function getOrSetGuestId() {
+  const cookieStore = await cookies();
+  let guestId = cookieStore.get("guest_id")?.value;
+
+  if (!guestId) {
+    guestId = randomUUID();
+    cookieStore.set("guest_id", guestId, {
+      httpOnly: true,
+      sameSite: "lax",
+      secure: process.env.NODE_ENV === "production",
+      path: "/",
+      maxAge: 60 * 60 * 24 * 30,
+    });
+  }
+
+  return guestId;
+}
+
 export async function POST(req: Request) {
   try {
-    const { prompt } = await req.json();
+    const { prompt, toolSlug } = await req.json();
 
     if (!prompt || typeof prompt !== "string") {
       return Response.json(
-        { error: "Prompt is required." },
+        { ok: false, error: "Prompt is required." },
         { status: 400 }
       );
+    }
+
+    if (!toolSlug || typeof toolSlug !== "string") {
+      return Response.json(
+        { ok: false, error: "toolSlug is required." },
+        { status: 400 }
+      );
+    }
+
+    const { userId } = await auth();
+    const guestId = userId ? undefined : await getOrSetGuestId();
+
+    const usage = await getUsage({
+      userId: userId || undefined,
+      guestId,
+      toolSlug,
+    });
+
+    const currentCount = usage?.count || 0;
+    const limit = userId ? USER_FREE_LIMIT : GUEST_FREE_LIMIT;
+
+    if (currentCount >= limit) {
+      return Response.json({
+        ok: false,
+        code: userId ? "UPGRADE_REQUIRED" : "LOGIN_REQUIRED",
+        message: userId
+          ? "You have reached your free daily limit. Upgrade to continue."
+          : "You have reached your guest free limit. Sign in to continue.",
+        usageCount: currentCount,
+        limit,
+      });
     }
 
     const provider = getProvider();
@@ -45,9 +102,9 @@ export async function POST(req: Request) {
       Authorization: `Bearer ${config.key}`,
     };
 
-    // OpenRouter recommends these headers
     if (provider === "openrouter") {
-      headers["HTTP-Referer"] = process.env.NEXT_PUBLIC_SITE_URL || "https://onlinetoolsbase.com";
+      headers["HTTP-Referer"] =
+        process.env.NEXT_PUBLIC_SITE_URL || "https://onlinetoolsbase.com";
       headers["X-Title"] = "OnlineToolsBase AI Tools";
     }
 
@@ -59,7 +116,7 @@ export async function POST(req: Request) {
         messages: [
           {
             role: "system",
-            content: "You are an expert SEO assistant.",
+            content: "You are an expert AI assistant.",
           },
           {
             role: "user",
@@ -70,31 +127,59 @@ export async function POST(req: Request) {
       }),
     });
 
-    const data = await response.json();
+    let data;
 
-    if (!response.ok) {
-      console.error("AI API error:", data);
-      return Response.json(
-        {
-          error: data?.error?.message || "AI provider request failed.",
-        },
-        { status: response.status }
-      );
-    }
+try {
+  data = await response.json();
+} catch (err) {
+  console.error("Invalid JSON response:", err);
 
-    const result =
-      data?.choices?.[0]?.message?.content ||
-      "No result returned from AI provider.";
+  return Response.json(
+    {
+      ok: false,
+      error: "AI provider returned invalid JSON.",
+    },
+    { status: 500 }
+  );
+}
 
-    return Response.json({ result });
+if (!response.ok) {
+  console.error("AI API error:", data);
+
+  return Response.json(
+    {
+      ok: false,
+      error: data?.error?.message || "AI provider request failed.",
+    },
+    { status: 500 }
+  );
+}
+
+const result =
+  data?.choices?.[0]?.message?.content ||
+  "No result returned from AI provider.";
+
+await incrementUsage({
+  userId: userId || undefined,
+  guestId,
+  toolSlug,
+});
+
+return Response.json({
+  ok: true,
+  result,
+  usageCount: currentCount + 1,
+  limit,
+});
   } catch (error) {
-    console.error("Route error:", error);
+  console.error("Route error:", error);
 
-    return Response.json(
-      {
-        error: error instanceof Error ? error.message : "Unexpected server error",
-      },
-      { status: 500 }
-    );
-  }
+  return Response.json(
+    {
+      ok: false,
+      error: error instanceof Error ? error.message : "Unexpected server error",
+    },
+    { status: 500 }
+  );
+}
 }

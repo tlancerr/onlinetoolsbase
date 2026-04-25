@@ -12,7 +12,7 @@ import AdSlot from "@/components/AdSlot";
 
 import aiToolsData from "@/components/aiToolsData";
 import AiToolSchema from "@/components/ai/AiToolSchema";
-
+import AiAuthBar from "@/components/ai/AiAuthBar";
 type Props = {
   title: string;
   description: string;

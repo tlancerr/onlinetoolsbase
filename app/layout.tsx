@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
+import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 import AdSenseScript from "@/components/AdSenseScript";
-// ---------------------------------
-//  FIXED THEME SCRIPT (WORKS 100%)
-// ---------------------------------
+
 function ThemeInitializer() {
   return (
     <script
@@ -24,7 +23,9 @@ function ThemeInitializer() {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"
+  ),
 
   title: {
     default: "OnlineToolsBase — Free Online Tools & Utilities",
@@ -39,7 +40,12 @@ export const metadata: Metadata = {
     title: "OnlineToolsBase — Free Online Tools & Utilities",
     description: "Fast, privacy-first online tools for PDFs, images and more.",
     images: [
-      { url: "/otb-og.png", width: 1200, height: 630, alt: "OnlineToolsBase" },
+      {
+        url: "/otb-og.png",
+        width: 1200,
+        height: 630,
+        alt: "OnlineToolsBase",
+      },
     ],
   },
 
@@ -49,25 +55,25 @@ export const metadata: Metadata = {
   },
 };
 
-
-
-
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <head>
-        {/* Load theme IMMEDIATELY before page renders */}
-        <ThemeInitializer />
-        <AdSenseScript />
-      </head>
+    <ClerkProvider>
+      <html lang="en" suppressHydrationWarning>
+        <head>
+          <ThemeInitializer />
+          <AdSenseScript />
+        </head>
 
-      <body className="main-shell">
-      
-        <SiteHeader />
-        <main className="flex-1">{children}</main>
-        <SiteFooter />
-
-      </body>
-    </html>
+        <body className="main-shell">
+          <SiteHeader />
+          <main className="flex-1">{children}</main>
+          <SiteFooter />
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

@@ -13,6 +13,7 @@ import AdSlot from "@/components/AdSlot";
 import aiToolsData from "@/components/aiToolsData";
 import AiToolSchema from "@/components/ai/AiToolSchema";
 import AiAuthBar from "@/components/ai/AiAuthBar";
+
 type Props = {
   title: string;
   description: string;
@@ -112,6 +113,7 @@ export default function AiToolLayout({
       <FAQSchema faqs={faqs} />
 
       <div className="ai-page-wrap">
+        <AiAuthBar />
         <section className="ai-hero">
           <div className="ai-hero-content">
             <span className="ai-pill">{category}</span>

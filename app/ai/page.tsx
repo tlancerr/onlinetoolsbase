@@ -1,8 +1,9 @@
 import Link from "next/link"
 import aiToolsData from "@/components/aiToolsData"
-
+import AiAuthBar from "@components/ai/AiAuthBar"
 export default function AiToolsPage() {
   return (
+    <AiAuthBar />
     <div className="max-w-6xl mx-auto px-4 py-10">
       <h1 className="text-3xl font-bold mb-4">AI Tools Hub</h1>
 

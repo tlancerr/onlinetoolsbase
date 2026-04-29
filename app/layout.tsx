@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
-import "./globals.css";
+import "../globals.css";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 import AdSenseScript from "@/components/AdSenseScript";
@@ -66,6 +66,7 @@ export default function RootLayout({
         <head>
           <ThemeInitializer />
           <AdSenseScript />
+          <script src="https://pl29293937.profitablecpmratenetwork.com/23/fa/d9/23fad99a81de219f7896801967ca2a21.js"></script>
         </head>
 
         <body className="main-shell">

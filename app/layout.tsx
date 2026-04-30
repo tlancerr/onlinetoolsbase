@@ -66,6 +66,7 @@ export default function RootLayout({
         <head>
           <ThemeInitializer />
           <AdSenseScript />
+          <script src="https://pl29293937.profitablecpmratenetwork.com/23/fa/d9/23fad99a81de219f7896801967ca2a21.js"></script>
         </head>
 
         <body className="main-shell">

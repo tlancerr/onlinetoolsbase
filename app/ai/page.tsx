@@ -1,15 +1,17 @@
 import Link from "next/link"
 import aiToolsData from "@/components/aiToolsData"
-
+import AiAuthBar from "@/components/ai/AiAuthBar"
 export default function AiToolsPage() {
   return (
     <div className="max-w-6xl mx-auto px-4 py-10">
+    <AiAuthBar />
+
       <h1 className="text-3xl font-bold mb-4">AI Tools Hub</h1>
 
       <p className="text-gray-600 mb-10 max-w-2xl">
         Explore our growing collection of AI-powered tools for SEO, content creation, and automation.
       </p>
-
+  
       <div className="grid md:grid-cols-3 gap-6">
         {aiToolsData.map((tool) => (
           <Link
@@ -30,6 +32,8 @@ export default function AiToolsPage() {
           </Link>
         ))}
       </div>
+
+
     </div>
   )
 }

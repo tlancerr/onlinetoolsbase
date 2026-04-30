@@ -77,6 +77,7 @@ export default function ToolLayout({
     <>
       <Head>
         <link rel="canonical" href={canonical} />
+        <script src="https://pl29293937.profitablecpmratenetwork.com/23/fa/d9/23fad99a81de219f7896801967ca2a21.js"></script>
       </Head>
 
       {/* Schemas (non-visual) */}

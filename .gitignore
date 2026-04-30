@@ -45,3 +45,8 @@ node_modules
 next-env.d.ts
 
 .vscode
+
+# clerk configuration (can include secrets)
+/.clerk/
+dev.db
+prisma/dev.db

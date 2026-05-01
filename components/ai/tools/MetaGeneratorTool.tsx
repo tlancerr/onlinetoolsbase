@@ -68,6 +68,8 @@ export default function MetaGeneratorTool() {
   };
 
   const runAI = async () => {
+    if (loading) return;
+
     if (!keyword.trim()) {
       setResult("Please enter a target keyword.");
       return;

@@ -84,6 +84,8 @@ export default function SchemaGeneratorTool() {
   };
 
   const runAI = async () => {
+    if (loading) return;
+
     if (!content.trim()) {
       setResult("Please enter content.");
       return;

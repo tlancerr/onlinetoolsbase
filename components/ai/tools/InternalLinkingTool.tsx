@@ -84,6 +84,8 @@ export default function InternalLinkingTool() {
   };
 
   const runAI = async () => {
+    if (loading) return;
+
     if (!content.trim() || !urls.trim()) {
       setResult("Please enter article content and at least one target URL.");
       return;

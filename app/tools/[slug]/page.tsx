@@ -4,14 +4,19 @@ import type { Metadata } from "next";
 import ToolLayout from "@/components/ToolLayout";
 import { toolsData } from "@/components/toolsData";
 
-// If your tool components are in /app/tools/<slug>/Something.tsx,
-// you can import them conditionally OR use a registry mapping.
-// For now, this page assumes you already render the tool UI elsewhere.
-// Replace <div>Tool UI</div> with your actual tool component.
-
 type Props = {
   params: Promise<{ slug: string }>;
 };
+
+// 1. ADD THIS FUNCTION: Forces Next.js to pre-render every tool as static HTML files at build time
+export async function generateStaticParams() {
+  return toolsData.map((tool) => ({
+    slug: tool.slug,
+  }));
+}
+
+// 2. ADD THIS VARIABLE: Stops crawlers from hitting randomly generated rogue URLs or old ad loops
+export const dynamicParams = false;
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
@@ -45,6 +50,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     alternates: {
       canonical: `${siteUrl}/tools/${tool.slug}`,
     },
+    // FORCE positive indexing instructions directly in your main metadata output loop
+    robots: {
+      index: true,
+      follow: true,
+    },
     openGraph: {
       title,
       description,
@@ -74,12 +84,6 @@ export default async function ToolPage({ params }: Props) {
       category={tool.category}
       slug={tool.slug}
     >
-      {/* IMPORTANT:
-          Render your actual tool component here.
-          Example: <AgeCalculator /> for "age-calculator"
-          If you already have per-tool folders under /app/tools/<slug>/page.tsx,
-          keep those and still use generateMetadata there.
-      */}
       <div className="w-full">Tool UI goes here</div>
     </ToolLayout>
   );

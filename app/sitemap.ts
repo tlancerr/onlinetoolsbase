@@ -1,5 +1,5 @@
 import { MetadataRoute } from "next";
-import toolsData from "../components/toolsData";
+import { toolsData } from "../components/toolsData";
 
 async function getBlogPosts() {
   const res = await fetch(
@@ -20,36 +20,26 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const domain = "https://onlinetoolsbase.com";
   const now = new Date().toISOString();
 
-  const categoryPages = [
-    "Text Tools",
-    "Image Tools",
-    "Finance Tools",
-    "Time and Age Tools",
-    "Social Media Tools",
-    "PDF Tools",
-    "SEO Tools",
-    "Converter Tools",
-    "Math Tools",
-    "Health and Fitness Tools",
-    "Security Tools",
-  ].map((cat) => ({
+  // 1. FIXED: Programmatically extract unique categories directly from toolsData
+  const uniqueCategories = Array.from(
+    new Set(toolsData.map((t) => t.category))
+  );
+
+  const categoryPages = uniqueCategories.map((cat) => ({
     url: `${domain}/tools/category/${cat.toLowerCase().replace(/\s+/g, "-")}`,
     lastModified: now,
     changeFrequency: "weekly" as const,
     priority: 0.7,
   }));
 
+  // 2. FIXED: Removed raw dynamic folder tokens ([slug]) and removed interior .xml links
   const staticPages = [
     "",
     "/about",
     "/contact",
     "/privacy-policy",
     "/terms-of-service",
-    "/tools-sitemap.xml",
-    "/tools-pages-sitemap.xml",
     "/blog",
-    "/blog/[slug]",
-    "/blog/category/[slug]",
   ].map((path) => ({
     url: `${domain}${path}`,
     lastModified: now,

@@ -60,13 +60,16 @@ For baby milestones or parenting schedules, convert your total age into weeks an
   title: "Age in Weeks & Months",
   slug: "age-weeks-months",
   category: "Time and Age Tools",
-  description: "Convert your age into weeks and months instantly with accurate results.",
-  seoTitleTemplate: "Age in Weeks & Months — Convert Age Instantly",
-  seoDescriptionTemplate: "Calculate your age in total weeks and months with this free online tool. Simple, fast, and perfect for parents, students, and planners.",
-  longDescription: `The Age in Weeks & Months tool converts your age into total completed weeks and total months, offering a clearer view of time passed beyond simple year counts. It is especially helpful for baby milestones, parenting schedules, academic planning, and medical tracking.
+     description: "Age in weeks and months calculator — convert your birth date into total weeks and months lived.",
 
-Enter your birth date to instantly see your total age in weeks and months using precise calendar calculations. If you need a full breakdown including years, days, and minutes, use the <a href="/tools/age-calculator" title="Age Calculator">Age Calculator</a>. To compare two ages directly, the <a href="/tools/age-difference" title="Age Difference Calculator">Age Difference Calculator</a> provides exact accurate differences.`,
+  seoTitleTemplate: "Age in Weeks & Months — Baby Age Converter",
+  seoDescriptionTemplate: "Convert age to weeks and months instantly. Ideal for baby milestones, pregnancy tracking, and pediatric scheduling. Try it free.",
+ longDescription: `The Age in Weeks & Months calculator transforms your date of birth into total completed weeks and months — a format pediatricians, parents, and pregnancy trackers rely on daily. Standard year counts miss the granular intervals needed for infant development charts, vaccination schedules, and milestone comparisons.
 
+Enter your birth date and click Calculate to see total weeks and months lived, calculated with precise calendar rules. The tool works for any person or date range you enter.
+
+For a complete breakdown including years, days, hours, and minutes, switch to the <a href="/tools/age-calculator" class="text-blue-500 hover:underline">exact age calculator</a>. When you need the gap between two people, the <a href="/tools/age-difference" class="text-blue-500 hover:underline">age difference calculator</a> delivers side-by-side results.`
+ ,
 faqs: [
   {
     q: "What does the Age in Weeks & Months tool calculate?",
@@ -90,13 +93,15 @@ howtoSteps: [
   title: "Age Difference Calculator",
   slug: "age-difference",
   category: "Time and Age Tools",
-  description: "Calculate the exact age difference between two people or dates.",
-  seoTitleTemplate: "Age Difference Calculator — Compare Ages Easily",
-  seoDescriptionTemplate: "Find the exact age difference between two dates instantly. Ideal for relationships, documentation, and planning.",
-longDescription: `The Age Difference Calculator measures the exact gap between two dates in years, months, and days. It is ideal for comparing birthdays, calculating relationship age gaps, legal documentation, HR records, or project durations.
+  description: "Age difference calculator — measure the exact gap in years, months, and days between two birth dates.",
+  seoTitleTemplate: "Age Difference Calculator — Compare Two Ages",
+    seoDescriptionTemplate: "Calculate age difference between two people in years, months, and days. Free, instant, and calendar-accurate. Compare now.",
+longDescription: `The Age Difference Calculator measures the precise interval between two dates of birth in years, months, and days. Relationship age gaps, sibling comparisons, HR eligibility checks, and legal age requirements all depend on this exact calculation rather than rough year estimates.
 
-Enter two dates and the tool calculates the precise difference using proper calendar rules, including leap years. For a single-person breakdown, use the <a href="/tools/age-calculator" title="Age Calculator">Age Calculator</a>. If you need to calculate the total number of days between two dates, try the <a href="/tools/days-between-dates" title="Days Between Dates Calculator">Days Between Dates Calculator</a>.`,
+Enter both birth dates, click Calculate, and receive a calendar-accurate gap that handles leap years automatically. Results appear instantly with no account needed.
 
+For a single person's full age breakdown, use the <a href="/tools/age-calculator" class="text-blue-500 hover:underline">exact age calculator</a>. To count raw days between any two calendar dates, try the <a href="/tools/days-between-dates" class="text-blue-500 hover:underline">days between dates calculator</a>.`
+ ,
   faqs: [
   {
     q: "What does the Age Difference Calculator do?",
@@ -120,13 +125,16 @@ howtoSteps: [
   title: "Weeks Calculator",
   slug: "weeks-calculator",
   category: "Time and Age Tools",
-  description: "Convert dates to weeks and calculate weeks between dates instantly.",
-  seoTitleTemplate: "Weeks Calculator — Weeks Between Dates Calculator",
-  seoDescriptionTemplate: "Use Weeks Calculator to calculate weeks between two dates or convert days to weeks. Fast and accurate.",
- longDescription: `The Weeks Calculator determines how many weeks fall between two selected dates. It is commonly used for pregnancy tracking, project planning, payroll cycles, school terms, and fitness programs structured in weekly blocks.
+ description: "Weeks between dates calculator — count total weeks elapsed between any two calendar dates instantly.",
+ seoTitleTemplate: "Weeks Calculator — Count Weeks Between Dates",
+     seoDescriptionTemplate: "Calculate weeks between two dates for pregnancy, projects, or payroll. Fast, free, and calendar-accurate. Start now.",
+  longDescription: `The Weeks Calculator counts how many full weeks fall between a start date and an end date — the standard unit for pregnancy gestation, project sprints, payroll cycles, school terms, and fitness programs measured in weekly blocks.
 
-Select start and end dates to instantly calculate the total number of weeks. For exact day-based measurement, use the <a href="/tools/days-between-dates" title="Days Between Dates Calculator">Days Between Dates Calculator</a>. If you need to convert a birth date into total weeks lived, the <a href="/tools/age-weeks-months" title="Age in Weeks & Months">Age in Weeks & Months</a> tool may be more appropriate.`,
-faqs: [
+Select your start and end dates, click Calculate, and view the total week count based on real calendar days. Leap years and month-length variations are handled automatically.
+
+For day-level precision instead of weeks, use the <a href="/tools/days-between-dates" class="text-blue-500 hover:underline">days between dates calculator</a>. To convert a birth date into total weeks lived, the <a href="/tools/age-weeks-months" class="text-blue-500 hover:underline">age in weeks and months tool</a> is the better fit.`
+ ,
+  faqs: [
   {
     q: "What does the Weeks Calculator do?",
     a: "It calculates the number of weeks between two selected dates, helping you understand a date range in weekly terms."
@@ -152,13 +160,16 @@ faqs: [
   title: "Time Duration Calculator",
   slug: "time-duration",
   category: "Time and Age Tools",
-  description: "Calculate the duration between two times accurately.",
-  seoTitleTemplate: "Time Duration Calculator — Calculate Time Between Two Times",
-  seoDescriptionTemplate: "Calculate time duration between any two times with this fast and accurate tool. Converts hours, minutes, and seconds instantly.",
-  longDescription: `The Time Duration Calculator measures the exact difference between two times and returns results in hours, minutes, and seconds. It is ideal for work shifts, time tracking, exercise sessions, study blocks, travel timing, and detailed scheduling.
+  description: "Time duration calculator — find hours, minutes, and seconds between any two clock times instantly.",
+ seoTitleTemplate: "Time Duration Calculator — Hours Between Times",
+  seoDescriptionTemplate: "Calculate time duration between two times in hours, minutes, and seconds. Perfect for shifts and tracking. Try free.",
+  longDescription: `The Time Duration Calculator computes the exact elapsed time between a start time and end time, returning results in hours, minutes, and seconds. Work shift logs, exercise sessions, study blocks, billing hours, and travel itineraries all require this clock-level precision rather than full-date math.
 
-Enter a start time and end time to instantly calculate the precise duration. If your calculation involves full calendar dates instead of clock times, use the <a href="/tools/days-between-dates" title="Days Between Dates Calculator">Days Between Dates Calculator</a>. For projecting deadlines into the future, the <a href="/tools/future-date" title="Future Date Calculator">Future Date Calculator</a> provides exact results.`,
-faqs: [
+Enter your start and end times, click Calculate, and get an instant breakdown — including durations that cross midnight. No manual subtraction needed.
+
+When your calculation spans full calendar dates rather than clock times, switch to the <a href="/tools/days-between-dates" class="text-blue-500 hover:underline">days between dates calculator</a>. To project a deadline forward from today, use the <a href="/tools/future-date" class="text-blue-500 hover:underline">future date calculator</a>.`
+ ,
+  faqs: [
   {
     q: "How does the Time Duration Calculator work?",
     a: "It calculates the time difference between two specific times, showing results in hours, minutes and seconds."
@@ -508,16 +519,16 @@ howtoSteps: [
   title: "Compound Interest Calculator",
   slug: "compound-interest-calculator",
   category: "Finance Tools",
-  description: "Calculate compound interest on savings and investments with flexible compounding periods.",
-  seoTitleTemplate: "Compound Interest Calculator — Investment Growth Tool",
-  seoDescriptionTemplate: "Estimate compound interest growth on your investments. Supports annual, monthly and daily compounding for accurate results."
-,
-longDescription: `The Compound Interest Calculator estimates how your savings or investments can grow over time when interest is compounded. Unlike simple interest, compound interest calculates returns on both the original principal and the accumulated interest, which can significantly increase long-term growth.
-  Enter your principal amount, interest rate, compounding frequency (such as yearly, monthly, or daily), and time period to instantly view projected growth. This tool is useful for investment planning, savings goals, retirement projections, and comparing different compounding options in a clear, easy-to-understand way.
-    
-  If you invest regularly instead of making a single deposit, the <a href='/tools/sip-calculator' title='SIP Calculator'>SIP Calculator</a> can estimate returns on monthly contributions. For simpler scenarios where interest does not compound, the <a href='/tools/simple-interest-calculator' title='Simple Interest Calculator'>Simple Interest Calculator</a> may be sufficient. You can also evaluate overall profitability using the <a href='/tools/investment-return-calculator' title='Investment Return Calculator'>Investment Return Calculator</a>.`,
+  description: "Compound interest calculator — project savings and investment growth with flexible compounding frequency.",
+ seoTitleTemplate: "Compound Interest Calculator — Growth Tool",
+  seoDescriptionTemplate: "Estimate compound interest on savings with daily, monthly, or annual compounding. Plan investments free.",
 
-faqs: [
+longDescription: `The Compound Interest Calculator projects how savings or investments grow when interest earns interest over time. Unlike simple interest, compounding accelerates long-term growth — making it essential for retirement planning, fixed deposits, savings goals, and comparing investment products.
+
+Enter your principal, rate, compounding frequency, and duration, then click Calculate to see projected final value and total gains.
+
+For regular monthly contributions rather than a lump sum, use the <a href="/tools/sip-calculator" class="text-blue-500 hover:underline">SIP calculator</a>. For non-compounding scenarios, try the <a href="/tools/simple-interest-calculator" class="text-blue-500 hover:underline">simple interest calculator</a>.`,
+  faqs: [
   {
     q: "What is compound interest?",
     a: "Compound interest is the interest calculated on the initial principal plus accumulated interest from previous periods."
@@ -547,15 +558,15 @@ howtoSteps: [
   title: "SIP Calculator",
   slug: "sip-calculator",
   category: "Finance Tools",
-  description: "Calculate SIP returns based on monthly investment, duration and expected rate.",
+  description: "SIP calculator — estimate mutual fund returns from monthly investments over any duration and rate.",
   seoTitleTemplate: "SIP Calculator — Mutual Fund Return Estimator",
-  seoDescriptionTemplate: "Use this free SIP Calculator to estimate long-term mutual fund returns. Perfect for investment planning and wealth building."
-,
-longDescription: `The SIP Calculator helps you estimate the future value of regular monthly investments (Systematic Investment Plan). It’s widely used for mutual fund planning and long-term wealth building because it shows how consistent investing combined with compounding can grow over time.
-  Enter your monthly SIP amount, expected annual return rate, and investment duration to see the estimated maturity value, total invested amount, and potential gains. Since SIPs are market-linked, the output is an estimate—not a guarantee—but it’s extremely useful for planning goals, comparing durations, and understanding how returns and time affect results.
-    
-  If you prefer a lump-sum investment calculation instead of monthly contributions, use the <a href='/tools/compound-interest-calculator' title='Compound Interest Calculator'>Compound Interest Calculator</a>. To compare overall profitability across different rates and durations, the <a href='/tools/investment-return-calculator' title='Investment Return Calculator'>Investment Return Calculator</a> can help you analyze potential outcomes.`,
+   seoDescriptionTemplate: "Project SIP maturity value from monthly investments and expected returns. Plan wealth building free today.",
+   
+longDescription: `The SIP Calculator estimates the future value of regular monthly investments through a Systematic Investment Plan. Mutual fund investors, retirement planners, and wealth builders use SIP projections to understand how consistent contributions combined with compounding can grow over years or decades.
 
+Enter your monthly SIP amount, expected annual return, and investment duration, then click Calculate to see maturity value, total invested, and estimated gains.
+
+For a one-time lump-sum investment instead, use the <a href="/tools/compound-interest-calculator" class="text-blue-500 hover:underline">compound interest calculator</a>. To compare overall profitability across rates, try the <a href="/tools/investment-return-calculator" class="text-blue-500 hover:underline">investment return calculator</a>.`,
 faqs: [
   {
     q: "How does the SIP Calculator estimate returns?",
@@ -586,15 +597,16 @@ howtoSteps: [
   slug: "currency-converter",
   category: "Finance Tools",
   popular: true,
-  description: "Convert between world currencies using real-time exchange rates.",
+  description: "Currency converter — convert amounts between world currencies using frequently updated exchange rates.",
   seoTitleTemplate: "Currency Converter — Live Exchange Rates",
-  seoDescriptionTemplate: "Convert world currencies instantly using live exchange rates. Fast, accurate and easy to use for travelers and businesses."
-,
-longDescription: `The Currency Converter lets you convert amounts between major world currencies using exchange rates that are updated frequently. It’s useful for travel budgeting, online shopping, international invoices, freelance payments, and comparing prices across countries without manual calculations.
-  Select the currency you want to convert from and to, enter an amount, and view the converted value instantly. Exchange rates can change throughout the day due to market movement, so the converted result should be treated as an estimate—especially for large transactions. For bank transfers or card payments, the final rate may differ slightly due to provider fees or markups.
-    
-    If you are calculating tax obligations in another country, the <a href='/tools/global-tax-calculator' title='Global Tax Calculator'>Global Tax Calculator</a> can estimate income tax based on local brackets. To evaluate investment returns in different currencies, you may also use the <a href='/tools/investment-return-calculator' title='Investment Return Calculator'>Investment Return Calculator</a>.`,
+  seoDescriptionTemplate: "Convert USD, EUR, GBP, and 150+ currencies instantly. Free for travel, shopping, and business. Convert now.",
 
+longDescription: `The Currency Converter transforms amounts between major world currencies using exchange rates updated frequently throughout the day. Travel budgeting, international online shopping, freelance invoicing, cross-border payments, and price comparisons all require fast, accurate conversion without manual rate lookup.
+
+Select source and target currencies, enter an amount, and click Convert for an instant result. Rates fluctuate with market movement, so treat large transactions as estimates.
+
+For income tax estimates in another country, try the <a href="/tools/global-tax-calculator" class="text-blue-500 hover:underline">global tax calculator</a>. To evaluate investment returns across currencies, use the <a href="/tools/investment-return-calculator" class="text-blue-500 hover:underline">investment return calculator</a>.`
+  ,
 faqs: [
   {
     q: "How accurate are the currency rates?",
@@ -619,15 +631,15 @@ howtoSteps: [
   title: "Salary to Hourly Calculator",
   slug: "salary-to-hourly-calculator",
   category: "Finance Tools",
-  description: "Convert annual salary into hourly, weekly and monthly earnings.",
-  seoTitleTemplate: "Salary to Hourly Calculator — Income Conversion Tool",
-  seoDescriptionTemplate: "Convert salary to hourly, weekly or monthly income instantly. Useful for job offers, freelancers, and paycheck comparisons."
-,
-longDescription: `The Salary to Hourly Calculator converts an annual salary into estimated hourly, weekly, and monthly earnings. It’s useful for comparing job offers, evaluating freelance vs salaried pay, budgeting, and understanding your real earning rate when work hours vary.
-    Enter your salary and provide your work schedule assumptions (such as hours per week and weeks per year) to see an instant breakdown. Because different employers define “full-time” differently and paid leave can vary, the results are estimates—but they’re excellent for quick comparisons and planning.
-    
-    To estimate your income tax after converting salary figures, you can use the <a href='/tools/global-tax-calculator' title='Global Tax Calculator'>Global Tax Calculator</a>. If you receive payments in foreign currencies, the <a href='/tools/currency-converter' title='Currency Converter'>Currency Converter</a> can help you compare earnings across countries.`,
+ description: "Salary to hourly calculator — convert annual salary into hourly, weekly, and monthly pay rates instantly.",
+  seoTitleTemplate: "Salary to Hourly Calculator — Pay Converter",
+  seoDescriptionTemplate: "Convert annual salary to hourly, weekly, or monthly pay instantly. Compare job offers free today.",
+longDescription: `The Salary to Hourly Calculator converts an annual salary into estimated hourly, weekly, and monthly earnings based on your work schedule assumptions. Comparing salaried job offers against freelance hourly rates, budgeting personal finances, and negotiating compensation all start with this conversion.
 
+Enter your salary and hours-per-week assumptions, then click Calculate for an instant breakdown across all pay intervals.
+
+To estimate take-home pay after taxes, use the <a href="/tools/global-tax-calculator" class="text-blue-500 hover:underline">global tax calculator</a>. For earnings in foreign currencies, try the <a href="/tools/currency-converter" class="text-blue-500 hover:underline">currency converter</a>.`
+,
 faqs: [
   {
     q: "How is salary converted to hourly rate?",
@@ -656,15 +668,16 @@ howtoSteps: [
   title: "Global Tax Calculator",
   slug: "global-tax-calculator",
   category: "Finance Tools",
-  description: "Estimate income tax based on country-specific tax brackets and rules.",
-  seoTitleTemplate: "Global Tax Calculator — Country-Wise Income Tax",
-  seoDescriptionTemplate: "Calculate income tax for any country using updated tax brackets. Perfect for expats, freelancers and global workers."
-,
-longDescription: `The Global Tax Calculator helps you estimate income tax based on country-specific tax brackets and commonly applied rules. It’s especially useful for expats, remote workers, freelancers, and international employees who need a quick understanding of how income tax may differ from one country to another.
-  After selecting a country and entering your annual income, the calculator provides an estimated tax amount using publicly referenced tax brackets. Because tax laws vary by location and can change due to deductions, residency status, and local regulations, the result should be treated as an estimate rather than legal advice. It’s ideal for early planning, comparisons, and general financial awareness.
-    
-  If you are comparing salary offers across countries, the <a href='/tools/salary-to-hourly-calculator' title='Salary to Hourly Calculator'>Salary to Hourly Calculator</a> can convert annual income into hourly or monthly estimates. For international income comparisons, the <a href='/tools/currency-converter' title='Currency Converter'>Currency Converter</a> helps translate earnings into your preferred currency.`,
+  description: "Global tax calculator — estimate income tax using country-specific brackets for expats and remote workers.",
+    seoTitleTemplate: "Global Tax Calculator — Country Income Tax",
+      seoDescriptionTemplate: "Estimate income tax by country using current brackets. Free for expats, freelancers, and remote workers.",
 
+longDescription: `The Global Tax Calculator estimates income tax based on country-specific tax brackets and commonly applied rules. Expats, remote workers, freelancers, and international employees use it to compare tax burdens across jurisdictions before accepting offers or relocating.
+
+Select a country, enter your annual income, and click Calculate for an estimated tax amount. Results are planning estimates — confirm with official sources for filing.
+
+When comparing salary offers across countries, convert pay rates with the <a href="/tools/salary-to-hourly-calculator" class="text-blue-500 hover:underline">salary to hourly calculator</a>. For currency-normalized comparisons, use the <a href="/tools/currency-converter" class="text-blue-500 hover:underline">currency converter</a>.`
+,
 faqs: [
   {
     q: "How does the Global Tax Calculator work?",
@@ -693,15 +706,16 @@ howtoSteps: [
   title: "Investment Return Calculator",
   slug: "investment-return-calculator",
   category: "Finance Tools",
-  description: "Calculate your investment returns based on principal, rate and duration.",
-  seoTitleTemplate: "Investment Return Calculator — ROI Estimator",
-  seoDescriptionTemplate: "Estimate investment returns and total profit using principal, interest rate and duration. Great for comparing ROI options."
-,
-longDescription: `The Investment Return Calculator estimates how much your investment can grow over time based on the initial amount, expected rate of return, and investment duration. It’s useful for evaluating savings plans, fixed-income products, and long-term investments where you want a clear picture of potential profit and final value.
-  By adjusting the rate or duration, you can easily compare different return scenarios and understand how time and growth impact results. The calculator provides a simple, readable breakdown that helps with planning and decision-making, while keeping the math transparent and easy to interpret.
-  
-  For growth calculations involving compounding frequency such as monthly or daily interest, the <a href='/tools/compound-interest-calculator' title='Compound Interest Calculator'>Compound Interest Calculator</a> offers more detailed projections. If you are investing monthly through mutual funds, the <a href='/tools/sip-calculator' title='SIP Calculator'>SIP Calculator</a> may be more suitable.`,
+ description: "Investment return calculator — estimate total profit and final value from principal, rate, and duration.",
+       seoTitleTemplate: "Investment Return Calculator — ROI Estimator",
+   seoDescriptionTemplate: "Calculate investment returns and total profit from rate and duration. Compare ROI scenarios free now.",
+ 
+ longDescription: `The Investment Return Calculator estimates how much an investment grows over time based on initial amount, expected rate of return, and duration. Savings plans, fixed-income products, bond comparisons, and long-term portfolio projections all benefit from a clear profit-and-value breakdown.
 
+Adjust the rate or duration to compare scenarios and understand how time and growth rate interact. Enter values and click Calculate for instant results.
+
+For compounding with monthly or daily frequency, use the <a href="/tools/compound-interest-calculator" class="text-blue-500 hover:underline">compound interest calculator</a>. For monthly mutual fund contributions, try the <a href="/tools/sip-calculator" class="text-blue-500 hover:underline">SIP calculator</a>.`
+,
 faqs: [
   {
     q: "What does the Investment Return Calculator do?",
@@ -731,16 +745,18 @@ howtoSteps: [
   slug: "word-counter",
   category: "Text Tools",
   popular: true,
-  description: "Count words, characters, sentences and paragraphs instantly.",
-  seoTitleTemplate: "Word Counter — Count Words & Characters Online",
-  seoDescriptionTemplate: "Use this free Word Counter to count words, characters, sentences and paragraphs instantly. Ideal for writers, students and SEO experts."
-,
-longDescription: `The Word Counter tool instantly analyzes your text and displays the number of words, characters, sentences, and paragraphs in real time. It’s ideal for writers, students, journalists, SEO specialists, and anyone working with word limits, content briefs, or platform requirements.
+      description: "Word counter — count words, characters, sentences, and paragraphs in real time as you type or paste.",
 
-Simply type or paste your content into the text box and watch the counts update automatically. This makes it easy to meet academic word limits, optimize SEO content length, track social media character limits, or review writing structure quickly and accurately on any device.
+    seoTitleTemplate: "Word Counter — Count Words & Characters",
+    seoDescriptionTemplate: "Free word counter for essays, SEO content, and social posts. Real-time counts with no signup. Start counting now.",
 
-If you only care about character limits (with and without spaces), use the <a href="/tools/character-counter" title="Character Counter">Character Counter</a>. To clean messy pasted content before counting, run it through <a href="/tools/remove-extra-spaces" title="Remove Extra Spaces">Remove Extra Spaces</a> or <a href="/tools/remove-line-breaks" title="Remove Line Breaks">Remove Line Breaks</a> first.`,
-faqs: [
+longDescription: `The Word Counter analyzes text in real time and displays word count, character count, sentence count, and paragraph count simultaneously. Writers, students, journalists, SEO specialists, and content marketers rely on it to meet platform limits, academic requirements, and content brief word targets.
+
+Paste or type your content and watch all metrics update automatically — no button click required. Works on desktop and mobile without uploading your text anywhere.
+
+For strict character limits on meta descriptions or social posts, use the <a href="/tools/character-counter" class="text-blue-500 hover:underline">character counter tool</a>. After drafting SEO copy, verify keyword balance with the <a href="/tools/keyword-density-checker" class="text-blue-500 hover:underline">keyword density checker</a>.`
+ ,
+  faqs: [
   {
     q: "What does the Word Counter tool do?",
     a: "The Word Counter counts words, characters, sentences and paragraphs instantly as you type or paste text."
@@ -768,16 +784,17 @@ howtoSteps: [
   title: "Character Counter",
   slug: "character-counter",
   category: "Text Tools",
-  description: "Count characters with or without spaces in real time.",
-  seoTitleTemplate: "Character Counter — Count Characters Instantly",
-  seoDescriptionTemplate: "Count characters with or without spaces instantly using this free Character Counter. Perfect for social media limits and SEO optimization."
-,
-longDescription: `The Character Counter instantly counts characters in your text in real time, both with spaces and without spaces. It’s especially useful for platforms with strict limits—like meta descriptions, ad copy, form fields, SMS, and social posts—where a few extra characters can cause content to be rejected or cut off.
+ description: "Character counter — count characters with and without spaces for meta tags, tweets, and form limits.",
+    seoTitleTemplate: "Character Counter — Count Characters Online",
+      seoDescriptionTemplate: "Count characters with or without spaces instantly. Perfect for Twitter, meta descriptions, and SMS. Try free.",
 
-Paste or type your text and the tool updates counts automatically as you edit. Seeing both totals helps you stay within limits with confidence. It’s fast, simple, and works smoothly on desktop and mobile.
+longDescription: `The Character Counter tracks character totals in real time — both with spaces and without — so you never exceed platform limits on meta descriptions, ad copy, SMS messages, form fields, or social posts where a few extra characters cause truncation or rejection.
 
-Need word, sentence, and paragraph counts too? Use the <a href="/tools/word-counter" title="Word Counter">Word Counter</a>. If your text is inflated by formatting issues, clean it first using <a href="/tools/remove-extra-spaces" title="Remove Extra Spaces">Remove Extra Spaces</a>.`,
-faqs: [
+Type or paste text and see both counts update live as you edit. The tool handles emojis, symbols, and Unicode characters accurately.
+
+For word, sentence, and paragraph counts alongside characters, use the <a href="/tools/word-counter" class="text-blue-500 hover:underline">word counter tool</a>. To clean messy pasted spacing before counting, try the <a href="/tools/remove-extra-spaces" class="text-blue-500 hover:underline">remove extra spaces tool</a>.`
+ ,
+  faqs: [
   {
     q: "What is a Character Counter used for?",
     a: "A Character Counter measures the number of characters with or without spaces, useful for social media limits, essays and SEO."
@@ -805,16 +822,17 @@ howtoSteps: [
   title: "Case Converter",
   slug: "case-converter",
   category: "Text Tools",
-  description: "Convert text between uppercase, lowercase, sentence case and more.",
-  seoTitleTemplate: "Case Converter — Convert Text Case Online",
-  seoDescriptionTemplate: "Convert text to uppercase, lowercase, title case, sentence case and more with this fast and easy Case Converter tool."
+    description: "Case converter — transform text to uppercase, lowercase, title case, or sentence case instantly.",
+    seoTitleTemplate: "Case Converter — Change Text Case Online",
+      seoDescriptionTemplate: "Convert text to uppercase, lowercase, title case, or sentence case free. Fix formatting in one click.",
+
+longDescription: `The Case Converter reformats text between uppercase, lowercase, title case, sentence case, and other common styles without retyping a single word. Cleaning copied content, standardizing headings, preparing social posts, and fixing inconsistent documentation all become one-click tasks.
+
+Paste your text, select the target case format, and copy the converted result instantly. Punctuation, numbers, and spacing remain untouched.
+
+For capitalizing only sentence starts without altering other words, use the <a href="/tools/capitalize-sentences" class="text-blue-500 hover:underline">capitalize sentences tool</a>. If pasted text has messy spacing, clean it first with the <a href="/tools/remove-extra-spaces" class="text-blue-500 hover:underline">remove extra spaces tool</a>.`
 ,
-longDescription: `The Case Converter helps you change text formatting instantly without retyping. You can convert content into uppercase, lowercase, sentence case, title case, and other common formats used in writing, documentation, and publishing. It’s ideal for cleaning copied text, formatting headings, preparing content for social media, or standardizing text in reports.
-
-Just paste your text, select the case style you want, and copy the converted result. This tool saves time and reduces mistakes, especially when handling long paragraphs or repeated formatting tasks across multiple pieces of content.
-
-For fixing only sentence starts (without changing other words), try <a href="/tools/capitalize-sentences" title="Capitalize Sentences">Capitalize Sentences</a>. If the text you pasted has messy spacing, use <a href="/tools/remove-extra-spaces" title="Remove Extra Spaces">Remove Extra Spaces</a> before converting.`,
-faqs: [
+  faqs: [
   {
     q: "What can I do with the Case Converter?",
     a: "You can convert text into uppercase, lowercase, sentence case, title case and other formatting styles instantly."
@@ -842,16 +860,17 @@ howtoSteps: [
   title: "Remove Extra Spaces",
   slug: "remove-extra-spaces",
   category: "Text Tools",
-  description: "Clean and remove extra spaces from text automatically.",
-  seoTitleTemplate: "Remove Extra Spaces — Clean Text Instantly",
-  seoDescriptionTemplate: "Remove unnecessary spaces from text instantly. Perfect for formatting, cleaning documents and improving readability."
-,
-longDescription: `The Remove Extra Spaces tool cleans text by fixing unwanted spacing issues such as double spaces, leading spaces, trailing spaces, and inconsistent gaps between words. It’s perfect when you copy text from PDFs, websites, emails, or documents where formatting introduces messy spacing that hurts readability or breaks layouts.
+description: "Remove extra spaces — strip double spaces, leading gaps, and trailing whitespace from any text block.",
+    seoTitleTemplate: "Remove Extra Spaces — Clean Text Online",
+     seoDescriptionTemplate: "Remove double spaces and trailing whitespace from copied text instantly. Free formatting cleanup tool.",
 
-Paste your content and the tool normalizes spacing while keeping your words and sentences intact. The result is cleaner text you can confidently use for emails, articles, forms, SEO work, or any place where formatting consistency matters.
+longDescription: `The Remove Extra Spaces tool normalizes spacing by eliminating double spaces, leading whitespace, trailing gaps, and inconsistent word gaps that appear when copying from PDFs, websites, emails, or scanned documents. Clean spacing improves readability and prevents layout breaks in forms, CMS editors, and email clients.
 
-If your copied text is broken into many short lines, use <a href="/tools/remove-line-breaks" title="Remove Line Breaks">Remove Line Breaks</a>. After cleaning, you can quickly check length with <a href="/tools/word-counter" title="Word Counter">Word Counter</a> or <a href="/tools/character-counter" title="Character Counter">Character Counter</a>.`,
-faqs: [
+Paste your content, click Remove Extra Spaces, and copy the cleaned output. Words and sentence meaning stay exactly the same.
+
+If copied text is broken into many short lines, use the <a href="/tools/remove-line-breaks" class="text-blue-500 hover:underline">remove line breaks tool</a> first. Then verify final length with the <a href="/tools/word-counter" class="text-blue-500 hover:underline">word counter</a>.`
+ ,
+  faqs: [
   {
     q: "What does the Remove Extra Spaces tool do?",
     a: "It automatically removes double spaces, leading spaces and trailing spaces from text to make it clean and readable."
@@ -879,16 +898,17 @@ howtoSteps: [
   title: "Remove Line Breaks",
   slug: "remove-line-breaks",
   category: "Text Tools",
-  description: "Remove line breaks, newlines and paragraph spacing with one click.",
-  seoTitleTemplate: "Remove Line Breaks — Clean Text Formatting",
-  seoDescriptionTemplate: "Remove newlines and line breaks from text instantly. Ideal for merging text, formatting emails, and fixing copied content."
+    description: "Remove line breaks — merge multi-line copied text into clean single-paragraph format instantly.",
+    seoTitleTemplate: "Remove Line Breaks — Merge Text Lines",
+     seoDescriptionTemplate: "Remove unwanted newlines from PDF and web copied text instantly. Free line break cleanup tool.",
+
+longDescription: `The Remove Line Breaks tool converts text littered with unwanted newlines into a clean, continuous paragraph. Content copied from PDFs, web pages, and scanned documents often breaks at the end of every visual line, making it unusable in emails, blog posts, and form fields without manual cleanup.
+
+Paste your text, choose your merge preference, and click Convert to generate properly flowing output you can copy anywhere.
+
+After merging lines, fix remaining spacing issues with the <a href="/tools/remove-extra-spaces" class="text-blue-500 hover:underline">remove extra spaces tool</a>. For final word-limit checks, use the <a href="/tools/word-counter" class="text-blue-500 hover:underline">word counter</a>.`
 ,
-longDescription: `The Remove Line Breaks tool converts text with unwanted newlines into a cleaner format—typically a single continuous paragraph. This is especially helpful when text is copied from PDFs, web pages, or scanned documents where line breaks appear at the end of every line and make the content hard to reuse.
-
-Paste your text, choose your preferred cleanup option, and generate a version without extra line breaks. You can then copy the cleaned output into emails, documents, blog posts, or forms without broken formatting. It’s quick, reliable, and designed for both short and long text.
-
-For fixing messy spacing after merging lines, run <a href="/tools/remove-extra-spaces" title="Remove Extra Spaces">Remove Extra Spaces</a>. If you’re preparing the final version for a word limit, check it with <a href="/tools/word-counter" title="Word Counter">Word Counter</a>.`,
-faqs: [
+  faqs: [
   {
     q: "Why use a Remove Line Breaks tool?",
     a: "It merges multiple lines into a single paragraph by removing newline characters."
@@ -920,16 +940,18 @@ howtoSteps: [
   title: "Text Reverser",
   slug: "text-reverser",
   category: "Text Tools",
-  description: "Reverse text, words or sentences with a single click.",
-  seoTitleTemplate: "Text Reverser — Reverse Text Online",
-  seoDescriptionTemplate: "Reverse text instantly by characters, words or full sentences. A simple and fast tool for creative and technical use."
-,
-longDescription: `The Text Reverser lets you reverse text instantly by characters, by words, or by full sentence order. It’s fun for creative writing and puzzles, but also practical for developers and testers who need reversed strings to validate input handling, UI rendering, or edge cases.
+     description: "Text reverser — flip characters, words, or sentence order in any string with one click.",
 
-Paste your text, choose how you want it reversed, and the tool generates the output immediately. You can copy the reversed result for experiments, formatting checks, or creative content. It works in real time and supports both short and long text.
+    seoTitleTemplate: "Text Reverser — Reverse Text Online",
+      seoDescriptionTemplate: "Reverse text by characters, words, or sentences instantly. Free tool for developers and creative writing.",
 
-If you want to analyze patterns in the reversed output, use <a href="/tools/character-frequency-counter" title="Character Frequency Counter">Character Frequency Counter</a>. If you’re reversing long lists line-by-line, you may want to clean duplicates first using <a href="/tools/remove-duplicate-lines" title="Remove Duplicate Lines">Remove Duplicate Lines</a>.`,
-faqs: [
+longDescription: `The Text Reverser flips text by individual characters, by word order, or by full sentence sequence — useful for creative writing, puzzles, QA testing, and developer workflows that need reversed strings to validate input handling or UI rendering edge cases.
+
+Paste your text, select the reversal mode, and click Reverse for instant output you can copy. Supports both short strings and long documents.
+
+To analyze character distribution in reversed output, use the <a href="/tools/character-frequency-counter" class="text-blue-500 hover:underline">character frequency counter</a>. For list cleanup before reversing line-by-line, try the <a href="/tools/remove-duplicate-lines" class="text-blue-500 hover:underline">remove duplicate lines tool</a>.`
+  ,
+  faqs: [
   {
     q: "What does the Text Reverser do?",
     a: "It reverses text direction by characters, words or complete sentences with one click."
@@ -957,16 +979,17 @@ howtoSteps: [
   title: "Remove Duplicate Lines",
   slug: "remove-duplicate-lines",
   category: "Text Tools",
-  description: "Remove duplicate lines from text while keeping unique entries.",
-  seoTitleTemplate: "Remove Duplicate Lines — Clean Duplicate Text",
-  seoDescriptionTemplate: "Remove duplicate lines from any text instantly. Great for cleaning lists, logs, and SEO keyword files."
-,
-longDescription: `The Remove Duplicate Lines tool cleans lists by removing repeated lines while keeping only unique entries. It’s useful for cleaning keyword lists, email lists, logs, exported data, search queries, and any text where duplicates create noise or inflate results.
+      description: "Remove duplicate lines — deduplicate text lists while preserving original order of unique entries.",
+     seoTitleTemplate: "Remove Duplicate Lines — Deduplicate Lists",
+      seoDescriptionTemplate: "Remove duplicate lines from keyword lists, logs, and data exports instantly. Free deduplication tool.",
 
-Paste your list (one item per line) and the tool removes duplicate entries while preserving the original order of first occurrences. This makes the output easier to use in spreadsheets, SEO workflows, automation scripts, and reporting without breaking your existing sequence.
+longDescription: `The Remove Duplicate Lines tool strips repeated entries from any line-separated list while keeping the first occurrence of each unique line in its original position. SEO keyword lists, email lists, server logs, search query exports, and spreadsheet data all accumulate duplicates that inflate counts and skew analysis.
 
-After de-duplicating, you can organize the list using <a href="/tools/text-sorter" title="Text Sorter">Text Sorter</a>. If you need to update terms across the whole list, use <a href="/tools/find-and-replace" title="Find & Replace">Find & Replace</a>.`,
-faqs: [
+Paste your list — one item per line — click Remove Duplicates, and copy the cleaned output ready for spreadsheets, automation scripts, or publishing.
+
+Organize the deduplicated list alphabetically with the <a href="/tools/text-sorter" class="text-blue-500 hover:underline">text sorter tool</a>. To bulk-replace terms across the list, use the <a href="/tools/find-and-replace" class="text-blue-500 hover:underline">find and replace tool</a>.`
+ ,
+  faqs: [
   {
     q: "What is the purpose of the Remove Duplicate Lines tool?",
     a: "It removes repeated lines from your text to create a clean list of unique items."
@@ -994,16 +1017,17 @@ howtoSteps: [
   title: "Find & Replace",
   slug: "find-and-replace",
   category: "Text Tools",
-  description: "Search and replace text patterns quickly and accurately.",
-  seoTitleTemplate: "Find & Replace — Search and Replace Text Online",
-  seoDescriptionTemplate: "Find and replace text strings instantly with this free online tool. Supports simple and advanced replacements."
-,
-longDescription: `The Find & Replace tool helps you quickly search for specific words or phrases in a block of text and replace them with new content. It’s especially useful when editing long documents, updating repeated terms, fixing typos at scale, or making consistent wording changes across articles, emails, or data exports.
+      description: "Find and replace — search and swap text patterns across entire documents in a single action.",
+      seoTitleTemplate: "Find & Replace — Bulk Text Editor Online",
+     seoDescriptionTemplate: "Find and replace words across long documents instantly. Free bulk editing for writers and SEO teams.",
 
-Instead of manually editing line by line, you can replace all matching instances in one action. This saves time, reduces errors, and ensures consistency—making it ideal for writers, editors, developers, and SEO professionals working with large amounts of text.
+longDescription: `The Find & Replace tool locates every instance of a word or phrase in a text block and swaps it with new content in one action. Editing long documents, updating repeated brand terms, fixing typos at scale, and making consistent wording changes across articles, emails, or data exports becomes effortless.
 
-If your text has inconsistent casing, normalize it first using <a href="/tools/case-converter" title="Case Converter">Case Converter</a>. For list-style content, you may also want to remove duplicates with <a href="/tools/remove-duplicate-lines" title="Remove Duplicate Lines">Remove Duplicate Lines</a> after replacements.`,
-faqs: [
+Paste your text, enter the search term and replacement, then click Replace All. No line-by-line manual editing required.
+
+Normalize inconsistent casing first with the <a href="/tools/case-converter" class="text-blue-500 hover:underline">case converter</a>. After bulk replacements on list data, remove any new duplicates with the <a href="/tools/remove-duplicate-lines" class="text-blue-500 hover:underline">remove duplicate lines tool</a>.`
+ ,
+  faqs: [
   {
     q: "How does the Find & Replace tool work?",
     a: "It searches text for a specific word or phrase and replaces it with your chosen alternative instantly."

@@ -261,12 +261,14 @@ howtoSteps: [
   slug: "future-date",
   category: "Time and Age Tools",
   popular: true,
-  description: "Add days, weeks, months or years to any date to find a future date.",
-  seoTitleTemplate: "Future Date Calculator — Add Days to Date",
-  seoDescriptionTemplate: "Calculate future dates easily by adding days, weeks, months, or years. Great for planning and scheduling.",
-  longDescription: `The Future Date Calculator allows you to add days, weeks, months, or years to any selected starting date to determine an exact future date. It is useful for contracts, subscription renewals, payment schedules, project milestones, and long-term planning and day until.
+  description: "Future date calculator — add days, weeks, months, or years to any date and find the exact resulting date.",
+  seoTitleTemplate: "Future Date Calculator — Add Days to a Date",
+  seoDescriptionTemplate: "Add days, weeks, or months to any date instantly. Ideal for contract renewals and milestone planning. Calculate free.",
+  longDescription: `The Future Date Calculator adds days, weeks, months, or years to any starting date and returns the precise future calendar date. Subscription renewals, payment schedules, contract end dates, warranty expirations, and long-term project milestones all depend on this forward projection.
 
-Select a starting date, enter the time period to add, and calculate the precise future date instantly. The tool accounts for leap years and month-length variations automatically. To subtract time instead, use the <a href="/tools/past-date" title="Past Date Calculator">Past Date Calculator</a>. If you want to calculate age on that future date, the <a href="/tools/age-calculator" title="Age Calculator">Age Calculator</a> can assist.`,
+Select a start date, enter the time period to add, and click Calculate. Leap years and variable month lengths are handled automatically.
+
+To subtract time and find a past date instead, use the <a href="/tools/past-date" class="text-blue-500 hover:underline">past date calculator</a>. To see how many days remain until that future date, try the <a href="/tools/days-until" class="text-blue-500 hover:underline">days until countdown calculator</a>.`,
   faqs: [
   {
     q: "How do I calculate a future date?",
@@ -291,12 +293,14 @@ howtoSteps: [
   title: "Past Date Calculator",
   slug: "past-date",
   category: "Time and Age Tools",
-  description: "Subtract days, weeks, months or years to find a past date.",
-  seoTitleTemplate: "Past Date Calculator — Subtract Days from Date",
-  seoDescriptionTemplate: "Find past dates by subtracting days, weeks, months, or years. Fast and reliable for documentation and planning.",
-longDescription: `The Past Date Calculator helps you determine an exact past date by subtracting days, weeks, months, or years from a selected starting date. It is useful for legal references, reporting, documentation, audits, and historical comparisons.
+  description: "Past date calculator — subtract days, weeks, months, or years from any date to find an exact historical date.",
+ seoTitleTemplate: "Past Date Calculator — Subtract Days from Date",
+  seoDescriptionTemplate: "Subtract days, weeks, or months from any date instantly. Perfect for audits, legal records, and reporting. Try free.",
+longDescription: `The Past Date Calculator subtracts days, weeks, months, or years from a starting date to reveal an exact past calendar date. Legal references, audit trails, historical comparisons, documentation deadlines, and retroactive reporting all require this backward date math.
 
-Enter a starting date and subtract the desired time period to instantly calculate the correct past date. Calendar variations such as leap years are handled automatically. For forward planning instead, use the <a href="/tools/future-date" title="Future Date Calculator">Future Date Calculator</a>. If you need to measure the number of days between two dates, try the <a href="/tools/days-between-dates" title="Days Between Dates Calculator">Days Between Dates Calculator</a>.`,
+Enter a start date, specify the period to subtract, and click Calculate for an instant result with leap-year accuracy built in.
+
+For forward date projection instead, switch to the <a href="/tools/future-date" class="text-blue-500 hover:underline">future date calculator</a>. To count total days between two historical dates, use the <a href="/tools/days-between-dates" class="text-blue-500 hover:underline">days between dates calculator</a>.`,
 
   faqs: [
   {

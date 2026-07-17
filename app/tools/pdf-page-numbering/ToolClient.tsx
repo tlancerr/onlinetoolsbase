@@ -4,8 +4,8 @@ import { useState } from "react";
 
 type Position = "footer-center" | "footer-right" | "header-right";
 function bytesToPdfBlob(bytes: Uint8Array) {
-  const safe = Uint8Array.from(bytes); // guarantees ArrayBuffer typing
-  return new Blob([safe], { type: "application/pdf" });
+  // Use .buffer directly to pass the clean, underlying raw ArrayBuffer stream to the file constructor
+  return new Blob([bytes.buffer], { type: "application/pdf" });
 }
 
 export default function ToolClient() {

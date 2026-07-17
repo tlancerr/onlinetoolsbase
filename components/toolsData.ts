@@ -1056,16 +1056,17 @@ howtoSteps: [
   title: "Capitalize Sentences",
   slug: "capitalize-sentences",
   category: "Text Tools",
-  description: "Automatically capitalize the first letter of every sentence.",
-  seoTitleTemplate: "Capitalize Sentences — Auto Sentence Capitalization",
-  seoDescriptionTemplate: "Automatically capitalize each sentence in your text. A perfect tool for formatting essays, documents and blog posts."
-,
-longDescription: `The Capitalize Sentences tool automatically fixes sentence capitalization by ensuring the first letter of every sentence is uppercase. It’s ideal for cleaning text copied from chats, notes, transcripts, or drafts where proper sentence formatting is missing.
+    description: "Capitalize sentences — auto-fix the first letter of every sentence in copied or draft text.",
+    seoTitleTemplate: "Capitalize Sentences — Auto Sentence Case Fix",
+      seoDescriptionTemplate: "Capitalize the first letter of every sentence automatically. Free formatting for essays and blog posts.",
 
-Simply paste your text and the tool corrects capitalization without changing words, punctuation, or spacing. This improves readability and presentation for essays, blog posts, emails, and documents without manual editing.
+longDescription: `The Capitalize Sentences tool ensures the first letter of every sentence is uppercase — fixing text copied from chats, voice transcripts, notes, or drafts where proper sentence capitalization is missing. Essays, blog posts, emails, and published documents all require this basic formatting standard.
 
-If you want broader formatting options like Title Case or ALL CAPS, use the <a href="/tools/case-converter" title="Case Converter">Case Converter</a>. For final length checks (especially for meta descriptions and snippets), use <a href="/tools/character-counter" title="Character Counter">Character Counter</a>.`,
-faqs: [
+Paste your text and click Capitalize Sentences. Words, punctuation, and spacing remain unchanged — only sentence-start letters are corrected.
+
+For broader formatting like Title Case or ALL CAPS, use the <a href="/tools/case-converter" class="text-blue-500 hover:underline">case converter</a>. To verify meta description length after formatting, check with the <a href="/tools/character-counter" class="text-blue-500 hover:underline">character counter</a>.`
+ ,
+  faqs: [
   {
     q: "What is the Capitalize Sentences tool used for?",
     a: "It automatically capitalizes the first letter of each sentence in your text."
@@ -1093,16 +1094,17 @@ howtoSteps: [
   title: "Text Sorter",
   slug: "text-sorter",
   category: "Text Tools",
-  description: "Sort lines of text alphabetically, numerically or randomly.",
-  seoTitleTemplate: "Text Sorter — Sort Lines Alphabetically or Randomly",
-  seoDescriptionTemplate: "Sort text lines alphabetically, numerically or randomly with this fast online Text Sorter."
-,
-longDescription: `The Text Sorter tool lets you rearrange lines of text in a specific order—alphabetical, reverse alphabetical, numerical, or random. It’s commonly used for sorting lists, names, keywords, data entries, or log files without altering the content itself.
+    description: "Text sorter — arrange lines alphabetically, numerically, or in random order instantly.",
+    seoTitleTemplate: "Text Sorter — Sort Lines Alphabetically",
+    seoDescriptionTemplate: "Sort text lines A-Z, Z-A, numerically, or randomly free. Organize lists and keyword files fast.",
 
-Paste your text (one item per line), choose a sorting method, and instantly get a reordered list. Because only the order changes and not the text, it’s a safe and fast way to organize information for analysis, presentation, or cleanup.
+longDescription: `The Text Sorter rearranges line-separated content in alphabetical, reverse-alphabetical, numerical, or random order without altering the text on each line. Keyword lists, name rosters, data entries, log files, and inventory records all benefit from quick reordering before analysis or presentation.
 
-If your list contains duplicates, clean it first with <a href="/tools/remove-duplicate-lines" title="Remove Duplicate Lines">Remove Duplicate Lines</a>. To standardize formatting before sorting (like making everything lowercase), use <a href="/tools/case-converter" title="Case Converter">Case Converter</a>.`,
-faqs: [
+Paste your list — one item per line — choose a sort method, and click Sort for instant reordered output.
+
+Remove duplicates before sorting with the <a href="/tools/remove-duplicate-lines" class="text-blue-500 hover:underline">remove duplicate lines tool</a>. To standardize casing before alphabetical sort, use the <a href="/tools/case-converter" class="text-blue-500 hover:underline">case converter</a>.`
+ ,
+  faqs: [
   {
     q: "What can I do with the Text Sorter?",
     a: "You can sort text lines alphabetically, reverse alphabetically, numerically or randomly."
@@ -1130,16 +1132,17 @@ howtoSteps: [
   title: "Lorem Ipsum Generator",
   slug: "lorem-ipsum-generator",
   category: "Text Tools",
-  description: "Generate lorem ipsum placeholder text instantly.",
-  seoTitleTemplate: "Lorem Ipsum Generator — Generate Dummy Text",
-  seoDescriptionTemplate: "Generate lorem ipsum placeholder text instantly for design, development and content layout testing."
-,
-longDescription: `The Lorem Ipsum Generator creates placeholder text that designers and developers use to preview layouts before real content is ready. It helps you focus on visual design, spacing, typography, and structure without being distracted by meaningful text.
+    description: "Lorem ipsum generator — create placeholder dummy text by paragraphs, words, or characters instantly.",
+    seoTitleTemplate: "Lorem Ipsum Generator — Dummy Text Tool",
+      seoDescriptionTemplate: "Generate lorem ipsum placeholder text for mockups and layouts free. Choose paragraphs, words, or chars.",
 
-Generate placeholder content by paragraphs, words, or characters depending on your needs. This makes the tool useful for website mockups, UI testing, print layouts, landing pages, and template building.
+longDescription: `The Lorem Ipsum Generator produces standard placeholder text that designers and developers use to preview layouts before real content exists. Focusing on typography, spacing, and visual hierarchy without meaningful text distractions speeds up website mockups, UI testing, print layouts, and template building.
 
-To test real-world limits in your layout, measure the output using <a href="/tools/word-counter" title="Word Counter">Word Counter</a> or <a href="/tools/character-counter" title="Character Counter">Character Counter</a>. If you need a clean URL-friendly version of a heading for a demo page, use <a href="/tools/slug-generator" title="Slug Generator">Slug Generator</a>.`,
-faqs: [
+Choose output by paragraphs, words, or characters, click Generate, and copy the placeholder content instantly.
+
+Measure generated output against layout limits with the <a href="/tools/word-counter" class="text-blue-500 hover:underline">word counter</a> or <a href="/tools/character-counter" class="text-blue-500 hover:underline">character counter</a>. For URL-friendly demo page slugs, use the <a href="/tools/slug-generator" class="text-blue-500 hover:underline">slug generator</a>.`
+ ,
+  faqs: [
   {
     q: "What does the Lorem Ipsum Generator create?",
     a: "It generates placeholder dummy text used for design, testing and content layouts."
@@ -1168,16 +1171,17 @@ howtoSteps: [
   title: "Character Frequency Counter",
   slug: "character-frequency-counter",
   category: "Text Tools",
-  description: "Count how many times each character appears in text.",
-  seoTitleTemplate: "Character Frequency Counter — Analyze Character Usage",
-  seoDescriptionTemplate: "Count character frequency in any text instantly. Ideal for cryptography, statistics and text analysis."
-,
-longDescription: `The Character Frequency Counter analyzes your text and shows how many times each character appears, including letters, numbers, symbols, and spaces. It’s useful for text analysis, data validation, cryptography basics, QA checks, and understanding character distribution patterns.
+    description: "Character frequency counter — analyze how often each letter, number, and symbol appears in text.",
+    seoTitleTemplate: "Character Frequency Counter — Text Analysis",
+      seoDescriptionTemplate: "Count character frequency in any text for linguistics, cryptography, and QA. Free analysis tool.",
 
-After pasting your text, the tool instantly produces a frequency breakdown that can be used for academic research, programming tasks, statistical checks, or language analysis. It works for both short strings and large blocks of text.
+longDescription: `The Character Frequency Counter breaks down how many times each character — letters, digits, symbols, and spaces — appears in your text. Linguistics research, cryptography exercises, data validation, programming QA, and language analysis all use character distribution data to detect patterns or anomalies.
 
-If you want to clean formatting noise before analysis, use <a href="/tools/remove-extra-spaces" title="Remove Extra Spaces">Remove Extra Spaces</a> first. For quick overall length metrics (not per-character), use <a href="/tools/word-counter" title="Word Counter">Word Counter</a>.`,
-faqs: [
+Paste your text, click Analyze, and review the full frequency breakdown for strings of any length.
+
+Clean formatting noise before analysis with the <a href="/tools/remove-extra-spaces" class="text-blue-500 hover:underline">remove extra spaces tool</a>. For overall length metrics rather than per-character counts, use the <a href="/tools/word-counter" class="text-blue-500 hover:underline">word counter</a>.`
+ ,
+  faqs: [
   {
     q: "What is the purpose of the Character Frequency Counter?",
     a: "It counts how many times each character appears in your text, including letters, numbers and symbols."
@@ -1205,16 +1209,17 @@ howtoSteps: [
   title: "Slug Generator",
   slug: "slug-generator",
   category: "Text Tools",
-  description: "Generate clean, SEO-friendly URL slugs instantly.",
-  seoTitleTemplate: "Slug Generator — Create SEO-Friendly URLs",
-  seoDescriptionTemplate: "Generate SEO-friendly URL slugs instantly. Perfect for blogs, websites and content management."
-,
-longDescription: `The Slug Generator converts any text into a clean, SEO-friendly URL slug that’s suitable for web pages, blog posts, and content management systems. It removes special characters, replaces spaces with hyphens, and formats text in a way search engines and browsers prefer.
+    description: "Slug generator — convert titles into clean, SEO-friendly URL slugs with hyphens and lowercase.",
+    seoTitleTemplate: "Slug Generator — SEO URL Slug Creator",
+      seoDescriptionTemplate: "Generate SEO-friendly URL slugs from any title instantly. Free for blogs, CMS, and landing pages.",
 
-This tool is especially helpful for bloggers, developers, and SEO professionals who want consistent, readable URLs without manual formatting. The generated slugs are lowercase, simple, and optimized for clarity and search visibility.
+longDescription: `The Slug Generator transforms any title or phrase into a clean, lowercase, hyphenated URL slug that search engines and browsers prefer. Bloggers, developers, and SEO professionals use it to create consistent, readable permalinks without manually stripping special characters and spaces.
 
-Before generating a slug, you can standardize headings using <a href="/tools/case-converter" title="Case Converter">Case Converter</a> or fix messy spacing with <a href="/tools/remove-extra-spaces" title="Remove Extra Spaces">Remove Extra Spaces</a>. If you’re cleaning a large list of slugs or keywords, remove repeats using <a href="/tools/remove-duplicate-lines" title="Remove Duplicate Lines">Remove Duplicate Lines</a> and then organize them with <a href="/tools/text-sorter" title="Text Sorter">Text Sorter</a>.`,
-faqs: [
+Enter your title, click Generate, and copy the slug ready for WordPress, Next.js, or any CMS.
+
+Standardize heading text first with the <a href="/tools/case-converter" class="text-blue-500 hover:underline">case converter</a>. For bulk slug lists, deduplicate with the <a href="/tools/remove-duplicate-lines" class="text-blue-500 hover:underline">remove duplicate lines tool</a> and sort with the <a href="/tools/text-sorter" class="text-blue-500 hover:underline">text sorter</a>.`
+ 
+  faqs: [
   {
     q: "What is the Slug Generator used for?",
     a: "It converts any text into a clean, SEO-friendly URL slug by removing spaces and special characters."

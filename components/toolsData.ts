@@ -1218,7 +1218,7 @@ longDescription: `The Slug Generator transforms any title or phrase into a clean
 Enter your title, click Generate, and copy the slug ready for WordPress, Next.js, or any CMS.
 
 Standardize heading text first with the <a href="/tools/case-converter" class="text-blue-500 hover:underline">case converter</a>. For bulk slug lists, deduplicate with the <a href="/tools/remove-duplicate-lines" class="text-blue-500 hover:underline">remove duplicate lines tool</a> and sort with the <a href="/tools/text-sorter" class="text-blue-500 hover:underline">text sorter</a>.`
- 
+ ,
   faqs: [
   {
     q: "What is the Slug Generator used for?",

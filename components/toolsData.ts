@@ -25,13 +25,14 @@ export const toolsData: ToolItem[] = [
   slug: "age-calculator",
   category: "Time and Age Tools",
   popular: true,
-  description: "Calculate your exact age in years, months, days, hours, and minutes instantly.",
-  seoTitleTemplate: "Age Calculator — Calculate Exact Age Online",
-  seoDescriptionTemplate:
-    "Use this free Age Calculator to find your exact age in years, months, days, and more. Fast, accurate, and mobile-friendly.",
-  longDescription: `The Age Calculator gives you an exact breakdown of your age in years, months, days, hours, and minutes based on your date of birth and today’s date. It is useful for official forms, school admissions, HR documentation, profile registrations, and precise milestone tracking.
+  description: "Age calculator: find your exact age in years, months, days, hours, and minutes from your date of birth.",
+  seoTitleTemplate: "Age Calculator — Exact Age from Date of Birth",
+ seoDescriptionTemplate: "Free age calculator for years, months, days, and hours. Enter your birth date and get instant, calendar-accurate results.",
+  longDescription: `The Age Calculator computes your precise age in years, months, days, hours, and minutes using real calendar logic that accounts for leap years and varying month lengths. It is essential for school admissions, HR records, government forms, insurance applications, and milestone tracking where exact age matters.
 
-The calculation follows real calendar logic, automatically handling leap years and different month lengths to ensure accuracy. If you want to convert your total age into simplified intervals, try the <a href="/tools/age-weeks-months" title="Age in Weeks & Months">Age in Weeks & Months</a> tool. To measure the exact difference between two birthdays, use the <a href="/tools/age-difference" title="Age Difference Calculator">Age Difference Calculator</a>. For planning future milestones, the <a href="/tools/future-date" title="Future Date Calculator">Future Date Calculator</a> can help you project exact upcoming dates.`,
+Enter your date of birth, click Calculate, and view a full breakdown instantly. No signup required — results update in real time on any device.
+
+For baby milestones or parenting schedules, convert your total age into weeks and months with the <a href="/tools/age-weeks-months" class="text-blue-500 hover:underline">age in weeks and months converter</a>. To compare two birth dates side by side, use the <a href="/tools/age-difference" class="text-blue-500 hover:underline">age difference calculator</a>.`,
   faqs: [
     {
       q: "How does the Age Calculator work?",
@@ -191,12 +192,14 @@ howtoSteps: [
   title: "Days Between Dates Calculator",
   slug: "days-between-dates",
   category: "Time and Age Tools",
-  description: "Find the number of days between two calendar dates.",
-  seoTitleTemplate: "Days Between Dates — Calculate Days Difference",
-  seoDescriptionTemplate: "Calculate the number of days between two dates instantly. Perfect for planning events, deadlines, and schedules.",
-  longDescription:  `The Days Between Dates Calculator computes the exact number of days between two calendar dates. It is useful for deadlines, contracts, rental periods, travel stays, academic schedules, and project planning.
+  description: "Days between dates calculator — count exact calendar days elapsed between any two dates instantly.",
+  seoTitleTemplate: "Days Between Dates — Count Days Difference",
+     seoDescriptionTemplate: "Calculate days between two dates for deadlines, contracts, and travel. Leap-year accurate and free. Try it now.",
+  longDescription: `The Days Between Dates Calculator returns the exact number of calendar days separating a start date and end date. Contract durations, rental periods, vacation lengths, academic schedules, and project timelines all require this day-level precision rather than rough month estimates.
 
-Select a start and end date to get an accurate day difference instantly. The calculation automatically handles leap years and varying month lengths. If you prefer measuring time in weeks, use the <a href="/tools/weeks-calculator" title="Weeks Calculator">Weeks Calculator</a>. For time-of-day precision, the <a href="/tools/time-duration" title="Time Duration Calculator">Time Duration Calculator</a> is available.`,
+Select your start and end dates, click Calculate, and receive an instant result that automatically handles leap years and months of different lengths.
+
+To measure the same interval in weeks, use the <a href="/tools/weeks-calculator" class="text-blue-500 hover:underline">weeks between dates calculator</a>. For clock-time precision within a single day, try the <a href="/tools/time-duration" class="text-blue-500 hover:underline">time duration calculator</a>.`,
 faqs: [
   {
     q: "How is the number of days between two dates calculated?",
@@ -226,12 +229,14 @@ howtoSteps: [
   slug: "days-until",
   category: "Time and Age Tools",
   popular: true,
-  description: "Calculate how many days remain until a future date.",
-  seoTitleTemplate: "Days Until Calculator — Count Days Until Any Date",
-  seoDescriptionTemplate: "Find out how many days are left until any event or date. Ideal for countdowns and important reminders.",
-longDescription: `The Days Until Calculator shows how many days remain until a selected future date. It is perfect for countdowns to holidays, exams, project deadlines, birthdays, travel dates, and important personal events.
+  description: "Days until calculator — countdown the exact number of days remaining until any future event or date.",
+ seoTitleTemplate: "Days Until Calculator — Countdown to Any Date",
+ seoDescriptionTemplate: "Count days until holidays, deadlines, or birthdays. Free countdown calculator with instant results. Start your countdown.",
+longDescription: `The Days Until Calculator shows how many days remain until a selected future date — perfect for holiday countdowns, exam preparation, wedding planning, project deadlines, and personal milestone tracking.
 
-Choose a future date to instantly see how many days are left. For adding a specific number of days to a starting date instead, use the <a href="/tools/future-date" title="Future Date Calculator">Future Date Calculator</a>. If you need the exact difference between two fixed dates, try the <a href="/tools/days-between-dates" title="Days Between Dates Calculator">Days Between Dates Calculator</a>.`,
+Pick a future date and click Calculate to see the remaining day count instantly. The tool uses live calendar math so your countdown stays accurate every day.
+
+To add a specific number of days to a starting date instead, use the <a href="/tools/future-date" class="text-blue-500 hover:underline">future date calculator</a>. For the exact gap between two fixed dates, try the <a href="/tools/days-between-dates" class="text-blue-500 hover:underline">days between dates calculator</a>.`,
   faqs: [
   {
     q: "What does the Days Until Calculator show?",

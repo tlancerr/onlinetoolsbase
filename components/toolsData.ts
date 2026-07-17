@@ -397,14 +397,14 @@ faqs: [
   title: "Mortgage Calculator",
   slug: "mortgage-calculator",
   category: "Finance Tools",
-  description: "Estimate your monthly mortgage payments including principal, interest, taxes and insurance.",
-  seoTitleTemplate: "Mortgage Calculator — Estimate Monthly Payments",
-  seoDescriptionTemplate: "Calculate your mortgage payments with interest, taxes and insurance included. Get instant amortization schedules with this free tool.",
-longDescription: `The Mortgage Calculator helps you estimate your monthly home loan payments with greater accuracy by including principal, interest, property taxes, and insurance. It’s an essential planning tool for anyone buying a home, refinancing, or comparing mortgage offers from different lenders.
-  By entering the loan amount, interest rate, and tenure, you can instantly view estimated monthly payments and understand long-term costs. Optional tax and insurance inputs provide a more realistic picture of actual housing expenses. The calculations follow industry-standard mortgage formulas used by banks and financial institutions worldwide.
-    
-  For general loan comparisons beyond home financing, you can use the <a href='/tools/loan-calculator' title='Loan Calculator'>Loan Calculator</a> to evaluate different borrowing options. If you only need to compute the monthly installment quickly, the <a href='/tools/emi-calculator' title='EMI Calculator'>EMI Calculator</a> provides a simplified view. To analyze investment growth instead of borrowing costs, consider the <a href='/tools/compound-interest-calculator' title='Compound Interest Calculator'>Compound Interest Calculator</a>.`,
+ description: "Mortgage calculator — estimate monthly home loan payments including principal, interest, taxes, and insurance.",
+  seoTitleTemplate: "Mortgage Calculator — Monthly Payment Estimator",
+  seoDescriptionTemplate: "Estimate mortgage payments with taxes and insurance included. Compare home loan offers free before you buy.",
+longDescription: `The Mortgage Calculator estimates your monthly home loan payment with greater accuracy by including principal, interest, property taxes, and homeowners insurance. Anyone buying a home, refinancing an existing mortgage, or comparing lender offers needs this realistic monthly figure before committing.
 
+Enter the loan amount, interest rate, tenure, and optional tax and insurance values, then click Calculate for an instant payment breakdown.
+
+For general loan comparisons beyond home financing, use the <a href="/tools/loan-calculator" class="text-blue-500 hover:underline">loan calculator</a>. For a simplified monthly installment view, try the <a href="/tools/emi-calculator" class="text-blue-500 hover:underline">EMI calculator</a>.`,
 faqs: [
   {
     q: "What does the Mortgage Calculator do?",
@@ -434,15 +434,15 @@ howtoSteps: [
   title: "Interest Rate Calculator",
   slug: "interest-rate-calculator",
   category: "Finance Tools",
-  description: "Calculate interest rate based on principal, time and total amount.",
-  seoTitleTemplate: "Interest Rate Calculator — Find Interest Easily",
-  seoDescriptionTemplate: "Compute interest rate using principal, duration and final amount instantly. Ideal for loans, savings and investment analysis."
-,
-longDescription: `The Interest Rate Calculator helps you determine the effective interest rate when you already know the principal amount, total amount payable, and time period. This is useful when reviewing loan agreements, investment returns, savings plans, or informal financial arrangements where the interest rate isn’t clearly stated.
-  By working backward from the final amount, the tool reveals the implied interest rate, making it easier to compare loans, evaluate returns, or verify financial terms. The calculator is fast, accurate, and suitable for both borrowing and saving scenarios.
-    
-  If you already know the interest rate and want to calculate total repayment or EMI, you can use the <a href='/tools/loan-calculator' title='Loan Calculator'>Loan Calculator</a> or the <a href='/tools/emi-calculator' title='EMI Calculator'>EMI Calculator</a>. For savings and investment growth scenarios, the <a href='/tools/compound-interest-calculator' title='Compound Interest Calculator'>Compound Interest Calculator</a> provides detailed compounding projections.`,
+  description: "Interest rate calculator — reverse-engineer the effective rate from principal, duration, and total amount.",
+  seoTitleTemplate: "Interest Rate Calculator — Find Effective Rate",
+  seoDescriptionTemplate: "Discover the implied interest rate from loan or savings totals. Compare offers and verify terms free.",
 
+longDescription: `The Interest Rate Calculator determines the effective interest rate when you know the principal, total amount payable, and time period. Reviewing loan agreements, evaluating investment returns, verifying informal lending terms, and comparing savings products all benefit from this reverse calculation.
+
+Enter your known values and click Calculate to reveal the implied annual rate instantly — useful for both borrowing and saving scenarios.
+
+If you already know the rate and need EMI or total repayment figures, use the <a href="/tools/loan-calculator" class="text-blue-500 hover:underline">loan calculator</a>. For compounding growth projections, try the <a href="/tools/compound-interest-calculator" class="text-blue-500 hover:underline">compound interest calculator</a>.`,
 faqs: [
   {
     q: "How does the Interest Rate Calculator work?",
@@ -472,15 +472,14 @@ howtoSteps: [
   title: "EMI Calculator",
   slug: "emi-calculator",
   category: "Finance Tools",
-  description: "Calculate monthly EMI for home, car, or personal loans within seconds.",
-  seoTitleTemplate: "EMI Calculator — Monthly Loan Payment Tool",
-  seoDescriptionTemplate: "Calculate EMI for mortgages, car loans and personal loans instantly. Provides interest breakdown and amortization details."
-,
-longDescription: `The EMI Calculator helps you estimate your fixed monthly loan payment (Equated Monthly Installment) in seconds. It’s useful for comparing home loans, car loans, personal loans, and other standard borrowing options where you need a clear view of affordability before you apply.
-    By entering the loan amount, interest rate, and tenure, you can instantly see the estimated EMI along with total interest and total repayment. This makes it easy to compare different offers, adjust the tenure to reduce monthly burden, or see how small interest rate changes affect the overall cost. The calculator uses standard EMI and amortization logic commonly used by lenders worldwide.
-  
-    If you want a broader overview including total interest and amortization details, our <a href='/tools/loan-calculator' title='Loan Calculator'>Loan Calculator</a> provides a complete repayment breakdown. Home financing scenarios can be evaluated more precisely with the <a href='/tools/mortgage-calculator' title='Mortgage Calculator'>Mortgage Calculator</a>. To verify or compare the implied rate in different offers, you may also use the <a href='/tools/interest-rate-calculator' title='Interest Rate Calculator'>Interest Rate Calculator</a>.`,
+  description: "EMI calculator — compute fixed monthly loan installments for home, car, and personal loans in seconds.",
+  seoTitleTemplate: "EMI Calculator — Monthly Loan Installment",
+  seoDescriptionTemplate: "Calculate EMI for home, car, and personal loans instantly. See interest breakdown free before you apply.",
+  longDescription: `The EMI Calculator estimates your Equated Monthly Installment — the fixed payment due each month on a standard loan. Comparing home loans, car loans, and personal loan offers requires knowing this number before you apply, and small rate or tenure changes can shift affordability significantly.
 
+Enter the loan amount, annual interest rate, and tenure, then click Calculate for an instant EMI along with total interest and repayment figures.
+
+For a complete amortization breakdown, use the <a href="/tools/loan-calculator" class="text-blue-500 hover:underline">loan calculator</a>. Home financing with taxes and insurance included is better handled by the <a href="/tools/mortgage-calculator" class="text-blue-500 hover:underline">mortgage calculator</a>.`,
 faqs: [
   {
     q: "What is an EMI?",

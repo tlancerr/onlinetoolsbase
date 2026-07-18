@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "cms.onlinetoolsbase.com",
+        hostname: "cms.cottagestore.pk",
       },
     ],
   },

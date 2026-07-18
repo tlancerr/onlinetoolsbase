@@ -4,7 +4,14 @@ import Link from "next/link";
 async function getPost(slug: string) {
   const res = await fetch(
     `https://cms.cottagestore.pk/wp-json/wp/v2/posts?slug=${encodeURIComponent(slug)}&_embed=1`,
-    { next: { revalidate: 300 } }
+    { 
+      method: 'GET',
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+        'Accept': 'application/json'
+      },
+      next: { revalidate: 300 } 
+    }
   );
 
   if (!res.ok) return null;

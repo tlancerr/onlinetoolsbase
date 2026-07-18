@@ -1,7 +1,7 @@
 export async function getBlogCategories() {
   try {
     const res = await fetch(
-      "https://cms.onlinetoolsbase.com/wp-json/wp/v2/categories?per_page=100",
+      "https://cms.cottagestore.pk/wp-json/wp/v2/categories?per_page=100",
       { next: { revalidate: 300 } }
     );
 

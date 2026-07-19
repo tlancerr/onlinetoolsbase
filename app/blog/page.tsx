@@ -9,24 +9,28 @@ async function fetchWithTimeout(url: string) {
 
   try {
     const res = await fetch(url, {
+      method: 'GET',
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'Accept': 'application/json',
+      },
       next: { revalidate: 300 },
       signal: controller.signal,
     });
 
     if (!res.ok) {
       console.error("WP fetch failed:", res.status, res.statusText, url);
-      return [];
+      return null;
     }
 
     return await res.json();
   } catch (error) {
     console.error("WP fetch error:", url, error);
-    return [];
+    return null;
   } finally {
     clearTimeout(timeout);
   }
 }
-
 async function getPosts() {
   return fetchWithTimeout(
     "https://cms.cottagestore.pk/wp-json/wp/v2/posts?per_page=12&_embed=1"

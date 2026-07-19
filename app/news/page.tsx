@@ -31,9 +31,11 @@ async function fetchWithTimeout(url: string) {
     clearTimeout(timeout);
   }
 }
+
 async function getPosts() {
+  // Pointing to your automated news subdomain source
   return fetchWithTimeout(
-    "https://cms.cottagestore.pk/wp-json/wp/v2/posts?per_page=12&_embed=1"
+    "https://real.cottagestore.pk/wp-json/wp/v2/posts?per_page=12&_embed=1"
   );
 }
 
@@ -41,20 +43,20 @@ function stripHtml(html: string) {
   return html.replace(/<[^>]*>/g, "").trim();
 }
 
-export default async function BlogPage() {
-  const posts = await getPosts();
+export default async function NewsPage() {
+  const posts = await getPosts() || []; // Added fallback array if fetch fails
 
   return (
     <main className="mx-auto max-w-5xl px-4 py-10">
       <div className="mb-8">
-        <h1 className="text-4xl font-bold">OnlineToolsBase Blog</h1>
+        <h1 className="text-4xl font-bold">Latest News</h1>
         <p className="mt-2 text-gray-600">
-          Articles, guides, and updates from OnlineToolsBase.
+          Stay updated with the latest trends and stories from OnlineToolsBase News.
         </p>
       </div>
 
       {posts.length === 0 ? (
-        <p className="text-gray-600">No blog posts found.</p>
+        <p className="text-gray-600">No news articles found.</p>
       ) : (
         <div className="grid gap-6 md:grid-cols-2">
           {posts.map((post: any) => {
@@ -67,17 +69,17 @@ export default async function BlogPage() {
                 className="rounded-xl border bg-white p-5 shadow-sm"
               >
                 {image && (
-                  <Link href={`/blog/${post.slug}`}>
+                  <Link href={`/news/${post.slug}`}>
                     <img
                       src={image}
-                      alt={post.title?.rendered || "Blog image"}
+                      alt={post.title?.rendered || "News image"}
                       className="mb-4 h-56 w-full rounded-lg object-cover"
                     />
                   </Link>
                 )}
 
                 <h2 className="text-2xl font-semibold">
-                  <Link href={`/blog/${post.slug}`} className="hover:underline">
+                  <Link href={`/news/${post.slug}`} className="hover:underline">
                     <span
                       dangerouslySetInnerHTML={{
                         __html: post.title.rendered,
@@ -96,10 +98,10 @@ export default async function BlogPage() {
 
                 <div className="mt-4">
                   <Link
-                    href={`/blog/${post.slug}`}
+                    href={`/news/${post.slug}`}
                     className="text-sm font-medium hover:underline"
                   >
-                    Read more →
+                    Read full article →
                   </Link>
                 </div>
               </article>

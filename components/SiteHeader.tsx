@@ -6,6 +6,7 @@ import { useMemo, useState, useEffect, useRef } from "react";
 import { useTheme } from "./useTheme";
 import Image from "next/image";
 import { getBlogCategories } from "../lib/getBlogCategories";
+import { getNewsCategories } from "../lib/getNewsCategories"; // Added News Helper
 
 /* ---------- debounce hook (local, lightweight) ---------- */
 function useDebouncedValue<T>(value: T, delay = 300) {
@@ -23,6 +24,9 @@ export default function SiteHeader() {
   const [blogCategories, setBlogCategories] = useState<
     { name: string; slug: string }[]
   >([]);
+  const [newsCategories, setNewsCategories] = useState<
+    { name: string; slug: string }[]
+  >([]); // Added state for news
 
   const { theme, toggleTheme } = useTheme();
 
@@ -37,6 +41,10 @@ export default function SiteHeader() {
   // Blog dropdown state
   const [blogMenuOpen, setBlogMenuOpen] = useState(false);
   const blogMenuRef = useRef<HTMLDivElement>(null);
+
+  // News dropdown state
+  const [newsMenuOpen, setNewsMenuOpen] = useState(false); // Added news menu state
+  const newsMenuRef = useRef<HTMLDivElement>(null); // Added news menu ref
 
   // Mobile menu state
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -66,24 +74,18 @@ export default function SiteHeader() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  /* ---------- ESC key closes search dropdown + category panel + mobile panel + blog menu ---------- */
+  /* ---------- ESC key closes menus ---------- */
   useEffect(() => {
     function handleEscape(e: KeyboardEvent) {
       if (e.key === "Escape") {
-        // Search
         setQuery("");
         setActiveIndex(-1);
         inputRef.current?.blur();
-
-        // Tool category panel
         setPanelOpen(false);
         setActiveCategory(null);
         setHoverCategory(null);
-
-        // Blog menu
         setBlogMenuOpen(false);
-
-        // Mobile menu
+        setNewsMenuOpen(false); // Added news escape close
         setMobileOpen(false);
       }
     }
@@ -91,14 +93,18 @@ export default function SiteHeader() {
     return () => document.removeEventListener("keydown", handleEscape);
   }, []);
 
-  /* --------- blog categories pull from wordpress -------- */
+  /* --------- blog & news categories pull from wordpress -------- */
   useEffect(() => {
     async function loadCategories() {
       try {
-        const cats = await getBlogCategories();
-        setBlogCategories(cats);
+        const [blogCats, newsCats] = await Promise.all([
+          getBlogCategories(),
+          getNewsCategories() // Fetching news categories asynchronously
+        ]);
+        setBlogCategories(blogCats);
+        setNewsCategories(newsCats);
       } catch (err) {
-        console.error("Failed to load blog categories", err);
+        console.error("Failed to load header categories", err);
       }
     }
 
@@ -132,6 +138,19 @@ export default function SiteHeader() {
     document.addEventListener("mousedown", handleOutsideBlogMenuClick);
     return () => document.removeEventListener("mousedown", handleOutsideBlogMenuClick);
   }, [blogMenuOpen]);
+
+  /* ---------- close news menu on outside click ---------- */
+  useEffect(() => {
+    function handleOutsideNewsMenuClick(e: MouseEvent) {
+      if (!newsMenuOpen) return;
+      if (newsMenuRef.current && !newsMenuRef.current.contains(e.target as Node)) {
+        setNewsMenuOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleOutsideNewsMenuClick);
+    return () => document.removeEventListener("mousedown", handleOutsideNewsMenuClick);
+  }, [newsMenuOpen]);
 
   /* ---------- close mobile panel on outside click ---------- */
   useEffect(() => {
@@ -220,7 +239,6 @@ export default function SiteHeader() {
     }
   }
 
-  // Click-to-open behavior for tool category panel
   function toggleCategory(cat: string) {
     if (panelOpen && activeCategory === cat) {
       setPanelOpen(false);
@@ -272,7 +290,6 @@ export default function SiteHeader() {
             onKeyDown={handleKeyDown}
           />
 
-          {/* Clear button */}
           {query && (
             <button
               type="button"
@@ -288,7 +305,6 @@ export default function SiteHeader() {
             </button>
           )}
 
-          {/* Search Dropdown */}
           {filtered.length > 0 && (
             <div className="absolute mt-1 w-full rounded-md border border-slate-700 bg-slate-900 max-h-64 overflow-auto z-20">
               {filtered.map((tool, i) => (
@@ -340,7 +356,6 @@ export default function SiteHeader() {
               })}
             </div>
 
-            {/* Overlay panel: absolute so header does NOT resize */}
             {panelOpen && panelCategory && (
               <div
                 id="category-panel"
@@ -407,62 +422,110 @@ export default function SiteHeader() {
 
         {/* Right controls */}
         <div className="flex items-center gap-2">
-          {/* Desktop Blog dropdown */}
-<div className="flex items-center gap-2">
-  <div ref={blogMenuRef} className="relative hidden md:block">
-    <button
-      type="button"
-      onClick={() => setBlogMenuOpen((v) => !v)}
-      className="btn-secondary inline-flex h-9 items-center justify-center px-3 text-sm leading-none"
-      aria-expanded={blogMenuOpen}
-      aria-haspopup="menu"
-    >
-      Blog
-    </button>
-
-    {blogMenuOpen && (
-      <div className="absolute right-0 top-full z-50 mt-2">
-        <div className="min-w-[220px] w-max max-w-[280px] rounded-xl border border-slate-800 bg-slate-950 shadow-2xl overflow-hidden">
-          <div className="py-2">
-            <Link
-              prefetch
-              href="/blog"
-              className="block w-full px-4 py-3 text-left text-sm text-slate-200 hover:bg-slate-900 whitespace-nowrap"
-              onClick={() => setBlogMenuOpen(false)}
-            >
-              All Articles
-            </Link>
-
-            {blogCategories.map((cat) => (
-              <Link
-                prefetch
-                key={cat.slug}
-                href={`/blog/category/${cat.slug}`}
-                className="block w-full px-4 py-3 text-left text-sm text-slate-200 hover:bg-slate-900 whitespace-nowrap"
-                onClick={() => setBlogMenuOpen(false)}
+          <div className="flex items-center gap-2">
+            {/* Desktop Blog dropdown */}
+            <div ref={blogMenuRef} className="relative hidden md:block">
+              <button
+                type="button"
+                onClick={() => {
+                  setBlogMenuOpen((v) => !v);
+                  setNewsMenuOpen(false); // Close news when opening blog
+                }}
+                className="btn-secondary inline-flex h-9 items-center justify-center px-3 text-sm leading-none"
+                aria-expanded={blogMenuOpen}
+                aria-haspopup="menu"
               >
-                {cat.name}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </div>
-    )}
-  </div>
+                Blog
+              </button>
 
-  <Link
-    href="/contact"
-    className="hidden md:inline-flex btn-secondary h-9 items-center justify-center px-3 text-sm leading-none"
-  >
-    Contact
-  </Link>
-  <Link
-    href="/about"
-    className="hidden md:inline-flex btn-secondary h-9 items-center justify-center px-3 text-sm leading-none"
-  >
-    About
-  </Link>
-</div>
+              {blogMenuOpen && (
+                <div className="absolute right-0 top-full z-50 mt-2">
+                  <div className="min-w-[220px] w-max max-w-[280px] rounded-xl border border-slate-800 bg-slate-950 shadow-2xl overflow-hidden">
+                    <div className="py-2">
+                      <Link
+                        prefetch
+                        href="/blog"
+                        className="block w-full px-4 py-3 text-left text-sm text-slate-200 hover:bg-slate-900 whitespace-nowrap"
+                        onClick={() => setBlogMenuOpen(false)}
+                      >
+                        All Articles
+                      </Link>
+
+                      {blogCategories.map((cat) => (
+                        <Link
+                          prefetch
+                          key={cat.slug}
+                          href={`/blog/category/${cat.slug}`}
+                          className="block w-full px-4 py-3 text-left text-sm text-slate-200 hover:bg-slate-900 whitespace-nowrap"
+                          onClick={() => setBlogMenuOpen(false)}
+                        >
+                          {cat.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Desktop News Dropdown Menu */}
+            <div ref={newsMenuRef} className="relative hidden md:block">
+              <button
+                type="button"
+                onClick={() => {
+                  setNewsMenuOpen((v) => !v);
+                  setBlogMenuOpen(false); // Close blog when opening news
+                }}
+                className="btn-secondary inline-flex h-9 items-center justify-center px-3 text-sm leading-none"
+                aria-expanded={newsMenuOpen}
+                aria-haspopup="menu"
+              >
+                News
+              </button>
+
+              {newsMenuOpen && (
+                <div className="absolute right-0 top-full z-50 mt-2">
+                  <div className="min-w-[220px] w-max max-w-[280px] rounded-xl border border-slate-800 bg-slate-950 shadow-2xl overflow-hidden">
+                    <div className="py-2">
+                      <Link
+                        prefetch
+                        href="/news"
+                        className="block w-full px-4 py-3 text-left text-sm text-slate-200 hover:bg-slate-900 whitespace-nowrap"
+                        onClick={() => setNewsMenuOpen(false)}
+                      >
+                        All News
+                      </Link>
+
+                      {newsCategories.map((cat) => (
+                        <Link
+                          prefetch
+                          key={cat.slug}
+                          href={`/news/category/${cat.slug}`}
+                          className="block w-full px-4 py-3 text-left text-sm text-slate-200 hover:bg-slate-900 whitespace-nowrap"
+                          onClick={() => setNewsMenuOpen(false)}
+                        >
+                          {cat.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            <Link
+              href="/contact"
+              className="hidden md:inline-flex btn-secondary h-9 items-center justify-center px-3 text-sm leading-none"
+            >
+              Contact
+            </Link>
+            <Link
+              href="/about"
+              className="hidden md:inline-flex btn-secondary h-9 items-center justify-center px-3 text-sm leading-none"
+            >
+              About
+            </Link>
+          </div>
 
           {/* Mobile 3-dot menu */}
           <button
@@ -495,16 +558,14 @@ export default function SiteHeader() {
       {/* Mobile panel */}
       {mobileOpen && (
         <div className="md:hidden fixed inset-0 z-[999]">
-          {/* dim background */}
           <div className="absolute inset-0 bg-black/40" />
 
-          {/* panel */}
           <div
             ref={mobileRef}
-            className="absolute top-16 left-1/2 -translate-x-1/2 w-[92vw] max-w-md rounded-xl border border-slate-800 bg-slate-950 shadow-2xl overflow-hidden"
+            className="absolute top-16 left-1/2 -translate-x-1/2 w-[92vw] max-w-md rounded-xl border border-slate-800 bg-slate-950 shadow-2xl overflow-hidden max-h-[80vh] overflow-y-auto"
           >
             <div className="flex items-center justify-between px-4 py-3 border-b border-slate-800">
-              <div className="text-sm font-semibold text-white">Find tools</div>
+              <div className="text-sm font-semibold text-white">Find tools & news</div>
               <button
                 type="button"
                 className="text-slate-300 hover:text-white text-lg leading-none"
@@ -517,18 +578,24 @@ export default function SiteHeader() {
 
             <div className="p-4 space-y-4">
               {/* Top quick links */}
-              <div className="grid grid-cols-2 gap-2">
+              <div className="grid grid-cols-3 gap-2">
                 <Link
                   href="/blog"
-                  className="btn-secondary text-xs px-4 py-2 text-center"
+                  className="btn-secondary text-xs px-2 py-2 text-center"
                   onClick={() => setMobileOpen(false)}
                 >
                   Blog
                 </Link>
-
+                <Link
+                  href="/news"
+                  className="btn-secondary text-xs px-2 py-2 text-center"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  News
+                </Link>
                 <Link
                   href="/contact"
-                  className="btn-secondary text-xs px-4 py-2 text-center"
+                  className="btn-secondary text-xs px-2 py-2 text-center"
                   onClick={() => setMobileOpen(false)}
                 >
                   Contact
@@ -546,7 +613,28 @@ export default function SiteHeader() {
                       <Link
                         key={cat.slug}
                         href={`/blog/category/${cat.slug}`}
-                        className="rounded-md border border-slate-800 px-3 py-2 text-xs text-slate-200 hover:bg-slate-900 text-center"
+                        className="rounded-md border border-slate-800 px-3 py-2 text-xs text-slate-200 hover:bg-slate-900 text-center truncate"
+                        onClick={() => setMobileOpen(false)}
+                      >
+                        {cat.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* News categories */}
+              {newsCategories.length > 0 && (
+                <div>
+                  <div className="mb-2 text-[11px] uppercase tracking-wide text-slate-400">
+                    News Categories
+                  </div>
+                  <div className="grid grid-cols-2 gap-2">
+                    {newsCategories.map((cat) => (
+                      <Link
+                        key={cat.slug}
+                        href={`/news/category/${cat.slug}`}
+                        className="rounded-md border border-slate-800 px-3 py-2 text-xs text-slate-200 hover:bg-slate-900 text-center truncate"
                         onClick={() => setMobileOpen(false)}
                       >
                         {cat.name}
@@ -637,7 +725,7 @@ export default function SiteHeader() {
 
               <div className="text-[11px] text-slate-400 leading-relaxed">
                 Tip: Use search to jump directly to a tool, browse tool categories,
-                or explore blog topics.
+                or explore blog/news topics.
               </div>
             </div>
           </div>

@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import ReactMarkdown from "react-markdown"; // 1. Import the markdown component
 
 async function getPost(slug: string) {
   const res = await fetch(
@@ -110,10 +111,10 @@ export default async function NewsPostPage({
         {new Date(post.date).toLocaleDateString()}
       </p>
 
-      <article
-        className="wp-content mt-8 prose max-w-none"
-        dangerouslySetInnerHTML={{ __html: post.content.rendered }}
-      />
+      {/* 2. Replaced raw HTML wrapper with the ReactMarkdown parser component */}
+      <article className="wp-content mt-8 prose max-w-none text-slate-200 space-y-4">
+        <ReactMarkdown>{stripHtml(post.content.rendered)}</ReactMarkdown>
+      </article>
     </main>
   );
 }

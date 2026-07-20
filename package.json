@@ -19,6 +19,7 @@
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
     "react-easy-crop": "^5.5.5",
+    "react-markdown": "^10.1.0",
     "zod": "^4.4.1"
   },
   "devDependencies": {

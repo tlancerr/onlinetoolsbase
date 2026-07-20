@@ -15,6 +15,7 @@ function safeDate(dateInput: any): string {
   }
 }
 
+// Fetch posts from Blog CMS (cms.cottagestore.pk)
 async function getBlogPosts() {
   try {
     const res = await fetch(
@@ -24,25 +25,45 @@ async function getBlogPosts() {
       }
     );
 
-    // If the server returns an HTML error status instead of 200 OK, catch it immediately
-    if (!res.ok) {
-      return [];
-    }
+    if (!res.ok) return [];
 
     const contentType = res.headers.get("content-type");
     if (!contentType || !contentType.includes("application/json")) {
-      return []; // Return empty array if WordPress serves an HTML maintenance block
+      return [];
     }
 
     return await res.json();
   } catch (error) {
-    return []; // Return an empty array if the CMS server is offline or unreachable
+    return [];
+  }
+}
+
+// Fetch posts from News CMS (real.cottagestore.pk)
+async function getNewsPosts() {
+  try {
+    const res = await fetch(
+      "https://real.cottagestore.pk/wp-json/wp/v2/posts?per_page=100",
+      {
+        next: { revalidate: 3600 },
+      }
+    );
+
+    if (!res.ok) return [];
+
+    const contentType = res.headers.get("content-type");
+    if (!contentType || !contentType.includes("application/json")) {
+      return [];
+    }
+
+    return await res.json();
+  } catch (error) {
+    return [];
   }
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const domain = "https://onlinetoolsbase.com";
-  const now = safeDate(new Date()); // Clean layout string matching Google requirements
+  const now = safeDate(new Date());
 
   const uniqueCategories = Array.from(
     new Set(toolsData.map((t) => t.category))
@@ -62,6 +83,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/privacy-policy",
     "/terms-of-service",
     "/blog",
+    "/news", // Added static /news page
   ].map((path) => ({
     url: `${domain}${path}`,
     lastModified: now,
@@ -76,12 +98,26 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8,
   }));
 
-  const posts = await getBlogPosts();
+  // Fetch both Blog and News posts concurrently
+  const [blogPosts, newsPosts] = await Promise.all([
+    getBlogPosts(),
+    getNewsPosts(),
+  ]);
 
-  const blogPages = Array.isArray(posts) 
-    ? posts.map((post: any) => ({
+  // Dynamic Blog URLs
+  const blogPages = Array.isArray(blogPosts)
+    ? blogPosts.map((post: any) => ({
         url: `${domain}/blog/${post.slug}`,
-        // Clean up the target string to prevent line 743 failures
+        lastModified: safeDate(post.modified || post.date || new Date()),
+        changeFrequency: "weekly" as const,
+        priority: 0.8,
+      }))
+    : [];
+
+  // Dynamic News URLs
+  const newsPages = Array.isArray(newsPosts)
+    ? newsPosts.map((post: any) => ({
+        url: `${domain}/news/${post.slug}`,
         lastModified: safeDate(post.modified || post.date || new Date()),
         changeFrequency: "weekly" as const,
         priority: 0.8,
@@ -93,5 +129,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...toolPages,
     ...categoryPages,
     ...blogPages,
+    ...newsPages,
   ];
 }

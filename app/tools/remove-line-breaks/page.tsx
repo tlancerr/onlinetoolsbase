@@ -22,7 +22,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function Page() {
-  const tool = toolsData.find((t) => t.slug === "remove-line=breaks");
+  const tool = toolsData.find((t) => t.slug === "remove-line-breaks");
   if (!tool) return notFound();
 
   return (

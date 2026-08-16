@@ -35,7 +35,7 @@ async function fetchWithTimeout(url: string) {
 
 async function getCategoryBySlug(slug: string) {
   const data = await fetchWithTimeout(
-    `https://real.cottagestore.pk/wp-json/wp/v2/categories?slug=${encodeURIComponent(slug)}`
+    `https://real.cottagecore.pk/wp-json/wp/v2/categories?slug=${encodeURIComponent(slug)}`
   );
 
   return Array.isArray(data) && data.length > 0 ? data[0] : null;
@@ -43,7 +43,7 @@ async function getCategoryBySlug(slug: string) {
 
 async function getPostsByCategory(categoryId: number) {
   const data = await fetchWithTimeout(
-    `https://real.cottagestore.pk/wp-json/wp/v2/posts?categories=${categoryId}&per_page=20&_embed=1`
+    `https://real.cottagecore.pk/wp-json/wp/v2/posts?categories=${categoryId}&per_page=20&_embed=1`
   );
 
   return Array.isArray(data) ? data : [];

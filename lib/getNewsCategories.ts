@@ -1,7 +1,7 @@
 export async function getNewsCategories() {
   try {
     const res = await fetch(
-      "https://real.cottagestore.pk/wp-json/wp/v2/categories?per_page=100",
+      "https://real.cottagecore.pk/wp-json/wp/v2/categories?per_page=100",
       { next: { revalidate: 300 } }
     );
 

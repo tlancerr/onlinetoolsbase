@@ -33,7 +33,7 @@ async function fetchWithTimeout(url: string) {
 }
 async function getPosts() {
   return fetchWithTimeout(
-    "https://cms.cottagestore.pk/wp-json/wp/v2/posts?per_page=12&_embed=1"
+    "https://cms.cottagecore.pk/wp-json/wp/v2/posts?per_page=12&_embed=1"
   );
 }
 

@@ -15,11 +15,11 @@ function safeDate(dateInput: any): string {
   }
 }
 
-// Fetch posts from Blog CMS (cms.cottagestore.pk)
+// Fetch posts from Blog CMS (cms.cottagecore.pk)
 async function getBlogPosts() {
   try {
     const res = await fetch(
-      "https://cms.cottagestore.pk/wp-json/wp/v2/posts?per_page=100",
+      "https://cms.cottagecore.pk/wp-json/wp/v2/posts?per_page=100",
       {
         next: { revalidate: 3600 },
       }
@@ -38,11 +38,11 @@ async function getBlogPosts() {
   }
 }
 
-// Fetch posts from News CMS (real.cottagestore.pk)
+// Fetch posts from News CMS (real.cottagecore.pk)
 async function getNewsPosts() {
   try {
     const res = await fetch(
-      "https://real.cottagestore.pk/wp-json/wp/v2/posts?per_page=100",
+      "https://real.cottagecore.pk/wp-json/wp/v2/posts?per_page=100",
       {
         next: { revalidate: 3600 },
       }

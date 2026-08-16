@@ -3,7 +3,7 @@ import Link from "next/link";
 
 async function getPost(slug: string) {
   const res = await fetch(
-    `https://cms.cottagestore.pk/wp-json/wp/v2/posts?slug=${encodeURIComponent(slug)}&_embed=1`,
+    `https://cms.cottagecore.pk/wp-json/wp/v2/posts?slug=${encodeURIComponent(slug)}&_embed=1`,
     { 
       method: 'GET',
       headers: {
